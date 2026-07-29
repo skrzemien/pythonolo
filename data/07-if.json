@@ -1,0 +1,108 @@
+{
+  "id": "07-if",
+  "tytul": "Decyzje: if",
+  "wstep": "`if` sprawdza warunek i wykonuje kod tylko wtedy, gdy warunek jest prawdziwy. Linia z `if` kończy się dwukropkiem, a to, co ma się wykonać, jest wcięte o 4 spacje.\n\nPorównania: `==` (równe), `!=` (różne), `<`, `>`, `<=`, `>=`. Warunki łączymy przez `and`, `or` i `not`.",
+  "zadania": [
+    {
+      "id": "if-1",
+      "typ": "uzupelnij",
+      "tytul": "Warunek większy lub równy",
+      "opis": "Uzupełnij porównanie tak, żeby osoba w wieku dokładnie 18 lat też była pełnoletnia.",
+      "kod": "age = 18\nif age ___ 18:\n    print(\"Pełnoletni\")",
+      "luki": [[">="]],
+      "wyjscie": "Pełnoletni",
+      "podpowiedzi": [
+        "Samo `>` nie wystarczy — 18 nie jest większe od 18.",
+        "Potrzebny znak „większe lub równe”: `>=`."
+      ]
+    },
+    {
+      "id": "if-2",
+      "typ": "uzupelnij",
+      "tytul": "A w przeciwnym razie",
+      "opis": "Uzupełnij słowo, po którym piszemy, co zrobić, gdy warunek **nie** jest spełniony.",
+      "kod": "temperature = 5\nif temperature > 20:\n    print(\"Ciepło\")\n___:\n    print(\"Zimno\")",
+      "luki": [["else"]],
+      "wyjscie": "Zimno",
+      "podpowiedzi": [
+        "Po angielsku „w przeciwnym razie”.",
+        "Wpisz `else` — dwukropek już jest."
+      ]
+    },
+    {
+      "id": "if-3",
+      "typ": "uzupelnij",
+      "tytul": "Trzecia możliwość",
+      "opis": "Gdy możliwości jest więcej niż dwie, w środku używamy `elif` (skrót od „else if”). Uzupełnij brakujące słowo.",
+      "kod": "grade = 4\nif grade == 5:\n    print(\"Świetnie\")\n___ grade == 4:\n    print(\"Dobrze\")\nelse:\n    print(\"Może być\")",
+      "luki": [["elif"]],
+      "wyjscie": "Dobrze",
+      "podpowiedzi": [
+        "To skrót od „else if”.",
+        "Wpisz `elif`."
+      ]
+    },
+    {
+      "id": "if-4",
+      "typ": "uzupelnij",
+      "tytul": "Równe czy przypisanie",
+      "opis": "Jeden znak `=` wkłada wartość do zmiennej, a dwa znaki sprawdzają, czy coś jest równe. Uzupełnij porównanie.",
+      "kod": "password = \"kot\"\nif password ___ \"kot\":\n    print(\"Wpuszczam\")",
+      "luki": [["=="]],
+      "wyjscie": "Wpuszczam",
+      "podpowiedzi": [
+        "Do porównywania służą dwa znaki równości.",
+        "Wpisz `==`."
+      ]
+    },
+    {
+      "id": "if-5",
+      "typ": "napisz",
+      "tytul": "Parzysta czy nieparzysta",
+      "opis": "Zapytaj o liczbę i sprawdź, czy jest parzysta. Liczba jest parzysta, gdy reszta z dzielenia przez 2 wynosi zero.\n\nPrzygotowana odpowiedź to `7`, więc na ekranie ma się pojawić:\n\n`nieparzysta`",
+      "start": "number = int(input(\"Podaj liczbę: \"))\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["7"],
+        "oczekiwane": "nieparzysta"
+      },
+      "podpowiedzi": [
+        "Resztę z dzielenia daje `%`.",
+        "`if number % 2 == 0:` … `else:` — pamiętaj o wcięciach."
+      ],
+      "rozwiazanie": "number = int(input(\"Podaj liczbę: \"))\nif number % 2 == 0:\n    print(\"parzysta\")\nelse:\n    print(\"nieparzysta\")"
+    },
+    {
+      "id": "if-6",
+      "typ": "napisz",
+      "tytul": "Która większa",
+      "opis": "Masz dwie liczby w zmiennych `a` i `b`. Wypisz większą z nich. Dla `a = 12` i `b = 30` ma się pojawić:\n\n`30`",
+      "start": "a = 12\nb = 30\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "30"
+      },
+      "podpowiedzi": [
+        "Porównaj `a` z `b` i wypisz tę, która wygrywa.",
+        "`if a > b:` wypisz `a`, `else:` wypisz `b`."
+      ],
+      "rozwiazanie": "a = 12\nb = 30\nif a > b:\n    print(a)\nelse:\n    print(b)"
+    },
+    {
+      "id": "if-7",
+      "typ": "napisz",
+      "tytul": "Czy pasuje do przedziału",
+      "opis": "Sprawdź, czy liczba `temperature` mieści się między `18` a `25` (włącznie z krańcami). Dwa warunki łączy słowo `and`.\n\nDla `temperature = 21` ma się pojawić:\n\n`W sam raz`\n\nW przeciwnym razie: `Nie w sam raz`.",
+      "start": "temperature = 21\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "W sam raz"
+      },
+      "podpowiedzi": [
+        "Potrzebne są dwa porównania: `>= 18` oraz `<= 25`.",
+        "`if temperature >= 18 and temperature <= 25:`"
+      ],
+      "rozwiazanie": "temperature = 21\nif temperature >= 18 and temperature <= 25:\n    print(\"W sam raz\")\nelse:\n    print(\"Nie w sam raz\")"
+    }
+  ]
+}

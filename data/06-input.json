@@ -1,0 +1,103 @@
+{
+  "id": "06-input",
+  "tytul": "Pytanie użytkownika",
+  "wstep": "`input(\"Pytanie: \")` zatrzymuje program i czeka, aż ktoś coś wpisze. Uwaga: `input` **zawsze** oddaje tekst — nawet gdy ktoś wpisał cyfry. Żeby liczyć, trzeba go opakować: `int(input(...))`.\n\nNa tej stronie odpowiedzi są przygotowane z góry i pokazują się w konsoli na szaro.",
+  "zadania": [
+    {
+      "id": "input-1",
+      "typ": "uzupelnij",
+      "tytul": "Zapytaj o imię",
+      "opis": "Uzupełnij nazwę polecenia, które pyta użytkownika o dane.",
+      "kod": "name = ___(\"Podaj imię: \")\nprint(\"Cześć,\", name)",
+      "luki": [["input"]],
+      "wejscie": ["Ala"],
+      "wyjscie": "Cześć, Ala",
+      "podpowiedzi": [
+        "Po angielsku „wejście” to `input`.",
+        "Odpowiedź „Ala” jest przygotowana z góry."
+      ]
+    },
+    {
+      "id": "input-2",
+      "typ": "uzupelnij",
+      "tytul": "Odpowiedź jako liczba",
+      "opis": "`input` oddaje tekst, więc `\"7\" + 1` by nie zadziałało. Uzupełnij polecenie zamieniające odpowiedź na liczbę całkowitą.",
+      "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za rok:\", age + 1)",
+      "luki": [["int"]],
+      "wejscie": ["12"],
+      "wyjscie": "Za rok: 13",
+      "podpowiedzi": [
+        "Chodzi o liczbę całkowitą.",
+        "Wpisz `int`."
+      ]
+    },
+    {
+      "id": "input-3",
+      "typ": "napisz",
+      "tytul": "Przywitanie",
+      "opis": "Zapytaj o imię i przywitaj się. Przygotowana odpowiedź to `Kuba`, więc na ekranie ma się pojawić:\n\n`Cześć, Kuba!`",
+      "start": "name = input(\"Jak masz na imię? \")\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["Kuba"],
+        "oczekiwane": "Cześć, Kuba!"
+      },
+      "podpowiedzi": [
+        "Wykrzyknik musi przykleić się do imienia, bez spacji.",
+        "Najprościej f-stringiem: `print(f\"Cześć, {name}!\")`."
+      ],
+      "rozwiazanie": "name = input(\"Jak masz na imię? \")\nprint(f\"Cześć, {name}!\")"
+    },
+    {
+      "id": "input-4",
+      "typ": "napisz",
+      "tytul": "Podwojenie",
+      "opis": "Zapytaj o liczbę i wypisz jej dwukrotność. Przygotowana odpowiedź to `7`, więc ma się pojawić:\n\n`14`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["7"],
+        "oczekiwane": "14"
+      },
+      "podpowiedzi": [
+        "Bez `int` dostaniesz `77` — tekst powtórzy się dwa razy.",
+        "`number = int(input(\"Podaj liczbę: \"))`, potem `print(number * 2)`."
+      ],
+      "rozwiazanie": "number = int(input(\"Podaj liczbę: \"))\nprint(number * 2)"
+    },
+    {
+      "id": "input-5",
+      "typ": "napisz",
+      "tytul": "Suma dwóch liczb",
+      "opis": "Zapytaj o dwie liczby i wypisz ich sumę. Przygotowane odpowiedzi to `3` i `4`, więc na ekranie ma być:\n\n`7`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["3", "4"],
+        "oczekiwane": "7"
+      },
+      "podpowiedzi": [
+        "Potrzebujesz dwóch osobnych `input`-ów.",
+        "Każdy z nich opakuj w `int(...)`."
+      ],
+      "rozwiazanie": "a = int(input(\"Pierwsza liczba: \"))\nb = int(input(\"Druga liczba: \"))\nprint(a + b)"
+    },
+    {
+      "id": "input-6",
+      "typ": "napisz",
+      "tytul": "Kalkulator pola",
+      "opis": "Zapytaj o dwa boki prostokąta i wypisz pole w postaci zdania. Przygotowane odpowiedzi to `5` i `3`, więc ma się pojawić:\n\n`Pole prostokąta 5 x 3 to 15`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["5", "3"],
+        "oczekiwane": "Pole prostokąta 5 x 3 to 15"
+      },
+      "podpowiedzi": [
+        "Zapisz boki w zmiennych, wtedy użyjesz ich dwa razy.",
+        "F-string zmieści całe zdanie: `f\"Pole prostokąta {a} x {b} to {a * b}\"`."
+      ],
+      "rozwiazanie": "a = int(input(\"Pierwszy bok: \"))\nb = int(input(\"Drugi bok: \"))\nprint(f\"Pole prostokąta {a} x {b} to {a * b}\")"
+    }
+  ]
+}

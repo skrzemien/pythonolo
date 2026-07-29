@@ -1,0 +1,841 @@
+/* ==========================================================================
+   Python od A do Z — arkusz stylów
+   Jeden plik dla całej strony. Duża czcionka, wysoki kontrast, responsywny.
+   ========================================================================== */
+
+:root {
+    --tlo: #f4f6fb;
+    --tlo-karta: #ffffff;
+    --tekst: #16202e;
+    --tekst-slaby: #5b6b80;
+    --ramka: #dbe2ee;
+
+    --akcent: #2f6fed;
+    --akcent-ciemny: #1d51bd;
+    --akcent-tlo: #e8f0ff;
+
+    --ok: #1a8b53;
+    --ok-tlo: #e4f6ec;
+    --blad: #cc3344;
+    --blad-tlo: #fdeaec;
+    --uwaga: #b06f00;
+    --uwaga-tlo: #fff4dd;
+
+    --konsola-tlo: #16202e;
+    --konsola-tekst: #e6edf7;
+
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Fira Code", Menlo, Consolas, monospace;
+    --promien: 14px;
+    --cien: 0 1px 2px rgba(22, 32, 46, .06), 0 6px 20px rgba(22, 32, 46, .07);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--tlo);
+    color: var(--tekst);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+a { color: var(--akcent-ciemny); }
+
+code {
+    font-family: var(--mono);
+    font-size: .92em;
+    background: var(--akcent-tlo);
+    color: var(--akcent-ciemny);
+    padding: .12em .38em;
+    border-radius: 6px;
+}
+
+/* --- układ ---------------------------------------------------------------- */
+
+.strona {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+}
+
+.gora {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    margin-bottom: 8px;
+}
+
+.gora .marka {
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: var(--tekst);
+    letter-spacing: -.01em;
+}
+
+.gora .rozpychacz { flex: 1; }
+
+.okruszki {
+    font-size: .95rem;
+    color: var(--tekst-slaby);
+    padding: 4px 0 12px;
+}
+
+.okruszki a { color: var(--tekst-slaby); }
+
+h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    margin: 8px 0 6px;
+}
+
+h2 {
+    font-size: 1.35rem;
+    letter-spacing: -.01em;
+    margin: 32px 0 12px;
+}
+
+.podtytul {
+    color: var(--tekst-slaby);
+    font-size: 1.1rem;
+    margin: 0 0 24px;
+    max-width: 62ch;
+}
+
+/* --- przyciski ------------------------------------------------------------ */
+
+.przycisk {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font: inherit;
+    font-weight: 650;
+    padding: 11px 18px;
+    min-height: 46px;
+    border-radius: 11px;
+    border: 1px solid var(--ramka);
+    background: var(--tlo-karta);
+    color: var(--tekst);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .12s, border-color .12s, transform .06s;
+}
+
+.przycisk:hover:not(:disabled) { border-color: #b9c5d8; background: #fbfcfe; }
+.przycisk:active:not(:disabled) { transform: translateY(1px); }
+
+.przycisk:disabled { opacity: .45; cursor: not-allowed; }
+
+.przycisk.glowny {
+    background: var(--akcent);
+    border-color: var(--akcent);
+    color: #fff;
+}
+.przycisk.glowny:hover:not(:disabled) { background: var(--akcent-ciemny); border-color: var(--akcent-ciemny); }
+
+.przycisk.zielony {
+    background: var(--ok);
+    border-color: var(--ok);
+    color: #fff;
+}
+.przycisk.zielony:hover:not(:disabled) { background: #146f42; border-color: #146f42; }
+
+/* Mniejsza czcionka i ciaśniejszy padding, ale wysokość zostaje wygodna
+   do trafienia palcem na tablecie. */
+.przycisk.maly {
+    padding: 7px 13px;
+    min-height: 44px;
+    font-size: .93rem;
+    font-weight: 600;
+}
+
+.przycisk:focus-visible,
+input:focus-visible,
+.CodeMirror-focused { outline: 3px solid #9dbcff; outline-offset: 2px; }
+
+/* --- strona główna: kafelki modułów --------------------------------------- */
+
+.moduly {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 16px;
+}
+
+.kafelek {
+    display: block;
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-radius: var(--promien);
+    padding: 18px 18px 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--cien);
+    transition: transform .12s, box-shadow .12s, border-color .12s;
+}
+
+.kafelek:hover {
+    transform: translateY(-2px);
+    border-color: #c3d2ea;
+    box-shadow: 0 2px 4px rgba(22, 32, 46, .07), 0 12px 28px rgba(22, 32, 46, .1);
+}
+
+.kafelek .naglowek {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.kafelek .ikona { font-size: 1.5rem; line-height: 1; }
+
+.kafelek .numer {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--tekst-slaby);
+    letter-spacing: .04em;
+}
+
+.kafelek h3 {
+    margin: 0 0 4px;
+    font-size: 1.12rem;
+    letter-spacing: -.01em;
+}
+
+.kafelek p {
+    margin: 0 0 14px;
+    color: var(--tekst-slaby);
+    font-size: .95rem;
+    line-height: 1.5;
+}
+
+.kafelek.ukonczony { border-color: #a8dcc0; }
+.kafelek.ukonczony .naglowek::after {
+    content: "✓";
+    margin-left: auto;
+    color: var(--ok);
+    font-weight: 800;
+}
+
+/* --- pasek postępu -------------------------------------------------------- */
+
+.pasek {
+    height: 9px;
+    background: #e6ebf4;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.pasek > i {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--akcent);
+    border-radius: 99px;
+    transition: width .35s ease;
+}
+
+.pasek.pelny > i { background: var(--ok); }
+
+.postep-opis {
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    color: var(--tekst-slaby);
+    margin-top: 6px;
+}
+
+.postep-globalny {
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-radius: var(--promien);
+    padding: 16px 18px;
+    margin-bottom: 26px;
+    box-shadow: var(--cien);
+}
+
+.postep-globalny .naglowek {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-weight: 650;
+}
+
+/* --- lista zadań w module ------------------------------------------------- */
+
+.zadania {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.zadania a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 1px 2px rgba(22, 32, 46, .05);
+    transition: border-color .12s, transform .06s;
+}
+
+.zadania a:hover { border-color: #c3d2ea; }
+.zadania a:active { transform: translateY(1px); }
+
+.zadania .znacznik {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: .9rem;
+    background: #eef2f8;
+    color: var(--tekst-slaby);
+}
+
+.zadania li.ok .znacznik { background: var(--ok-tlo); color: var(--ok); }
+.zadania li.ok a { border-color: #a8dcc0; }
+
+.zadania .tresc { flex: 1; min-width: 0; }
+.zadania .tresc strong { display: block; font-weight: 650; }
+.zadania .tresc span { color: var(--tekst-slaby); font-size: .88rem; }
+
+.plakietka {
+    flex: none;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 99px;
+    background: var(--akcent-tlo);
+    color: var(--akcent-ciemny);
+}
+
+.plakietka.pisz { background: #f0e9ff; color: #6437c4; }
+
+/* --- ćwiczenie: układ dwukolumnowy ---------------------------------------- */
+
+.cwiczenie {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 20px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .cwiczenie { grid-template-columns: 1fr; }
+}
+
+.karta {
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-radius: var(--promien);
+    padding: 20px;
+    box-shadow: var(--cien);
+}
+
+.wstep-modulu { margin-bottom: 22px; }
+
+.tresc-zadania h1 { font-size: 1.5rem; margin: 0 0 10px; }
+.tresc-zadania .opis { margin: 0 0 4px; }
+
+.opis p,
+.wstep-modulu p { margin: 0 0 10px; }
+
+.opis p:last-child,
+.wstep-modulu p:last-child { margin-bottom: 0; }
+
+.opis ul,
+.wstep-modulu ul { margin: 0 0 10px; padding-left: 22px; }
+
+.opis li,
+.wstep-modulu li { margin-bottom: 4px; }
+
+.blok-kodu {
+    margin: 0 0 12px;
+    padding: 12px 14px;
+    background: var(--konsola-tlo);
+    color: var(--konsola-tekst);
+    border-radius: 10px;
+    font-family: var(--mono);
+    font-size: .92rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.tresc-zadania .oczekiwane-wyjscie {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #f7f9fc;
+    border: 1px dashed var(--ramka);
+    border-radius: 10px;
+}
+
+.tresc-zadania .oczekiwane-wyjscie strong {
+    display: block;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--tekst-slaby);
+    margin-bottom: 6px;
+}
+
+.tresc-zadania .oczekiwane-wyjscie pre {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: .92rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.pomoc { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+.podpowiedz {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: var(--uwaga-tlo);
+    border-left: 4px solid var(--uwaga);
+    border-radius: 8px;
+    font-size: .96rem;
+}
+
+.podpowiedz code { background: #fdeec9; color: #7a4d00; }
+
+.rozwiazanie {
+    margin-top: 12px;
+    border: 1px solid var(--ramka);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rozwiazanie summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 650;
+    background: #f7f9fc;
+}
+
+.rozwiazanie pre {
+    margin: 0;
+    padding: 12px 14px;
+    background: var(--konsola-tlo);
+    color: var(--konsola-tekst);
+    font-family: var(--mono);
+    font-size: .92rem;
+    overflow-x: auto;
+}
+
+/* --- pasek narzędzi + edytor ---------------------------------------------- */
+
+.panel-kodu { display: grid; gap: 14px; }
+
+.pasek-narzedzi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.pasek-narzedzi .rozpychacz { flex: 1; }
+
+.stan-pythona {
+    font-size: .85rem;
+    color: var(--tekst-slaby);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.stan-pythona .kropka {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--uwaga);
+    flex: none;
+}
+
+.stan-pythona.gotowy .kropka { background: var(--ok); }
+.stan-pythona.pracuje .kropka { background: var(--akcent); animation: puls 1s infinite; }
+
+@keyframes puls { 50% { opacity: .25; } }
+
+.edytor {
+    border: 1px solid var(--ramka);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--tlo-karta);
+}
+
+.CodeMirror {
+    height: auto;
+    min-height: 220px;
+    font-family: var(--mono);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.CodeMirror-scroll { min-height: 220px; }
+
+/* --- konsola wyjścia ------------------------------------------------------ */
+
+.konsola {
+    background: var(--konsola-tlo);
+    color: var(--konsola-tekst);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: var(--mono);
+    font-size: .95rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+    min-height: 96px;
+    max-height: 340px;
+    overflow: auto;
+}
+
+.konsola .pusto { color: #8ea2bd; font-style: italic; }
+.konsola .stderr { color: #ff9aa6; }
+.konsola .info { color: #8ea2bd; }
+
+/* --- komunikat wyniku ----------------------------------------------------- */
+
+.wynik {
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-weight: 600;
+    display: none;
+}
+
+.wynik.widoczny { display: block; }
+.wynik.ok { background: var(--ok-tlo); color: #0f6b3d; border: 1px solid #a8dcc0; }
+.wynik.zle { background: var(--blad-tlo); color: #99202f; border: 1px solid #f3b6bd; }
+.wynik.info { background: var(--uwaga-tlo); color: #7a4d00; border: 1px solid #f0d49a; }
+
+.wynik .naglowek { font-size: 1.05rem; }
+.wynik .szczegol { font-weight: 400; margin-top: 8px; font-size: .95rem; }
+
+.porownanie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+@media (max-width: 620px) {
+    .porownanie { grid-template-columns: 1fr; }
+}
+
+.porownanie > div {
+    background: #fff;
+    border: 1px solid var(--ramka);
+    border-radius: 9px;
+    padding: 10px 12px;
+    min-width: 0;
+}
+
+.porownanie strong {
+    display: block;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--tekst-slaby);
+    margin-bottom: 5px;
+}
+
+.porownanie pre {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: .9rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--tekst);
+}
+
+.porownanie .rozna-linia {
+    background: #ffe0e4;
+    border-radius: 3px;
+    display: inline-block;
+    min-width: 1ch;
+}
+
+.porownanie pre .brak { color: var(--tekst-slaby); font-style: italic; }
+
+/* --- zadanie typu "uzupełnij" --------------------------------------------- */
+
+.kod-z-lukami {
+    background: var(--konsola-tlo);
+    color: var(--konsola-tekst);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-family: var(--mono);
+    font-size: 1rem;
+    /* Luźno, żeby pola do wpisywania mieściły się bez ściskania linii kodu. */
+    line-height: 2.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+}
+
+.luka {
+    font-family: var(--mono);
+    font-size: .95rem;
+    font-weight: 700;
+    width: 8ch;
+    min-height: 36px;
+    padding: 5px 8px;
+    border-radius: 7px;
+    border: 2px solid #55708f;
+    background: #23324a;
+    color: #fff;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.luka::placeholder { color: #6d84a3; font-weight: 400; }
+.luka.ok { border-color: #4ec98a; background: #14372a; color: #9ff0c5; }
+.luka.zle { border-color: #ff8e9b; background: #3d1c22; }
+
+.legenda-luk {
+    font-size: .92rem;
+    color: var(--tekst-slaby);
+    margin: 0 0 10px;
+}
+
+/* --- nawigacja pod zadaniem ----------------------------------------------- */
+
+.nawigacja-zadan {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.nawigacja-zadan .rozpychacz { flex: 1; }
+
+/* --- stopka --------------------------------------------------------------- */
+
+.stopka {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ramka);
+    color: var(--tekst-slaby);
+    font-size: .9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.stopka .rozpychacz { flex: 1; }
+
+/* Kasowanie postępu jest nieodwracalne — guzik ma wyglądać poważniej
+   niż reszta, ale nie krzyczeć na dziecko z każdej strony. */
+.przycisk.ostrzegawczy {
+    color: var(--blad);
+    border-color: #f0c2c8;
+}
+
+.przycisk.ostrzegawczy:hover:not(:disabled) {
+    background: var(--blad-tlo);
+    border-color: var(--blad);
+}
+
+/* --- drobiazgi ------------------------------------------------------------ */
+
+.ladowanie { color: var(--tekst-slaby); padding: 24px 0; }
+
+.blad-strony {
+    background: var(--blad-tlo);
+    border: 1px solid #f3b6bd;
+    color: #99202f;
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+
+.ukryty { display: none !important; }
+
+/* Link „przejdź do treści" — widoczny dopiero po dojściu do niego tabulatorem. */
+.pomin-nawigacje {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 20;
+    background: var(--akcent);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 0 0 10px 0;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.pomin-nawigacje:focus {
+    left: 0;
+}
+
+/* --- przełącznik trybu czytania ------------------------------------------- */
+
+.przycisk.tryb-czytania[aria-pressed="true"] {
+    background: var(--ok-tlo);
+    border-color: var(--ok);
+    color: #0f6b3d;
+}
+
+.tryb-info {
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-left: 4px solid var(--ok);
+    border-radius: var(--promien);
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    font-size: .95rem;
+    color: var(--tekst-slaby);
+}
+
+/* --- mniej ruchu ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+    }
+
+    .kafelek:hover { transform: none; }
+}
+
+@media (max-width: 600px) {
+    body { font-size: 16px; }
+    .strona { padding: 0 14px 48px; }
+    .karta { padding: 16px; }
+    .CodeMirror { font-size: 15px; }
+}
+
+/* ==========================================================================
+   TRYB CZYTANIA DLA DYSLEKTYKÓW
+   Włączany guzikiem na stronie głównej, zapamiętywany w localStorage.
+   Zestaw zmian wg wytycznych British Dyslexia Association:
+   bezszeryfowa czcionka, większy tekst, luźniejsze odstępy między literami
+   i wierszami, krótsze linie, kremowe tło zamiast bieli, zero kursywy
+   i zero KAPITALIKÓW.
+
+   Świadomie bez specjalnej czcionki „dla dyslektyków" — badania (Rello
+   i Baeza-Yates 2013, Kuster i in. 2018) nie wykazały jej przewagi nad
+   zwykłą bezszeryfową, a wyglądała dziwnie. Działa to, co niżej.
+   ========================================================================== */
+
+:root[data-tryb="dysleksja"] {
+    /* Czysta biel męczy i powoduje rozmywanie się liter — stąd kremowe tło
+       i tekst granatowy zamiast czarnego. */
+    --tlo: #f3ece0;
+    --tlo-karta: #fffcf5;
+    --tekst: #22303f;
+    --tekst-slaby: #4c5b6d;
+    --ramka: #ddd2bf;
+
+    /* Zwykła bezszeryfowa o szerokich, dobrze rozróżnialnych literach.
+       Verdana i Tahoma są polecane przy dysleksji i siedzą już w systemie —
+       nic się nie pobiera. */
+    --czcionka: Verdana, Tahoma, 'Trebuchet MS', system-ui, sans-serif;
+}
+
+:root[data-tryb="dysleksja"] body {
+    font-family: var(--czcionka);
+    font-size: 19px;
+    line-height: 1.8;
+    /* Przerwa między wyrazami wyraźnie większa niż między literami —
+       dzięki temu wzrok łapie granice wyrazów, a litery nie rozjeżdżają się
+       w oderwane znaki. */
+    letter-spacing: .03em;
+    word-spacing: .14em;
+}
+
+/* Krótsza linia = mniejsze ryzyko zgubienia się przy przejściu do następnej. */
+:root[data-tryb="dysleksja"] .opis,
+:root[data-tryb="dysleksja"] .wstep-modulu,
+:root[data-tryb="dysleksja"] .podtytul,
+:root[data-tryb="dysleksja"] .podpowiedz,
+:root[data-tryb="dysleksja"] .kafelek p {
+    max-width: 58ch;
+}
+
+:root[data-tryb="dysleksja"] h1,
+:root[data-tryb="dysleksja"] h2,
+:root[data-tryb="dysleksja"] h3 {
+    letter-spacing: 0;
+    line-height: 1.3;
+}
+
+/* Kursywa i kapitaliki utrudniają rozpoznawanie kształtu wyrazu. */
+:root[data-tryb="dysleksja"] em,
+:root[data-tryb="dysleksja"] i,
+:root[data-tryb="dysleksja"] .konsola .pusto {
+    font-style: normal;
+    font-weight: 650;
+}
+
+:root[data-tryb="dysleksja"] .plakietka,
+:root[data-tryb="dysleksja"] .numer,
+:root[data-tryb="dysleksja"] .oczekiwane-wyjscie strong,
+:root[data-tryb="dysleksja"] .porownanie strong {
+    text-transform: none;
+    letter-spacing: .02em;
+}
+
+/* Kod zostaje w czcionce o stałej szerokości — wcięcia w Pythonie muszą się
+   zgadzać co do kolumny. Poprawiamy tylko rozmiar i odstępy. */
+:root[data-tryb="dysleksja"] .konsola,
+:root[data-tryb="dysleksja"] .kod-z-lukami,
+:root[data-tryb="dysleksja"] .blok-kodu,
+:root[data-tryb="dysleksja"] .rozwiazanie pre,
+:root[data-tryb="dysleksja"] .oczekiwane-wyjscie pre,
+:root[data-tryb="dysleksja"] .porownanie pre {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    letter-spacing: .02em;
+    word-spacing: normal;
+}
+
+:root[data-tryb="dysleksja"] .kod-z-lukami { line-height: 2.7; }
+
+:root[data-tryb="dysleksja"] .CodeMirror {
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: .02em;
+    word-spacing: normal;
+}
+
+:root[data-tryb="dysleksja"] code {
+    letter-spacing: .02em;
+    word-spacing: normal;
+    padding: .15em .45em;
+}
+
+/* Większe cele do kliknięcia i wyraźniejsza obwódka pól do wpisywania. */
+:root[data-tryb="dysleksja"] .przycisk { min-height: 52px; }
+:root[data-tryb="dysleksja"] .przycisk.maly { min-height: 48px; }
+
+:root[data-tryb="dysleksja"] .luka {
+    min-height: 42px;
+    border-width: 3px;
+    font-size: 1.02rem;
+}
+
+:root[data-tryb="dysleksja"] .zadania a { padding: 18px 16px; }

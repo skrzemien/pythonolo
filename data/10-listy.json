@@ -1,0 +1,107 @@
+{
+  "id": "10-listy",
+  "tytul": "Listy",
+  "wstep": "Lista trzyma wiele wartości pod jedną nazwą: `fruits = [\"jabłko\", \"gruszka\"]`. Elementy numerujemy od zera, więc `fruits[0]` to pierwszy element, a `fruits[-1]` ostatni.\n\nPrzydatne: `len(lista)` — ile elementów, `lista.append(x)` — dopisz na końcu, `sum`, `min`, `max`.",
+  "zadania": [
+    {
+      "id": "listy-1",
+      "typ": "uzupelnij",
+      "tytul": "Nawiasy listy",
+      "opis": "Listę zapisujemy w nawiasach kwadratowych. Uzupełnij nawias otwierający.",
+      "kod": "fruits = ___\"jabłko\", \"gruszka\", \"śliwka\"]\nprint(fruits)",
+      "luki": [["["]],
+      "wyjscie": "['jabłko', 'gruszka', 'śliwka']",
+      "podpowiedzi": [
+        "Nawias kwadratowy, ten sam co przy `word[0]`.",
+        "Wpisz `[`."
+      ]
+    },
+    {
+      "id": "listy-2",
+      "typ": "uzupelnij",
+      "tytul": "Drugi element",
+      "opis": "Elementy liczymy od zera. Wpisz numer, żeby wypisać `gruszka`.",
+      "kod": "fruits = [\"jabłko\", \"gruszka\", \"śliwka\"]\nprint(fruits[___])",
+      "luki": [["1"]],
+      "wyjscie": "gruszka",
+      "podpowiedzi": [
+        "`jabłko` ma numer 0.",
+        "Wpisz `1`."
+      ]
+    },
+    {
+      "id": "listy-3",
+      "typ": "uzupelnij",
+      "tytul": "Dopisz na końcu",
+      "opis": "Uzupełnij nazwę polecenia, które dokłada element na koniec listy.",
+      "kod": "numbers = [1, 2, 3]\nnumbers.___(4)\nprint(numbers)",
+      "luki": [["append"]],
+      "wyjscie": "[1, 2, 3, 4]",
+      "podpowiedzi": [
+        "Po angielsku „dołącz” to `append`.",
+        "Uwaga na pisownię: dwa `p`."
+      ]
+    },
+    {
+      "id": "listy-4",
+      "typ": "uzupelnij",
+      "tytul": "Ostatni element",
+      "opis": "Numer `-1` oznacza ostatni element, `-2` przedostatni. Wpisz numer, żeby wypisać `śliwka`.",
+      "kod": "fruits = [\"jabłko\", \"gruszka\", \"śliwka\"]\nprint(fruits[___])",
+      "luki": [["-1", "2"]],
+      "wyjscie": "śliwka",
+      "podpowiedzi": [
+        "Można liczyć od początku albo od końca.",
+        "Zadziała `2` albo `-1`."
+      ]
+    },
+    {
+      "id": "listy-5",
+      "typ": "napisz",
+      "tytul": "Ile ocen",
+      "opis": "Wypisz, ile ocen jest na liście, w takiej postaci:\n\n`Ocen: 5`",
+      "start": "grades = [5, 3, 4, 5, 2]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Ocen: 5"
+      },
+      "podpowiedzi": [
+        "Długość listy podaje `len`.",
+        "`print(\"Ocen:\", len(grades))`"
+      ],
+      "rozwiazanie": "grades = [5, 3, 4, 5, 2]\nprint(\"Ocen:\", len(grades))"
+    },
+    {
+      "id": "listy-6",
+      "typ": "napisz",
+      "tytul": "Najlepsza i najgorsza",
+      "opis": "Z listy ocen wypisz najwyższą i najniższą, każdą w osobnej linii:\n\n```\nNajlepsza: 5\nNajgorsza: 2\n```\n\nPrzydadzą się `max` i `min`.",
+      "start": "grades = [5, 3, 4, 5, 2]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Najlepsza: 5\nNajgorsza: 2"
+      },
+      "podpowiedzi": [
+        "`max(grades)` daje największą wartość z listy.",
+        "`print(\"Najlepsza:\", max(grades))` i podobnie z `min`."
+      ],
+      "rozwiazanie": "grades = [5, 3, 4, 5, 2]\nprint(\"Najlepsza:\", max(grades))\nprint(\"Najgorsza:\", min(grades))"
+    },
+    {
+      "id": "listy-7",
+      "typ": "napisz",
+      "tytul": "Lista zakupów",
+      "opis": "Przejdź pętlą po liście i wypisz każdą rzecz z myślnikiem z przodu:\n\n```\n- chleb\n- mleko\n- jabłka\n```",
+      "start": "shopping = [\"chleb\", \"mleko\", \"jabłka\"]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "- chleb\n- mleko\n- jabłka"
+      },
+      "podpowiedzi": [
+        "`for item in shopping:` przechodzi po elementach listy.",
+        "`print(\"-\", item)` — przecinek doda spację po myślniku."
+      ],
+      "rozwiazanie": "shopping = [\"chleb\", \"mleko\", \"jabłka\"]\nfor item in shopping:\n    print(\"-\", item)"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": "01-print",
+  "tytul": "Wypisywanie tekstu",
+  "wstep": "`print` to polecenie, które każe Pythonowi coś napisać. Tekst wpisujemy w cudzysłowie i w nawiasie: `print(\"Cześć\")`. Każdy `print` wypisuje w nowej linii.",
+  "zadania": [
+    {
+      "id": "print-1",
+      "typ": "uzupelnij",
+      "tytul": "Pierwsze polecenie",
+      "opis": "Prawie gotowe — brakuje tylko nazwy polecenia, które wypisuje tekst na ekranie.",
+      "kod": "___(\"Cześć, świecie!\")",
+      "luki": [["print"]],
+      "wyjscie": "Cześć, świecie!",
+      "podpowiedzi": [
+        "To pięć liter i po angielsku znaczy „drukuj”.",
+        "Napisz `print` małymi literami."
+      ]
+    },
+    {
+      "id": "print-2",
+      "typ": "uzupelnij",
+      "tytul": "Tekst w cudzysłowie",
+      "opis": "Napis dla Pythona musi być zamknięty w cudzysłowie: `\"tak\"`. Bez cudzysłowu Python szukałby zmiennej o takiej nazwie.\n\nWpisz w lukę słowo Pies **razem z cudzysłowami**.",
+      "kod": "print(\"Kot\")\nprint(___)",
+      "luki": [["\"Pies\"", "'Pies'"]],
+      "wyjscie": "Kot\nPies",
+      "podpowiedzi": [
+        "Cudzysłów otwiera i zamyka tekst — musi być z obu stron.",
+        "Wpisz `\"Pies\"`."
+      ]
+    },
+    {
+      "id": "print-3",
+      "typ": "uzupelnij",
+      "tytul": "Komentarz",
+      "opis": "Komentarz to notatka dla człowieka — Python całkowicie ją pomija. Zaczyna się jednym znakiem.",
+      "kod": "___ Ta linia to notatka, Python jej nie wykona\nprint(\"Tylko to się wypisze\")",
+      "luki": [["#"]],
+      "wyjscie": "Tylko to się wypisze",
+      "podpowiedzi": [
+        "Ten znak bywa nazywany „kratką” albo „hasztagiem”.",
+        "To `#`."
+      ]
+    },
+    {
+      "id": "print-4",
+      "typ": "uzupelnij",
+      "tytul": "Pusta linia",
+      "opis": "`print` bez niczego w nawiasie robi przerwę — wypisuje pustą linię.\n\nWpisz w lukę **całe polecenie razem z pustym nawiasem**.",
+      "kod": "print(\"Góra\")\n___\nprint(\"Dół\")",
+      "luki": [["print()"]],
+      "wyjscie": "Góra\n\nDół",
+      "podpowiedzi": [
+        "To wciąż `print`, tylko nic nie dostaje do wypisania.",
+        "Wpisz `print()`."
+      ]
+    },
+    {
+      "id": "print-5",
+      "typ": "uzupelnij",
+      "tytul": "Cudzysłów w środku tekstu",
+      "opis": "Kłopot: jeśli w tekście ma być cudzysłów, Python pomyśli, że napis się już skończył. Rozwiązanie: całość obejmujemy **apostrofami** `'`, a cudzysłowy zostają w środku.\n\nWstaw apostrofy w obie luki.",
+      "kod": "print(___Kot powiedział \"miau\"___)",
+      "luki": [["'"], ["'"]],
+      "wyjscie": "Kot powiedział \"miau\"",
+      "podpowiedzi": [
+        "Apostrof to pojedynczy znak `'` — na klawiaturze zwykle obok Enter.",
+        "Python traktuje `'tekst'` i `\"tekst\"` tak samo."
+      ]
+    },
+    {
+      "id": "print-6",
+      "typ": "uzupelnij",
+      "tytul": "Własny separator",
+      "opis": "Gdy `print` dostaje kilka wartości, domyślnie skleja je spacją. Ustawienie `sep` zmienia to na dowolny znak.\n\nUzupełnij nazwę tego ustawienia.",
+      "kod": "print(\"2026\", \"07\", \"29\", ___=\"-\")",
+      "luki": [["sep"]],
+      "wyjscie": "2026-07-29",
+      "podpowiedzi": [
+        "Skrót od angielskiego „separator”.",
+        "Wpisz `sep` — trzy litery."
+      ]
+    },
+    {
+      "id": "print-7",
+      "typ": "uzupelnij",
+      "tytul": "Bez przechodzenia do nowej linii",
+      "opis": "Zwykle `print` kończy linię. Ustawienie `end=\"\"` mówi: nie przechodź do nowej linii, zostań tutaj.\n\nUzupełnij nazwę tego ustawienia, żeby oba napisy trafiły do jednej linii.",
+      "kod": "print(\"Ala \", ___=\"\")\nprint(\"ma kota\")",
+      "luki": [["end"]],
+      "wyjscie": "Ala ma kota",
+      "podpowiedzi": [
+        "Po angielsku „koniec”.",
+        "Wpisz `end` — trzy litery."
+      ]
+    },
+    {
+      "id": "print-8",
+      "typ": "napisz",
+      "tytul": "Przywitanie",
+      "opis": "Napisz program, który wypisze dokładnie taki tekst:\n\n`Cześć! Uczę się Pythona.`",
+      "start": "# Tutaj napisz swój kod\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Cześć! Uczę się Pythona."
+      },
+      "podpowiedzi": [
+        "Użyj `print` i wstaw tekst w cudzysłowie.",
+        "Przepisz tekst dokładnie, razem z wykrzyknikiem i kropką."
+      ],
+      "rozwiazanie": "print(\"Cześć! Uczę się Pythona.\")"
+    },
+    {
+      "id": "print-9",
+      "typ": "napisz",
+      "tytul": "Trzy linijki",
+      "opis": "Wypisz trzy słowa, każde w osobnej linii:\n\n`Python`\n`jest`\n`super`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Python\njest\nsuper"
+      },
+      "podpowiedzi": [
+        "Każdy `print` zaczyna nową linię — potrzebujesz trzech.",
+        "Trzy linie kodu, jedna pod drugą, bez wcięć."
+      ],
+      "rozwiazanie": "print(\"Python\")\nprint(\"jest\")\nprint(\"super\")"
+    },
+    {
+      "id": "print-10",
+      "typ": "napisz",
+      "tytul": "Kilka wartości naraz",
+      "opis": "`print` może dostać kilka rzeczy oddzielonych przecinkami — sam wstawi między nie spacje:\n\n`print(\"Mam\", 12, \"lat\")`\n\nWypisz w ten sposób zdanie:\n\n`Kot ma 4 łapy`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Kot ma 4 łapy"
+      },
+      "podpowiedzi": [
+        "Liczby nie wpisujemy w cudzysłów — `4` to liczba, `\"4\"` to tekst.",
+        "Spróbuj `print(\"Kot ma\", 4, \"łapy\")`."
+      ],
+      "rozwiazanie": "print(\"Kot ma\", 4, \"łapy\")"
+    },
+    {
+      "id": "print-11",
+      "typ": "napisz",
+      "tytul": "Choinka",
+      "opis": "Narysuj z gwiazdek małą choinkę. Zwróć uwagę na spacje z lewej strony — one też się liczą.\n\n```\n  *\n ***\n*****\n```",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "  *\n ***\n*****"
+      },
+      "podpowiedzi": [
+        "Trzy `print`-y, w każdym inna liczba spacji i gwiazdek.",
+        "Pierwsza linia to dwie spacje i jedna gwiazdka: `print(\"  *\")`."
+      ],
+      "rozwiazanie": "print(\"  *\")\nprint(\" ***\")\nprint(\"*****\")"
+    },
+    {
+      "id": "print-12",
+      "typ": "napisz",
+      "tytul": "Schodki",
+      "opis": "Zbuduj z gwiazdek schodki — w każdej linii o jedną gwiazdkę więcej, żadnych spacji z przodu:\n\n```\n*\n**\n***\n****\n*****\n```\n\nPięć `print`-ów w zupełności wystarczy. Później nauczysz się robić to jedną pętlą.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "*\n**\n***\n****\n*****"
+      },
+      "podpowiedzi": [
+        "Policz gwiazdki w każdej linii: 1, 2, 3, 4, 5.",
+        "Zamiast przepisywać gwiazdki, możesz je pomnożyć: `print(\"*\" * 3)`."
+      ],
+      "rozwiazanie": "print(\"*\")\nprint(\"**\")\nprint(\"***\")\nprint(\"****\")\nprint(\"*****\")"
+    }
+  ]
+}

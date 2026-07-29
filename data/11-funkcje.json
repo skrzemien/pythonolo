@@ -1,0 +1,110 @@
+{
+  "id": "11-funkcje",
+  "tytul": "Funkcje",
+  "wstep": "Funkcja to własne polecenie — piszesz je raz, używasz wiele razy:\n\n```\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```\n\n`def` zaczyna definicję, w nawiasie są argumenty, a `return` oddaje wynik. Bez `return` funkcja nic nie oddaje.\n\nW tym module sprawdzarka sama wywoła Twoją funkcję z różnymi wartościami — nazwy muszą się więc zgadzać co do litery.",
+  "zadania": [
+    {
+      "id": "funkcje-1",
+      "typ": "uzupelnij",
+      "tytul": "Definicja funkcji",
+      "opis": "Uzupełnij słowo, od którego zaczyna się każda definicja funkcji.",
+      "kod": "___ hello():\n    print(\"Cześć!\")\n\nhello()",
+      "luki": [["def"]],
+      "wyjscie": "Cześć!",
+      "podpowiedzi": [
+        "Trzy litery, skrót od „define”.",
+        "Wpisz `def`."
+      ]
+    },
+    {
+      "id": "funkcje-2",
+      "typ": "uzupelnij",
+      "tytul": "Oddanie wyniku",
+      "opis": "Uzupełnij słowo, którym funkcja oddaje wynik do miejsca, z którego ją wywołano.",
+      "kod": "def double(n):\n    ___ n * 2\n\nprint(double(21))",
+      "luki": [["return"]],
+      "wyjscie": "42",
+      "podpowiedzi": [
+        "Po angielsku „zwróć”.",
+        "Wpisz `return`."
+      ]
+    },
+    {
+      "id": "funkcje-3",
+      "typ": "uzupelnij",
+      "tytul": "Wywołanie z wartością",
+      "opis": "Funkcja bez wywołania nic nie robi. Wpisz w lukę wartość, dla której program wypisze `25`.",
+      "kod": "def square(n):\n    return n * n\n\nprint(square(___))",
+      "luki": [["5"]],
+      "wyjscie": "25",
+      "podpowiedzi": [
+        "Jaka liczba pomnożona przez siebie daje 25?",
+        "Wpisz `5`."
+      ]
+    },
+    {
+      "id": "funkcje-4",
+      "typ": "napisz",
+      "tytul": "Funkcja dodająca",
+      "opis": "Napisz funkcję `add`, która przyjmuje dwie liczby i **zwraca** ich sumę.\n\nNic nie musisz wypisywać — sprawdzarka sama wywoła `add(2, 3)` i sprawdzi, czy dostała `5`.",
+      "start": "def add(a, b):\n    # wpisz tutaj return\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert add(2, 3) == 5, \"add(2, 3) powinno dać 5\"\nassert add(0, 0) == 0, \"add(0, 0) powinno dać 0\"\nassert add(-1, 1) == 0, \"add(-1, 1) powinno dać 0\"\nassert add(100, 250) == 350, \"add(100, 250) powinno dać 350\""
+      },
+      "podpowiedzi": [
+        "`print` tu nie wystarczy — potrzebne jest `return`.",
+        "`return a + b`"
+      ],
+      "rozwiazanie": "def add(a, b):\n    return a + b"
+    },
+    {
+      "id": "funkcje-5",
+      "typ": "napisz",
+      "tytul": "Pole prostokąta jako funkcja",
+      "opis": "Napisz funkcję `area`, która przyjmuje dwa boki i zwraca pole prostokąta.\n\nSprawdzarka wywoła między innymi `area(5, 3)` i oczekuje `15`.",
+      "start": "def area(a, b):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert area(5, 3) == 15, \"area(5, 3) powinno dać 15\"\nassert area(1, 1) == 1, \"area(1, 1) powinno dać 1\"\nassert area(10, 0) == 0, \"area(10, 0) powinno dać 0\""
+      },
+      "podpowiedzi": [
+        "Pole to bok razy bok.",
+        "`return a * b`"
+      ],
+      "rozwiazanie": "def area(a, b):\n    return a * b"
+    },
+    {
+      "id": "funkcje-6",
+      "typ": "napisz",
+      "tytul": "Czy parzysta",
+      "opis": "Napisz funkcję `is_even`, która dostaje liczbę i zwraca `True`, gdy jest parzysta, a `False`, gdy nieparzysta.\n\nSprawdzarka wywoła ją dla kilku liczb.",
+      "start": "def is_even(n):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert is_even(4) is True, \"is_even(4) powinno dać True\"\nassert is_even(7) is False, \"is_even(7) powinno dać False\"\nassert is_even(0) is True, \"is_even(0) powinno dać True\""
+      },
+      "podpowiedzi": [
+        "Reszta z dzielenia przez 2 daje `0` dla liczb parzystych.",
+        "Samo `return n % 2 == 0` załatwia sprawę — porównanie już daje True albo False."
+      ],
+      "rozwiazanie": "def is_even(n):\n    return n % 2 == 0"
+    },
+    {
+      "id": "funkcje-7",
+      "typ": "napisz",
+      "tytul": "Powitanie z imieniem",
+      "opis": "Napisz funkcję `greet`, która dostaje imię i **zwraca** napis w postaci `Cześć, Ala!`.\n\nUwaga: funkcja ma zwrócić tekst, a nie go wypisać.",
+      "start": "def greet(name):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert greet(\"Ala\") == \"Cześć, Ala!\", \"greet('Ala') powinno zwrócić 'Cześć, Ala!'\"\nassert greet(\"Kuba\") == \"Cześć, Kuba!\", \"greet('Kuba') powinno zwrócić 'Cześć, Kuba!'\""
+      },
+      "podpowiedzi": [
+        "Najwygodniej f-stringiem.",
+        "`return f\"Cześć, {name}!\"`"
+      ],
+      "rozwiazanie": "def greet(name):\n    return f\"Cześć, {name}!\""
+    }
+  ]
+}

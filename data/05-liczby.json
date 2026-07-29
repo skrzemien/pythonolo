@@ -1,0 +1,110 @@
+{
+  "id": "05-liczby",
+  "tytul": "Liczby i działania",
+  "wstep": "Python liczy jak kalkulator: `+`, `-`, `*`, `/`. Do tego ma trzy przydatne znaki: `//` dzieli bez reszty, `%` daje samą resztę, a `**` podnosi do potęgi. Zwykłe `/` zawsze daje ułamek — `10 / 2` to `5.0`.",
+  "zadania": [
+    {
+      "id": "liczby-1",
+      "typ": "uzupelnij",
+      "tytul": "Dzielenie bez reszty",
+      "opis": "Ile pełnych trójek mieści się w dziesiątce? Uzupełnij znak dzielenia całkowitego, żeby wyszło `3`, a nie `3.3333`.",
+      "kod": "print(10 ___ 3)",
+      "luki": [["//"]],
+      "wyjscie": "3",
+      "podpowiedzi": [
+        "To dwa takie same znaki obok siebie.",
+        "Wpisz `//`."
+      ]
+    },
+    {
+      "id": "liczby-2",
+      "typ": "uzupelnij",
+      "tytul": "Reszta z dzielenia",
+      "opis": "Ten znak podaje, ile zostaje po podziale. `10` podzielone przez `3` to trzy razy po trzy i reszta `1`.",
+      "kod": "print(10 ___ 3)",
+      "luki": [["%"]],
+      "wyjscie": "1",
+      "podpowiedzi": [
+        "Znak wygląda jak procent.",
+        "Wpisz `%`."
+      ]
+    },
+    {
+      "id": "liczby-3",
+      "typ": "uzupelnij",
+      "tytul": "Potęga",
+      "opis": "Dwa do potęgi piątej to `2 * 2 * 2 * 2 * 2`. Uzupełnij krótszy zapis.",
+      "kod": "print(2 ___ 5)",
+      "luki": [["**"]],
+      "wyjscie": "32",
+      "podpowiedzi": [
+        "Dwie gwiazdki obok siebie.",
+        "Wpisz `**`."
+      ]
+    },
+    {
+      "id": "liczby-4",
+      "typ": "napisz",
+      "tytul": "Kolejność działań",
+      "opis": "Python liczy najpierw mnożenie, a dopiero potem dodawanie — tak samo jak w szkole. Nawiasy zmieniają kolejność.\n\nWypisz wynik działania: najpierw dodaj `2` i `3`, a potem pomnóż wynik przez `4`. Na ekranie ma być:\n\n`20`",
+      "start": "print(2 + 3 * 4)\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "20"
+      },
+      "podpowiedzi": [
+        "Kod w edytorze daje `14`, bo `3 * 4` liczy się pierwsze.",
+        "Otocz dodawanie nawiasem: `(2 + 3) * 4`."
+      ],
+      "rozwiazanie": "print((2 + 3) * 4)"
+    },
+    {
+      "id": "liczby-5",
+      "typ": "napisz",
+      "tytul": "Pole prostokąta",
+      "opis": "Prostokąt ma boki `5` i `3`. Policz pole i wypisz zdanie:\n\n`Pole wynosi 15`",
+      "start": "a = 5\nb = 3\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Pole wynosi 15"
+      },
+      "podpowiedzi": [
+        "Pole prostokąta to bok razy bok.",
+        "`print(\"Pole wynosi\", a * b)`"
+      ],
+      "rozwiazanie": "a = 5\nb = 3\nprint(\"Pole wynosi\", a * b)"
+    },
+    {
+      "id": "liczby-6",
+      "typ": "napisz",
+      "tytul": "Zaokrąglanie",
+      "opis": "`round(x, 2)` zaokrągla do dwóch miejsc po przecinku. Zaokrąglij `3.14159` do dwóch miejsc i wypisz wynik:\n\n`3.14`",
+      "start": "pi = 3.14159\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "3.14"
+      },
+      "podpowiedzi": [
+        "`round` przyjmuje dwie wartości: liczbę i ile miejsc zostawić.",
+        "`print(round(pi, 2))`"
+      ],
+      "rozwiazanie": "pi = 3.14159\nprint(round(pi, 2))"
+    },
+    {
+      "id": "liczby-7",
+      "typ": "napisz",
+      "tytul": "Sekundy na minuty",
+      "opis": "Masz `145` sekund. Policz, ile to pełnych minut i ile sekund zostaje, a potem wypisz:\n\n`2 min 25 s`\n\nPrzydadzą się `//` i `%`.",
+      "start": "seconds = 145\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "2 min 25 s"
+      },
+      "podpowiedzi": [
+        "Minuta ma 60 sekund, więc pełne minuty to `seconds // 60`.",
+        "Reszta sekund to `seconds % 60`."
+      ],
+      "rozwiazanie": "seconds = 145\nprint(seconds // 60, \"min\", seconds % 60, \"s\")"
+    }
+  ]
+}

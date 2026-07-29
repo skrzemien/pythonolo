@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zadanie — Python od A do Z</title>
+<!-- CodeMirror pierwszy: jego reguły dla .CodeMirror mają tę samą wagę co nasze,
+     więc nasz arkusz musi iść po nim, żeby wygrać kolejnością. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/lib/codemirror.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+<script>try{var t=localStorage.getItem('python-az:tryb-czytania');if(t)document.documentElement.dataset.tryb=t;}catch(e){}</script>
+</head>
+<body>
+<a class="pomin-nawigacje" href="#widok">Przejdź do treści zadania</a>
+<div class="strona">
+
+    <header class="gora">
+        <a class="marka" href="index.html">🐍 Python od A do Z</a>
+        <span class="rozpychacz"></span>
+        <span class="stan-pythona ladowanie" id="stan" role="status"><span class="kropka"></span><span>Przygotowuję Pythona…</span></span>
+    </header>
+
+    <nav class="okruszki" id="okruszki"><a href="index.html">← Wszystkie moduły</a></nav>
+
+    <main id="widok">
+        <p class="ladowanie">Wczytuję zadanie…</p>
+    </main>
+
+    <footer class="stopka">
+        <span>Kod uruchamia się w Twojej przeglądarce. Nic nie jest wysyłane na serwer.</span>
+        <span class="rozpychacz"></span>
+        <button class="przycisk maly ostrzegawczy" id="wyczysc-postep">↺ Zacznij od nowa</button>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/lib/codemirror.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/mode/python/python.js"></script>
+<script type="module" src="js/exercise.js"></script>
+</body>
+</html>

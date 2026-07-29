@@ -1,0 +1,110 @@
+{
+  "id": "09-for",
+  "tytul": "Pętla for",
+  "wstep": "`for` przechodzi po kolei przez zestaw wartości. Najczęściej z `range`: `range(5)` to liczby `0, 1, 2, 3, 4` — od zera i **bez** ostatniej. `range(1, 6)` daje `1..5`, a `range(10, 0, -1)` liczy w dół.\n\n`for` działa też na tekstach: przechodzi wtedy literka po literce.",
+  "zadania": [
+    {
+      "id": "for-1",
+      "typ": "uzupelnij",
+      "tytul": "Słowo łączące",
+      "opis": "Uzupełnij słowo, które w pętli `for` stoi między nazwą zmiennej a zestawem wartości.",
+      "kod": "for i ___ range(3):\n    print(i)",
+      "luki": [["in"]],
+      "wyjscie": "0\n1\n2",
+      "podpowiedzi": [
+        "Po angielsku „w”.",
+        "Wpisz `in`."
+      ]
+    },
+    {
+      "id": "for-2",
+      "typ": "uzupelnij",
+      "tytul": "Od jednego do pięciu",
+      "opis": "`range` może dostać początek i koniec. Koniec jest **niewliczany**. Uzupełnij liczbę, żeby wypisały się wartości od 1 do 5.",
+      "kod": "for i in range(1, ___):\n    print(i)",
+      "luki": [["6"]],
+      "wyjscie": "1\n2\n3\n4\n5",
+      "podpowiedzi": [
+        "Ostatnia liczba w `range` nie jest wypisywana.",
+        "Żeby dojść do 5, trzeba napisać `6`."
+      ]
+    },
+    {
+      "id": "for-3",
+      "typ": "uzupelnij",
+      "tytul": "Litera po literze",
+      "opis": "`for` potrafi przejść po literach tekstu. Uzupełnij nazwę zmiennej, po której program ma iść.",
+      "kod": "word = \"Kot\"\nfor letter in ___:\n    print(letter)",
+      "luki": [["word"]],
+      "wyjscie": "K\no\nt",
+      "podpowiedzi": [
+        "Tekst siedzi w zmiennej `word`.",
+        "Bez cudzysłowu — chcemy wartość zmiennej."
+      ]
+    },
+    {
+      "id": "for-4",
+      "typ": "napisz",
+      "tytul": "Pięć razy cześć",
+      "opis": "Wypisz słowo `Cześć` pięć razy, każde w osobnej linii. Użyj pętli `for`, a nie pięciu `print`-ów.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Cześć\nCześć\nCześć\nCześć\nCześć"
+      },
+      "podpowiedzi": [
+        "`range(5)` da pięć obrotów.",
+        "Zmienna pętli nie musi być używana w środku: `for i in range(5):`."
+      ],
+      "rozwiazanie": "for i in range(5):\n    print(\"Cześć\")"
+    },
+    {
+      "id": "for-5",
+      "typ": "napisz",
+      "tytul": "Tabliczka mnożenia",
+      "opis": "Wypisz tabliczkę mnożenia przez `3` od jednego do pięciu:\n\n```\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n```",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15"
+      },
+      "podpowiedzi": [
+        "`for i in range(1, 6):` da liczby od 1 do 5.",
+        "`print(f\"3 x {i} = {3 * i}\")`"
+      ],
+      "rozwiazanie": "for i in range(1, 6):\n    print(f\"3 x {i} = {3 * i}\")"
+    },
+    {
+      "id": "for-6",
+      "typ": "napisz",
+      "tytul": "Suma od 1 do 100",
+      "opis": "Policz sumę wszystkich liczb od `1` do `100` i wypisz wynik. Ręcznie zajęłoby to godzinę — pętla robi to od razu.\n\n`5050`",
+      "start": "total = 0\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "5050"
+      },
+      "podpowiedzi": [
+        "Potrzebujesz `range(1, 101)`.",
+        "W pętli: `total = total + i`. Wypisz `total` dopiero po pętli."
+      ],
+      "rozwiazanie": "total = 0\nfor i in range(1, 101):\n    total = total + i\nprint(total)"
+    },
+    {
+      "id": "for-7",
+      "typ": "napisz",
+      "tytul": "Prostokąt z gwiazdek",
+      "opis": "Pętla może być w pętli. Narysuj prostokąt: 3 linie po 5 gwiazdek.\n\n```\n*****\n*****\n*****\n```\n\nSpróbuj użyć dwóch pętli — zewnętrznej od linii i wewnętrznej od gwiazdek. Podpowiedź: `print(\"*\", end=\"\")` wypisuje bez przechodzenia do nowej linii, a samo `print()` kończy linię.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "*****\n*****\n*****"
+      },
+      "podpowiedzi": [
+        "Da się też prościej — `\"*\" * 5` tworzy gotowy napis.",
+        "Wtedy wystarczy jedna pętla: `for line in range(3): print(\"*\" * 5)`."
+      ],
+      "rozwiazanie": "for line in range(3):\n    for star in range(5):\n        print(\"*\", end=\"\")\n    print()"
+    }
+  ]
+}

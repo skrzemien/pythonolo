@@ -1,0 +1,102 @@
+{
+  "tytul": "Python od A do Z",
+  "podtytul": "Zadania z programowania — pisz kod prosto w przeglądarce",
+  "moduly": [
+    {
+      "id": "01-print",
+      "numer": 1,
+      "tytul": "Wypisywanie tekstu",
+      "opis": "Pierwszy program, print, cudzysłowy i komentarze.",
+      "ikona": "🖨️",
+      "liczbaZadan": 12
+    },
+    {
+      "id": "02-zmienne",
+      "numer": 2,
+      "tytul": "Zmienne",
+      "opis": "Pudełka na dane: tworzenie, nazywanie i zmienianie wartości.",
+      "ikona": "📦",
+      "liczbaZadan": 12
+    },
+    {
+      "id": "03-typy",
+      "numer": 3,
+      "tytul": "Typy danych",
+      "opis": "Tekst, liczby całkowite, ułamki i wartości prawda/fałsz.",
+      "ikona": "🏷️",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "04-teksty",
+      "numer": 4,
+      "tytul": "Teksty",
+      "opis": "Sklejanie napisów, f-stringi, długość, wielkie litery i wycinki.",
+      "ikona": "🔤",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "05-liczby",
+      "numer": 5,
+      "tytul": "Liczby i działania",
+      "opis": "Dodawanie, dzielenie, reszta z dzielenia i potęgi.",
+      "ikona": "🔢",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "06-input",
+      "numer": 6,
+      "tytul": "Pytanie użytkownika",
+      "opis": "Wczytywanie danych przez input i zamiana ich na liczby.",
+      "ikona": "⌨️",
+      "liczbaZadan": 6
+    },
+    {
+      "id": "07-if",
+      "numer": 7,
+      "tytul": "Decyzje: if",
+      "opis": "Warunki, porównania oraz and, or i not.",
+      "ikona": "🔀",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "08-while",
+      "numer": 8,
+      "tytul": "Pętla while",
+      "opis": "Powtarzanie, dopóki warunek jest prawdziwy. Break i continue.",
+      "ikona": "🔁",
+      "liczbaZadan": 6
+    },
+    {
+      "id": "09-for",
+      "numer": 9,
+      "tytul": "Pętla for",
+      "opis": "Range, przechodzenie po tekście i pętle w pętli.",
+      "ikona": "➰",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "10-listy",
+      "numer": 10,
+      "tytul": "Listy",
+      "opis": "Zbieranie wielu wartości: indeksy, append, sum, min i max.",
+      "ikona": "📋",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "11-funkcje",
+      "numer": 11,
+      "tytul": "Funkcje",
+      "opis": "Własne polecenia: def, argumenty i return.",
+      "ikona": "⚙️",
+      "liczbaZadan": 7
+    },
+    {
+      "id": "12-projekty",
+      "numer": 12,
+      "tytul": "Słowniki i projekty",
+      "opis": "Słowniki oraz mini-programy łączące wszystko razem.",
+      "ikona": "🏆",
+      "liczbaZadan": 8
+    }
+  ]
+}

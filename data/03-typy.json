@@ -1,0 +1,107 @@
+{
+  "id": "03-typy",
+  "tytul": "Typy danych",
+  "wstep": "Python rozróżnia rodzaje wartości: `str` to tekst (`\"Ala\"`), `int` to liczba całkowita (`12`), `float` to ułamek (`3.5`), `bool` to prawda albo fałsz (`True` / `False`). Typ sprawdzisz przez `type(x)`, a zamienisz przez `int()`, `float()` i `str()`.",
+  "zadania": [
+    {
+      "id": "typy-1",
+      "typ": "uzupelnij",
+      "tytul": "Jaki to typ?",
+      "opis": "Uzupełnij nazwę polecenia, które pokazuje rodzaj wartości.",
+      "kod": "print(___(\"Ala\"))",
+      "luki": [["type"]],
+      "wyjscie": "<class 'str'>",
+      "podpowiedzi": [
+        "Po angielsku „typ” to `type`.",
+        "`str` w wyniku znaczy „string”, czyli tekst."
+      ]
+    },
+    {
+      "id": "typy-2",
+      "typ": "uzupelnij",
+      "tytul": "Tekst na liczbę całkowitą",
+      "opis": "`\"12\"` to tekst, a nie liczba — nie da się do niego dodać `1`. Uzupełnij polecenie, które zamienia tekst na liczbę całkowitą.",
+      "kod": "age = ___(\"12\")\nprint(age + 1)",
+      "luki": [["int"]],
+      "wyjscie": "13",
+      "podpowiedzi": [
+        "Liczba całkowita to po angielsku „integer”.",
+        "Wpisz `int`."
+      ]
+    },
+    {
+      "id": "typy-3",
+      "typ": "uzupelnij",
+      "tytul": "Tekst na ułamek",
+      "opis": "Ułamki (`3.5`) mają w Pythonie typ `float`. Uzupełnij polecenie, które zamienia tekst na taką liczbę.",
+      "kod": "price = ___(\"3.5\")\nprint(price * 2)",
+      "luki": [["float"]],
+      "wyjscie": "7.0",
+      "podpowiedzi": [
+        "Nazwa typu to `float` — i tak samo nazywa się polecenie.",
+        "Zwróć uwagę: wynik to `7.0`, a nie `7` — ułamek zostaje ułamkiem."
+      ]
+    },
+    {
+      "id": "typy-4",
+      "typ": "uzupelnij",
+      "tytul": "Liczba na tekst",
+      "opis": "Do napisu można dodać tylko napis. Uzupełnij polecenie zamieniające liczbę na tekst.",
+      "kod": "text = ___(25)\nprint(\"Mam \" + text + \" lat\")",
+      "luki": [["str"]],
+      "wyjscie": "Mam 25 lat",
+      "podpowiedzi": [
+        "Tekst to po angielsku „string”, w skrócie `str`.",
+        "Zauważ spacje w cudzysłowach — bez nich wyszłoby `Mam25lat`."
+      ]
+    },
+    {
+      "id": "typy-5",
+      "typ": "napisz",
+      "tytul": "Sprawdź typ liczby",
+      "opis": "Wypisz typ wartości `7`. Na ekranie ma się pojawić:\n\n`<class 'int'>`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "<class 'int'>"
+      },
+      "podpowiedzi": [
+        "Połącz dwa polecenia: `print` i `type`.",
+        "`print(type(7))`"
+      ],
+      "rozwiazanie": "print(type(7))"
+    },
+    {
+      "id": "typy-6",
+      "typ": "napisz",
+      "tytul": "Suma z tekstu",
+      "opis": "Masz tekst `\"42\"`. Zamień go na liczbę, dodaj `8` i wypisz wynik — czyli `50`.",
+      "start": "text = \"42\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "50"
+      },
+      "podpowiedzi": [
+        "Najpierw `int(text)`, dopiero potem dodawanie.",
+        "Bez zamiany dostaniesz `428` albo błąd — tekst by się „skleił”."
+      ],
+      "rozwiazanie": "text = \"42\"\nprint(int(text) + 8)"
+    },
+    {
+      "id": "typy-7",
+      "typ": "napisz",
+      "tytul": "Prawda czy fałsz",
+      "opis": "Porównania dają wartość `True` albo `False`. Wypisz wynik porównania „5 jest większe od 3”.\n\nNa ekranie ma być:\n\n`True`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "True"
+      },
+      "podpowiedzi": [
+        "Znak „większe niż” to `>`.",
+        "`print(5 > 3)` — bez cudzysłowu."
+      ],
+      "rozwiazanie": "print(5 > 3)"
+    }
+  ]
+}

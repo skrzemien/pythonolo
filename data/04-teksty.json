@@ -1,0 +1,107 @@
+{
+  "id": "04-teksty",
+  "tytul": "Teksty",
+  "wstep": "Napisy można sklejać (`\"a\" + \"b\"`), powtarzać (`\"ab\" * 3`) i mierzyć (`len(\"Ala\")`). Najwygodniej wstawiać do nich zmienne przez f-string: `f\"Mam {age} lat\"`. Litery numerujemy od zera: `word[0]` to pierwsza litera.",
+  "zadania": [
+    {
+      "id": "teksty-1",
+      "typ": "uzupelnij",
+      "tytul": "F-string",
+      "opis": "W f-stringu wszystko w klamrach `{ }` Python zamienia na wartość zmiennej. Wpisz w lukę nazwę zmiennej.",
+      "kod": "name = \"Ola\"\nprint(f\"Cześć, {___}!\")",
+      "luki": [["name"]],
+      "wyjscie": "Cześć, Ola!",
+      "podpowiedzi": [
+        "Zmienna nazywa się `name`.",
+        "W klamrach nie dajemy cudzysłowu."
+      ]
+    },
+    {
+      "id": "teksty-2",
+      "typ": "uzupelnij",
+      "tytul": "Ile liter",
+      "opis": "Uzupełnij polecenie, które podaje długość tekstu.",
+      "kod": "print(___(\"Python\"))",
+      "luki": [["len"]],
+      "wyjscie": "6",
+      "podpowiedzi": [
+        "Od angielskiego „length”, czyli długość.",
+        "Wpisz `len`."
+      ]
+    },
+    {
+      "id": "teksty-3",
+      "typ": "uzupelnij",
+      "tytul": "Wielkie litery",
+      "opis": "Do tekstów można doczepiać kropką różne polecenia. To zamienia wszystko na wielkie litery.",
+      "kod": "print(\"python\".___())",
+      "luki": [["upper"]],
+      "wyjscie": "PYTHON",
+      "podpowiedzi": [
+        "Po angielsku wielkie litery to „upper case”.",
+        "Wpisz `upper` — nawiasy już są."
+      ]
+    },
+    {
+      "id": "teksty-4",
+      "typ": "uzupelnij",
+      "tytul": "Litera po numerze",
+      "opis": "Litery liczymy od zera: w słowie `Python` litera `P` ma numer 0, `y` numer 1, a `t` numer 2. Wpisz numer, żeby wypisać literę `t`.",
+      "kod": "word = \"Python\"\nprint(word[___])",
+      "luki": [["2"]],
+      "wyjscie": "t",
+      "podpowiedzi": [
+        "Policz od zera: P=0, y=1, t=?",
+        "Wpisz `2`."
+      ]
+    },
+    {
+      "id": "teksty-5",
+      "typ": "napisz",
+      "tytul": "Pierwsze trzy litery",
+      "opis": "Z wycinka `word[0:3]` dostaniesz litery od numeru 0 do 3 (bez trójki). Wypisz pierwsze trzy litery słowa `Programowanie`.\n\nNa ekranie ma być:\n\n`Pro`",
+      "start": "word = \"Programowanie\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Pro"
+      },
+      "podpowiedzi": [
+        "Wycinek zapisujemy w nawiasach kwadratowych z dwukropkiem.",
+        "`print(word[0:3])`, można też krócej: `word[:3]`."
+      ],
+      "rozwiazanie": "word = \"Programowanie\"\nprint(word[0:3])"
+    },
+    {
+      "id": "teksty-6",
+      "typ": "napisz",
+      "tytul": "Wizytówka",
+      "opis": "Masz zmienne `name` i `age`. Użyj f-stringa, żeby wypisać dokładnie:\n\n`Nazywam się Kuba i mam 12 lat.`",
+      "start": "name = \"Kuba\"\nage = 12\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Nazywam się Kuba i mam 12 lat."
+      },
+      "podpowiedzi": [
+        "F-string zaczyna się od litery `f` przed cudzysłowem.",
+        "`print(f\"Nazywam się {name} i mam {age} lat.\")`"
+      ],
+      "rozwiazanie": "name = \"Kuba\"\nage = 12\nprint(f\"Nazywam się {name} i mam {age} lat.\")"
+    },
+    {
+      "id": "teksty-7",
+      "typ": "napisz",
+      "tytul": "Linia oddzielająca",
+      "opis": "Tekst pomnożony przez liczbę powtarza się: `\"ab\" * 3` daje `ababab`.\n\nWypisz linię z dwudziestu myślników:\n\n`--------------------`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "--------------------"
+      },
+      "podpowiedzi": [
+        "Nie przepisuj myślników ręcznie — użyj mnożenia.",
+        "`print(\"-\" * 20)`"
+      ],
+      "rozwiazanie": "print(\"-\" * 20)"
+    }
+  ]
+}

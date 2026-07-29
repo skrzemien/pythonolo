@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piaskownica — Python od A do Z</title>
+<!-- CodeMirror pierwszy: jego reguły dla .CodeMirror mają tę samą wagę co nasze,
+     więc nasz arkusz musi iść po nim, żeby wygrać kolejnością. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/lib/codemirror.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+<script>try{var t=localStorage.getItem('python-az:tryb-czytania');if(t)document.documentElement.dataset.tryb=t;}catch(e){}</script>
+</head>
+<body>
+<a class="pomin-nawigacje" href="#edytor">Przejdź do edytora</a>
+<div class="strona">
+
+    <header class="gora">
+        <a class="marka" href="index.html">🐍 Python od A do Z</a>
+        <span class="rozpychacz"></span>
+        <span class="stan-pythona ladowanie" id="stan" role="status"><span class="kropka"></span><span>Przygotowuję Pythona…</span></span>
+    </header>
+
+    <h1>🧪 Piaskownica</h1>
+    <p class="podtytul">Miejsce na własne eksperymenty. Pisz, co chcesz, i naciśnij <strong>Uruchom</strong>
+        (albo <code>Ctrl</code> + <code>Enter</code>). Kod zapisuje się w przeglądarce.</p>
+
+    <div class="panel-kodu">
+        <div class="pasek-narzedzi">
+            <button class="przycisk glowny" id="uruchom">▶ Uruchom</button>
+            <button class="przycisk" id="stop" disabled>⏹ Stop</button>
+            <button class="przycisk" id="wyczysc">🗑 Wyczyść kod</button>
+            <span class="rozpychacz"></span>
+        </div>
+
+        <div class="edytor" id="edytor"></div>
+
+        <details class="rozwiazanie">
+            <summary>Dane dla <code>input()</code> — po jednej wartości w linii</summary>
+            <textarea id="wejscie" rows="4" style="width:100%;border:0;padding:12px 14px;font-family:var(--mono);font-size:.95rem;resize:vertical"
+                placeholder="Ala&#10;12"></textarea>
+        </details>
+
+        <div class="wynik" id="wynik" role="status"></div>
+        <div class="konsola" id="konsola" role="log" aria-live="polite" aria-label="Wynik działania programu"></div>
+    </div>
+
+    <footer class="stopka">
+        <a href="index.html">← Wróć do zadań</a>
+        <span class="rozpychacz"></span>
+        <button class="przycisk maly ostrzegawczy" id="wyczysc-postep">↺ Zacznij od nowa</button>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/lib/codemirror.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.21/mode/python/python.js"></script>
+<script type="module" src="js/piaskownica.js"></script>
+</body>
+</html>

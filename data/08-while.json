@@ -1,0 +1,94 @@
+{
+  "id": "08-while",
+  "tytul": "Pętla while",
+  "wstep": "`while` powtarza kod tak długo, jak warunek jest prawdziwy. Trzeba pamiętać o dwóch rzeczach: dwukropku na końcu linii i o tym, żeby coś w środku **zbliżało** warunek do fałszu. Inaczej program kręci się w kółko bez końca — na tej stronie zostanie wtedy zatrzymany po 10 sekundach.\n\n`break` wychodzi z pętli natychmiast, a `continue` przeskakuje do następnego obrotu.",
+  "zadania": [
+    {
+      "id": "while-1",
+      "typ": "uzupelnij",
+      "tytul": "Warunek pętli",
+      "opis": "Uzupełnij porównanie tak, żeby pętla wypisała liczby od 1 do 5.",
+      "kod": "count = 1\nwhile count ___ 5:\n    print(count)\n    count = count + 1",
+      "luki": [["<="]],
+      "wyjscie": "1\n2\n3\n4\n5",
+      "podpowiedzi": [
+        "Przy samym `<` piątka by się nie wypisała.",
+        "Potrzebny znak „mniejsze lub równe”: `<=`."
+      ]
+    },
+    {
+      "id": "while-2",
+      "typ": "uzupelnij",
+      "tytul": "Krok naprzód",
+      "opis": "Bez tej linii `count` nigdy by nie urosło i pętla kręciłaby się w nieskończoność. Uzupełnij ją.",
+      "kod": "count = 1\nwhile count <= 3:\n    print(\"obrót\", count)\n    count = count ___ 1",
+      "luki": [["+"]],
+      "wyjscie": "obrót 1\nobrót 2\nobrót 3",
+      "podpowiedzi": [
+        "Licznik ma rosnąć o jeden.",
+        "Wpisz `+`."
+      ]
+    },
+    {
+      "id": "while-3",
+      "typ": "uzupelnij",
+      "tytul": "Wyjście z pętli",
+      "opis": "To słowo natychmiast przerywa pętlę, nawet jeśli warunek nadal jest prawdziwy. Uzupełnij je.",
+      "kod": "count = 1\nwhile True:\n    print(count)\n    if count == 3:\n        ___\n    count = count + 1",
+      "luki": [["break"]],
+      "wyjscie": "1\n2\n3",
+      "podpowiedzi": [
+        "Po angielsku „przerwij”.",
+        "Wpisz `break`."
+      ]
+    },
+    {
+      "id": "while-4",
+      "typ": "napisz",
+      "tytul": "Odliczanie",
+      "opis": "Użyj pętli `while`, żeby odliczyć od `5` do `1`, a na końcu wypisać `Start!`:\n\n```\n5\n4\n3\n2\n1\nStart!\n```",
+      "start": "count = 5\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "5\n4\n3\n2\n1\nStart!"
+      },
+      "podpowiedzi": [
+        "Warunek: `while count >= 1:`",
+        "W środku zmniejszaj licznik: `count = count - 1`. `Start!` wypisz **po** pętli, bez wcięcia."
+      ],
+      "rozwiazanie": "count = 5\nwhile count >= 1:\n    print(count)\n    count = count - 1\nprint(\"Start!\")"
+    },
+    {
+      "id": "while-5",
+      "typ": "napisz",
+      "tytul": "Suma do dziesięciu",
+      "opis": "Policz sumę liczb od `1` do `10` przy pomocy pętli `while` i wypisz wynik:\n\n`55`",
+      "start": "total = 0\nnumber = 1\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "55"
+      },
+      "podpowiedzi": [
+        "W każdym obrocie dodawaj `number` do `total`.",
+        "`total = total + number`, a potem `number = number + 1`. Wynik wypisz po pętli."
+      ],
+      "rozwiazanie": "total = 0\nnumber = 1\nwhile number <= 10:\n    total = total + number\n    number = number + 1\nprint(total)"
+    },
+    {
+      "id": "while-6",
+      "typ": "napisz",
+      "tytul": "Tabliczka razy dwa",
+      "opis": "Wypisz pierwsze cztery wielokrotności dwójki w takiej postaci:\n\n```\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n```",
+      "start": "i = 1\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8"
+      },
+      "podpowiedzi": [
+        "Pętla ma się kręcić, dopóki `i <= 4`.",
+        "F-string ułatwi sprawę: `print(f\"2 x {i} = {2 * i}\")`."
+      ],
+      "rozwiazanie": "i = 1\nwhile i <= 4:\n    print(f\"2 x {i} = {2 * i}\")\n    i = i + 1"
+    }
+  ]
+}

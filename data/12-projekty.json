@@ -1,0 +1,127 @@
+{
+  "id": "12-projekty",
+  "tytul": "Słowniki i projekty",
+  "wstep": "Słownik trzyma pary „klucz — wartość”: `person = {\"name\": \"Ala\", \"age\": 12}`. Do wartości sięgamy przez klucz: `person[\"name\"]`.\n\nOstatnie zadania łączą wszystko, czego się nauczyłeś: zmienne, warunki, pętle, listy i funkcje.",
+  "zadania": [
+    {
+      "id": "projekty-1",
+      "typ": "uzupelnij",
+      "tytul": "Wartość spod klucza",
+      "opis": "W słowniku zamiast numerów używamy kluczy. Wpisz klucz, pod którym siedzi imię — razem z cudzysłowami.",
+      "kod": "person = {\"name\": \"Ala\", \"age\": 12}\nprint(person[___])",
+      "luki": [["\"name\"", "'name'"]],
+      "wyjscie": "Ala",
+      "podpowiedzi": [
+        "Klucze w tym słowniku to `name` i `age`.",
+        "Wpisz `\"name\"` — razem z cudzysłowami."
+      ]
+    },
+    {
+      "id": "projekty-2",
+      "typ": "uzupelnij",
+      "tytul": "Nowy klucz",
+      "opis": "Do słownika można dopisać kolejną parę — wystarczy przypisać wartość do nowego klucza. Uzupełnij znak przypisania.",
+      "kod": "person = {\"name\": \"Ala\"}\nperson[\"city\"] ___ \"Gdańsk\"\nprint(person)",
+      "luki": [["="]],
+      "wyjscie": "{'name': 'Ala', 'city': 'Gdańsk'}",
+      "podpowiedzi": [
+        "Tak samo jak przy zwykłej zmiennej.",
+        "Wpisz `=`."
+      ]
+    },
+    {
+      "id": "projekty-3",
+      "typ": "uzupelnij",
+      "tytul": "Przejście po słowniku",
+      "opis": "`.items()` daje pary klucz-wartość, po których może przejść pętla. Uzupełnij nazwę tego polecenia.",
+      "kod": "prices = {\"chleb\": 5, \"mleko\": 3}\nfor name, price in prices.___():\n    print(name, \"kosztuje\", price)",
+      "luki": [["items"]],
+      "wyjscie": "chleb kosztuje 5\nmleko kosztuje 3",
+      "podpowiedzi": [
+        "Po angielsku „rzeczy, pozycje”.",
+        "Wpisz `items`."
+      ]
+    },
+    {
+      "id": "projekty-4",
+      "typ": "napisz",
+      "tytul": "Cała tabliczka mnożenia",
+      "opis": "Wypisz tabliczkę mnożenia przez `7` od 1 do 10:\n\n```\n7 x 1 = 7\n7 x 2 = 14\n...\n7 x 10 = 70\n```\n\nOstatnia linia musi być dokładnie `7 x 10 = 70`.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70"
+      },
+      "podpowiedzi": [
+        "Żeby dojść do 10, `range` musi kończyć się na 11.",
+        "`for i in range(1, 11): print(f\"7 x {i} = {7 * i}\")`"
+      ],
+      "rozwiazanie": "for i in range(1, 11):\n    print(f\"7 x {i} = {7 * i}\")"
+    },
+    {
+      "id": "projekty-5",
+      "typ": "napisz",
+      "tytul": "Licznik słów",
+      "opis": "`sentence.split()` dzieli zdanie na listę słów. Policz, ile słów jest w zdaniu, i wypisz:\n\n`Słów: 5`",
+      "start": "sentence = \"Ala ma kota i psa\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Słów: 5"
+      },
+      "podpowiedzi": [
+        "`split()` daje listę, a długość listy podaje `len`.",
+        "`print(\"Słów:\", len(sentence.split()))`"
+      ],
+      "rozwiazanie": "sentence = \"Ala ma kota i psa\"\nprint(\"Słów:\", len(sentence.split()))"
+    },
+    {
+      "id": "projekty-6",
+      "typ": "napisz",
+      "tytul": "Zgadywanka",
+      "opis": "Program zna sekretną liczbę `7`. W pętli pyta o liczbę i odpowiada:\n\n* `Za mało!` gdy podana liczba jest mniejsza,\n* `Za dużo!` gdy większa,\n* `Trafione!` gdy równa — i wtedy kończy pętlę.\n\nPrzygotowane odpowiedzi to `3`, `9` i `7`, więc na ekranie ma się pojawić:\n\n```\nZa mało!\nZa dużo!\nTrafione!\n```",
+      "start": "secret = 7\n\nwhile True:\n    guess = int(input(\"Zgadnij liczbę: \"))\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["3", "9", "7"],
+        "oczekiwane": "Za mało!\nZa dużo!\nTrafione!"
+      },
+      "podpowiedzi": [
+        "Potrzebujesz trzech przypadków: `if`, `elif` i `else`.",
+        "Po `Trafione!` daj `break`, inaczej pętla poprosi o czwartą liczbę i program się zatrzyma."
+      ],
+      "rozwiazanie": "secret = 7\n\nwhile True:\n    guess = int(input(\"Zgadnij liczbę: \"))\n    if guess < secret:\n        print(\"Za mało!\")\n    elif guess > secret:\n        print(\"Za dużo!\")\n    else:\n        print(\"Trafione!\")\n        break"
+    },
+    {
+      "id": "projekty-7",
+      "typ": "napisz",
+      "tytul": "Ile samogłosek",
+      "opis": "Napisz funkcję `count_vowels`, która dostaje tekst pisany małymi literami i zwraca liczbę samogłosek. Za samogłoski uznajemy: `a e i o u y`.\n\nDla `\"python\"` wynik to `2` (`y` oraz `o`).",
+      "start": "def count_vowels(text):\n    vowels = \"aeiouy\"\n    count = 0\n    # przejdź po literach i policz\n    return count\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert count_vowels(\"python\") == 2, \"count_vowels('python') powinno dać 2\"\nassert count_vowels(\"kot\") == 1, \"count_vowels('kot') powinno dać 1\"\nassert count_vowels(\"aeiouy\") == 6, \"count_vowels('aeiouy') powinno dać 6\"\nassert count_vowels(\"xz\") == 0, \"count_vowels('xz') powinno dać 0\""
+      },
+      "podpowiedzi": [
+        "`for letter in text:` przechodzi po literach.",
+        "Sprawdzaj `if letter in vowels:` i wtedy `count = count + 1`."
+      ],
+      "rozwiazanie": "def count_vowels(text):\n    vowels = \"aeiouy\"\n    count = 0\n    for letter in text:\n        if letter in vowels:\n            count = count + 1\n    return count"
+    },
+    {
+      "id": "projekty-8",
+      "typ": "napisz",
+      "tytul": "Kamień, papier, nożyce",
+      "opis": "Napisz funkcję `who_wins(a, b)`, która dostaje ruchy dwóch graczy (`\"kamień\"`, `\"papier\"` albo `\"nożyce\"`) i zwraca:\n\n* `\"remis\"` gdy ruchy są takie same,\n* `\"pierwszy\"` gdy wygrywa gracz `a`,\n* `\"drugi\"` gdy wygrywa gracz `b`.\n\nZasady: kamień tępi nożyce, nożyce tną papier, papier owija kamień.",
+      "start": "def who_wins(a, b):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert who_wins(\"kamień\", \"kamień\") == \"remis\", \"takie same ruchy to remis\"\nassert who_wins(\"kamień\", \"nożyce\") == \"pierwszy\", \"kamień tępi nożyce\"\nassert who_wins(\"nożyce\", \"papier\") == \"pierwszy\", \"nożyce tną papier\"\nassert who_wins(\"papier\", \"kamień\") == \"pierwszy\", \"papier owija kamień\"\nassert who_wins(\"nożyce\", \"kamień\") == \"drugi\", \"kamień tępi nożyce\"\nassert who_wins(\"papier\", \"nożyce\") == \"drugi\", \"nożyce tną papier\"\nassert who_wins(\"kamień\", \"papier\") == \"drugi\", \"papier owija kamień\""
+      },
+      "podpowiedzi": [
+        "Zacznij od najprostszego przypadku: `if a == b: return \"remis\"`.",
+        "Potem wypisz trzy sytuacje, w których wygrywa pierwszy — resztę załatwi `else: return \"drugi\"`."
+      ],
+      "rozwiazanie": "def who_wins(a, b):\n    if a == b:\n        return \"remis\"\n    if a == \"kamień\" and b == \"nożyce\":\n        return \"pierwszy\"\n    if a == \"nożyce\" and b == \"papier\":\n        return \"pierwszy\"\n    if a == \"papier\" and b == \"kamień\":\n        return \"pierwszy\"\n    return \"drugi\""
+    }
+  ]
+}

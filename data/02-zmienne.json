@@ -1,0 +1,178 @@
+{
+  "id": "02-zmienne",
+  "tytul": "Zmienne",
+  "wstep": "Zmienna to pudełko z nazwą, w którym trzymamy wartość: `age = 12`. Od tej chwili wszędzie, gdzie napiszesz `age`, Python podstawi `12`. Nazwy piszemy bez spacji i bez polskich znaków.",
+  "zadania": [
+    {
+      "id": "zmienne-1",
+      "typ": "uzupelnij",
+      "tytul": "Znak przypisania",
+      "opis": "Żeby włożyć wartość do zmiennej, używamy jednego znaku. Uzupełnij go.",
+      "kod": "name ___ \"Ala\"\nprint(name)",
+      "luki": [["="]],
+      "wyjscie": "Ala",
+      "podpowiedzi": [
+        "To ten sam znak co w matematyce, ale w Pythonie znaczy „włóż do”.",
+        "Wpisz `=`."
+      ]
+    },
+    {
+      "id": "zmienne-2",
+      "typ": "uzupelnij",
+      "tytul": "Wypisz zawartość pudełka",
+      "opis": "Nazwę zmiennej wpisujemy **bez** cudzysłowu — inaczej Python wypisze samą nazwę zamiast wartości.",
+      "kod": "age = 12\nprint(___)",
+      "luki": [["age"]],
+      "wyjscie": "12",
+      "podpowiedzi": [
+        "Zmienna nazywa się `age`.",
+        "Bez cudzysłowu: `print(age)`."
+      ]
+    },
+    {
+      "id": "zmienne-3",
+      "typ": "uzupelnij",
+      "tytul": "Nowa wartość",
+      "opis": "Do zmiennej można włożyć nową wartość — stara przepada. Zrób tak, żeby program wypisał `20`.",
+      "kod": "score = 10\nscore = ___\nprint(score)",
+      "luki": [["20"]],
+      "wyjscie": "20",
+      "podpowiedzi": [
+        "Wpisz liczbę, którą program ma wypisać.",
+        "Liczby nie wpisujemy w cudzysłów."
+      ]
+    },
+    {
+      "id": "zmienne-4",
+      "typ": "uzupelnij",
+      "tytul": "Własna nazwa",
+      "opis": "Nazwę zmiennej wymyślasz sam, ale musi być wszędzie taka sama. W drugiej linii używana jest nazwa `pi` — popraw pierwszą linię.",
+      "kod": "___ = 3.14\nprint(\"Pi to\", pi)",
+      "luki": [["pi"]],
+      "wyjscie": "Pi to 3.14",
+      "podpowiedzi": [
+        "Spójrz, jakiej nazwy używa `print`.",
+        "Wpisz `pi`."
+      ]
+    },
+    {
+      "id": "zmienne-5",
+      "typ": "uzupelnij",
+      "tytul": "Wartość z innej zmiennej",
+      "opis": "Po prawej stronie znaku `=` może stać nie tylko liczba, ale też inna zmienna. Python bierze wtedy jej wartość.\n\nUzupełnij nazwę tak, żeby program wypisał `7`.",
+      "kod": "a = 7\nb = ___\nprint(b)",
+      "luki": [["a"]],
+      "wyjscie": "7",
+      "podpowiedzi": [
+        "Siódemka siedzi w zmiennej `a`.",
+        "Wpisz `a` — bez cudzysłowu."
+      ]
+    },
+    {
+      "id": "zmienne-6",
+      "typ": "uzupelnij",
+      "tytul": "Licznik",
+      "opis": "Sztuczka, której będziesz używać w każdej pętli: bierzemy starą wartość zmiennej, coś do niej dodajemy i wynik wkładamy z powrotem do tej samej zmiennej.\n\nUzupełnij znak działania.",
+      "kod": "counter = 0\ncounter = counter ___ 1\ncounter = counter + 1\nprint(counter)",
+      "luki": [["+"]],
+      "wyjscie": "2",
+      "podpowiedzi": [
+        "Licznik ma rosnąć, więc chodzi o dodawanie.",
+        "Python najpierw liczy prawą stronę, dopiero potem wkłada wynik do zmiennej."
+      ]
+    },
+    {
+      "id": "zmienne-7",
+      "typ": "uzupelnij",
+      "tytul": "Krótszy zapis",
+      "opis": "`points = points + 5` można zapisać krócej: `points += 5`. Znaczy dokładnie to samo.\n\nUzupełnij ten skrót — to dwa znaki obok siebie.",
+      "kod": "points = 10\npoints ___ 5\nprint(points)",
+      "luki": [["+="]],
+      "wyjscie": "15",
+      "podpowiedzi": [
+        "Najpierw znak działania, potem znak przypisania.",
+        "Wpisz `+=`."
+      ]
+    },
+    {
+      "id": "zmienne-8",
+      "typ": "napisz",
+      "tytul": "Twoje miasto",
+      "opis": "Stwórz zmienną `city` o wartości `Warszawa`, a potem wypisz ją tak, żeby na ekranie pojawiło się:\n\n`Mieszkam w Warszawa`",
+      "start": "city = \n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Mieszkam w Warszawa"
+      },
+      "podpowiedzi": [
+        "Najpierw `city = \"Warszawa\"`.",
+        "Potem `print(\"Mieszkam w\", city)` — przecinek sam doda spację."
+      ],
+      "rozwiazanie": "city = \"Warszawa\"\nprint(\"Mieszkam w\", city)"
+    },
+    {
+      "id": "zmienne-9",
+      "typ": "napisz",
+      "tytul": "Suma dwóch zmiennych",
+      "opis": "Stwórz dwie zmienne: `a` równe `3` i `b` równe `4`. Wypisz ich sumę — na ekranie ma być samo `7`.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "7"
+      },
+      "podpowiedzi": [
+        "Zmienne z liczbami można dodawać: `a + b`.",
+        "`print(a + b)` — bez cudzysłowu, inaczej wypisze się napis „a + b”."
+      ],
+      "rozwiazanie": "a = 3\nb = 4\nprint(a + b)"
+    },
+    {
+      "id": "zmienne-10",
+      "typ": "napisz",
+      "tytul": "Rachunek w sklepie",
+      "opis": "W zmiennych są ceny trzech rzeczy. Policz, ile trzeba zapłacić razem, i wypisz:\n\n`Razem: 15`",
+      "start": "bread = 5\nmilk = 3\napples = 7\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Razem: 15"
+      },
+      "podpowiedzi": [
+        "Wszystkie trzy zmienne można dodać w jednym działaniu.",
+        "`print(\"Razem:\", bread + milk + apples)`"
+      ],
+      "rozwiazanie": "bread = 5\nmilk = 3\napples = 7\nprint(\"Razem:\", bread + milk + apples)"
+    },
+    {
+      "id": "zmienne-11",
+      "typ": "napisz",
+      "tytul": "Stopnie na stopnie",
+      "opis": "Temperaturę ze stopni Celsjusza na Fahrenheita przelicza się wzorem: pomnóż przez `9`, podziel przez `5` i dodaj `32`.\n\nPolicz to dla `20` stopni i wypisz:\n\n`20 C to 68.0 F`\n\nWynik ma kropkę i zero, bo dzielenie w Pythonie zawsze daje ułamek.",
+      "start": "celsius = 20\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "20 C to 68.0 F"
+      },
+      "podpowiedzi": [
+        "Zapisz wynik w drugiej zmiennej: `fahrenheit = celsius * 9 / 5 + 32`.",
+        "`print(celsius, \"C to\", fahrenheit, \"F\")`"
+      ],
+      "rozwiazanie": "celsius = 20\nfahrenheit = celsius * 9 / 5 + 32\nprint(celsius, \"C to\", fahrenheit, \"F\")"
+    },
+    {
+      "id": "zmienne-12",
+      "typ": "napisz",
+      "tytul": "Zamiana miejscami",
+      "opis": "Masz `x = 1` i `y = 2`. Zamień ich wartości miejscami, a potem wypisz obie w jednej linii:\n\n`2 1`",
+      "start": "x = 1\ny = 2\n\n# zamień wartości miejscami\n\nprint(x, y)\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "2 1"
+      },
+      "podpowiedzi": [
+        "Samo `x = y` nie wystarczy — stara wartość `x` przepadnie.",
+        "Możesz użyć trzeciej zmiennej na przechowanie albo skrótu `x, y = y, x`."
+      ],
+      "rozwiazanie": "x = 1\ny = 2\nx, y = y, x\nprint(x, y)"
+    }
+  ]
+}
