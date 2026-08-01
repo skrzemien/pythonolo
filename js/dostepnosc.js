@@ -29,7 +29,7 @@ function opiszPrzycisk(przycisk, wlaczony) {
         : '<span aria-hidden="true">🔠</span> Tryb łatwiejszego czytania';
     przycisk.title = wlaczony
         ? 'Wyłącz większy tekst i szersze odstępy'
-        : 'Większy tekst, szersze odstępy między literami, cieplejsze tło';
+        : 'Większy tekst, prostsza czcionka, szersze odstępy między literami';
 }
 
 function opiszStan(pojemnik, wlaczony) {
@@ -37,8 +37,8 @@ function opiszStan(pojemnik, wlaczony) {
     pojemnik.hidden = !wlaczony;
     pojemnik.textContent = wlaczony
         ? 'Tryb łatwiejszego czytania jest włączony na wszystkich stronach: '
-            + 'większy tekst, szersze odstępy między literami i wierszami, '
-            + 'kremowe tło zamiast białego. Wyłączysz go tym samym guzikiem.'
+            + 'większy tekst, prostsza czcionka oraz szersze odstępy między '
+            + 'literami i wierszami. Wyłączysz go tym samym guzikiem.'
         : '';
 }
 

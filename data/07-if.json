@@ -56,6 +56,32 @@
       ]
     },
     {
+      "id": "if-rozne",
+      "typ": "uzupelnij",
+      "tytul": "Różne od",
+      "opis": "`==` sprawdza, czy dwie rzeczy są takie same. Jest też znak odwrotny: sprawdza, czy się **różnią**.\n\nUzupełnij go.",
+      "kod": "animal = \"kot\"\nif animal ___ \"pies\":\n    print(\"To nie jest pies\")",
+      "luki": [["!="]],
+      "wyjscie": "To nie jest pies",
+      "podpowiedzi": [
+        "Wykrzyknik czyta się tu jako „nie”.",
+        "Wpisz `!=`."
+      ]
+    },
+    {
+      "id": "if-lub",
+      "typ": "uzupelnij",
+      "tytul": "Albo jedno, albo drugie",
+      "opis": "`and` wymaga, żeby **oba** warunki były prawdziwe. Gdy wystarczy **którykolwiek**, używamy innego słowa.\n\nUzupełnij je.",
+      "kod": "day = \"sobota\"\nif day == \"sobota\" ___ day == \"niedziela\":\n    print(\"Weekend!\")",
+      "luki": [["or"]],
+      "wyjscie": "Weekend!",
+      "podpowiedzi": [
+        "Po angielsku „albo”.",
+        "Wpisz `or` — dwie litery."
+      ]
+    },
+    {
       "id": "if-5",
       "typ": "napisz",
       "tytul": "Parzysta czy nieparzysta",
@@ -103,6 +129,22 @@
         "`if temperature >= 18 and temperature <= 25:`"
       ],
       "rozwiazanie": "temperature = 21\nif temperature >= 18 and temperature <= 25:\n    print(\"W sam raz\")\nelse:\n    print(\"Nie w sam raz\")"
+    },
+    {
+      "id": "if-zaprzeczenie",
+      "typ": "napisz",
+      "tytul": "Kiedy czegoś nie ma",
+      "opis": "Zmienna `is_raining` trzyma samo `True` albo `False` — nie trzeba jej z niczym porównywać. Słowo `not` odwraca wartość: `not False` to `True`.\n\nNapisz warunek, który wypisze `Idziemy na dwór`, gdy **nie** pada.",
+      "start": "is_raining = False\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Idziemy na dwór"
+      },
+      "podpowiedzi": [
+        "Warunek zaczyna się od `if not ...`.",
+        "`if not is_raining:` — i pod spodem wcięty `print`."
+      ],
+      "rozwiazanie": "is_raining = False\nif not is_raining:\n    print(\"Idziemy na dwór\")"
     }
   ]
 }

@@ -43,6 +43,22 @@
       ]
     },
     {
+      "id": "projekty-slownik-wlasny",
+      "typ": "napisz",
+      "tytul": "Własny słownik",
+      "opis": "Zbuduj od zera słownik `pet` z dwoma parami: klucz `name` z wartością `Burek` i klucz `age` z wartością `3`.\n\nPotem wypisz z niego dane w takiej postaci:\n\n`Burek ma 3 lata`",
+      "start": "pet = \n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Burek ma 3 lata"
+      },
+      "podpowiedzi": [
+        "Słownik zapisujemy w klamrach, pary rozdziela przecinek: `{\"name\": \"Burek\", \"age\": 3}`.",
+        "Do wartości sięgasz przez klucz: `pet[\"name\"]`. Najwygodniej f-stringiem."
+      ],
+      "rozwiazanie": "pet = {\"name\": \"Burek\", \"age\": 3}\nprint(f\"{pet['name']} ma {pet['age']} lata\")"
+    },
+    {
       "id": "projekty-4",
       "typ": "napisz",
       "tytul": "Cała tabliczka mnożenia",
@@ -106,6 +122,22 @@
         "Sprawdzaj `if letter in vowels:` i wtedy `count = count + 1`."
       ],
       "rozwiazanie": "def count_vowels(text):\n    vowels = \"aeiouy\"\n    count = 0\n    for letter in text:\n        if letter in vowels:\n            count = count + 1\n    return count"
+    },
+    {
+      "id": "projekty-ocena-slownie",
+      "typ": "napisz",
+      "tytul": "Ocena słownie",
+      "opis": "Rozgrzewka przed ostatnim zadaniem: funkcja, która wybiera jedną z kilku odpowiedzi.\n\nNapisz funkcję `grade_text`, która dostaje ocenę i zwraca:\n\n* `\"świetnie\"` dla `5`,\n* `\"dobrze\"` dla `4`,\n* `\"może być\"` dla każdej innej.",
+      "start": "def grade_text(grade):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert grade_text(5) == \"świetnie\", \"grade_text(5) powinno zwrócić 'świetnie'\"\nassert grade_text(4) == \"dobrze\", \"grade_text(4) powinno zwrócić 'dobrze'\"\nassert grade_text(3) == \"może być\", \"grade_text(3) powinno zwrócić 'może być'\"\nassert grade_text(1) == \"może być\", \"grade_text(1) powinno zwrócić 'może być'\""
+      },
+      "podpowiedzi": [
+        "Potrzebujesz `if`, `elif` i `else` — w każdej gałęzi `return`.",
+        "Pamiętaj, że zwracasz tekst, więc w cudzysłowie: `return \"świetnie\"`."
+      ],
+      "rozwiazanie": "def grade_text(grade):\n    if grade == 5:\n        return \"świetnie\"\n    elif grade == 4:\n        return \"dobrze\"\n    else:\n        return \"może być\""
     },
     {
       "id": "projekty-8",

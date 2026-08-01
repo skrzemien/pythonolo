@@ -43,6 +43,19 @@
       ]
     },
     {
+      "id": "for-w-dol",
+      "typ": "uzupelnij",
+      "tytul": "Liczenie w dół",
+      "opis": "`range` może dostać trzeci parametr — krok. Krok ujemny sprawia, że liczby maleją.\n\nUzupełnij krok tak, żeby program odliczył od 3 do 1.",
+      "kod": "for i in range(3, 0, ___):\n    print(i)",
+      "luki": [["-1"]],
+      "wyjscie": "3\n2\n1",
+      "podpowiedzi": [
+        "Krok o jeden, ale w drugą stronę.",
+        "Wpisz `-1`. Koniec `0` znów nie jest wypisywany."
+      ]
+    },
+    {
       "id": "for-4",
       "typ": "napisz",
       "tytul": "Pięć razy cześć",
@@ -89,6 +102,22 @@
         "W pętli: `total = total + i`. Wypisz `total` dopiero po pętli."
       ],
       "rozwiazanie": "total = 0\nfor i in range(1, 101):\n    total = total + i\nprint(total)"
+    },
+    {
+      "id": "for-schodki",
+      "typ": "napisz",
+      "tytul": "Schodki z pętli",
+      "opis": "W module 1 budowałeś schodki pięcioma osobnymi `print`-ami. Teraz zrób to jedną pętlą — w każdym obrocie o jedną gwiazdkę więcej:\n\n```\n*\n**\n***\n****\n```\n\nPrzypomnienie: `\"*\" * 3` daje `***`.",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "*\n**\n***\n****"
+      },
+      "podpowiedzi": [
+        "Potrzebujesz liczb od 1 do 4, czyli `range(1, 5)`.",
+        "W środku pętli: `print(\"*\" * i)`."
+      ],
+      "rozwiazanie": "for i in range(1, 5):\n    print(\"*\" * i)"
     },
     {
       "id": "for-7",

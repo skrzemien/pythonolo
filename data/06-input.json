@@ -32,6 +32,20 @@
       ]
     },
     {
+      "id": "input-pulapka-tekstu",
+      "typ": "uzupelnij",
+      "tytul": "Pułapka: to jeszcze nie liczby",
+      "opis": "`input` oddaje **tekst**, nawet gdy ktoś wpisał same cyfry. A plus na tekstach skleja zamiast dodawać — bez poprawki poniżej program wypisałby `34` zamiast `7`.\n\nUzupełnij obie luki tak, żeby liczby naprawdę się dodały.",
+      "kod": "a = input(\"Pierwsza liczba: \")\nb = input(\"Druga liczba: \")\nprint(___(a) + ___(b))",
+      "luki": [["int"], ["int"]],
+      "wejscie": ["3", "4"],
+      "wyjscie": "7",
+      "podpowiedzi": [
+        "Każdy z dwóch tekstów trzeba osobno zamienić na liczbę.",
+        "W obie luki wpisz `int`."
+      ]
+    },
+    {
       "id": "input-3",
       "typ": "napisz",
       "tytul": "Przywitanie",
@@ -98,6 +112,23 @@
         "F-string zmieści całe zdanie: `f\"Pole prostokąta {a} x {b} to {a * b}\"`."
       ],
       "rozwiazanie": "a = int(input(\"Pierwszy bok: \"))\nb = int(input(\"Drugi bok: \"))\nprint(f\"Pole prostokąta {a} x {b} to {a * b}\")"
+    },
+    {
+      "id": "input-cena",
+      "typ": "napisz",
+      "tytul": "Cena z groszami",
+      "opis": "`int` przyjmuje tylko liczby całkowite — na cenie `19.99` by się wyłożył. Od ułamków jest `float`.\n\nZapytaj o cenę jednej sztuki i wypisz, ile kosztują dwie. Przygotowana odpowiedź to `19.99`, więc ma się pojawić:\n\n`Dwie sztuki: 39.98`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "wejscie": ["19.99"],
+        "oczekiwane": "Dwie sztuki: 39.98"
+      },
+      "podpowiedzi": [
+        "Zamiast `int(input(...))` użyj `float(input(...))`.",
+        "`print(\"Dwie sztuki:\", price * 2)`"
+      ],
+      "rozwiazanie": "price = float(input(\"Cena sztuki: \"))\nprint(\"Dwie sztuki:\", price * 2)"
     }
   ]
 }

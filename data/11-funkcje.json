@@ -91,6 +91,22 @@
       "rozwiazanie": "def is_even(n):\n    return n % 2 == 0"
     },
     {
+      "id": "funkcje-wieksza",
+      "typ": "napisz",
+      "tytul": "Większa z dwóch liczb",
+      "opis": "W funkcji można używać wszystkiego, co już znasz — również `if`. `return` kończy funkcję natychmiast, więc po jednym `return` drugi już się nie wykona.\n\nNapisz funkcję `bigger`, która dostaje dwie liczby i zwraca większą. Gdy są równe, zwróć którąkolwiek.",
+      "start": "def bigger(a, b):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert bigger(3, 7) == 7, \"bigger(3, 7) powinno dać 7\"\nassert bigger(10, 2) == 10, \"bigger(10, 2) powinno dać 10\"\nassert bigger(4, 4) == 4, \"bigger(4, 4) powinno dać 4\"\nassert bigger(-5, -1) == -1, \"bigger(-5, -1) powinno dać -1\""
+      },
+      "podpowiedzi": [
+        "Zacznij od `if a > b:` i zwróć `a`.",
+        "W przeciwnym razie zwróć `b` — to załatwia też przypadek, gdy są równe."
+      ],
+      "rozwiazanie": "def bigger(a, b):\n    if a > b:\n        return a\n    return b"
+    },
+    {
       "id": "funkcje-7",
       "typ": "napisz",
       "tytul": "Powitanie z imieniem",

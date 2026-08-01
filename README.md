@@ -3,7 +3,7 @@
 Statyczna strona z zadaniami z Pythona dla początkujących (ok. 12 lat). Kod pisze się
 i uruchamia prosto w przeglądarce — bez instalowania czegokolwiek i bez konta.
 
-**12 modułów, 93 zadania**: od `print` przez zmienne, warunki i pętle aż po funkcje,
+**12 modułów, 110 zadań**: od `print` przez zmienne, warunki i pętle aż po funkcje,
 słowniki i mini-projekty. Dwa pierwsze moduły są najdłuższe (po 12 zadań) — to
 podstawy, na których stoi cała reszta.
 
@@ -29,9 +29,11 @@ Co zmienia (wg wytycznych [British Dyslexia Association](https://www.bdadyslexia
 - większy tekst (19 px) i luźniejsza interlinia (1,8),
 - większe odstępy między literami, a jeszcze większe między wyrazami,
 - krótsze linie tekstu (maks. ok. 58 znaków),
-- kremowe tło zamiast czystej bieli i granatowy tekst zamiast czarnego,
 - zero kursywy i zero KAPITALIKÓW — utrudniają rozpoznanie kształtu wyrazu,
-- większe guziki i pola do wpisywania.
+- większe guziki i pola do wpisywania (rosną razem z tekstem).
+
+Kolorów tryb **nie zmienia** — tło i barwy tekstu zostają takie same jak zwykle.
+To wyłącznie zmiana typografii.
 
 Kod zostaje w czcionce o stałej szerokości nawet w tym trybie — wcięcia w Pythonie
 muszą się zgadzać co do kolumny. Zmienia się tylko jego rozmiar i odstępy.
@@ -141,6 +143,27 @@ porównywanego wyniku — liczy się tylko to, co program wypisze przez `print`.
 Pola `opis`, `wstep` i `podpowiedzi` obsługują skromny markdown: `` `kod` ``,
 `**pogrubienie**`, listę punktowaną (`* `) i blok kodu w potrójnych grawisach.
 
+### Uwaga na postęp uczniów
+
+Postęp jest zapisywany pod **identyfikatorem** zadania, a nie pod jego pozycją:
+`{"09-for": {"for-5": {"status": "ok"}}}`. Wynikają z tego dwie zasady:
+
+- **Nigdy nie zmieniaj `id` istniejącego zadania** ani go nie usuwaj — uczeń
+  straciłby zaliczenie.
+- **Wstawianie nowych zadań w środek modułu jest bezpieczne.** Zaliczenia idą
+  za zadaniem, nawet gdy przesunie się na dalszą pozycję. Zmienia się tylko
+  numer w adresie `?z=N`, więc stary zakładkowany link może trafić w sąsiednie
+  zadanie.
+
+Nowe zadania dostają opisowe identyfikatory (`for-schodki`, `if-lub`), a nie
+kolejny numer — dzięki temu od razu widać, co jest dopisane po wydaniu, i nie ma
+ryzyka kolizji z istniejącą numeracją.
+
+Dopisując zadania po wydaniu, dorzuć wpis do `data/zmiany.json` — trafi na stronę
+**Zmiany** (guzik w stopce). We wpisie podajesz tylko identyfikatory zadań;
+tytuły, moduły i adresy dolatują z plików modułów przy wyświetlaniu, więc linki
+nie zgniją, gdy zadanie zmieni pozycję.
+
 Po dopisaniu zadania zaktualizuj licznik i sprawdź treść:
 
 ```bash
@@ -169,6 +192,7 @@ index.html            strona główna z kafelkami modułów
 modul.html            lista zadań w module
 cwiczenie.html        pojedyncze zadanie
 piaskownica.html      wolny edytor bez zadania
+zmiany.html           lista tego, co doszło w zadaniach
 css/style.css
 js/pyodide-worker.js  worker: uruchamia kod w Pyodide
 js/runner.js          limit czasu, Stop, restart workera
@@ -177,6 +201,8 @@ js/bledy.js           tłumaczenie wyjątków Pythona na polskie podpowiedzi
 js/progress.js        postęp w localStorage
 js/stopka.js          guzik „Zacznij od nowa" w stopce każdej strony
 js/dostepnosc.js      przełącznik trybu łatwiejszego czytania
+js/zmiany.js          renderowanie listy zmian
 data/                 treść zadań
+data/zmiany.json      wpisy na stronę „Zmiany"
 tools/                serwer lokalny i walidator treści
 ```

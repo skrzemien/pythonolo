@@ -4,6 +4,19 @@
   "wstep": "Napisy można sklejać (`\"a\" + \"b\"`), powtarzać (`\"ab\" * 3`) i mierzyć (`len(\"Ala\")`). Najwygodniej wstawiać do nich zmienne przez f-string: `f\"Mam {age} lat\"`. Litery numerujemy od zera: `word[0]` to pierwsza litera.",
   "zadania": [
     {
+      "id": "teksty-sklejanie",
+      "typ": "uzupelnij",
+      "tytul": "Sklejanie napisów",
+      "opis": "Znak `+` na napisach niczego nie dodaje — skleja je w jeden. Uwaga: sam z siebie nie wstawia spacji.\n\nUzupełnij znak sklejania.",
+      "kod": "print(\"Ala\" ___ \" ma kota\")",
+      "luki": [["+"]],
+      "wyjscie": "Ala ma kota",
+      "podpowiedzi": [
+        "Ten sam znak co przy dodawaniu liczb.",
+        "Spacja jest już wpisana w drugim napisie, zaraz za cudzysłowem."
+      ]
+    },
+    {
       "id": "teksty-1",
       "typ": "uzupelnij",
       "tytul": "F-string",
@@ -40,6 +53,19 @@
       "podpowiedzi": [
         "Po angielsku wielkie litery to „upper case”.",
         "Wpisz `upper` — nawiasy już są."
+      ]
+    },
+    {
+      "id": "teksty-male-litery",
+      "typ": "uzupelnij",
+      "tytul": "Małe litery",
+      "opis": "Skoro `.upper()` robi wielkie litery, to jego odwrotność robi małe. Uzupełnij jej nazwę.",
+      "kod": "print(\"PYTHON\".___())",
+      "luki": [["lower"]],
+      "wyjscie": "python",
+      "podpowiedzi": [
+        "Po angielsku małe litery to „lower case”.",
+        "Wpisz `lower` — nawiasy już są."
       ]
     },
     {
@@ -102,6 +128,22 @@
         "`print(\"-\" * 20)`"
       ],
       "rozwiazanie": "print(\"-\" * 20)"
+    },
+    {
+      "id": "teksty-obcinanie",
+      "typ": "napisz",
+      "tytul": "Niepotrzebne spacje",
+      "opis": "Gdy ktoś wpisze imię ze spacjami z przodu i z tyłu, `.strip()` je obcina. Spacje w środku zostają.\n\nWypisz imię obcięte i otoczone nawiasami klamrowymi, żeby było widać, że spacji już nie ma:\n\n`[Ala]`",
+      "start": "name = \"   Ala   \"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "[Ala]"
+      },
+      "podpowiedzi": [
+        "Najpierw obetnij: `name.strip()`.",
+        "Potem sklej trzy napisy plusem: `\"[\" + name.strip() + \"]\"`."
+      ],
+      "rozwiazanie": "name = \"   Ala   \"\nprint(\"[\" + name.strip() + \"]\")"
     }
   ]
 }

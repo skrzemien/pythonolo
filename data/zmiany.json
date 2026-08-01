@@ -1,0 +1,36 @@
+{
+  "wpisy": [
+    {
+      "data": "2026-08-01",
+      "tytul": "17 nowych zadań po audycie treści",
+      "opis": "Przegląd wszystkich zadań pod kątem 11–12-latka wykazał, że wstępy modułów obiecują konstrukcje, których potem żadne zadanie nie ćwiczy, a w kilku miejscach trudność skacze bez stopnia pośredniego. Stare zadania zostały nietknięte — zaliczenia uczniów są bezpieczne. Doszły nowe.",
+      "punkty": [
+        "Operatory `or`, `not` i `!=` były opisane we wstępie modułu o `if`, ale nie było ich w żadnym zadaniu.",
+        "To samo z `continue` w pętli `while`, `sum()` na listach i krokiem ujemnym w `range`.",
+        "Zadanie „Ile samogłosek” wymagało `if litera in tekst`, a sprawdzanie przynależności nie pojawiało się wcześniej ani razu.",
+        "Nic nie pokazywało najczęstszej pomyłki początkujących: `input()` zwraca tekst, więc `\"3\" + \"4\"` daje `34`, a nie `7`.",
+        "Przed pętlą w pętli i przed finałowym „Kamień, papier, nożyce” brakowało łagodniejszego stopnia."
+      ],
+      "noweZadania": [
+        "teksty-sklejanie",
+        "teksty-male-litery",
+        "teksty-obcinanie",
+        "input-pulapka-tekstu",
+        "input-cena",
+        "if-rozne",
+        "if-lub",
+        "if-zaprzeczenie",
+        "while-trzy-razy",
+        "while-continue",
+        "for-w-dol",
+        "for-schodki",
+        "listy-czy-jest",
+        "listy-suma",
+        "funkcje-wieksza",
+        "projekty-slownik-wlasny",
+        "projekty-ocena-slownie"
+      ],
+      "stopka": "Nowe zadania zostały wstawione w środek modułów, tam gdzie pasują, a nie doklejone na końcu. Postęp jest zapisywany pod identyfikatorem zadania, więc zaliczenia zostały na swoich miejscach — zmieniły się tylko numery pozycji."
+    }
+  ]
+}

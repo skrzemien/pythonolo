@@ -32,7 +32,7 @@
       "tytul": "Teksty",
       "opis": "Sklejanie napisów, f-stringi, długość, wielkie litery i wycinki.",
       "ikona": "🔤",
-      "liczbaZadan": 7
+      "liczbaZadan": 10
     },
     {
       "id": "05-liczby",
@@ -48,7 +48,7 @@
       "tytul": "Pytanie użytkownika",
       "opis": "Wczytywanie danych przez input i zamiana ich na liczby.",
       "ikona": "⌨️",
-      "liczbaZadan": 6
+      "liczbaZadan": 8
     },
     {
       "id": "07-if",
@@ -56,7 +56,7 @@
       "tytul": "Decyzje: if",
       "opis": "Warunki, porównania oraz and, or i not.",
       "ikona": "🔀",
-      "liczbaZadan": 7
+      "liczbaZadan": 10
     },
     {
       "id": "08-while",
@@ -64,7 +64,7 @@
       "tytul": "Pętla while",
       "opis": "Powtarzanie, dopóki warunek jest prawdziwy. Break i continue.",
       "ikona": "🔁",
-      "liczbaZadan": 6
+      "liczbaZadan": 8
     },
     {
       "id": "09-for",
@@ -72,7 +72,7 @@
       "tytul": "Pętla for",
       "opis": "Range, przechodzenie po tekście i pętle w pętli.",
       "ikona": "➰",
-      "liczbaZadan": 7
+      "liczbaZadan": 9
     },
     {
       "id": "10-listy",
@@ -80,7 +80,7 @@
       "tytul": "Listy",
       "opis": "Zbieranie wielu wartości: indeksy, append, sum, min i max.",
       "ikona": "📋",
-      "liczbaZadan": 7
+      "liczbaZadan": 9
     },
     {
       "id": "11-funkcje",
@@ -88,7 +88,7 @@
       "tytul": "Funkcje",
       "opis": "Własne polecenia: def, argumenty i return.",
       "ikona": "⚙️",
-      "liczbaZadan": 7
+      "liczbaZadan": 8
     },
     {
       "id": "12-projekty",
@@ -96,7 +96,7 @@
       "tytul": "Słowniki i projekty",
       "opis": "Słowniki oraz mini-programy łączące wszystko razem.",
       "ikona": "🏆",
-      "liczbaZadan": 8
+      "liczbaZadan": 10
     }
   ]
 }

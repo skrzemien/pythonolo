@@ -43,6 +43,22 @@
       ]
     },
     {
+      "id": "while-trzy-razy",
+      "typ": "napisz",
+      "tytul": "Trzy razy to samo",
+      "opis": "Najprostsze zastosowanie pętli: powtórzyć coś ustaloną liczbę razy.\n\nUżyj `while`, żeby wypisać `Cześć` trzy razy, każde w osobnej linii. Zmienna `count` jest już gotowa.",
+      "start": "count = 1\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Cześć\nCześć\nCześć"
+      },
+      "podpowiedzi": [
+        "Pętla ma się kręcić, dopóki `count <= 3`.",
+        "W środku dwie linie: `print(\"Cześć\")` oraz `count = count + 1`. Bez tej drugiej pętla nigdy się nie skończy."
+      ],
+      "rozwiazanie": "count = 1\nwhile count <= 3:\n    print(\"Cześć\")\n    count = count + 1"
+    },
+    {
       "id": "while-4",
       "typ": "napisz",
       "tytul": "Odliczanie",
@@ -89,6 +105,19 @@
         "F-string ułatwi sprawę: `print(f\"2 x {i} = {2 * i}\")`."
       ],
       "rozwiazanie": "i = 1\nwhile i <= 4:\n    print(f\"2 x {i} = {2 * i}\")\n    i = i + 1"
+    },
+    {
+      "id": "while-continue",
+      "typ": "uzupelnij",
+      "tytul": "Pominięcie jednego obrotu",
+      "opis": "`break` kończy całą pętlę. Jest też słowo, które kończy tylko **bieżący obrót** i wraca na górę pętli — reszta linii pod nim zostaje pominięta.\n\nUzupełnij je tak, żeby program pominął trójkę.",
+      "kod": "number = 0\nwhile number < 5:\n    number = number + 1\n    if number == 3:\n        ___\n    print(number)",
+      "luki": [["continue"]],
+      "wyjscie": "1\n2\n4\n5",
+      "podpowiedzi": [
+        "Po angielsku „kontynuuj”.",
+        "Zwróć uwagę, że licznik rośnie **przed** sprawdzeniem — inaczej pętla utknęłaby na trójce."
+      ]
     }
   ]
 }

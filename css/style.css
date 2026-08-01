@@ -630,6 +630,56 @@ input:focus-visible,
 
 .nawigacja-zadan .rozpychacz { flex: 1; }
 
+/* --- strona ze zmianami --------------------------------------------------- */
+
+.wpis-zmian { margin-bottom: 22px; }
+
+.wpis-zmian .wpis-naglowek {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.wpis-zmian h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.wpis-zmian time {
+    font-size: .88rem;
+    color: var(--tekst-slaby);
+    font-variant-numeric: tabular-nums;
+}
+
+.wpis-zmian .lista-zmian {
+    margin: 0 0 18px;
+    padding-left: 22px;
+    color: var(--tekst-slaby);
+}
+
+.wpis-zmian .lista-zmian li { margin-bottom: 7px; }
+
+.wpis-zmian .naglowek-zadan {
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--tekst-slaby);
+    margin: 0 0 10px;
+}
+
+.wpis-zmian .wpis-stopka {
+    margin: 18px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--ramka);
+    font-size: .93rem;
+    color: var(--tekst-slaby);
+}
+
+:root[data-tryb="dysleksja"] .wpis-zmian .naglowek-zadan { text-transform: none; }
+
 /* --- stopka --------------------------------------------------------------- */
 
 .stopka {
@@ -733,8 +783,8 @@ input:focus-visible,
    Włączany guzikiem na stronie głównej, zapamiętywany w localStorage.
    Zestaw zmian wg wytycznych British Dyslexia Association:
    bezszeryfowa czcionka, większy tekst, luźniejsze odstępy między literami
-   i wierszami, krótsze linie, kremowe tło zamiast bieli, zero kursywy
-   i zero KAPITALIKÓW.
+   i wierszami, krótsze linie, zero kursywy i zero KAPITALIKÓW.
+   Kolorów tryb nie rusza — to wyłącznie zmiana typografii.
 
    Świadomie bez specjalnej czcionki „dla dyslektyków" — badania (Rello
    i Baeza-Yates 2013, Kuster i in. 2018) nie wykazały jej przewagi nad
@@ -742,15 +792,10 @@ input:focus-visible,
    ========================================================================== */
 
 :root[data-tryb="dysleksja"] {
-    /* Czysta biel męczy i powoduje rozmywanie się liter — stąd kremowe tło
-       i tekst granatowy zamiast czarnego. */
-    --tlo: #f3ece0;
-    --tlo-karta: #fffcf5;
-    --tekst: #22303f;
-    --tekst-slaby: #4c5b6d;
-    --ramka: #ddd2bf;
+    /* Kolory zostają takie jak w zwykłym trybie — ten przełącznik zmienia
+       wyłącznie typografię.
 
-    /* Zwykła bezszeryfowa o szerokich, dobrze rozróżnialnych literach.
+       Zwykła bezszeryfowa o szerokich, dobrze rozróżnialnych literach.
        Verdana i Tahoma są polecane przy dysleksji i siedzą już w systemie —
        nic się nie pobiera. */
     --czcionka: Verdana, Tahoma, 'Trebuchet MS', system-ui, sans-serif;

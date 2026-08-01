@@ -56,6 +56,19 @@
       ]
     },
     {
+      "id": "listy-czy-jest",
+      "typ": "uzupelnij",
+      "tytul": "Czy coś jest na liście",
+      "opis": "Znasz `in` z pętli `for`. To samo słowo służy do sprawdzania, czy coś **znajduje się** w liście — wtedy stoi w warunku `if`.\n\nUzupełnij je.",
+      "kod": "fruits = [\"jabłko\", \"gruszka\", \"śliwka\"]\nif \"gruszka\" ___ fruits:\n    print(\"Jest gruszka\")",
+      "luki": [["in"]],
+      "wyjscie": "Jest gruszka",
+      "podpowiedzi": [
+        "To dwuliterowe słowo, które już widziałeś w `for owoc in owoce:`.",
+        "Wpisz `in`. Działa tak samo na tekstach: `if \"a\" in \"Ala\":`."
+      ]
+    },
+    {
       "id": "listy-5",
       "typ": "napisz",
       "tytul": "Ile ocen",
@@ -70,6 +83,22 @@
         "`print(\"Ocen:\", len(grades))`"
       ],
       "rozwiazanie": "grades = [5, 3, 4, 5, 2]\nprint(\"Ocen:\", len(grades))"
+    },
+    {
+      "id": "listy-suma",
+      "typ": "napisz",
+      "tytul": "Suma całej listy",
+      "opis": "W module 9 sumowałeś liczby pętlą. Dla listy nie trzeba pętli — `sum(lista)` liczy wszystko naraz.\n\nWypisz sumę ocen w takiej postaci:\n\n`Suma: 19`",
+      "start": "grades = [5, 3, 4, 5, 2]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Suma: 19"
+      },
+      "podpowiedzi": [
+        "`sum` działa tak samo jak `len` — dostaje listę w nawiasie.",
+        "`print(\"Suma:\", sum(grades))`"
+      ],
+      "rozwiazanie": "grades = [5, 3, 4, 5, 2]\nprint(\"Suma:\", sum(grades))"
     },
     {
       "id": "listy-6",
