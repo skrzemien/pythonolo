@@ -105,6 +105,55 @@
         "Reszta sekund to `seconds % 60`."
       ],
       "rozwiazanie": "seconds = 145\nprint(seconds // 60, \"min\", seconds % 60, \"s\")"
+    },
+    {
+      "id": "liczby-paczki",
+      "typ": "uzupelnij",
+      "tytul": "Pełne paczki kredek",
+      "opis": "Policz pełne paczki, które można zapełnić kredkami.\n\n* Masz siedemnaście kredek. Do paczki wkładasz po pięć.\n* W lukę wpisz operator dzielenia całkowitego.\n* Interesuje Cię liczba pełnych paczek, bez niepełnej części.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3`",
+      "kod": "print(17 ___ 5)",
+      "luki": [
+        [
+          "//"
+        ]
+      ],
+      "wyjscie": "3",
+      "podpowiedzi": [
+        "Zwykłe dzielenie dałoby liczbę z częścią dziesiętną.",
+        "Użyj dwóch ukośników: `//`."
+      ]
+    },
+    {
+      "id": "liczby-reszta-cukierkow",
+      "typ": "napisz",
+      "tytul": "Cukierki do podziału",
+      "opis": "Rozdziel cukierki po równo i policz resztę.\n\n* Zostaw gotowe zmienne candies i children.\n* Oblicz, ile pełnych cukierków dostanie każde dziecko. Użyj dzielenia całkowitego.\n* Osobno oblicz, ile cukierków zostanie, używając reszty z dzielenia.\n* Wypisz dwie linie: najpierw tekst `Dla każdego:` i liczbę, potem tekst `Zostaje:` i resztę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nDla każdego: 4\nZostaje: 3\n```",
+      "start": "candies = 23\nchildren = 5\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Dla każdego: 4\nZostaje: 3"
+      },
+      "podpowiedzi": [
+        "Pierwszą liczbę oblicza operator `//`, drugą `%`.",
+        "W obu działaniach dziel candies przez children."
+      ],
+      "rozwiazanie": "candies = 23\nchildren = 5\nprint(\"Dla każdego:\", candies // children)\nprint(\"Zostaje:\", candies % children)"
+    },
+    {
+      "id": "liczby-srednia",
+      "typ": "napisz",
+      "tytul": "Średnia z trzech wyników",
+      "opis": "Oblicz średnią z trzech wyników.\n\n* Zostaw zmienne a, b i c.\n* Dodaj ich wartości i podziel sumę przez trzy. Dodawanie umieść w nawiasach.\n* Zaokrąglij wynik funkcją round do dwóch miejsc po kropce.\n* Wypisz samą zaokrągloną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`8.33`",
+      "start": "a = 7\nb = 8\nc = 10\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "8.33"
+      },
+      "podpowiedzi": [
+        "Najpierw oblicz całą sumę, dopiero potem dziel.",
+        "Użyj `round(average, 2)` po zapisaniu średniej w average."
+      ],
+      "rozwiazanie": "a = 7\nb = 8\nc = 10\naverage = (a + b + c) / 3\nprint(round(average, 2))"
     }
   ]
 }

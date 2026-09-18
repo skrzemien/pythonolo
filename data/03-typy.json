@@ -102,6 +102,55 @@
         "`print(5 > 3)` — bez cudzysłowu."
       ],
       "rozwiazanie": "print(5 > 3)"
+    },
+    {
+      "id": "typy-numer-na-napis",
+      "typ": "uzupelnij",
+      "tytul": "Numer w etykiecie",
+      "opis": "Dołącz numer do tekstowej etykiety.\n\n* Zmienna number zawiera liczbę osiem.\n* W lukę przed nawiasem wpisz funkcję zamieniającą liczbę na tekst.\n* Dzięki temu plus będzie mógł połączyć numer z napisem.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Numer: 8`",
+      "kod": "number = 8\nprint(\"Numer: \" + ___(number))",
+      "luki": [
+        [
+          "str"
+        ]
+      ],
+      "wyjscie": "Numer: 8",
+      "podpowiedzi": [
+        "Obie strony sklejania muszą być tekstami.",
+        "Wpisz `str`."
+      ]
+    },
+    {
+      "id": "typy-cena-z-tekstu",
+      "typ": "napisz",
+      "tytul": "Cena i opakowanie",
+      "opis": "Dodaj koszt opakowania do ceny zapisanej jako tekst.\n\n* Zostaw gotową zmienną price_text. Zawiera tekst oznaczający dwa i pół.\n* Zamień jej wartość na liczbę przez float i zapisz w zmiennej price.\n* Dodaj do price jeden i wypisz wynik. Nie dopisuj żadnego tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`3.5`",
+      "start": "price_text = \"2.5\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "3.5"
+      },
+      "podpowiedzi": [
+        "Do tekstu nie można dodać liczby. Najpierw zmień typ.",
+        "Zapisz `price = float(price_text)`."
+      ],
+      "rozwiazanie": "price_text = \"2.5\"\nprice = float(price_text)\nprint(price + 1)"
+    },
+    {
+      "id": "typy-porownanie-falsz",
+      "typ": "napisz",
+      "tytul": "Porównanie, które jest fałszywe",
+      "opis": "Sprawdź, czy dwójka jest większa od dziewiątki.\n\n* W pustym edytorze dodaj polecenie print.\n* W nawiasie zapisz cyfry dwa i dziewięć, a między nimi znak większe niż.\n* Nie otaczaj porównania cudzysłowami. Python ma je obliczyć i zwrócić fałsz.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`False`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "False"
+      },
+      "podpowiedzi": [
+        "Wynik porównania to wartość logiczna.",
+        "Użyj znaku `>` między liczbami."
+      ],
+      "rozwiazanie": "print(2 > 9)"
     }
   ]
 }

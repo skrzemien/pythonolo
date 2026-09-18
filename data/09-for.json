@@ -134,6 +134,55 @@
         "Wtedy wystarczy jedna pętla: `for line in range(3): print(\"*\" * 5)`."
       ],
       "rozwiazanie": "for line in range(3):\n    for star in range(5):\n        print(\"*\", end=\"\")\n    print()"
+    },
+    {
+      "id": "for-krok-parzyste",
+      "typ": "uzupelnij",
+      "tytul": "Parzyste w zakresie",
+      "opis": "Wypisz liczby parzyste od dwóch do dziesięciu.\n\n* Początek zakresu to dwa. Koniec jedenaście nie jest wliczany.\n* W lukę na trzecim miejscu wpisz krok między kolejnymi wartościami.\n* Pętla ma pomijać wszystkie liczby nieparzyste.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n10\n```",
+      "kod": "for number in range(2, 11, ___):\n    print(number)",
+      "luki": [
+        [
+          "2"
+        ]
+      ],
+      "wyjscie": "2\n4\n6\n8\n10",
+      "podpowiedzi": [
+        "Trzeci argument range określa, o ile rośnie liczba.",
+        "Wpisz `2`."
+      ]
+    },
+    {
+      "id": "for-suma-parzystych",
+      "typ": "napisz",
+      "tytul": "Suma tylko parzystych",
+      "opis": "Dodaj liczby parzyste od jednego do dziesięciu.\n\n* Zmienna total ma już wartość zero.\n* Napisz pętlę for przechodzącą po liczbach od jednego do dziesięciu włącznie.\n* W pętli sprawdź resztę z dzielenia liczby przez dwa. Do total dodawaj tylko liczby parzyste.\n* Po pętli wypisz samą sumę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`30`",
+      "start": "total = 0\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "30"
+      },
+      "podpowiedzi": [
+        "Warunek ma być wewnątrz pętli, a dodawanie wewnątrz warunku.",
+        "Liczba jest parzysta, gdy `number % 2 == 0`."
+      ],
+      "rozwiazanie": "total = 0\nfor number in range(1, 11):\n    if number % 2 == 0:\n        total += number\nprint(total)"
+    },
+    {
+      "id": "for-licznik-litery",
+      "typ": "napisz",
+      "tytul": "Ile razy występuje litera a",
+      "opis": "Policz wystąpienia małej litery a w tekście.\n\n* Zostaw gotowy tekst w zmiennej word. Utwórz licznik count równy zero.\n* Pętlą for przejdź po kolejnych literach word.\n* Jeśli bieżąca litera jest równa tekstowi `a`, zwiększ licznik o jeden.\n* Po pętli wypisz tekst `Litera a:` i wartość licznika.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Litera a: 2`",
+      "start": "word = \"banan\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Litera a: 2"
+      },
+      "podpowiedzi": [
+        "Porównujesz literę z tekstem, więc a musi być w cudzysłowie.",
+        "Zwiększaj count tylko wewnątrz if."
+      ],
+      "rozwiazanie": "word = \"banan\"\ncount = 0\nfor letter in word:\n    if letter == \"a\":\n        count += 1\nprint(\"Litera a:\", count)"
     }
   ]
 }

@@ -3,8 +3,8 @@
 Statyczna strona z zadaniami z Pythona dla początkujących (ok. 12 lat). Kod pisze się
 i uruchamia prosto w przeglądarce — bez instalowania czegokolwiek i bez konta.
 
-**12 modułów, 110 zadań**: od `print` przez zmienne, warunki i pętle aż po funkcje,
-słowniki i mini-projekty. Dwa pierwsze moduły są najdłuższe (po 12 zadań) — to
+**12 modułów, 146 zadań**: od `print` przez zmienne, warunki i pętle aż po funkcje,
+słowniki i mini-projekty. Dwa pierwsze moduły są najdłuższe (po 15 zadań) — to
 podstawy, na których stoi cała reszta.
 
 ## Jak to działa

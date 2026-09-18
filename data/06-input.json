@@ -129,6 +129,65 @@
         "`print(\"Dwie sztuki:\", price * 2)`"
       ],
       "rozwiazanie": "price = float(input(\"Cena sztuki: \"))\nprint(\"Dwie sztuki:\", price * 2)"
+    },
+    {
+      "id": "input-wiek-na-liczbe",
+      "typ": "uzupelnij",
+      "tytul": "Wiek za dwa lata",
+      "opis": "Zamień odpowiedź na liczbę i oblicz przyszły wiek.\n\n* Input już pyta o wiek.\n* W lukę przed input wpisz funkcję zamieniającą tekst na liczbę całkowitą.\n* Gotowe print doda dwa lata. Nie zmieniaj tej linii.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za dwa lata: 14`",
+      "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za dwa lata:\", age + 2)",
+      "luki": [
+        [
+          "int"
+        ]
+      ],
+      "wyjscie": "Za dwa lata: 14",
+      "podpowiedzi": [
+        "Nie dodawaj liczby do surowego tekstu z input.",
+        "Wpisz `int`."
+      ],
+      "wejscie": [
+        "12"
+      ]
+    },
+    {
+      "id": "input-ulubione-zwierze",
+      "typ": "napisz",
+      "tytul": "Ulubione zwierzę",
+      "opis": "Wczytaj nazwę zwierzęcia i użyj jej w zdaniu.\n\n* Użyj input, żeby zapytać o ulubione zwierzę. Zapisz odpowiedź w zmiennej animal.\n* W następnej linii wypisz tekst `Moje ulubione zwierzę to` oraz wartość animal.\n* Oddziel tekst i zmienną przecinkiem. Nie zamieniaj odpowiedzi na liczbę.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `kot`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Moje ulubione zwierzę to kot`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Moje ulubione zwierzę to kot",
+        "wejscie": [
+          "kot"
+        ]
+      },
+      "podpowiedzi": [
+        "Nazwa zwierzęcia ma pozostać tekstem.",
+        "Odpowiedź zapisz przez `animal = input(\"Jakie zwierzę lubisz? \")`."
+      ],
+      "rozwiazanie": "animal = input(\"Jakie zwierzę lubisz? \")\nprint(\"Moje ulubione zwierzę to\", animal)"
+    },
+    {
+      "id": "input-bilety",
+      "typ": "napisz",
+      "tytul": "Koszt biletów",
+      "opis": "Oblicz koszt kilku biletów na podstawie odpowiedzi użytkownika.\n\n* Najpierw wczytaj liczbę biletów, a potem cenę jednego biletu.\n* Obie odpowiedzi zamień przez int na liczby całkowite i zapisz w osobnych zmiennych.\n* Pomnóż liczbę biletów przez cenę.\n* Wypisz tekst `Do zapłaty:` i obliczony koszt.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `3`, `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Do zapłaty: 36`",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Do zapłaty: 36",
+        "wejscie": [
+          "3",
+          "12"
+        ]
+      },
+      "podpowiedzi": [
+        "Potrzebujesz dwóch wywołań input w podanej kolejności.",
+        "Koszt to `count * price`."
+      ],
+      "rozwiazanie": "count = int(input(\"Ile biletów? \"))\nprice = int(input(\"Cena biletu: \"))\nprint(\"Do zapłaty:\", count * price)"
     }
   ]
 }

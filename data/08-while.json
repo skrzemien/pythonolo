@@ -118,6 +118,59 @@
         "Po angielsku „kontynuuj”.",
         "Zwróć uwagę, że licznik rośnie **przed** sprawdzeniem — inaczej pętla utknęłaby na trójce."
       ]
+    },
+    {
+      "id": "while-co-dwa",
+      "typ": "uzupelnij",
+      "tytul": "Licznik co dwa",
+      "opis": "Wypisz kolejne liczby parzyste od dwóch do ośmiu.\n\n* Warunek pętli jest gotowy, a number zaczyna od dwóch.\n* W ostatniej linii wpisz w lukę liczbę, o którą licznik ma rosnąć.\n* Kolejne wartości mają różnić się o dwa. Nie zmieniaj warunku.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n```",
+      "kod": "number = 2\nwhile number <= 8:\n    print(number)\n    number = number + ___",
+      "luki": [
+        [
+          "2"
+        ]
+      ],
+      "wyjscie": "2\n4\n6\n8",
+      "podpowiedzi": [
+        "Z dwójki chcesz przejść do czwórki, potem do szóstki.",
+        "Wpisz `2`."
+      ]
+    },
+    {
+      "id": "while-oszczednosci",
+      "typ": "napisz",
+      "tytul": "Oszczędzanie do celu",
+      "opis": "Policz, po ilu wpłatach uzbierasz co najmniej dwadzieścia złotych.\n\n* Zmienne savings i weeks zaczynają od zera.\n* Napisz pętlę while działającą, dopóki oszczędności są mniejsze niż dwadzieścia.\n* W każdym obrocie dodaj sześć do savings i jeden do weeks.\n* Po pętli wypisz liczbę tygodni i zgromadzoną kwotę w dwóch liniach, zgodnie ze wzorem.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nTygodnie: 4\nOszczędności: 24\n```",
+      "start": "savings = 0\nweeks = 0\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Tygodnie: 4\nOszczędności: 24"
+      },
+      "podpowiedzi": [
+        "Kwota może przekroczyć cel. Nie sprawdzaj, czy jest dokładnie równa dwadzieścia.",
+        "Oba liczniki zwiększaj wewnątrz pętli. Oba print umieść po pętli."
+      ],
+      "rozwiazanie": "savings = 0\nweeks = 0\nwhile savings < 20:\n    savings += 6\n    weeks += 1\nprint(\"Tygodnie:\", weeks)\nprint(\"Oszczędności:\", savings)"
+    },
+    {
+      "id": "while-haslo",
+      "typ": "napisz",
+      "tytul": "Pytaj aż do poprawnego hasła",
+      "opis": "Powtarzaj pytanie o hasło, aż użytkownik poda poprawną odpowiedź.\n\n* Poprawne hasło jest zapisane w zmiennej secret.\n* Utwórz pętlę while True. W każdym obrocie wczytaj hasło przez input.\n* Gdy odpowiedź jest równa secret, wypisz `Otwarte` i zakończ pętlę przez break.\n* Dla innej odpowiedzi wypisz `Spróbuj ponownie`. Nie kończ wtedy pętli.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `pies`, `kot`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nSpróbuj ponownie\nOtwarte\n```",
+      "start": "secret = \"kot\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Spróbuj ponownie\nOtwarte",
+        "wejscie": [
+          "pies",
+          "kot"
+        ]
+      },
+      "podpowiedzi": [
+        "Porównuj hasła operatorem równości.",
+        "Break umieść pod print wypisującym Otwarte, z takim samym wcięciem."
+      ],
+      "rozwiazanie": "secret = \"kot\"\nwhile True:\n    password = input(\"Hasło: \")\n    if password == secret:\n        print(\"Otwarte\")\n        break\n    print(\"Spróbuj ponownie\")"
     }
   ]
 }

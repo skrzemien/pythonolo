@@ -154,6 +154,54 @@
         "Potem wypisz trzy sytuacje, w których wygrywa pierwszy — resztę załatwi `else: return \"drugi\"`."
       ],
       "rozwiazanie": "def who_wins(a, b):\n    if a == b:\n        return \"remis\"\n    if a == \"kamień\" and b == \"nożyce\":\n        return \"pierwszy\"\n    if a == \"nożyce\" and b == \"papier\":\n        return \"pierwszy\"\n    if a == \"papier\" and b == \"kamień\":\n        return \"pierwszy\"\n    return \"drugi\""
+    },
+    {
+      "id": "projekty-koszyk",
+      "typ": "napisz",
+      "tytul": "Wartość koszyka",
+      "opis": "Napisz funkcję obliczającą wartość koszyka ze słownika.\n\n* Argument prices zawiera słownik. Klucze to nazwy produktów, a wartości to ich całkowite ceny. Każdy produkt kupujesz raz.\n* W funkcji basket_total utwórz sumę równą zero.\n* Przejdź po parach nazwa i cena metodą items. Dodawaj każdą cenę do sumy.\n* Po pętli zwróć sumę. Pusty słownik ma dać zero. Nie zmieniaj zawartości prices.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "start": "def basket_total(prices):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert basket_total({\"chleb\": 5, \"mleko\": 3}) == 8, \"Koszyk za 5 i 3 powinien kosztować 8\"\nassert basket_total({}) == 0, \"Pusty koszyk powinien kosztować 0\"\nassert basket_total({\"jabłko\": 2}) == 2, \"Jeden produkt powinien dać swoją cenę\"\nassert basket_total({\"woda\": 0, \"sok\": 7, \"ser\": 6}) == 13, \"Uwzględnij wszystkie ceny, także zero\"\n_koszyk = {\"ryż\": 4, \"makaron\": 5}\nassert basket_total(_koszyk) == 9, \"Suma powinna wynosić 9\"\nassert _koszyk == {\"ryż\": 4, \"makaron\": 5}, \"Nie zmieniaj przekazanego słownika\""
+      },
+      "podpowiedzi": [
+        "Pętla może zaczynać się od `for name, price in prices.items():`.",
+        "Return umieść po pętli."
+      ],
+      "rozwiazanie": "def basket_total(prices):\n    total = 0\n    for name, price in prices.items():\n        total += price\n    return total"
+    },
+    {
+      "id": "projekty-cieple-dni",
+      "typ": "napisz",
+      "tytul": "Licznik ciepłych dni",
+      "opis": "Policz dni, w których temperatura osiągnęła ustalony próg.\n\n* Funkcja warm_days dostaje listę temperatures oraz próg limit.\n* Utwórz licznik równy zero. Przejdź pętlą po temperaturach.\n* Zwiększ licznik, gdy temperatura jest większa od limit albo mu równa.\n* Zwróć licznik po zakończeniu pętli. Dla pustej listy zwróć zero.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "start": "def warm_days(temperatures, limit):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert warm_days([18, 20, 25, 17], 20) == 2, \"Dla progu 20 liczą się dni z 20 i 25 stopniami\"\nassert warm_days([], 20) == 0, \"Pusta lista powinna dać 0\"\nassert warm_days([20, 20], 20) == 2, \"Temperatura równa progowi też się liczy\"\nassert warm_days([1, 2], 5) == 0, \"Żaden dzień nie osiąga progu 5\"\nassert warm_days([-5, 0, 3], 0) == 2, \"Próg może wynosić zero\"\nassert warm_days([-5, -2, 0], -2) == 2, \"Próg może być ujemny\""
+      },
+      "podpowiedzi": [
+        "Dzień dokładnie na granicy też się liczy.",
+        "W warunku użyj `temperature >= limit`."
+      ],
+      "rozwiazanie": "def warm_days(temperatures, limit):\n    count = 0\n    for temperature in temperatures:\n        if temperature >= limit:\n            count += 1\n    return count"
+    },
+    {
+      "id": "projekty-podsumowanie-wynikow",
+      "typ": "napisz",
+      "tytul": "Podsumowanie wyników gry",
+      "opis": "Zbuduj słownik z liczbą wygranych, remisów i przegranych.\n\n* Funkcja game_summary dostaje listę results. Każdy element to tekst: wygrana, remis albo przegrana.\n* Utwórz słownik z tymi trzema kluczami. Każdemu przypisz na początku zero.\n* Przejdź po wynikach pętlą. Każdy wynik wskazuje klucz, którego licznik trzeba zwiększyć o jeden.\n* Zwróć cały słownik. Dla pustej listy wszystkie trzy liczniki mają zostać równe zero.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "start": "def game_summary(results):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert game_summary([\"wygrana\", \"remis\", \"wygrana\", \"przegrana\"]) == {\"wygrana\": 2, \"remis\": 1, \"przegrana\": 1}, \"Powinny być 2 wygrane, 1 remis i 1 przegrana\"\nassert game_summary([]) == {\"wygrana\": 0, \"remis\": 0, \"przegrana\": 0}, \"Pusta lista wymaga trzech zerowych liczników\"\nassert game_summary([\"remis\", \"remis\"]) == {\"wygrana\": 0, \"remis\": 2, \"przegrana\": 0}, \"Policz oba remisy\"\nassert game_summary([\"przegrana\"]) == {\"wygrana\": 0, \"remis\": 0, \"przegrana\": 1}, \"Policz jedną przegraną\"\nassert game_summary([\"wygrana\"]) == {\"wygrana\": 1, \"remis\": 0, \"przegrana\": 0}, \"Każde wywołanie ma zaczynać liczenie od zera\""
+      },
+      "podpowiedzi": [
+        "Tekst z listy może służyć jako klucz: `summary[result]`.",
+        "Zwiększ wartość pod tym kluczem przez `summary[result] += 1`."
+      ],
+      "rozwiazanie": "def game_summary(results):\n    summary = {\"wygrana\": 0, \"remis\": 0, \"przegrana\": 0}\n    for result in results:\n        summary[result] += 1\n    return summary"
     }
   ]
 }

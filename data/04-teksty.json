@@ -144,6 +144,55 @@
         "Potem sklej trzy napisy plusem: `\"[\" + name.strip() + \"]\"`."
       ],
       "rozwiazanie": "name = \"   Ala   \"\nprint(\"[\" + name.strip() + \"]\")"
+    },
+    {
+      "id": "teksty-dlugosc-zmiennej",
+      "typ": "uzupelnij",
+      "tytul": "Długość imienia",
+      "opis": "Policz litery w imieniu zapisanym w zmiennej.\n\n* Zmienna name zawiera imię Zosia.\n* W lukę przed nawiasem wpisz nazwę funkcji podającej długość tekstu.\n* Nie wpisuj gotowej liczby. Funkcja ma policzyć znaki w name.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`5`",
+      "kod": "name = \"Zosia\"\nprint(___(name))",
+      "luki": [
+        [
+          "len"
+        ]
+      ],
+      "wyjscie": "5",
+      "podpowiedzi": [
+        "To ta sama funkcja, którą liczyłeś znaki słowa Python.",
+        "Wpisz `len`."
+      ]
+    },
+    {
+      "id": "teksty-prefiks",
+      "typ": "napisz",
+      "tytul": "Pierwsze dwie litery miasta",
+      "opis": "Wytnij początek nazwy miasta.\n\n* Zostaw zmienną city z nazwą Kraków.\n* Pod nią dopisz print z wycinkiem zmiennej city.\n* Wybierz znaki o indeksach zero i jeden. Koniec wycinka ustaw na dwa, bo nie jest wliczany.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Kr`",
+      "start": "city = \"Kraków\"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Kr"
+      },
+      "podpowiedzi": [
+        "Wycinek zapisujesz w nawiasach kwadratowych z dwukropkiem.",
+        "Użyj `city[0:2]`."
+      ],
+      "rozwiazanie": "city = \"Kraków\"\nprint(city[0:2])"
+    },
+    {
+      "id": "teksty-powitanie-czyste",
+      "typ": "napisz",
+      "tytul": "Powitanie bez zbędnych spacji",
+      "opis": "Oczyść imię i wstaw je do powitania.\n\n* Zmienna name zawiera imię Ola ze spacjami po obu stronach.\n* Utwórz zmienną clean_name i przypisz jej wynik użycia strip na name.\n* Wypisz f-string z powitaniem `Cześć, Ola!`. Imię pobierz z clean_name.\n* Zostaw jedną spację po przecinku. Przed wykrzyknikiem nie może być spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Cześć, Ola!`",
+      "start": "name = \"  Ola  \"\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Cześć, Ola!"
+      },
+      "podpowiedzi": [
+        "Metodę wywołujesz po kropce.",
+        "Najpierw `clean_name = name.strip()`, potem f-string."
+      ],
+      "rozwiazanie": "name = \"  Ola  \"\nclean_name = name.strip()\nprint(f\"Cześć, {clean_name}!\")"
     }
   ]
 }

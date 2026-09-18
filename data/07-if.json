@@ -145,6 +145,55 @@
         "`if not is_raining:` — i pod spodem wcięty `print`."
       ],
       "rozwiazanie": "is_raining = False\nif not is_raining:\n    print(\"Idziemy na dwór\")"
+    },
+    {
+      "id": "if-dwie-zgody",
+      "typ": "uzupelnij",
+      "tytul": "Dwie zgody naraz",
+      "opis": "Pozwól rozpocząć grę tylko wtedy, gdy oba warunki są spełnione.\n\n* Zmienne has_ticket i has_permission mają wartości logiczne.\n* W lukę między nimi wpisz słowo wymagające prawdziwości obu warunków naraz.\n* Nie zmieniaj gotowych wartości. Obie zgody są teraz udzielone.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Możesz grać`",
+      "kod": "has_ticket = True\nhas_permission = True\nif has_ticket ___ has_permission:\n    print(\"Możesz grać\")",
+      "luki": [
+        [
+          "and"
+        ]
+      ],
+      "wyjscie": "Możesz grać",
+      "podpowiedzi": [
+        "Nie wystarczy jeden z dwóch warunków.",
+        "Wpisz `and`."
+      ]
+    },
+    {
+      "id": "if-rowne-liczby",
+      "typ": "napisz",
+      "tytul": "Trzy wyniki porównania",
+      "opis": "Porównaj dwie liczby, uwzględniając także równość.\n\n* Zostaw zmienne a i b.\n* Jeśli a jest większe, wypisz `Pierwsza większa`.\n* Jeśli a jest mniejsze, wypisz `Druga większa`. Użyj elif.\n* W przeciwnym razie wypisz `Równe`. Każde print umieść wewnątrz odpowiedniej gałęzi.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Równe`",
+      "start": "a = 8\nb = 8\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Równe"
+      },
+      "podpowiedzi": [
+        "Równość zostanie jako trzeci przypadek.",
+        "Zacznij od `if a > b:`."
+      ],
+      "rozwiazanie": "a = 8\nb = 8\nif a > b:\n    print(\"Pierwsza większa\")\nelif a < b:\n    print(\"Druga większa\")\nelse:\n    print(\"Równe\")"
+    },
+    {
+      "id": "if-bateria",
+      "typ": "napisz",
+      "tytul": "Komunikat o baterii",
+      "opis": "Wybierz komunikat zależny od poziomu baterii.\n\n* Użyj gotowej zmiennej battery.\n* Dla wartości mniejszej niż dwadzieścia wypisz `Podłącz ładowarkę`.\n* Dla wartości od dwudziestu do siedemdziesięciu dziewięciu wypisz `Możesz działać`.\n* Dla osiemdziesięciu lub więcej wypisz `Dużo energii`. Użyj if, elif i else, żeby pojawił się tylko jeden komunikat.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Możesz działać`",
+      "start": "battery = 20\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Możesz działać"
+      },
+      "podpowiedzi": [
+        "W drugim warunku sprawdź górną granicę. Pierwszy wykluczył już wartości poniżej dwudziestu.",
+        "Drugi warunek może wyglądać tak: `elif battery < 80:`."
+      ],
+      "rozwiazanie": "battery = 20\nif battery < 20:\n    print(\"Podłącz ładowarkę\")\nelif battery < 80:\n    print(\"Możesz działać\")\nelse:\n    print(\"Dużo energii\")"
     }
   ]
 }

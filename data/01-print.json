@@ -173,6 +173,56 @@
         "Zamiast przepisywać gwiazdki, możesz je pomnożyć: `print(\"*\" * 3)`."
       ],
       "rozwiazanie": "print(\"*\")\nprint(\"**\")\nprint(\"***\")\nprint(\"****\")\nprint(\"*****\")"
+    },
+    {
+      "id": "print-separator-slash",
+      "typ": "uzupelnij",
+      "tytul": "Data z ukośnikami",
+      "opis": "Oddziel części daty ukośnikami.\n\n* W poleceniu print są już dzień, miesiąc i rok.\n* W lukę po znaku równości wpisz ukośnik w cudzysłowie. To nowy separator.\n* Nie zmieniaj części daty ani nazwy ustawienia sep.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`18/09/2026`",
+      "kod": "print(\"18\", \"09\", \"2026\", sep=___)",
+      "luki": [
+        [
+          "\"/\"",
+          "'/'"
+        ]
+      ],
+      "wyjscie": "18/09/2026",
+      "podpowiedzi": [
+        "Separator to tekst, więc potrzebuje cudzysłowów.",
+        "Wpisz `\"/\"`."
+      ]
+    },
+    {
+      "id": "print-bilet",
+      "typ": "napisz",
+      "tytul": "Bilet do kina",
+      "opis": "Wypisz prosty bilet w trzech liniach.\n\n* W pierwszej linii edytora dodaj print wypisujące tekst `Bilet do kina`.\n* W następnej linii dodaj print wypisujące tekst `Rząd: 3`.\n* W ostatniej linii wypisz tekst `Miejsce: 8`.\n* Każdy tekst otocz cudzysłowami. Po dwukropkach zostaw po jednej spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nBilet do kina\nRząd: 3\nMiejsce: 8\n```",
+      "start": "",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Bilet do kina\nRząd: 3\nMiejsce: 8"
+      },
+      "podpowiedzi": [
+        "Potrzebujesz trzech osobnych poleceń.",
+        "Pierwsza linia to `print(\"Bilet do kina\")`."
+      ],
+      "rozwiazanie": "print(\"Bilet do kina\")\nprint(\"Rząd: 3\")\nprint(\"Miejsce: 8\")"
+    },
+    {
+      "id": "print-koniec-zdania",
+      "typ": "napisz",
+      "tytul": "Dokończ zdanie w tej samej linii",
+      "opis": "Połącz dwa gotowe polecenia w jedno zdanie na ekranie.\n\n* Pierwsze polecenie wypisuje słowo Lubię. Drugie wypisuje słowo Python.\n* W pierwszym poleceniu dodaj po tekście przecinek i ustawienie end.\n* Jako zakończenie ustaw tekst zawierający jedną spację. Dzięki temu drugie słowo pojawi się obok pierwszego.\n* Drugą linię zostaw bez zmian.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Lubię Python`",
+      "start": "print(\"Lubię\")\nprint(\"Python\")\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Lubię Python"
+      },
+      "podpowiedzi": [
+        "Pusty tekst skleiłby słowa. Potrzebujesz spacji.",
+        "Dodaj do pierwszego print ustawienie `end=\" \"`."
+      ],
+      "rozwiazanie": "print(\"Lubię\", end=\" \")\nprint(\"Python\")"
     }
   ]
 }

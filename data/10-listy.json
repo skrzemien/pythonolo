@@ -131,6 +131,55 @@
         "`print(\"-\", item)` — przecinek doda spację po myślniku."
       ],
       "rozwiazanie": "shopping = [\"chleb\", \"mleko\", \"jabłka\"]\nfor item in shopping:\n    print(\"-\", item)"
+    },
+    {
+      "id": "listy-suma-punktow",
+      "typ": "uzupelnij",
+      "tytul": "Punkty drużyny",
+      "opis": "Oblicz sumę punktów całej drużyny.\n\n* Lista points zawiera wyniki trzech zawodników.\n* W lukę wpisz nazwę funkcji sumującej elementy listy.\n* Nie używaj len, bo policzyłoby zawodników zamiast ich punktów.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`20`",
+      "kod": "points = [4, 7, 9]\nprint(___(points))",
+      "luki": [
+        [
+          "sum"
+        ]
+      ],
+      "wyjscie": "20",
+      "podpowiedzi": [
+        "Potrzebujesz funkcji dodającej wartości.",
+        "Wpisz `sum`."
+      ]
+    },
+    {
+      "id": "listy-nowa-ocena",
+      "typ": "napisz",
+      "tytul": "Dopisz ocenę i policz",
+      "opis": "Dodaj nową ocenę, a potem policz wszystkie oceny.\n\n* Zostaw gotową listę grades.\n* Pod nią wywołaj metodę append, żeby dodać na końcu liczbę pięć.\n* Policz elementy zmienionej listy przez len.\n* Wypisz tekst `Ocen po dopisaniu:` i obliczoną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Ocen po dopisaniu: 4`",
+      "start": "grades = [3, 4, 2]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Ocen po dopisaniu: 4"
+      },
+      "podpowiedzi": [
+        "Dopisanie elementu ma nastąpić przed liczeniem.",
+        "Użyj `grades.append(5)`."
+      ],
+      "rozwiazanie": "grades = [3, 4, 2]\ngrades.append(5)\nprint(\"Ocen po dopisaniu:\", len(grades))"
+    },
+    {
+      "id": "listy-srednia-ocen",
+      "typ": "napisz",
+      "tytul": "Średnia ocen z listy",
+      "opis": "Oblicz średnią ocen bez przepisywania ich do działania.\n\n* Zostaw gotową listę grades.\n* Oblicz sumę jej elementów przez sum i liczbę elementów przez len.\n* Podziel sumę przez liczbę ocen. Zaokrąglij wynik do dwóch miejsc po kropce.\n* Wypisz tekst `Średnia:` oraz wynik. Lista w tym zadaniu nie jest pusta.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Średnia: 4.25`",
+      "start": "grades = [5, 4, 3, 5]\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Średnia: 4.25"
+      },
+      "podpowiedzi": [
+        "Średnia to suma podzielona przez liczbę elementów.",
+        "Użyj `sum(grades) / len(grades)`."
+      ],
+      "rozwiazanie": "grades = [5, 4, 3, 5]\naverage = sum(grades) / len(grades)\nprint(\"Średnia:\", round(average, 2))"
     }
   ]
 }

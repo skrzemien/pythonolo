@@ -173,6 +173,55 @@
         "Możesz użyć trzeciej zmiennej na przechowanie albo skrótu `x, y = y, x`."
       ],
       "rozwiazanie": "x = 1\ny = 2\nx, y = y, x\nprint(x, y)"
+    },
+    {
+      "id": "zmienne-kopia",
+      "typ": "uzupelnij",
+      "tytul": "Kopia zachowuje starą liczbę",
+      "opis": "Zapisz kopię wyniku, zanim zmienisz oryginalną zmienną.\n\n* Zmienna score ma wartość dziesięć.\n* W drugiej linii wpisz w lukę nazwę zmiennej, której wartość chcesz zachować w saved.\n* Dalszy kod zmieni score na dwadzieścia. saved ma nadal przechowywać dziesięć.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`10 20`",
+      "kod": "score = 10\nsaved = ___\nscore = 20\nprint(saved, score)",
+      "luki": [
+        [
+          "score"
+        ]
+      ],
+      "wyjscie": "10 20",
+      "podpowiedzi": [
+        "Kopiujesz obecną wartość, a nie nazwę w cudzysłowie.",
+        "Wpisz `score`."
+      ]
+    },
+    {
+      "id": "zmienne-plecak",
+      "typ": "napisz",
+      "tytul": "Ile rzeczy w plecaku",
+      "opis": "Oblicz, ile przedmiotów jest w plecaku.\n\n* Zostaw gotowe zmienne books i notebooks.\n* Utwórz zmienną total. Zapisz w niej sumę liczby książek i zeszytów.\n* Wypisz tekst `W plecaku:` oraz wartość total. Oddziel je spacją.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`W plecaku: 7`",
+      "start": "books = 3\nnotebooks = 4\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "W plecaku: 7"
+      },
+      "podpowiedzi": [
+        "Po prawej stronie przypisania możesz dodać dwie zmienne.",
+        "Zapisz `total = books + notebooks`, a potem użyj total w print."
+      ],
+      "rozwiazanie": "books = 3\nnotebooks = 4\ntotal = books + notebooks\nprint(\"W plecaku:\", total)"
+    },
+    {
+      "id": "zmienne-dwie-nagrody",
+      "typ": "napisz",
+      "tytul": "Dwie nagrody",
+      "opis": "Zwiększ wynik gracza po zdobyciu dwóch nagród.\n\n* Zmienna points ma już pięć punktów.\n* W następnej linii zwiększ ją o trzy, używając dodawania z przypisaniem.\n* W kolejnej linii zwiększ ją o dwa w ten sam sposób.\n* Na końcu wypisz tekst `Punkty:` i aktualną wartość points.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Punkty: 10`",
+      "start": "points = 5\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Punkty: 10"
+      },
+      "podpowiedzi": [
+        "Użyj krótszego zapisu ze znakiem plus i znakiem przypisania.",
+        "Pierwsza zmiana to `points += 3`."
+      ],
+      "rozwiazanie": "points = 5\npoints += 3\npoints += 2\nprint(\"Punkty:\", points)"
     }
   ]
 }
