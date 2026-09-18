@@ -791,6 +791,10 @@ input:focus-visible,
    zwykłą bezszeryfową, a wyglądała dziwnie. Działa to, co niżej.
    ========================================================================== */
 
+.czytanie-polecenia { margin: 0 0 1rem; }
+#stan-czytania { margin: .5rem 0 0; }
+#stan-czytania:empty { display: none; }
+
 :root[data-tryb="dysleksja"] {
     /* Kolory zostają takie jak w zwykłym trybie — ten przełącznik zmienia
        wyłącznie typografię.

@@ -5,6 +5,7 @@ import { Postep } from './progress.js';
 import { utworzEdytor } from './editor.js';
 import { podepnijWyczyszczeniePostepu } from './stopka.js';
 import { Uruchamiacz } from './runner.js';
+import { podepnijCzytanie } from './czytanie.js';
 import {
     Konsola, ustawStan, pokazBlad, pokazWynik, schowajWynik,
     wyjsciaZgodne, htmlPorownania
@@ -113,7 +114,12 @@ function render({ wpis, modul, zadanie, poprzednie, nastepne }) {
         <div class="cwiczenie">
             <section class="karta tresc-zadania">
                 <h1>${esc(zadanie.tytul)}${zaliczone ? ' ✓' : ''}</h1>
-                <div class="opis">${htmlTresci(zadanie.opis)}</div>
+                <div class="czytanie-polecenia">
+                    <button class="przycisk maly" type="button" id="czytaj-polecenie"
+                            aria-describedby="stan-czytania">🔊 Czytaj polecenie</button>
+                    <p id="stan-czytania" role="status"></p>
+                </div>
+                <div class="opis" id="opis-zadania">${htmlTresci(zadanie.opis)}</div>
                 ${htmlOczekiwanego(zadanie)}
 
                 <div class="pomoc">
@@ -183,6 +189,13 @@ async function start() {
         poprzednie: numerZadania > 1,
         nastepne: numerZadania < modul.zadania.length
     });
+
+    // innerText zachowuje podział akapitów i list, bez znaczników Markdown.
+    podepnijCzytanie(
+        document.getElementById('czytaj-polecenie'),
+        document.getElementById('stan-czytania'),
+        `${zadanie.tytul}.\n${document.getElementById('opis-zadania').innerText}`
+    );
 
     const elWynik = document.getElementById('wynik');
     const konsola = new Konsola(document.getElementById('konsola'));

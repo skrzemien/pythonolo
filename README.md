@@ -19,6 +19,18 @@ podstawy, na których stoi cała reszta.
 
 ## Dostępność
 
+Na stronie każdego zadania przycisk **Czytaj polecenie** odczytuje tytuł i treść
+polecenia. Kolejne kliknięcie zatrzymuje czytanie. Opuszczenie strony również
+zatrzymuje głos. Czytanie nie uruchamia się automatycznie.
+
+Funkcja korzysta z Web Speech API przeglądarki, bez backendu i kluczy API;
+działa na statycznym hostingu GitHub Pages. Dostępność i wymowa polskiego głosu
+zależą od systemu i przeglądarki. Preferowany jest głos lokalny; inne głosy mogą
+korzystać z usługi sieciowej dostawcy przeglądarki. Fragmenty kodu są czytane
+tak, jak interpretuje je syntezator. Postęp ucznia pozostaje bez zmian.
+
+Testy logiki przycisku: `node --test tests/czytanie.test.mjs` (Node.js 24).
+
 Na stronie głównej jest guzik **Tryb łatwiejszego czytania**. Włącza układ
 przyjaźniejszy przy dysleksji — ustawienie zapamiętuje się i działa na wszystkich
 podstronach, aż do wyłączenia tym samym guzikiem.
