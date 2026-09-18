@@ -1,6 +1,17 @@
 {
   "wpisy": [
     {
+      "data": "2026-09-18",
+      "tytul": "Polecenia prowadzą krok po kroku",
+      "opis": "Przeredagowaliśmy wszystkie 110 poleceń. Każde wyjaśnia, od czego zacząć, gdzie wpisać kod i jak sprawdzić wynik.",
+      "punkty": [
+        "Pierwsze moduły zawierają szczegółowe wskazówki. Późniejsze zadania stopniowo zostawiają więcej samodzielności.",
+        "Zadania z input wyjaśniają, że odpowiedzi podaje strona. Zadania z funkcjami przypominają o zwracaniu wyniku i automatycznych testach.",
+        "Poprawiliśmy opis nawiasów kwadratowych i liczb. W zadaniu „Twoje miasto” poprawny wynik brzmi teraz „Moje miasto to Warszawa”."
+      ],
+      "stopka": "Identyfikatory i kolejność zadań pozostały bez zmian. Dotychczasowe zaliczenia uczniów są zachowane."
+    },
+    {
       "data": "2026-08-01",
       "tytul": "17 nowych zadań po audycie treści",
       "opis": "Przegląd wszystkich zadań pod kątem 11–12-latka wykazał, że wstępy modułów obiecują konstrukcje, których potem żadne zadanie nie ćwiczy, a w kilku miejscach trudność skacze bez stopnia pośredniego. Stare zadania zostały nietknięte — zaliczenia uczniów są bezpieczne. Doszły nowe.",
