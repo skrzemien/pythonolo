@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<meta charset="utf-8">
+<title>Test zaznaczania polecenia</title>
+<link rel="stylesheet" href="../css/style.css">
+<main class="strona">
+    <h1>Test zaznaczania polecenia</h1>
+    <p id="rezultat" role="status">Test w toku…</p>
+    <p id="przyklad">Ala ma <code>kota</code>. Kot <strong>śpi</strong>.<br>Żółw też.</p>
+</main>
+<script type="module">
+import { przygotujCzytanie } from '../js/czytanie.js';
+const el = document.getElementById('przyklad');
+const wynik = document.getElementById('rezultat');
+const tekst = el.textContent;
+function sprawdz(warunek, opis) { if (!warunek) throw new Error(opis); }
+try {
+    let czesci = przygotujCzytanie([el]);
+    sprawdz(czesci.length === 3, 'Podział na trzy zdania');
+    sprawdz(el.textContent === tekst, 'Niezmieniona treść');
+    sprawdz(el.querySelector('code').textContent === 'kota', 'Zachowany kod');
+    sprawdz(el.querySelector('strong').textContent === 'śpi', 'Zachowane pogrubienie');
+    czesci[0].zaznacz(7, 4);
+    sprawdz(el.querySelector('.czytane-teraz').textContent === 'kota', 'Pozycja słowa w kodzie');
+    czesci[0].zaznacz(0, 0);
+    sprawdz(!el.querySelector('.czytane-teraz'), 'Usunięcie zaznaczenia');
+    czesci[1].zaznacz(0, czesci[1].tekst.length);
+    sprawdz([...el.querySelectorAll('.czytane-teraz')].map(x => x.textContent).join('') === 'Kotśpi.', 'Drugie zdanie');
+    czesci = przygotujCzytanie([el]);
+    sprawdz(!el.querySelector('.slowo-lektora .slowo-lektora'), 'Brak zagnieżdżeń po ponownym starcie');
+    sprawdz(el.textContent === tekst, 'Niezmieniona treść po ponownym starcie');
+    czesci[2].zaznacz(0, czesci[2].tekst.length);
+    sprawdz([...el.querySelectorAll('.czytane-teraz')].map(x => x.textContent).join('') === 'Żółwteż.', 'Zdanie po łamaniu wiersza');
+    wynik.textContent = '10/10 testów DOM przeszło. Poniżej przykładowe zaznaczenie.';
+} catch (e) {
+    wynik.textContent = 'BŁĄD: ' + e.message;
+    throw e;
+}
+</script>
+</html>

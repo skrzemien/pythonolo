@@ -5,7 +5,7 @@ import { Postep } from './progress.js';
 import { utworzEdytor } from './editor.js';
 import { podepnijWyczyszczeniePostepu } from './stopka.js';
 import { Uruchamiacz } from './runner.js';
-import { podepnijCzytanie } from './czytanie.js';
+import { podepnijCzytanie, przygotujCzytanie } from './czytanie.js';
 import {
     Konsola, ustawStan, pokazBlad, pokazWynik, schowajWynik,
     wyjsciaZgodne, htmlPorownania
@@ -190,11 +190,14 @@ async function start() {
         nastepne: numerZadania < modul.zadania.length
     });
 
-    // innerText zachowuje podział akapitów i list, bez znaczników Markdown.
+    // Przy każdym starcie mapujemy aktualny tekst na słowa widoczne na stronie.
     podepnijCzytanie(
         document.getElementById('czytaj-polecenie'),
         document.getElementById('stan-czytania'),
-        `${zadanie.tytul}.\n${document.getElementById('opis-zadania').innerText}`
+        () => przygotujCzytanie([
+            document.querySelector('.tresc-zadania h1'),
+            ...document.querySelectorAll('#opis-zadania p, #opis-zadania li, #opis-zadania pre')
+        ])
     );
 
     const elWynik = document.getElementById('wynik');

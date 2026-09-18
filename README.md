@@ -23,6 +23,11 @@ Na stronie każdego zadania przycisk **Czytaj polecenie** odczytuje tytuł i tre
 polecenia. Kolejne kliknięcie zatrzymuje czytanie. Opuszczenie strony również
 zatrzymuje głos. Czytanie nie uruchamia się automatycznie.
 
+Żółte podkreślenie śledzi czytane słowo, jeśli głos zgłasza granice słów.
+W przeciwnym razie zaznaczone jest całe aktualnie czytane zdanie. Zaznaczenie
+znika po zakończeniu, zatrzymaniu lub błędzie. Formatowanie polecenia pozostaje
+zachowane.
+
 Funkcja korzysta z Web Speech API przeglądarki, bez backendu i kluczy API;
 działa na statycznym hostingu GitHub Pages. Dostępność i wymowa polskiego głosu
 zależą od systemu i przeglądarki. Preferowany jest głos lokalny; inne głosy mogą
@@ -30,6 +35,9 @@ korzystać z usługi sieciowej dostawcy przeglądarki. Fragmenty kodu są czytan
 tak, jak interpretuje je syntezator. Postęp ucznia pozostaje bez zmian.
 
 Testy logiki przycisku: `node --test tests/czytanie.test.mjs` (Node.js 24).
+Test mapowania tekstu i wyglądu podkreślenia: otwórz `tests/czytanie.html`
+przez lokalny serwer HTTP. Synchronizację dźwięku sprawdź dodatkowo przyciskiem
+czytania w docelowej przeglądarce z polskim głosem.
 
 Na stronie głównej jest guzik **Tryb łatwiejszego czytania**. Włącza układ
 przyjaźniejszy przy dysleksji — ustawienie zapamiętuje się i działa na wszystkich

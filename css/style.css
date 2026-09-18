@@ -794,6 +794,14 @@ input:focus-visible,
 .czytanie-polecenia { margin: 0 0 1rem; }
 #stan-czytania { margin: .5rem 0 0; }
 #stan-czytania:empty { display: none; }
+.czytane-teraz {
+    text-decoration-line: underline;
+    text-decoration-color: #facc15;
+    text-decoration-thickness: .22em;
+    text-underline-offset: .18em;
+    text-decoration-skip-ink: none;
+    background-color: rgba(250, 204, 21, .16);
+}
 
 :root[data-tryb="dysleksja"] {
     /* Kolory zostają takie jak w zwykłym trybie — ten przełącznik zmienia
