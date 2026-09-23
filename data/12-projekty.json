@@ -1,7 +1,7 @@
 {
   "id": "12-projekty",
   "tytul": "Słowniki i projekty",
-  "wstep": "Słownik trzyma pary „klucz — wartość”: `person = {\"name\": \"Ala\", \"age\": 12}`. Do wartości sięgamy przez klucz: `person[\"name\"]`.\n\nOstatnie zadania łączą wszystko, czego się nauczyłeś: zmienne, warunki, pętle, listy i funkcje.",
+  "wstep": "Słownik trzyma pary „klucz — wartość”: `person = {\"name\": \"Ala\", \"age\": 12}`. Do wartości sięgamy przez klucz: `person[\"name\"]`.\n\nOstatnie zadania łączą wszystko, co już znasz: zmienne, warunki, pętle, listy i funkcje.",
   "zadania": [
     {
       "id": "projekty-1",
@@ -33,7 +33,7 @@
       "id": "projekty-3",
       "typ": "uzupelnij",
       "tytul": "Przejście po słowniku",
-      "opis": "Przejdź po produktach i ich cenach zapisanych w słowniku.\n\n* Pętla ma pobierać dwie rzeczy naraz: nazwę produktu i jego cenę.\n* W lukę po nazwie słownika i kropce wpisz metodę udostępniającą pary klucz i wartość.\n* Nawiasy oraz polecenie print są już gotowe. Każdy produkt ma pojawić się z przypisaną mu ceną.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nchleb kosztuje 5\nmleko kosztuje 3\n```",
+      "opis": "Przejdź po produktach i ich cenach zapisanych w słowniku.\n\n* Pętla ma pobierać dwie rzeczy naraz: nazwę produktu i jego cenę. Dlatego po `for` stoją dwie zmienne oddzielone przecinkiem.\n* W lukę po nazwie słownika i kropce wpisz metodę udostępniającą pary klucz i wartość.\n* Nawiasy oraz polecenie print są już gotowe. Każdy produkt ma pojawić się z przypisaną mu ceną.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nchleb kosztuje 5\nmleko kosztuje 3\n```",
       "kod": "prices = {\"chleb\": 5, \"mleko\": 3}\nfor name, price in prices.___():\n    print(name, \"kosztuje\", price)",
       "luki": [["items"]],
       "wyjscie": "chleb kosztuje 5\nmleko kosztuje 3",
@@ -46,7 +46,7 @@
       "id": "projekty-slownik-wlasny",
       "typ": "napisz",
       "tytul": "Własny słownik",
-      "opis": "Zbuduj słownik opisujący psa, a potem użyj jego danych w zdaniu.\n\n* Dokończ pierwszą linię. Do zmiennej `pet` przypisz słownik z dwiema parami.\n* Pod kluczem `name` zapisz tekst `Burek`. Pod kluczem `age` zapisz liczbę trzy, bez cudzysłowów.\n* Pod słownikiem dodaj print. Odczytaj imię i wiek za pomocą kluczy i połącz je ze słowami ma oraz lata.\n* Nie wpisuj całego gotowego zdania na stałe. Użyj wartości ze słownika.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Burek ma 3 lata`",
+      "opis": "Zbuduj słownik opisujący psa, a potem użyj jego danych w zdaniu.\n\n* Dokończ pierwszą linię. Do zmiennej `pet` przypisz słownik z dwiema parami.\n* Pod kluczem `name` zapisz tekst `Burek`. Pod kluczem `age` zapisz liczbę `3`, bez cudzysłowów.\n* Pod słownikiem dodaj print. Odczytaj imię i wiek za pomocą kluczy i połącz je ze słowami ma oraz lata.\n* Nie wpisuj całego gotowego zdania na stałe. Użyj wartości ze słownika.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Burek ma 3 lata`",
       "start": "pet = \n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -62,7 +62,7 @@
       "id": "projekty-4",
       "typ": "napisz",
       "tytul": "Cała tabliczka mnożenia",
-      "opis": "Przygotuj pełną tabliczkę mnożenia przez siedem.\n\n* Utwórz pętlę przechodzącą po liczbach od jednego do dziesięciu włącznie.\n* W każdym obrocie oblicz siedem razy bieżąca liczba.\n* Wypisz działanie i wynik w osobnej linii. Użyj f-stringa, litery x i odstępów pokazanych we wzorze.\n* Sprawdź, czy wynik zawiera dziesięć linii. Ostatnia ma oznaczać siedem razy dziesięć równa się siedemdziesiąt.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n```",
+      "opis": "Przygotuj pełną tabliczkę mnożenia przez 7.\n\n* Utwórz pętlę przechodzącą po liczbach od 1 do 10 włącznie.\n* W każdym obrocie oblicz 7 razy bieżąca liczba.\n* Wypisz działanie i wynik w osobnej linii. Użyj f-stringa, litery x i odstępów pokazanych we wzorze.\n* Sprawdź, czy wynik zawiera 10 linii. Ostatnia to `7 x 10 = 70`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -111,7 +111,7 @@
       "id": "projekty-7",
       "typ": "napisz",
       "tytul": "Ile samogłosek",
-      "opis": "Dokończ funkcję liczącą samogłoski w tekście.\n\n* Funkcja `count_vowels` otrzymuje tekst pisany małymi literami. Zostaw jej nazwę i argument text.\n* Gotowa zmienna vowels zawiera litery uznawane w tym zadaniu za samogłoski: a, e, i, o, u oraz y. Nie dodawaj innych liter.\n* W miejscu komentarza napisz pętlę po literach argumentu text. Dla każdej litery sprawdź, czy należy do vowels.\n* Jeśli tak, zwiększ count o jeden. Gotowe return count zostaw po pętli, na poziomie wnętrza funkcji.\n* Dla słowa python wynik wynosi dwa: liczą się litery y oraz o.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
+      "opis": "Dokończ funkcję liczącą samogłoski w tekście.\n\n* Funkcja `count_vowels` otrzymuje tekst pisany małymi literami. Zostaw jej nazwę i argument text.\n* Gotowa zmienna vowels zawiera litery uznawane w tym zadaniu za samogłoski: a, e, i, o, u oraz y. Nie dodawaj innych liter.\n* W miejscu komentarza napisz pętlę po literach argumentu text. Dla każdej litery sprawdź, czy należy do vowels.\n* Jeśli tak, zwiększ count o `1`. Gotowe return count zostaw po pętli, na poziomie wnętrza funkcji.\n* Dla słowa python wynik wynosi `2`: liczą się litery y oraz o.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
       "start": "def count_vowels(text):\n    vowels = \"aeiouy\"\n    count = 0\n    # przejdź po literach i policz\n    return count\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -127,7 +127,7 @@
       "id": "projekty-ocena-slownie",
       "typ": "napisz",
       "tytul": "Ocena słownie",
-      "opis": "Zamień ocenę na krótki komentarz.\n\n* W gotowej funkcji `grade_text` sprawdź wartość argumentu grade.\n* Dla piątki zwróć tekst `świetnie`. Dla czwórki zwróć tekst `dobrze`.\n* Dla każdej innej wartości zwróć tekst `może być`. Użyj if, elif i else.\n* W każdej gałęzi użyj return. Teksty zapisuj małymi literami i otaczaj cudzysłowami.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
+      "opis": "Zamień ocenę na krótki komentarz.\n\n* W gotowej funkcji `grade_text` sprawdź wartość argumentu grade.\n* Dla `5` zwróć tekst `świetnie`. Dla `4` zwróć tekst `dobrze`.\n* Dla każdej innej wartości zwróć tekst `może być`. Użyj if, elif i else.\n* W każdej gałęzi użyj return. Teksty zapisuj małymi literami i otaczaj cudzysłowami.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
       "start": "def grade_text(grade):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -151,7 +151,7 @@
       },
       "podpowiedzi": [
         "Zacznij od najprostszego przypadku: `if a == b: return \"remis\"`.",
-        "Potem wypisz trzy sytuacje, w których wygrywa pierwszy — resztę załatwi `else: return \"drugi\"`."
+        "Potem wypisz trzy sytuacje, w których wygrywa pierwszy — resztę załatwi końcowe `return \"drugi\"`."
       ],
       "rozwiazanie": "def who_wins(a, b):\n    if a == b:\n        return \"remis\"\n    if a == \"kamień\" and b == \"nożyce\":\n        return \"pierwszy\"\n    if a == \"nożyce\" and b == \"papier\":\n        return \"pierwszy\"\n    if a == \"papier\" and b == \"kamień\":\n        return \"pierwszy\"\n    return \"drugi\""
     },
@@ -159,7 +159,7 @@
       "id": "projekty-koszyk",
       "typ": "napisz",
       "tytul": "Wartość koszyka",
-      "opis": "Napisz funkcję obliczającą wartość koszyka ze słownika.\n\n* Argument prices zawiera słownik. Klucze to nazwy produktów, a wartości to ich całkowite ceny. Każdy produkt kupujesz raz.\n* W funkcji basket_total utwórz sumę równą zero.\n* Przejdź po parach nazwa i cena metodą items. Dodawaj każdą cenę do sumy.\n* Po pętli zwróć sumę. Pusty słownik ma dać zero. Nie zmieniaj zawartości prices.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "opis": "Napisz funkcję obliczającą wartość koszyka ze słownika.\n\n* Argument prices zawiera słownik. Klucze to nazwy produktów, a wartości to ich całkowite ceny. Każdy produkt kupujesz raz.\n* W funkcji basket_total utwórz sumę równą `0`.\n* Przejdź po parach nazwa i cena metodą items. Dodawaj każdą cenę do sumy.\n* Po pętli zwróć sumę. Pusty słownik ma dać `0`. Nie zmieniaj zawartości prices.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
       "start": "def basket_total(prices):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -175,7 +175,7 @@
       "id": "projekty-cieple-dni",
       "typ": "napisz",
       "tytul": "Licznik ciepłych dni",
-      "opis": "Policz dni, w których temperatura osiągnęła ustalony próg.\n\n* Funkcja warm_days dostaje listę temperatures oraz próg limit.\n* Utwórz licznik równy zero. Przejdź pętlą po temperaturach.\n* Zwiększ licznik, gdy temperatura jest większa od limit albo mu równa.\n* Zwróć licznik po zakończeniu pętli. Dla pustej listy zwróć zero.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "opis": "Policz dni, w których temperatura osiągnęła ustalony próg.\n\n* Funkcja warm_days dostaje listę temperatures oraz próg limit.\n* Utwórz licznik równy `0`. Przejdź pętlą po temperaturach.\n* Zwiększ licznik, gdy temperatura jest większa od limit albo mu równa.\n* Zwróć licznik po zakończeniu pętli. Dla pustej listy zwróć `0`.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
       "start": "def warm_days(temperatures, limit):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -191,7 +191,7 @@
       "id": "projekty-podsumowanie-wynikow",
       "typ": "napisz",
       "tytul": "Podsumowanie wyników gry",
-      "opis": "Zbuduj słownik z liczbą wygranych, remisów i przegranych.\n\n* Funkcja game_summary dostaje listę results. Każdy element to tekst: wygrana, remis albo przegrana.\n* Utwórz słownik z tymi trzema kluczami. Każdemu przypisz na początku zero.\n* Przejdź po wynikach pętlą. Każdy wynik wskazuje klucz, którego licznik trzeba zwiększyć o jeden.\n* Zwróć cały słownik. Dla pustej listy wszystkie trzy liczniki mają zostać równe zero.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "opis": "Zbuduj słownik z liczbą wygranych, remisów i przegranych.\n\n* Funkcja game_summary dostaje listę results. Każdy element to tekst: wygrana, remis albo przegrana.\n* Utwórz słownik z tymi trzema kluczami. Każdemu przypisz na początku `0`.\n* Przejdź po wynikach pętlą. Każdy wynik wskazuje klucz, którego licznik trzeba zwiększyć o `1`.\n* Zwróć cały słownik. Dla pustej listy wszystkie trzy liczniki mają zostać równe `0`.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
       "start": "def game_summary(results):\n",
       "sprawdzenie": {
         "tryb": "testy",

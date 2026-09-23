@@ -7,7 +7,7 @@
       "id": "while-1",
       "typ": "uzupelnij",
       "tytul": "Warunek pętli",
-      "opis": "Pozwól pętli wypisać liczby od jednego do pięciu włącznie.\n\n* Licznik `count` zaczyna od jednego i po każdym obrocie rośnie o jeden.\n* W lukę w linii z `while` wpisz porównanie, które jest prawdziwe także dla licznika równego pięć.\n* Dla wartości sześć warunek ma już być fałszywy, żeby pętla się zakończyła.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n4\n5\n```",
+      "opis": "Pozwól pętli wypisać liczby od 1 do 5 włącznie.\n\n* Licznik `count` zaczyna od `1` i po każdym obrocie rośnie o 1.\n* W lukę w linii z `while` wpisz porównanie, które jest prawdziwe także dla licznika równego `5`.\n* Dla wartości `6` warunek ma już być fałszywy, żeby pętla się zakończyła.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n4\n5\n```",
       "kod": "count = 1\nwhile count ___ 5:\n    print(count)\n    count = count + 1",
       "luki": [["<="]],
       "wyjscie": "1\n2\n3\n4\n5",
@@ -20,7 +20,7 @@
       "id": "while-2",
       "typ": "uzupelnij",
       "tytul": "Krok naprzód",
-      "opis": "Napraw zmianę licznika, żeby pętla mogła się skończyć.\n\n* Znajdź lukę w ostatniej linii, wewnątrz pętli.\n* Wpisz znak działania, które zwiększy `count` o jeden.\n* Pętla ma wykonać trzy obroty. Po trzecim licznik przekroczy trzy i warunek przestanie być spełniony.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nobrót 1\nobrót 2\nobrót 3\n```",
+      "opis": "Napraw zmianę licznika, żeby pętla mogła się skończyć.\n\n* Znajdź lukę w ostatniej linii, wewnątrz pętli.\n* Wpisz znak działania, które zwiększy `count` o `1`.\n* Pętla ma wykonać 3 obroty. Po trzecim licznik przekroczy `3` i warunek przestanie być spełniony.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nobrót 1\nobrót 2\nobrót 3\n```",
       "kod": "count = 1\nwhile count <= 3:\n    print(\"obrót\", count)\n    count = count ___ 1",
       "luki": [["+"]],
       "wyjscie": "obrót 1\nobrót 2\nobrót 3",
@@ -33,7 +33,7 @@
       "id": "while-3",
       "typ": "uzupelnij",
       "tytul": "Wyjście z pętli",
-      "opis": "Zatrzymaj pętlę po wypisaniu liczby trzy.\n\n* Warunek pętli to `True`, więc sama pętla nie ma wyznaczonego końca.\n* W środku jest już warunek sprawdzający, czy licznik osiągnął trzy.\n* W lukę pod tym warunkiem wpisz słowo natychmiast kończące pętlę. Gotowe wcięcie zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n```",
+      "opis": "Zatrzymaj pętlę po wypisaniu liczby `3`.\n\n* Warunek pętli to `True`, więc sama pętla nie ma wyznaczonego końca.\n* W środku jest już warunek sprawdzający, czy licznik osiągnął `3`.\n* W lukę pod tym warunkiem wpisz słowo natychmiast kończące pętlę. Gotowe wcięcie zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n```",
       "kod": "count = 1\nwhile True:\n    print(count)\n    if count == 3:\n        ___\n    count = count + 1",
       "luki": [["break"]],
       "wyjscie": "1\n2\n3",
@@ -46,7 +46,7 @@
       "id": "while-trzy-razy",
       "typ": "napisz",
       "tytul": "Trzy razy to samo",
-      "opis": "Powtórz powitanie trzy razy za pomocą pętli.\n\n* Zmienna `count` zaczyna od jednego. Pod nią dopisz pętlę `while`, która obejmie trzy wartości licznika.\n* Wewnątrz pętli wypisz słowo `Cześć` i zwiększ licznik o jeden.\n* Obie linie wewnątrz pętli wsuń o cztery spacje. Pamiętaj o zwiększaniu licznika, żeby pętla się skończyła.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\nCześć\nCześć\nCześć\n```",
+      "opis": "Powtórz powitanie 3 razy za pomocą pętli.\n\n* Zmienna `count` zaczyna od `1`. Pod nią dopisz pętlę `while`, która obejmie 3 wartości licznika.\n* Wewnątrz pętli wypisz słowo `Cześć` i zwiększ licznik o `1`.\n* Obie linie wewnątrz pętli wsuń o 4 spacje. Pamiętaj o zwiększaniu licznika, żeby pętla się skończyła.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\nCześć\nCześć\nCześć\n```",
       "start": "count = 1\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -62,7 +62,7 @@
       "id": "while-4",
       "typ": "napisz",
       "tytul": "Odliczanie",
-      "opis": "Przygotuj odliczanie przed startem.\n\n* Licznik `count` ma już wartość pięć. Dopisz pętlę while działającą, dopóki licznik jest co najmniej równy jeden.\n* W pętli wypisz licznik, a potem zmniejsz go o jeden. Obie instrukcje mają być wcięte.\n* Po pętli, już bez wcięcia, wypisz `Start!`.\n* W wyniku ma być pięć liczb w kolejności malejącej, każda w osobnej linii, a dopiero potem hasło startu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n5\n4\n3\n2\n1\nStart!\n```",
+      "opis": "Przygotuj odliczanie przed startem.\n\n* Licznik `count` ma już wartość `5`. Dopisz pętlę while działającą, dopóki licznik jest co najmniej równy `1`.\n* W pętli wypisz licznik, a potem zmniejsz go o `1`. Obie instrukcje mają być wcięte.\n* Po pętli, już bez wcięcia, wypisz `Start!`.\n* W wyniku ma być 5 liczb w kolejności malejącej, każda w osobnej linii, a dopiero potem hasło startu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n5\n4\n3\n2\n1\nStart!\n```",
       "start": "count = 5\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -78,7 +78,7 @@
       "id": "while-5",
       "typ": "napisz",
       "tytul": "Suma do dziesięciu",
-      "opis": "Zsumuj liczby od jednego do dziesięciu w pętli.\n\n* Zmienna `total` przechowuje sumę, a `number` kolejną dodawaną liczbę. Obie są już przygotowane.\n* Dopisz pętlę while, która uwzględni także liczbę dziesięć.\n* W każdym obrocie dodaj number do total, a potem zwiększ number o jeden.\n* Po pętli wypisz total. Polecenie wypisujące wynik umieść bez wcięcia, żeby wykonało się tylko raz.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`55`",
+      "opis": "Zsumuj liczby od 1 do 10 w pętli.\n\n* Zmienna `total` przechowuje sumę, a `number` kolejną dodawaną liczbę. Obie są już przygotowane.\n* Dopisz pętlę while, która uwzględni także liczbę `10`.\n* W każdym obrocie dodaj number do total, a potem zwiększ number o `1`.\n* Po pętli wypisz total. Polecenie wypisujące wynik umieść bez wcięcia, żeby wykonało się tylko raz.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`55`",
       "start": "total = 0\nnumber = 1\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -94,7 +94,7 @@
       "id": "while-6",
       "typ": "napisz",
       "tytul": "Tabliczka razy dwa",
-      "opis": "Wypisz cztery wiersze tabliczki mnożenia przez dwa.\n\n* Zmienna `i` zaczyna od jednego. Dopisz pętlę while, która przejdzie przez wartości od jednego do czterech.\n* W pętli użyj f-stringa, aby wypisać dwa, literę x, wartość i, znak równości oraz obliczony iloczyn.\n* Na końcu każdego obrotu zwiększ i o jeden.\n* Zachowaj odstępy ze wzoru. Pierwszy wiersz oznacza dwa razy jeden równa się dwa, ostatni: dwa razy cztery równa się osiem.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n```",
+      "opis": "Wypisz 4 wiersze tabliczki mnożenia przez 2.\n\n* Zmienna `i` zaczyna od `1`. Dopisz pętlę while, która przejdzie przez wartości od 1 do 4.\n* W pętli użyj f-stringa, aby wypisać `2`, literę x, wartość i, znak równości oraz wynik mnożenia.\n* Na końcu każdego obrotu zwiększ i o `1`.\n* Zachowaj odstępy ze wzoru. Pierwszy wiersz to `2 x 1 = 2`, ostatni to `2 x 4 = 8`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n```",
       "start": "i = 1\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -110,7 +110,7 @@
       "id": "while-continue",
       "typ": "uzupelnij",
       "tytul": "Pominięcie jednego obrotu",
-      "opis": "Pomiń wypisywanie trójki, ale nie kończ całej pętli.\n\n* Znajdź warunek sprawdzający, czy `number` jest równe trzy.\n* W lukę pod nim wpisz słowo pomijające resztę bieżącego obrotu pętli.\n* Nie używaj `break`, bo zakończyłoby całą pętlę. Po pominiętej trójce nadal mają pojawić się cztery i pięć.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n4\n5\n```",
+      "opis": "Pomiń wypisywanie liczby `3`, ale nie kończ całej pętli.\n\n* Znajdź warunek sprawdzający, czy `number` jest równe `3`.\n* W lukę pod nim wpisz słowo pomijające resztę bieżącego obrotu pętli.\n* Nie używaj `break`, bo zakończyłoby całą pętlę. Po pominiętej `3` nadal mają pojawić się `4` i `5`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n4\n5\n```",
       "kod": "number = 0\nwhile number < 5:\n    number = number + 1\n    if number == 3:\n        ___\n    print(number)",
       "luki": [["continue"]],
       "wyjscie": "1\n2\n4\n5",
@@ -123,7 +123,7 @@
       "id": "while-co-dwa",
       "typ": "uzupelnij",
       "tytul": "Licznik co dwa",
-      "opis": "Wypisz kolejne liczby parzyste od dwóch do ośmiu.\n\n* Warunek pętli jest gotowy, a number zaczyna od dwóch.\n* W ostatniej linii wpisz w lukę liczbę, o którą licznik ma rosnąć.\n* Kolejne wartości mają różnić się o dwa. Nie zmieniaj warunku.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n```",
+      "opis": "Wypisz kolejne liczby parzyste od 2 do 8.\n\n* Warunek pętli jest gotowy, a number zaczyna od `2`.\n* W ostatniej linii wpisz w lukę liczbę, o którą licznik ma rosnąć.\n* Kolejne wartości mają różnić się o 2. Nie zmieniaj warunku.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n```",
       "kod": "number = 2\nwhile number <= 8:\n    print(number)\n    number = number + ___",
       "luki": [
         [
@@ -140,14 +140,14 @@
       "id": "while-oszczednosci",
       "typ": "napisz",
       "tytul": "Oszczędzanie do celu",
-      "opis": "Policz, po ilu wpłatach uzbierasz co najmniej dwadzieścia złotych.\n\n* Zmienne savings i weeks zaczynają od zera.\n* Napisz pętlę while działającą, dopóki oszczędności są mniejsze niż dwadzieścia.\n* W każdym obrocie dodaj sześć do savings i jeden do weeks.\n* Po pętli wypisz liczbę tygodni i zgromadzoną kwotę w dwóch liniach, zgodnie ze wzorem.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nTygodnie: 4\nOszczędności: 24\n```",
+      "opis": "Policz, po ilu wpłatach uzbierasz co najmniej 20 złotych.\n\n* Zmienne savings i weeks zaczynają od `0`.\n* Napisz pętlę while działającą, dopóki oszczędności są mniejsze niż `20`.\n* W każdym obrocie dodaj `6` do savings i `1` do weeks.\n* Po pętli wypisz liczbę tygodni i zgromadzoną kwotę w dwóch liniach, zgodnie ze wzorem.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n```\nTygodnie: 4\nOszczędności: 24\n```",
       "start": "savings = 0\nweeks = 0\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
         "oczekiwane": "Tygodnie: 4\nOszczędności: 24"
       },
       "podpowiedzi": [
-        "Kwota może przekroczyć cel. Nie sprawdzaj, czy jest dokładnie równa dwadzieścia.",
+        "Kwota może przekroczyć cel. Nie sprawdzaj, czy jest dokładnie równa 20.",
         "Oba liczniki zwiększaj wewnątrz pętli. Oba print umieść po pętli."
       ],
       "rozwiazanie": "savings = 0\nweeks = 0\nwhile savings < 20:\n    savings += 6\n    weeks += 1\nprint(\"Tygodnie:\", weeks)\nprint(\"Oszczędności:\", savings)"

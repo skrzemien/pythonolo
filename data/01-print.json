@@ -146,7 +146,7 @@
       "id": "print-11",
       "typ": "napisz",
       "tytul": "Choinka",
-      "opis": "Narysuj choinkę z gwiazdek w trzech liniach.\n\n* Napisz trzy polecenia `print`, każde w osobnej linii. Każde ma wypisać tekst w cudzysłowie.\n* W pierwszym tekście wpisz dwie spacje, a potem jedną gwiazdkę.\n* W drugim tekście wpisz jedną spację, a potem trzy gwiazdki.\n* W trzecim tekście wpisz pięć gwiazdek, bez spacji na początku.\n* Spacje wpisuj wewnątrz cudzysłowów. Dzięki nim czubek choinki znajdzie się pośrodku.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n  *\n ***\n*****\n```",
+      "opis": "Narysuj choinkę z gwiazdek w trzech liniach.\n\n* Napisz trzy polecenia `print`, każde w osobnej linii. Każde ma wypisać tekst w cudzysłowie.\n* W pierwszym tekście wpisz 2 spacje, a potem 1 gwiazdkę.\n* W drugim tekście wpisz 1 spację, a potem 3 gwiazdki.\n* W trzecim tekście wpisz 5 gwiazdek, bez spacji na początku.\n* Spacje wpisuj wewnątrz cudzysłowów. Dzięki nim czubek choinki znajdzie się pośrodku.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n  *\n ***\n*****\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -162,7 +162,7 @@
       "id": "print-12",
       "typ": "napisz",
       "tytul": "Schodki",
-      "opis": "Narysuj pięć schodków z gwiazdek.\n\n* Napisz pięć poleceń `print`, każde w osobnej linii.\n* Pierwsze ma wypisać jedną gwiazdkę. Każde następne ma wypisać o jedną gwiazdkę więcej.\n* Ostatnie polecenie ma wypisać pięć gwiazdek.\n* Gwiazdki otocz cudzysłowami. Nie dodawaj spacji przed nimi ani między nimi.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*\n**\n***\n****\n*****\n```",
+      "opis": "Narysuj 5 schodków z gwiazdek.\n\n* Napisz 5 poleceń `print`, każde w osobnej linii.\n* Pierwsze ma wypisać 1 gwiazdkę. Każde następne ma wypisać o 1 gwiazdkę więcej.\n* Ostatnie polecenie ma wypisać 5 gwiazdek.\n* Gwiazdki otocz cudzysłowami. Nie dodawaj spacji przed nimi ani między nimi.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*\n**\n***\n****\n*****\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -212,17 +212,17 @@
       "id": "print-koniec-zdania",
       "typ": "napisz",
       "tytul": "Dokończ zdanie w tej samej linii",
-      "opis": "Połącz dwa gotowe polecenia w jedno zdanie na ekranie.\n\n* Pierwsze polecenie wypisuje słowo Lubię. Drugie wypisuje słowo Python.\n* W pierwszym poleceniu dodaj po tekście przecinek i ustawienie end.\n* Jako zakończenie ustaw tekst zawierający jedną spację. Dzięki temu drugie słowo pojawi się obok pierwszego.\n* Drugą linię zostaw bez zmian.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Lubię Python`",
-      "start": "print(\"Lubię\")\nprint(\"Python\")\n",
+      "opis": "Połącz dwa gotowe polecenia w jedno zdanie na ekranie.\n\n* Pierwsze polecenie wypisuje słowo Lubię. Drugie wypisuje słowo Pythona.\n* W pierwszym poleceniu dodaj po tekście przecinek i ustawienie end.\n* Jako zakończenie ustaw tekst zawierający jedną spację. Dzięki temu drugie słowo pojawi się obok pierwszego.\n* Drugą linię zostaw bez zmian.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Lubię Pythona`",
+      "start": "print(\"Lubię\")\nprint(\"Pythona\")\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "oczekiwane": "Lubię Python"
+        "oczekiwane": "Lubię Pythona"
       },
       "podpowiedzi": [
         "Pusty tekst skleiłby słowa. Potrzebujesz spacji.",
         "Dodaj do pierwszego print ustawienie `end=\" \"`."
       ],
-      "rozwiazanie": "print(\"Lubię\", end=\" \")\nprint(\"Python\")"
+      "rozwiazanie": "print(\"Lubię\", end=\" \")\nprint(\"Pythona\")"
     }
   ]
 }

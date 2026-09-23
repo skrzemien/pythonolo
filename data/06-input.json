@@ -21,7 +21,7 @@
       "id": "input-2",
       "typ": "uzupelnij",
       "tytul": "Odpowiedź jako liczba",
-      "opis": "Oblicz, ile lat użytkownik będzie miał za rok.\n\n* Pierwsza linia pobiera wiek przez `input`. Odpowiedź jest tekstem, nawet jeśli zawiera cyfry.\n* W lukę przed wywołaniem input wpisz nazwę funkcji zamieniającej tekst na liczbę całkowitą.\n* Drugą linię zostaw bez zmian. Doda jeden do wieku i wypisze wynik.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za rok: 13`",
+      "opis": "Oblicz, ile lat użytkownik będzie miał za rok.\n\n* Pierwsza linia pobiera wiek przez `input`. Odpowiedź jest tekstem, nawet jeśli zawiera cyfry.\n* W lukę przed wywołaniem input wpisz nazwę funkcji zamieniającej tekst na liczbę całkowitą.\n* Drugą linię zostaw bez zmian. Doda `1` do wieku i wypisze wynik.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za rok: 13`",
       "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za rok:\", age + 1)",
       "luki": [["int"]],
       "wejscie": ["12"],
@@ -66,7 +66,7 @@
       "id": "input-4",
       "typ": "napisz",
       "tytul": "Podwojenie",
-      "opis": "Napisz program, który podwaja wczytaną liczbę.\n\n* W pierwszej linii użyj `input`, żeby zapytać o liczbę.\n* Zamień otrzymany tekst na liczbę całkowitą przez `int` i zapisz ją w zmiennej.\n* W następnej linii pomnóż wartość zmiennej przez dwa. Wypisz wynik przez `print`, bez dodatkowego tekstu.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`14`",
+      "opis": "Napisz program, który podwaja wczytaną liczbę.\n\n* W pierwszej linii użyj `input`, żeby zapytać o liczbę.\n* Zamień otrzymany tekst na liczbę całkowitą przez `int` i zapisz ją w zmiennej.\n* W następnej linii pomnóż wartość zmiennej przez `2`. Wypisz wynik przez `print`, bez dodatkowego tekstu.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`14`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -117,7 +117,7 @@
       "id": "input-cena",
       "typ": "napisz",
       "tytul": "Cena z groszami",
-      "opis": "Oblicz cenę dwóch sztuk produktu.\n\n* Użyj `input`, żeby wczytać cenę jednej sztuki.\n* Odpowiedź zawiera kropkę dziesiętną. Taki tekst zamień na liczbę przez `float`, a nie przez int.\n* Zapisz cenę w zmiennej i pomnóż ją przez dwa.\n* Wypisz tekst `Dwie sztuki:` oraz obliczony koszt, oddzielając je spacją.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `19.99`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Dwie sztuki: 39.98`",
+      "opis": "Oblicz cenę dwóch sztuk produktu.\n\n* Użyj `input`, żeby wczytać cenę jednej sztuki.\n* Odpowiedź zawiera kropkę dziesiętną. Taki tekst zamień na liczbę przez `float`, a nie przez int.\n* Zapisz cenę w zmiennej i pomnóż ją przez `2`.\n* Wypisz tekst `Dwie sztuki:` oraz obliczony koszt, oddzielając je spacją.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `19.99`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Dwie sztuki: 39.98`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -134,7 +134,7 @@
       "id": "input-wiek-na-liczbe",
       "typ": "uzupelnij",
       "tytul": "Wiek za dwa lata",
-      "opis": "Zamień odpowiedź na liczbę i oblicz przyszły wiek.\n\n* Input już pyta o wiek.\n* W lukę przed input wpisz funkcję zamieniającą tekst na liczbę całkowitą.\n* Gotowe print doda dwa lata. Nie zmieniaj tej linii.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za dwa lata: 14`",
+      "opis": "Zamień odpowiedź na liczbę i oblicz przyszły wiek.\n\n* Input już pyta o wiek.\n* W lukę przed input wpisz funkcję zamieniającą tekst na liczbę całkowitą.\n* Gotowe print doda 2 lata. Nie zmieniaj tej linii.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za dwa lata: 14`",
       "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za dwa lata:\", age + 2)",
       "luki": [
         [

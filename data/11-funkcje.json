@@ -20,7 +20,7 @@
       "id": "funkcje-2",
       "typ": "uzupelnij",
       "tytul": "Oddanie wyniku",
-      "opis": "Spraw, żeby funkcja zwracała podwojoną liczbę.\n\n* W funkcji `double` jest już działanie mnożące argument n przez dwa.\n* W lukę przed działaniem wpisz słowo przekazujące wynik z funkcji do miejsca jej wywołania.\n* Nie zastępuj go poleceniem print. Wypisywanie wyniku jest już przygotowane poza funkcją.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`42`",
+      "opis": "Spraw, żeby funkcja zwracała podwojoną liczbę.\n\n* W funkcji `double` jest już działanie mnożące argument n przez `2`.\n* W lukę przed działaniem wpisz słowo przekazujące wynik z funkcji do miejsca jej wywołania.\n* Nie zastępuj go poleceniem print. Wypisywanie wyniku jest już przygotowane poza funkcją.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`42`",
       "kod": "def double(n):\n    ___ n * 2\n\nprint(double(21))",
       "luki": [["return"]],
       "wyjscie": "42",
@@ -33,7 +33,7 @@
       "id": "funkcje-3",
       "typ": "uzupelnij",
       "tytul": "Wywołanie z wartością",
-      "opis": "Dobierz argument, dla którego funkcja zwróci dwadzieścia pięć.\n\n* Przeczytaj funkcję `square`. Mnoży otrzymaną liczbę przez nią samą.\n* Znajdź lukę w wywołaniu funkcji w ostatniej linii.\n* Wpisz dodatnią liczbę całkowitą, której kwadrat wynosi dwadzieścia pięć. Definicję funkcji zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`25`",
+      "opis": "Dobierz argument, dla którego funkcja zwróci `25`.\n\n* Przeczytaj funkcję `square`. Mnoży otrzymaną liczbę przez nią samą.\n* Znajdź lukę w wywołaniu funkcji w ostatniej linii.\n* Wpisz dodatnią liczbę całkowitą, której kwadrat wynosi `25`. Definicję funkcji zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`25`",
       "kod": "def square(n):\n    return n * n\n\nprint(square(___))",
       "luki": [["5"]],
       "wyjscie": "25",
@@ -46,7 +46,7 @@
       "id": "funkcje-4",
       "typ": "napisz",
       "tytul": "Funkcja dodająca",
-      "opis": "Dokończ funkcję dodającą dwie liczby.\n\n* Zostaw nazwę `add` i argumenty a oraz b w pierwszej linii.\n* W miejscu komentarza, z wcięciem na cztery spacje, dopisz return z sumą argumentów.\n* Funkcja ma zwracać wynik, a nie go wypisywać. Nie musisz dodawać print.\n* Dla argumentów dwa i trzy ma zwrócić pięć. Dla innych liczb także ma obliczać ich sumę.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
+      "opis": "Dokończ funkcję dodającą dwie liczby.\n\n* Zostaw nazwę `add` i argumenty a oraz b w pierwszej linii.\n* W miejscu komentarza, z wcięciem na 4 spacje, dopisz return z sumą argumentów.\n* Funkcja ma zwracać wynik, a nie go wypisywać. Nie musisz dodawać print.\n* Dla argumentów `2` i `3` ma zwrócić `5`. Dla innych liczb także ma obliczać ich sumę.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
       "start": "def add(a, b):\n    # wpisz tutaj return\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -62,7 +62,7 @@
       "id": "funkcje-5",
       "typ": "napisz",
       "tytul": "Pole prostokąta jako funkcja",
-      "opis": "Dokończ funkcję obliczającą pole prostokąta.\n\n* Gotowa funkcja `area` przyjmuje dwa boki: a oraz b.\n* Pod nagłówkiem dodaj wciętą linię, która zwraca iloczyn boków.\n* Nie wpisuj na stałe długości boków. Dla pięciu i trzech wynik ma wynosić piętnaście, ale funkcja ma działać również dla innych wartości.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
+      "opis": "Dokończ funkcję obliczającą pole prostokąta.\n\n* Gotowa funkcja `area` przyjmuje dwa boki: a oraz b.\n* Pod nagłówkiem dodaj wciętą linię, która zwraca wynik mnożenia boków.\n* Nie wpisuj na stałe długości boków. Dla `5` i `3` wynik ma wynosić `15`, ale funkcja ma działać również dla innych wartości.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
       "start": "def area(a, b):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -78,7 +78,7 @@
       "id": "funkcje-6",
       "typ": "napisz",
       "tytul": "Czy parzysta",
-      "opis": "Dokończ funkcję rozpoznającą liczby parzyste.\n\n* Zostaw gotową nazwę `is_even` i argument n.\n* W środku sprawdź, czy reszta z dzielenia n przez dwa jest równa zeru.\n* Zwróć wynik porównania: True dla liczby parzystej, False dla nieparzystej. Nie otaczaj tych wartości cudzysłowami.\n* Pamiętaj, że zero też jest parzyste.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
+      "opis": "Dokończ funkcję rozpoznającą liczby parzyste.\n\n* Zostaw gotową nazwę `is_even` i argument n.\n* W środku sprawdź, czy reszta z dzielenia n przez `2` jest równa `0`.\n* Zwróć wynik porównania: True dla liczby parzystej, False dla nieparzystej. Nie otaczaj tych wartości cudzysłowami.\n* Pamiętaj, że `0` też jest parzyste.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła Twoją funkcję dla kilku zestawów danych. Jeśli pojawi się błąd, przeczytaj komunikat i popraw wskazany przypadek.",
       "start": "def is_even(n):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -142,7 +142,7 @@
       "id": "funkcje-suma-listy",
       "typ": "napisz",
       "tytul": "Funkcja sumująca listę",
-      "opis": "Napisz funkcję, która oblicza sumę listy własną pętlą.\n\n* W funkcji total_points utwórz lokalną zmienną total równą zero.\n* Przejdź pętlą po argumencie points i dodawaj kolejne wartości do total.\n* Po pętli zwróć total. Nie używaj tutaj funkcji sum.\n* Pusta lista ma dać zero. Nie zakładaj, że lista ma stałą długość.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "opis": "Napisz funkcję, która oblicza sumę listy własną pętlą.\n\n* W funkcji total_points utwórz lokalną zmienną total równą `0`.\n* Przejdź pętlą po argumencie points i dodawaj kolejne wartości do total.\n* Po pętli zwróć total. Nie używaj tutaj funkcji sum.\n* Pusta lista ma dać `0`. Nie zakładaj, że lista ma stałą długość.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
       "start": "def total_points(points):\n",
       "sprawdzenie": {
         "tryb": "testy",
@@ -158,7 +158,7 @@
       "id": "funkcje-powtorz",
       "typ": "napisz",
       "tytul": "Powtarzanie tekstu w funkcji",
-      "opis": "Dokończ funkcję powtarzającą tekst podaną liczbę razy.\n\n* Funkcja repeat_text otrzymuje tekst text i nieujemną liczbę całkowitą times.\n* Zwróć tekst powtórzony times razy. Nie dodawaj spacji ani końców linii.\n* Dla tekstu ha i liczby trzy wynik ma być `hahaha`. Dla liczby zero zwróć pusty tekst.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
+      "opis": "Dokończ funkcję powtarzającą tekst podaną liczbę razy.\n\n* Funkcja repeat_text otrzymuje tekst text i nieujemną liczbę całkowitą times.\n* Zwróć tekst powtórzony times razy. Nie dodawaj spacji ani końców linii.\n* Dla tekstu ha i liczby `3` wynik ma być `hahaha`. Dla liczby `0` zwróć pusty tekst.\n\nKliknij **Sprawdź**. Sprawdzarka sama wywoła funkcję dla kilku zestawów danych. Nie musisz dodawać print.",
       "start": "def repeat_text(text, times):\n",
       "sprawdzenie": {
         "tryb": "testy",

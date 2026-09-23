@@ -7,7 +7,7 @@
       "id": "for-1",
       "typ": "uzupelnij",
       "tytul": "Słowo łączące",
-      "opis": "Uzupełnij początek pętli przechodzącej po liczbach.\n\n* Znajdź lukę między zmienną `i` a wywołaniem `range`.\n* Wpisz słowo łączące zmienną pętli z zestawem wartości, po których przechodzi.\n* Gotowy zakres ma trzy wartości, zaczynając od zera. Sprawdź, czy każda pojawi się w osobnej linii.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n0\n1\n2\n```",
+      "opis": "Uzupełnij początek pętli przechodzącej po liczbach.\n\n* Znajdź lukę między zmienną `i` a wywołaniem `range`.\n* Wpisz słowo łączące zmienną pętli z zestawem wartości, po których przechodzi.\n* Gotowy zakres ma 3 wartości, zaczynając od `0`. Sprawdź, czy każda pojawi się w osobnej linii.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n0\n1\n2\n```",
       "kod": "for i ___ range(3):\n    print(i)",
       "luki": [["in"]],
       "wyjscie": "0\n1\n2",
@@ -20,7 +20,7 @@
       "id": "for-2",
       "typ": "uzupelnij",
       "tytul": "Od jednego do pięciu",
-      "opis": "Ustaw zakres pętli od jednego do pięciu włącznie.\n\n* Pierwszy argument funkcji `range` to jeden. Początek jest już poprawny.\n* W lukę wpisz koniec zakresu. Pamiętaj, że ta końcowa liczba nie zostanie wypisana.\n* Dobierz ją tak, żeby ostatnią wypisaną liczbą było pięć.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n4\n5\n```",
+      "opis": "Ustaw zakres pętli od 1 do 5 włącznie.\n\n* Pierwsza liczba w `range` to `1`. Początek jest już poprawny.\n* W lukę wpisz koniec zakresu. Pamiętaj, że ta końcowa liczba nie zostanie wypisana.\n* Dobierz ją tak, żeby ostatnią wypisaną liczbą było `5`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n1\n2\n3\n4\n5\n```",
       "kod": "for i in range(1, ___):\n    print(i)",
       "luki": [["6"]],
       "wyjscie": "1\n2\n3\n4\n5",
@@ -46,7 +46,7 @@
       "id": "for-w-dol",
       "typ": "uzupelnij",
       "tytul": "Liczenie w dół",
-      "opis": "Ustaw pętlę tak, żeby liczyła w dół.\n\n* Początek zakresu to trzy. Końcowe zero nie jest wliczane.\n* W lukę na trzecim miejscu wpisz krok, który zmniejsza liczbę o jeden w każdym obrocie.\n* Wynik ma zawierać trzy, dwa i jeden, każde w osobnej linii.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n3\n2\n1\n```",
+      "opis": "Ustaw pętlę tak, żeby liczyła w dół.\n\n* Początek zakresu to `3`. Końcowe `0` nie jest wliczane.\n* W lukę na trzecim miejscu wpisz krok, który zmniejsza liczbę o 1 w każdym obrocie.\n* Wynik ma zawierać `3`, `2` i `1`, każde w osobnej linii.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n3\n2\n1\n```",
       "kod": "for i in range(3, 0, ___):\n    print(i)",
       "luki": [["-1"]],
       "wyjscie": "3\n2\n1",
@@ -59,7 +59,7 @@
       "id": "for-4",
       "typ": "napisz",
       "tytul": "Pięć razy cześć",
-      "opis": "Wypisz powitanie pięć razy, używając jednej pętli.\n\n* Napisz pętlę `for` z zakresem dającym pięć obrotów.\n* W środku umieść jedno polecenie wypisujące `Cześć`. Zrób wcięcie na cztery spacje.\n* Nie dopisuj pięciu osobnych poleceń. Powtarzaniem ma zająć się pętla.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\nCześć\nCześć\nCześć\nCześć\nCześć\n```",
+      "opis": "Wypisz powitanie 5 razy, używając jednej pętli.\n\n* Napisz pętlę `for` z zakresem dającym 5 obrotów.\n* W środku umieść jedno polecenie wypisujące `Cześć`. Zrób wcięcie na 4 spacje.\n* Nie dopisuj 5 osobnych poleceń. Powtarzaniem ma zająć się pętla.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\nCześć\nCześć\nCześć\nCześć\nCześć\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -75,7 +75,7 @@
       "id": "for-5",
       "typ": "napisz",
       "tytul": "Tabliczka mnożenia",
-      "opis": "Zbuduj tabliczkę mnożenia przez trzy dla liczb od jednego do pięciu.\n\n* Utwórz pętlę for z odpowiednim początkiem i końcem zakresu. Pamiętaj, że koniec nie jest wliczany.\n* W każdym obrocie oblicz trzy razy aktualna liczba.\n* Użyj f-stringa, żeby wypisać działanie i wynik w jednej linii.\n* W zapisie działania użyj litery x. Zachowaj spacje po obu stronach x i znaku równości.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n```",
+      "opis": "Zbuduj tabliczkę mnożenia przez 3 dla liczb od 1 do 5.\n\n* Utwórz pętlę for z odpowiednim początkiem i końcem zakresu. Pamiętaj, że koniec nie jest wliczany.\n* W każdym obrocie oblicz 3 razy aktualna liczba.\n* Użyj f-stringa, żeby wypisać działanie i wynik w jednej linii.\n* W zapisie działania użyj litery x. Zachowaj spacje po obu stronach x i znaku równości.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -91,7 +91,7 @@
       "id": "for-6",
       "typ": "napisz",
       "tytul": "Suma od 1 do 100",
-      "opis": "Oblicz sumę liczb od jednego do stu.\n\n* Zmienna `total` jest już ustawiona na zero.\n* Dopisz pętlę for, która obejmie wszystkie liczby od jednego do stu, także sto.\n* W każdym obrocie dodaj bieżącą liczbę do total.\n* Po zakończeniu pętli wypisz sumę. Polecenie print umieść poza pętlą, bez wcięcia.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`5050`",
+      "opis": "Oblicz sumę liczb od 1 do 100.\n\n* Zmienna `total` jest już ustawiona na `0`.\n* Dopisz pętlę for, która obejmie wszystkie liczby od 1 do 100, także `100`.\n* W każdym obrocie dodaj bieżącą liczbę do total.\n* Po zakończeniu pętli wypisz sumę. Polecenie print umieść poza pętlą, bez wcięcia.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`5050`",
       "start": "total = 0\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -107,7 +107,7 @@
       "id": "for-schodki",
       "typ": "napisz",
       "tytul": "Schodki z pętli",
-      "opis": "Narysuj cztery schodki za pomocą jednej pętli.\n\n* Utwórz pętlę for przechodzącą przez liczby od jednego do czterech.\n* W każdym obrocie powtórz tekst zawierający jedną gwiazdkę tyle razy, ile wskazuje bieżąca liczba. Użyj mnożenia tekstu.\n* Wypisz otrzymany tekst. Każdy obrót ma tworzyć osobną linię, bez spacji.\n* Pierwsza linia ma jedną gwiazdkę, a ostatnia cztery.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*\n**\n***\n****\n```",
+      "opis": "Narysuj 4 schodki za pomocą jednej pętli.\n\n* Utwórz pętlę for przechodzącą przez liczby od 1 do 4.\n* W każdym obrocie powtórz tekst zawierający jedną gwiazdkę tyle razy, ile wskazuje bieżąca liczba. Użyj mnożenia tekstu.\n* Wypisz otrzymany tekst. Każdy obrót ma tworzyć osobną linię, bez spacji.\n* Pierwsza linia ma 1 gwiazdkę, a ostatnia 4.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*\n**\n***\n****\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -123,15 +123,15 @@
       "id": "for-7",
       "typ": "napisz",
       "tytul": "Prostokąt z gwiazdek",
-      "opis": "Narysuj prostokąt z trzech linii po pięć gwiazdek.\n\n* Utwórz zewnętrzną pętlę for z trzema obrotami. Każdy obrót będzie odpowiadał jednej linii.\n* W jej środku utwórz drugą pętlę, tym razem z pięcioma obrotami.\n* W wewnętrznej pętli wypisuj jedną gwiazdkę bez przechodzenia do nowej linii. Ustaw parametr `end` na pusty tekst.\n* Po wewnętrznej pętli dodaj puste wywołanie print. Wsuń je na poziom wnętrza zewnętrznej pętli, żeby kończyło każdą linię prostokąta.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*****\n*****\n*****\n```",
+      "opis": "Narysuj prostokąt z 3 linii po 5 gwiazdek.\n\n* Utwórz zewnętrzną pętlę for z 3 obrotami. Każdy obrót będzie odpowiadał jednej linii.\n* W jej środku utwórz drugą pętlę, tym razem z 5 obrotami.\n* W wewnętrznej pętli wypisuj jedną gwiazdkę bez przechodzenia do nowej linii. Ustaw parametr `end` na pusty tekst.\n* Po wewnętrznej pętli dodaj puste wywołanie print. Wsuń je na poziom wnętrza zewnętrznej pętli, żeby kończyło każdą linię prostokąta.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\n*****\n*****\n*****\n```",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
         "oczekiwane": "*****\n*****\n*****"
       },
       "podpowiedzi": [
-        "Da się też prościej — `\"*\" * 5` tworzy gotowy napis.",
-        "Wtedy wystarczy jedna pętla: `for line in range(3): print(\"*\" * 5)`."
+        "Zewnętrzna pętla to linie: `for line in range(3):`. Wewnętrzna, wcięta pod nią, to gwiazdki w jednej linii: `for star in range(5):`.",
+        "W wewnętrznej pętli: `print(\"*\", end=\"\")`. Pusty `print()` wcięty tak jak wewnętrzny `for` — pod nią, a nie w niej."
       ],
       "rozwiazanie": "for line in range(3):\n    for star in range(5):\n        print(\"*\", end=\"\")\n    print()"
     },
@@ -139,7 +139,7 @@
       "id": "for-krok-parzyste",
       "typ": "uzupelnij",
       "tytul": "Parzyste w zakresie",
-      "opis": "Wypisz liczby parzyste od dwóch do dziesięciu.\n\n* Początek zakresu to dwa. Koniec jedenaście nie jest wliczany.\n* W lukę na trzecim miejscu wpisz krok między kolejnymi wartościami.\n* Pętla ma pomijać wszystkie liczby nieparzyste.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n10\n```",
+      "opis": "Wypisz liczby parzyste od 2 do 10.\n\n* Początek zakresu to `2`. Koniec `11` nie jest wliczany.\n* W lukę na trzecim miejscu wpisz krok między kolejnymi wartościami.\n* Pętla ma pomijać wszystkie liczby nieparzyste.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\n2\n4\n6\n8\n10\n```",
       "kod": "for number in range(2, 11, ___):\n    print(number)",
       "luki": [
         [
@@ -156,7 +156,7 @@
       "id": "for-suma-parzystych",
       "typ": "napisz",
       "tytul": "Suma tylko parzystych",
-      "opis": "Dodaj liczby parzyste od jednego do dziesięciu.\n\n* Zmienna total ma już wartość zero.\n* Napisz pętlę for przechodzącą po liczbach od jednego do dziesięciu włącznie.\n* W pętli sprawdź resztę z dzielenia liczby przez dwa. Do total dodawaj tylko liczby parzyste.\n* Po pętli wypisz samą sumę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`30`",
+      "opis": "Dodaj liczby parzyste od 1 do 10.\n\n* Zmienna total ma już wartość `0`.\n* Napisz pętlę for przechodzącą po liczbach od 1 do 10 włącznie.\n* W pętli sprawdź resztę z dzielenia liczby przez `2`. Do total dodawaj tylko liczby parzyste.\n* Po pętli wypisz samą sumę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`30`",
       "start": "total = 0\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -172,7 +172,7 @@
       "id": "for-licznik-litery",
       "typ": "napisz",
       "tytul": "Ile razy występuje litera a",
-      "opis": "Policz wystąpienia małej litery a w tekście.\n\n* Zostaw gotowy tekst w zmiennej word. Utwórz licznik count równy zero.\n* Pętlą for przejdź po kolejnych literach word.\n* Jeśli bieżąca litera jest równa tekstowi `a`, zwiększ licznik o jeden.\n* Po pętli wypisz tekst `Litera a:` i wartość licznika.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Litera a: 2`",
+      "opis": "Policz wystąpienia małej litery a w tekście.\n\n* Zostaw gotowy tekst w zmiennej word. Utwórz licznik count równy `0`.\n* Pętlą for przejdź po kolejnych literach word.\n* Jeśli bieżąca litera jest równa tekstowi `a`, zwiększ licznik o `1`.\n* Po pętli wypisz tekst `Litera a:` i wartość licznika.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Litera a: 2`",
       "start": "word = \"banan\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",

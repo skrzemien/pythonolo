@@ -28,9 +28,17 @@ function zlozKod(szablon, wartosci) {
     return czesci.map((c, i) => c + (i < czesci.length - 1 ? (wartosci[i] ?? '') : '')).join('');
 }
 
+/* Wielkość liter musi się zgadzać: Python odróżnia `print` od `Print`,
+   a program uruchamia się z tym, co uczeń wpisał, a nie z wzorcem. */
 function poprawnaOdpowiedz(przyjmowane, wpisane) {
     const a = String(wpisane).trim();
-    return przyjmowane.some(w => String(w).trim().toLowerCase() === a.toLowerCase());
+    return przyjmowane.some(w => String(w).trim() === a);
+}
+
+/** Odpowiedź dobra co do liter, ale z inną wielkością — zasługuje na osobną wskazówkę. */
+function tylkoWielkoscLiter(przyjmowane, wpisane) {
+    const a = String(wpisane).trim().toLowerCase();
+    return przyjmowane.some(w => String(w).trim().toLowerCase() === a);
 }
 
 /** Rozwiązanie zadania „uzupełnij" powstaje z pierwszej przyjmowanej odpowiedzi. */
@@ -274,18 +282,26 @@ async function start() {
 
     async function sprawdzUzupelnij() {
         let wszystkoOk = true;
+        let zlaWielkosc = false;
         poluLuk.forEach((pole, i) => {
-            const ok = poprawnaOdpowiedz(zadanie.luki[i] || [], pole.value);
+            const przyjmowane = zadanie.luki[i] || [];
+            const ok = poprawnaOdpowiedz(przyjmowane, pole.value);
             pole.classList.toggle('ok', ok);
             pole.classList.toggle('zle', !ok);
-            if (!ok) wszystkoOk = false;
+            if (!ok) {
+                wszystkoOk = false;
+                if (tylkoWielkoscLiter(przyjmowane, pole.value)) zlaWielkosc = true;
+            }
         });
 
         if (!wszystkoOk) {
             zapiszWynik(false);
             const puste = poluLuk.some(p => !p.value.trim());
-            pokazWynik(elWynik, 'zle', 'Jeszcze nie to.',
-                puste ? 'Wypełnij wszystkie pola.' : 'Pola zaznaczone na czerwono trzeba poprawić. Zajrzyj do podpowiedzi.');
+            let dodatek = 'Pola zaznaczone na czerwono trzeba poprawić. Zajrzyj do podpowiedzi.';
+            if (puste) dodatek = 'Wypełnij wszystkie pola.';
+            else if (zlaWielkosc) dodatek = 'Prawie! Sprawdź wielkie i małe litery — dla Pythona '
+                + '<code>print</code> i <code>Print</code> to dwa różne słowa.';
+            pokazWynik(elWynik, 'zle', 'Jeszcze nie to.', dodatek);
             return;
         }
 

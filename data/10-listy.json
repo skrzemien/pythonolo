@@ -33,7 +33,7 @@
       "id": "listy-3",
       "typ": "uzupelnij",
       "tytul": "Dopisz na końcu",
-      "opis": "Dodaj czwórkę na koniec listy liczb.\n\n* Lista `numbers` zawiera już jeden, dwa i trzy.\n* W drugiej linii, po kropce, wpisz nazwę metody dodającej jeden element na koniec listy.\n* Argument cztery i nawiasy są już gotowe. Zostaw je bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`[1, 2, 3, 4]`",
+      "opis": "Dodaj `4` na koniec listy liczb.\n\n* Lista `numbers` zawiera już `1`, `2` i `3`.\n* W drugiej linii, po kropce, wpisz nazwę metody dodającej jeden element na koniec listy.\n* Liczba `4` i nawiasy są już gotowe. Zostaw je bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`[1, 2, 3, 4]`",
       "kod": "numbers = [1, 2, 3]\nnumbers.___(4)\nprint(numbers)",
       "luki": [["append"]],
       "wyjscie": "[1, 2, 3, 4]",
@@ -46,13 +46,13 @@
       "id": "listy-4",
       "typ": "uzupelnij",
       "tytul": "Ostatni element",
-      "opis": "Wybierz ostatni owoc za pomocą indeksu ujemnego.\n\n* Spójrz na listę fruits. Ostatnim elementem jest śliwka.\n* W lukę w drugiej linii wpisz indeks oznaczający ostatni element listy.\n* Przy liczeniu od końca ostatni element ma indeks minus jeden, a przedostatni minus dwa.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`śliwka`",
+      "opis": "Wybierz ostatni owoc za pomocą indeksu ujemnego.\n\n* Spójrz na listę fruits. Ostatnim elementem jest śliwka.\n* W lukę w drugiej linii wpisz indeks oznaczający ostatni element listy.\n* Przy liczeniu od końca ostatni element ma indeks `-1`, a przedostatni `-2`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`śliwka`",
       "kod": "fruits = [\"jabłko\", \"gruszka\", \"śliwka\"]\nprint(fruits[___])",
-      "luki": [["-1", "2"]],
+      "luki": [["-1"]],
       "wyjscie": "śliwka",
       "podpowiedzi": [
-        "Można liczyć od początku albo od końca.",
-        "Zadziała `2` albo `-1`."
+        "Tym razem licz od końca listy.",
+        "Wpisz `-1`. Minus oznacza liczenie od końca."
       ]
     },
     {
@@ -64,7 +64,7 @@
       "luki": [["in"]],
       "wyjscie": "Jest gruszka",
       "podpowiedzi": [
-        "To dwuliterowe słowo, które już widziałeś w `for owoc in owoce:`.",
+        "To dwuliterowe słowo, które znasz już z pętli: `for owoc in owoce:`.",
         "Wpisz `in`. Działa tak samo na tekstach: `if \"a\" in \"Ala\":`."
       ]
     },
@@ -153,7 +153,7 @@
       "id": "listy-nowa-ocena",
       "typ": "napisz",
       "tytul": "Dopisz ocenę i policz",
-      "opis": "Dodaj nową ocenę, a potem policz wszystkie oceny.\n\n* Zostaw gotową listę grades.\n* Pod nią wywołaj metodę append, żeby dodać na końcu liczbę pięć.\n* Policz elementy zmienionej listy przez len.\n* Wypisz tekst `Ocen po dopisaniu:` i obliczoną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Ocen po dopisaniu: 4`",
+      "opis": "Dodaj nową ocenę, a potem policz wszystkie oceny.\n\n* Zostaw gotową listę grades.\n* Pod nią wywołaj metodę append, żeby dodać na końcu liczbę `5`.\n* Policz elementy zmienionej listy przez len.\n* Wypisz tekst `Ocen po dopisaniu:` i obliczoną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Ocen po dopisaniu: 4`",
       "start": "grades = [3, 4, 2]\n",
       "sprawdzenie": {
         "tryb": "wyjscie",

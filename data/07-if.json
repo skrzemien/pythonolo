@@ -7,7 +7,7 @@
       "id": "if-1",
       "typ": "uzupelnij",
       "tytul": "Warunek większy lub równy",
-      "opis": "Uwzględnij w warunku także osobę, która ma dokładnie osiemnaście lat.\n\n* Spójrz na porównanie w linii zaczynającej się od `if`.\n* W lukę wpisz operator oznaczający: większe lub równe.\n* Nie zmieniaj wieku. Dla gotowej wartości warunek ma być prawdziwy.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Pełnoletni`",
+      "opis": "Uwzględnij w warunku także osobę, która ma dokładnie 18 lat.\n\n* Spójrz na porównanie w linii zaczynającej się od `if`.\n* W lukę wpisz operator oznaczający: większe lub równe.\n* Nie zmieniaj wieku. Dla gotowej wartości warunek ma być prawdziwy.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Pełnoletni`",
       "kod": "age = 18\nif age ___ 18:\n    print(\"Pełnoletni\")",
       "luki": [[">="]],
       "wyjscie": "Pełnoletni",
@@ -20,7 +20,7 @@
       "id": "if-2",
       "typ": "uzupelnij",
       "tytul": "A w przeciwnym razie",
-      "opis": "Dodaj odpowiedź na sytuację, gdy warunek nie jest spełniony.\n\n* Temperatura wynosi pięć, więc warunek o temperaturze większej niż dwadzieścia nie jest spełniony.\n* Znajdź lukę przed dwukropkiem, nad poleceniem wypisującym słowo Zimno.\n* Wpisz słowo oznaczające w Pythonie: w przeciwnym razie. Wcięcia są już gotowe.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Zimno`",
+      "opis": "Dodaj odpowiedź na sytuację, gdy warunek nie jest spełniony.\n\n* Temperatura wynosi `5`, więc warunek „temperatura większa niż `20`” nie jest spełniony.\n* Znajdź lukę przed dwukropkiem, nad poleceniem wypisującym słowo Zimno.\n* Wpisz słowo oznaczające w Pythonie: w przeciwnym razie. Wcięcia są już gotowe.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Zimno`",
       "kod": "temperature = 5\nif temperature > 20:\n    print(\"Ciepło\")\n___:\n    print(\"Zimno\")",
       "luki": [["else"]],
       "wyjscie": "Zimno",
@@ -33,7 +33,7 @@
       "id": "if-3",
       "typ": "uzupelnij",
       "tytul": "Trzecia możliwość",
-      "opis": "Dodaj sprawdzenie drugiej możliwej oceny.\n\n* Pierwszy warunek dotyczy oceny pięć. Gotowa zmienna ma jednak wartość cztery.\n* W lukę przed porównaniem z czwórką wpisz słowo, które pozwala sprawdzić kolejny warunek po `if`.\n* Końcowa część `else` ma zostać odpowiedzią dla pozostałych ocen. Nie zmieniaj jej.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Dobrze`",
+      "opis": "Dodaj sprawdzenie drugiej możliwej oceny.\n\n* Pierwszy warunek dotyczy oceny `5`. Gotowa zmienna ma jednak wartość `4`.\n* W lukę przed porównaniem z `4` wpisz słowo, które pozwala sprawdzić kolejny warunek po `if`.\n* Końcowa część `else` ma zostać odpowiedzią dla pozostałych ocen. Nie zmieniaj jej.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Dobrze`",
       "kod": "grade = 4\nif grade == 5:\n    print(\"Świetnie\")\n___ grade == 4:\n    print(\"Dobrze\")\nelse:\n    print(\"Może być\")",
       "luki": [["elif"]],
       "wyjscie": "Dobrze",
@@ -85,7 +85,7 @@
       "id": "if-5",
       "typ": "napisz",
       "tytul": "Parzysta czy nieparzysta",
-      "opis": "Rozpoznaj, czy wczytana liczba jest parzysta.\n\n* Pierwsza linia już wczytuje liczbę do zmiennej `number`.\n* Pod nią napisz warunek `if`: reszta z dzielenia number przez dwa jest równa zeru.\n* W tej gałęzi wypisz słowo `parzysta`. W gałęzi `else` wypisz słowo `nieparzysta`.\n* Po warunkach dodaj dwukropki. Polecenia wewnątrz każdej gałęzi wsuń o cztery spacje.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`nieparzysta`",
+      "opis": "Rozpoznaj, czy wczytana liczba jest parzysta.\n\n* Pierwsza linia już wczytuje liczbę do zmiennej `number`.\n* Pod nią napisz warunek `if`: reszta z dzielenia number przez `2` jest równa `0`.\n* W tej gałęzi wypisz słowo `parzysta`. W gałęzi `else` wypisz słowo `nieparzysta`.\n* Po warunkach dodaj dwukropki. Polecenia wewnątrz każdej gałęzi wsuń o 4 spacje.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`nieparzysta`",
       "start": "number = int(input(\"Podaj liczbę: \"))\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -118,7 +118,7 @@
       "id": "if-7",
       "typ": "napisz",
       "tytul": "Czy pasuje do przedziału",
-      "opis": "Sprawdź, czy temperatura mieści się w podanym zakresie.\n\n* Użyj gotowej zmiennej `temperature`.\n* Zapisz dwa porównania: temperatura jest nie mniejsza niż osiemnaście i nie większa niż dwadzieścia pięć.\n* Połącz je słowem `and`. Obie graniczne wartości też mają pasować.\n* Gdy warunek jest spełniony, wypisz `W sam raz`. W gałęzi else wypisz `Nie w sam raz`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`W sam raz`",
+      "opis": "Sprawdź, czy temperatura mieści się w podanym zakresie.\n\n* Użyj gotowej zmiennej `temperature`.\n* Zapisz dwa porównania: temperatura wynosi co najmniej `18` i co najwyżej `25`.\n* Połącz je słowem `and`. Obie graniczne wartości też mają pasować.\n* Gdy warunek jest spełniony, wypisz `W sam raz`. W gałęzi else wypisz `Nie w sam raz`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`W sam raz`",
       "start": "temperature = 21\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -134,7 +134,7 @@
       "id": "if-zaprzeczenie",
       "typ": "napisz",
       "tytul": "Kiedy czegoś nie ma",
-      "opis": "Wypisz zaproszenie na dwór tylko wtedy, gdy nie pada.\n\n* Zmienna `is_raining` zawiera już wartość False, czyli fałsz. Oznacza to, że deszcz nie pada.\n* Dopisz warunek `if`, który używa słowa `not` przed nazwą tej zmiennej. Not odwraca prawdę i fałsz.\n* Wewnątrz warunku wypisz tekst `Idziemy na dwór`. Zrób wcięcie na cztery spacje.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Idziemy na dwór`",
+      "opis": "Wypisz zaproszenie na dwór tylko wtedy, gdy nie pada.\n\n* Zmienna `is_raining` zawiera już wartość False, czyli fałsz. Oznacza to, że deszcz nie pada.\n* Dopisz warunek `if`, który używa słowa `not` przed nazwą tej zmiennej. Not odwraca prawdę i fałsz.\n* Wewnątrz warunku wypisz tekst `Idziemy na dwór`. Zrób wcięcie na 4 spacje.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Idziemy na dwór`",
       "start": "is_raining = False\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -183,14 +183,14 @@
       "id": "if-bateria",
       "typ": "napisz",
       "tytul": "Komunikat o baterii",
-      "opis": "Wybierz komunikat zależny od poziomu baterii.\n\n* Użyj gotowej zmiennej battery.\n* Dla wartości mniejszej niż dwadzieścia wypisz `Podłącz ładowarkę`.\n* Dla wartości od dwudziestu do siedemdziesięciu dziewięciu wypisz `Możesz działać`.\n* Dla osiemdziesięciu lub więcej wypisz `Dużo energii`. Użyj if, elif i else, żeby pojawił się tylko jeden komunikat.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Możesz działać`",
+      "opis": "Wybierz komunikat zależny od poziomu baterii.\n\n* Użyj gotowej zmiennej battery.\n* Dla wartości mniejszej niż `20` wypisz `Podłącz ładowarkę`.\n* Dla wartości od `20` do `79` wypisz `Możesz działać`.\n* Dla `80` lub więcej wypisz `Dużo energii`. Użyj if, elif i else, żeby pojawił się tylko jeden komunikat.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Możesz działać`",
       "start": "battery = 20\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
         "oczekiwane": "Możesz działać"
       },
       "podpowiedzi": [
-        "W drugim warunku sprawdź górną granicę. Pierwszy wykluczył już wartości poniżej dwudziestu.",
+        "W drugim warunku sprawdź górną granicę. Pierwszy wykluczył już wartości poniżej 20.",
         "Drugi warunek może wyglądać tak: `elif battery < 80:`."
       ],
       "rozwiazanie": "battery = 20\nif battery < 20:\n    print(\"Podłącz ładowarkę\")\nelif battery < 80:\n    print(\"Możesz działać\")\nelse:\n    print(\"Dużo energii\")"

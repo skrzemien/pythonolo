@@ -20,7 +20,7 @@
       "id": "zmienne-2",
       "typ": "uzupelnij",
       "tytul": "Wypisz zawartość pudełka",
-      "opis": "Wypisz wiek zapisany w zmiennej.\n\n* Przeczytaj pierwszą linię. Zmienna `age` ma wartość dwanaście.\n* W drugiej linii kliknij puste pole w nawiasie polecenia `print`.\n* Wpisz nazwę zmiennej z pierwszej linii. Nie dodawaj cudzysłowów, bo chcesz wypisać jej wartość, a nie nazwę.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`12`",
+      "opis": "Wypisz wiek zapisany w zmiennej.\n\n* Przeczytaj pierwszą linię. Zmienna `age` ma wartość `12`.\n* W drugiej linii kliknij puste pole w nawiasie polecenia `print`.\n* Wpisz nazwę zmiennej z pierwszej linii. Nie dodawaj cudzysłowów, bo chcesz wypisać jej wartość, a nie nazwę.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`12`",
       "kod": "age = 12\nprint(___)",
       "luki": [["age"]],
       "wyjscie": "12",
@@ -33,7 +33,7 @@
       "id": "zmienne-3",
       "typ": "uzupelnij",
       "tytul": "Nowa wartość",
-      "opis": "Zmień wynik gracza z dziesięciu na dwadzieścia punktów.\n\n* Pierwsza linia zapisuje dziesięć w zmiennej `score`.\n* W drugiej linii wpisz w lukę nową wartość: dwadzieścia. Zapisz ją cyframi, bez cudzysłowów.\n* Ostatnią linię zostaw bez zmian. Wypisze nową wartość zmiennej.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`20`",
+      "opis": "Zmień wynik gracza z 10 na 20 punktów.\n\n* Pierwsza linia zapisuje `10` w zmiennej `score`.\n* W drugiej linii wpisz w lukę nową wartość: `20`. Bez cudzysłowów.\n* Ostatnią linię zostaw bez zmian. Wypisze nową wartość zmiennej.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`20`",
       "kod": "score = 10\nscore = ___\nprint(score)",
       "luki": [["20"]],
       "wyjscie": "20",
@@ -59,7 +59,7 @@
       "id": "zmienne-5",
       "typ": "uzupelnij",
       "tytul": "Wartość z innej zmiennej",
-      "opis": "Skopiuj wartość z jednej zmiennej do drugiej.\n\n* Pierwsza linia zapisuje siedem w zmiennej `a`.\n* W drugiej linii uzupełnij lukę nazwą zmiennej, z której chcesz pobrać wartość. Nie wpisuj samej liczby.\n* Nie dodawaj cudzysłowów. Ostatnia linia ma wypisać wartość zapisaną w zmiennej `b`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7`",
+      "opis": "Skopiuj wartość z jednej zmiennej do drugiej.\n\n* Pierwsza linia zapisuje `7` w zmiennej `a`.\n* W drugiej linii uzupełnij lukę nazwą zmiennej, z której chcesz pobrać wartość. Nie wpisuj samej liczby.\n* Nie dodawaj cudzysłowów. Ostatnia linia ma wypisać wartość zapisaną w zmiennej `b`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7`",
       "kod": "a = 7\nb = ___\nprint(b)",
       "luki": [["a"]],
       "wyjscie": "7",
@@ -72,7 +72,7 @@
       "id": "zmienne-6",
       "typ": "uzupelnij",
       "tytul": "Licznik",
-      "opis": "Zwiększ licznik dwa razy, za każdym razem o jeden.\n\n* Licznik `counter` zaczyna od zera.\n* Spójrz na trzecią linię. Pokazuje, jak zwiększyć licznik o jeden.\n* W drugiej linii wpisz w lukę znak tego samego działania. Resztę kodu zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`2`",
+      "opis": "Zwiększ licznik 2 razy, za każdym razem o 1.\n\n* Licznik `counter` zaczyna od `0`.\n* Spójrz na trzecią linię. Pokazuje, jak zwiększyć licznik o 1.\n* W drugiej linii wpisz w lukę znak tego samego działania. Resztę kodu zostaw bez zmian.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`2`",
       "kod": "counter = 0\ncounter = counter ___ 1\ncounter = counter + 1\nprint(counter)",
       "luki": [["+"]],
       "wyjscie": "2",
@@ -85,7 +85,7 @@
       "id": "zmienne-7",
       "typ": "uzupelnij",
       "tytul": "Krótszy zapis",
-      "opis": "Zwiększ liczbę punktów krótkim zapisem.\n\n* Zmienna `points` ma na początku dziesięć punktów. Chcesz dodać do niej pięć.\n* Znajdź lukę w drugiej linii, między nazwą zmiennej a liczbą.\n* Wpisz operator dodawania z przypisaniem. Składa się z dwóch znaków zapisanych obok siebie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`15`",
+      "opis": "Zwiększ liczbę punktów krótkim zapisem.\n\n* Zmienna `points` ma na początku `10` punktów. Chcesz dodać do niej `5`.\n* Znajdź lukę w drugiej linii, między nazwą zmiennej a liczbą.\n* Wpisz operator dodawania z przypisaniem. Operator to znak działania, taki jak `+` albo `=`. Składa się z dwóch znaków zapisanych obok siebie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`15`",
       "kod": "points = 10\npoints ___ 5\nprint(points)",
       "luki": [["+="]],
       "wyjscie": "15",
@@ -114,7 +114,7 @@
       "id": "zmienne-9",
       "typ": "napisz",
       "tytul": "Suma dwóch zmiennych",
-      "opis": "Dodaj wartości dwóch zmiennych.\n\n* W pierwszej linii utwórz zmienną `a` i przypisz jej liczbę trzy.\n* W drugiej linii utwórz zmienną `b` i przypisz jej liczbę cztery.\n* W trzeciej linii użyj `print`, żeby wypisać sumę obu zmiennych. W działaniu użyj ich nazw.\n* Wynik ma zawierać samą liczbę, bez dodatkowego tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`7`",
+      "opis": "Dodaj wartości dwóch zmiennych.\n\n* W pierwszej linii utwórz zmienną `a` i przypisz jej liczbę `3`.\n* W drugiej linii utwórz zmienną `b` i przypisz jej liczbę `4`.\n* W trzeciej linii użyj `print`, żeby wypisać sumę obu zmiennych. W działaniu użyj ich nazw.\n* Wynik ma zawierać samą liczbę, bez dodatkowego tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`7`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -146,7 +146,7 @@
       "id": "zmienne-11",
       "typ": "napisz",
       "tytul": "Stopnie na stopnie",
-      "opis": "Przelicz temperaturę ze stopni Celsjusza na stopnie Fahrenheita.\n\n* Zmienna `celsius` ma już wartość dwadzieścia. Zostaw ją bez zmian.\n* W następnej linii utwórz zmienną `fahrenheit`. Przypisz jej wynik obliczenia: wartość celsius pomnóż przez dziewięć, podziel przez pięć i dodaj trzydzieści dwa.\n* Użyj `print`, żeby wypisać kolejno: wartość celsius, tekst `C to`, wartość fahrenheit i tekst `F`. Oddziel wartości przecinkami.\n* Dzielenie pojedynczym ukośnikiem daje tutaj liczbę typu float. Dlatego wynik zawiera kropkę i zero.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`20 C to 68.0 F`",
+      "opis": "Przelicz temperaturę ze stopni Celsjusza na stopnie Fahrenheita. Tych stopni używa się na przykład w USA.\n\n* Zmienna `celsius` ma już wartość `20`. Zostaw ją bez zmian.\n* W następnej linii utwórz zmienną `fahrenheit`. Przypisz jej wynik obliczenia: wartość celsius pomnóż przez `9`, podziel przez `5` i dodaj `32`.\n* Użyj `print`, żeby wypisać kolejno: wartość celsius, tekst `C to`, wartość fahrenheit i tekst `F`. Oddziel wartości przecinkami.\n* Dzielenie pojedynczym ukośnikiem daje tutaj liczbę typu float. Dlatego wynik zawiera kropkę i zero.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`20 C to 68.0 F`",
       "start": "celsius = 20\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -162,7 +162,7 @@
       "id": "zmienne-12",
       "typ": "napisz",
       "tytul": "Zamiana miejscami",
-      "opis": "Zamień miejscami wartości dwóch zmiennych.\n\n* Na początku `x` ma wartość jeden, a `y` ma wartość dwa.\n* Dopisz kod w miejscu pod komentarzem. Najpierw zachowaj starą wartość x w dodatkowej zmiennej.\n* Przypisz do x wartość y. Następnie przypisz do y zachowaną wcześniej wartość.\n* Gotowe polecenie `print` na końcu zostaw bez zmian. Ma wypisać najpierw dwa, potem jeden.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`2 1`",
+      "opis": "Zamień miejscami wartości dwóch zmiennych.\n\n* Na początku `x` ma wartość `1`, a `y` ma wartość `2`.\n* Dopisz kod w miejscu pod komentarzem. Najpierw zachowaj starą wartość x w dodatkowej zmiennej.\n* Przypisz do x wartość y. Następnie przypisz do y zachowaną wcześniej wartość.\n* Gotowe polecenie `print` na końcu zostaw bez zmian. Ma wypisać najpierw `2`, potem `1`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`2 1`",
       "start": "x = 1\ny = 2\n\n# zamień wartości miejscami\n\nprint(x, y)\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -170,7 +170,7 @@
       },
       "podpowiedzi": [
         "Samo `x = y` nie wystarczy — stara wartość `x` przepadnie.",
-        "Możesz użyć trzeciej zmiennej na przechowanie albo skrótu `x, y = y, x`."
+        "Użyj trzeciej zmiennej: `temp = x`, potem `x = y` i `y = temp`. Jest też skrót `x, y = y, x` — Python najpierw odczytuje obie wartości z prawej strony, a dopiero potem wkłada je do zmiennych po lewej."
       ],
       "rozwiazanie": "x = 1\ny = 2\nx, y = y, x\nprint(x, y)"
     },
@@ -178,7 +178,7 @@
       "id": "zmienne-kopia",
       "typ": "uzupelnij",
       "tytul": "Kopia zachowuje starą liczbę",
-      "opis": "Zapisz kopię wyniku, zanim zmienisz oryginalną zmienną.\n\n* Zmienna score ma wartość dziesięć.\n* W drugiej linii wpisz w lukę nazwę zmiennej, której wartość chcesz zachować w saved.\n* Dalszy kod zmieni score na dwadzieścia. saved ma nadal przechowywać dziesięć.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`10 20`",
+      "opis": "Zapisz kopię wyniku, zanim zmienisz oryginalną zmienną.\n\n* Zmienna score ma wartość `10`.\n* W drugiej linii wpisz w lukę nazwę zmiennej, której wartość chcesz zachować w saved.\n* Dalszy kod zmieni score na `20`. saved ma nadal przechowywać `10`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`10 20`",
       "kod": "score = 10\nsaved = ___\nscore = 20\nprint(saved, score)",
       "luki": [
         [
@@ -211,7 +211,7 @@
       "id": "zmienne-dwie-nagrody",
       "typ": "napisz",
       "tytul": "Dwie nagrody",
-      "opis": "Zwiększ wynik gracza po zdobyciu dwóch nagród.\n\n* Zmienna points ma już pięć punktów.\n* W następnej linii zwiększ ją o trzy, używając dodawania z przypisaniem.\n* W kolejnej linii zwiększ ją o dwa w ten sam sposób.\n* Na końcu wypisz tekst `Punkty:` i aktualną wartość points.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Punkty: 10`",
+      "opis": "Zwiększ wynik gracza po zdobyciu dwóch nagród.\n\n* Zmienna points ma już `5` punktów.\n* W następnej linii zwiększ ją o `3`, używając dodawania z przypisaniem.\n* W kolejnej linii zwiększ ją o `2` w ten sam sposób.\n* Na końcu wypisz tekst `Punkty:` i aktualną wartość points.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Punkty: 10`",
       "start": "points = 5\n",
       "sprawdzenie": {
         "tryb": "wyjscie",

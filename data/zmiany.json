@@ -1,6 +1,19 @@
 {
   "wpisy": [
     {
+      "data": "2026-09-23",
+      "tytul": "Poprawki w sprawdzaniu i w poleceniach",
+      "opis": "Przejrzeliśmy wszystkie 146 zadań pod kątem młodszego ucznia i poprawiliśmy to, co mogło mylić.",
+      "punkty": [
+        "W zadaniach z lukami liczy się teraz wielkość liter, tak jak w Pythonie. Wcześniej pole z `Print` świeciło na zielono, a program i tak kończył się błędem. Gdy różnią się tylko wielkie i małe litery, strona podpowiada, żeby to sprawdzić.",
+        "Liczby w poleceniach są zapisane cyframi, np. `145` zamiast „sto czterdzieści pięć”. Łatwiej je przeczytać i porównać z kodem.",
+        "„Prostokąt z gwiazdek” ma nowe podpowiedzi, które prowadzą do pętli w pętli, a nie do skrótu bez niej. „Ostatni element” przyjmuje już tylko indeks ujemny, tak jak mówi polecenie.",
+        "Kilka trudniejszych zadań dostało krótkie wyjaśnienia: zamiana miejscami `x, y = y, x`, dwie zmienne w pętli po słowniku i stopnie Fahrenheita.",
+        "Drobne poprawki językowe, m.in. „Lubię Pythona” i formy pasujące do każdego ucznia."
+      ],
+      "stopka": "Żadne zadanie nie zostało dodane ani usunięte, identyfikatory i kolejność są bez zmian. Dotychczasowe zaliczenia uczniów są zachowane."
+    },
+    {
       "data": "2026-09-18",
       "tytul": "36 nowych zadań do utrwalenia materiału",
       "opis": "Każdy z 12 modułów otrzymał po trzy nowe zadania. Polecenia prowadzą krok po kroku, a podpowiedzi pomagają przy trudniejszych fragmentach.",

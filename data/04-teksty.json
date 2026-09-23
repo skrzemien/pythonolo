@@ -72,9 +72,9 @@
       "id": "teksty-4",
       "typ": "uzupelnij",
       "tytul": "Litera po numerze",
-      "opis": "Wybierz literę t ze słowa Python.\n\n* Spójrz na słowo zapisane w zmiennej `word`.\n* Policz pozycje od zera: litera P jest pierwsza, ale ma indeks zero.\n* Ustal indeks litery t. Wpisz go cyfrą w lukę między nawiasami kwadratowymi.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`t`",
+      "opis": "Wybierz literę t ze słowa Python.\n\n* Spójrz na słowo zapisane w zmiennej `word`.\n* Policz pozycje od `0`: litera P jest pierwsza, ale ma indeks `0`.\n* Ustal indeks litery t. Wpisz go cyfrą w lukę między nawiasami kwadratowymi.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`t`",
       "kod": "word = \"Python\"\nprint(word[___])",
-      "luki": [["2"]],
+      "luki": [["2", "-4"]],
       "wyjscie": "t",
       "podpowiedzi": [
         "Policz od zera: P=0, y=1, t=?",
@@ -85,7 +85,7 @@
       "id": "teksty-5",
       "typ": "napisz",
       "tytul": "Pierwsze trzy litery",
-      "opis": "Wypisz tylko pierwsze trzy litery słowa Programowanie.\n\n* Zostaw gotową zmienną `word`.\n* Pod nią dodaj polecenie `print`. W jego nawiasach użyj wycinka zmiennej word.\n* W nawiasach kwadratowych wpisz początek zero, dwukropek i koniec trzy. Koniec nie jest wliczany, więc wybierzesz indeksy zero, jeden i dwa.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pro`",
+      "opis": "Wypisz tylko pierwsze 3 litery słowa Programowanie.\n\n* Zostaw gotową zmienną `word`.\n* Pod nią dodaj polecenie `print`. W jego nawiasach użyj wycinka zmiennej word.\n* W nawiasach kwadratowych wpisz początek `0`, dwukropek i koniec `3`. Koniec nie jest wliczany, więc wybierzesz indeksy `0`, `1` i `2`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pro`",
       "start": "word = \"Programowanie\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -117,7 +117,7 @@
       "id": "teksty-7",
       "typ": "napisz",
       "tytul": "Linia oddzielająca",
-      "opis": "Zbuduj linię z dwudziestu myślników.\n\n* Zapisz jeden myślnik jako tekst w cudzysłowie.\n* Pomnóż ten tekst przez dwadzieścia. Mnożenie tekstu powtarza jego zawartość.\n* Wypisz wynik poleceniem `print`. Nie dodawaj spacji między myślnikami.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`--------------------`",
+      "opis": "Zbuduj linię z 20 myślników.\n\n* Zapisz jeden myślnik jako tekst w cudzysłowie.\n* Pomnóż ten tekst przez `20`. Mnożenie tekstu powtarza jego zawartość.\n* Wypisz wynik poleceniem `print`. Nie dodawaj spacji między myślnikami.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`--------------------`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -158,7 +158,7 @@
       ],
       "wyjscie": "5",
       "podpowiedzi": [
-        "To ta sama funkcja, którą liczyłeś znaki słowa Python.",
+        "To ta sama funkcja, która liczyła znaki w słowie Python.",
         "Wpisz `len`."
       ]
     },
@@ -166,7 +166,7 @@
       "id": "teksty-prefiks",
       "typ": "napisz",
       "tytul": "Pierwsze dwie litery miasta",
-      "opis": "Wytnij początek nazwy miasta.\n\n* Zostaw zmienną city z nazwą Kraków.\n* Pod nią dopisz print z wycinkiem zmiennej city.\n* Wybierz znaki o indeksach zero i jeden. Koniec wycinka ustaw na dwa, bo nie jest wliczany.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Kr`",
+      "opis": "Wytnij początek nazwy miasta.\n\n* Zostaw zmienną city z nazwą Kraków.\n* Pod nią dopisz print z wycinkiem zmiennej city.\n* Wybierz znaki o indeksach `0` i `1`. Koniec wycinka ustaw na `2`, bo nie jest wliczany.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Kr`",
       "start": "city = \"Kraków\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",

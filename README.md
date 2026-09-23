@@ -92,7 +92,10 @@ Potem wejdź na `http://localhost:8123`. Port można podać jako argument: `pyth
 ## Sprawdzanie treści zadań
 
 Skrypt uruchamia wzorcowe rozwiązanie każdego zadania w lokalnym Pythonie i porównuje
-wynik z tym, co obiecuje treść. Odpalaj po każdej zmianie w `data/`:
+wynik z tym, co obiecuje treść. W zadaniach „uzupełnij” sprawdza każdą przyjmowaną
+odpowiedź w każdej luce. Pilnuje też unikalnych `id`, licznika `liczbaZadan`, tego,
+że sam kod startowy nie zalicza zadania, i odwołań w `data/zmiany.json`.
+Odpalaj po każdej zmianie w `data/`:
 
 ```bash
 python3 tools/sprawdz-zadania.py
@@ -122,7 +125,10 @@ Zadanie typu **uzupełnij**:
 
 Każde `___` w polu `kod` zamienia się w pole do wpisania. Tablica `luki` musi mieć
 tyle samo elementów, co luk w kodzie — każdy element to lista **przyjmowanych**
-odpowiedzi (wielkość liter nie ma znaczenia).
+odpowiedzi. Wielkość liter **ma** znaczenie, tak jak w Pythonie — program uruchamia
+się z tym, co wpisał uczeń, więc `Print` zamiast `print` skończyłby się błędem.
+Gdy odpowiedź różni się tylko wielkością liter, strona podpowiada, żeby to sprawdzić.
+Jeśli poprawnych zapisów jest kilka (np. `"Pies"` i `'Pies'`), wpisz każdy osobno.
 
 Zadanie typu **napisz**, sprawdzane po wypisanym wyniku:
 

@@ -7,7 +7,7 @@
       "id": "liczby-1",
       "typ": "uzupelnij",
       "tytul": "Dzielenie bez reszty",
-      "opis": "Oblicz, ile pełnych trójek mieści się w dziesięciu.\n\n* W poleceniu `print` są już liczby dziesięć i trzy.\n* Między nimi wpisz operator dzielenia całkowitego. Zwraca pełną część wyniku dla tych dodatnich liczb.\n* Potrzebujesz operatora złożonego z dwóch znaków, a nie zwykłego dzielenia.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3`",
+      "opis": "Oblicz, ile razy liczba 3 mieści się w całości w liczbie 10.\n\n* W poleceniu `print` są już liczby `10` i `3`.\n* Między nimi wpisz operator dzielenia całkowitego. Daje wynik bez reszty i bez części po kropce.\n* Potrzebujesz operatora złożonego z dwóch znaków, a nie zwykłego dzielenia.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3`",
       "kod": "print(10 ___ 3)",
       "luki": [["//"]],
       "wyjscie": "3",
@@ -20,7 +20,7 @@
       "id": "liczby-2",
       "typ": "uzupelnij",
       "tytul": "Reszta z dzielenia",
-      "opis": "Oblicz resztę z dzielenia dziesięciu przez trzy.\n\n* Pomyśl o rozdzieleniu dziesięciu przedmiotów na grupy po trzy. Jeden przedmiot zostanie.\n* W lukę między liczbami wpisz operator obliczający resztę z dzielenia.\n* Nie wpisuj gotowego wyniku. Obliczenie ma wykonać Python.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`1`",
+      "opis": "Oblicz resztę z dzielenia `10` przez `3`.\n\n* Pomyśl o rozdzieleniu 10 cukierków na grupy po 3. Jeden cukierek zostanie.\n* W lukę między liczbami wpisz operator obliczający resztę z dzielenia.\n* Nie wpisuj gotowego wyniku. Obliczenie ma wykonać Python.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`1`",
       "kod": "print(10 ___ 3)",
       "luki": [["%"]],
       "wyjscie": "1",
@@ -33,7 +33,7 @@
       "id": "liczby-3",
       "typ": "uzupelnij",
       "tytul": "Potęga",
-      "opis": "Podnieś dwa do potęgi piątej.\n\n* To obliczenie oznacza pomnożenie przez siebie pięciu dwójek.\n* W gotowym kodzie znajdź lukę między liczbami dwa i pięć.\n* Wpisz operator potęgowania. Nie używaj zwykłego mnożenia dwóch liczb.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`32`",
+      "opis": "Podnieś `2` do potęgi `5`.\n\n* To obliczenie oznacza pomnożenie przez siebie 5 dwójek: 2 · 2 · 2 · 2 · 2.\n* W gotowym kodzie znajdź lukę między liczbami `2` i `5`.\n* Wpisz operator potęgowania. Nie używaj zwykłego mnożenia dwóch liczb.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`32`",
       "kod": "print(2 ___ 5)",
       "luki": [["**"]],
       "wyjscie": "32",
@@ -46,7 +46,7 @@
       "id": "liczby-4",
       "typ": "napisz",
       "tytul": "Kolejność działań",
-      "opis": "Zmień kolejność działań za pomocą nawiasów.\n\n* Spójrz na gotowe obliczenie w edytorze. Bez zmian Python najpierw mnoży trzy przez cztery.\n* Dodaj wewnątrz polecenia nawiasy wokół dodawania dwóch i trzech.\n* Nie zmieniaj liczb ani znaków działań. Teraz Python ma najpierw dodać, a potem pomnożyć sumę przez cztery.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`20`",
+      "opis": "Zmień kolejność działań za pomocą nawiasów.\n\n* Spójrz na gotowe obliczenie w edytorze. Bez zmian Python najpierw mnoży `3` przez `4`.\n* Dodaj wewnątrz polecenia nawiasy wokół dodawania `2 + 3`.\n* Nie zmieniaj liczb ani znaków działań. Teraz Python ma najpierw dodać, a potem pomnożyć sumę przez `4`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`20`",
       "start": "print(2 + 3 * 4)\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -78,7 +78,7 @@
       "id": "liczby-6",
       "typ": "napisz",
       "tytul": "Zaokrąglanie",
-      "opis": "Zaokrąglij liczbę do dwóch miejsc po kropce.\n\n* W zmiennej `pi` jest już zapisana liczba. Nie poprawiaj jej ręcznie.\n* Pod pierwszą linią użyj funkcji `round`. Podaj jej dwa argumenty: zmienną pi oraz liczbę miejsc, czyli dwa.\n* Wypisz otrzymany wynik przez `print`. W zapisie Pythona część dziesiętną oddziela kropka.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`3.14`",
+      "opis": "Zaokrąglij liczbę do dwóch miejsc po kropce.\n\n* W zmiennej `pi` jest już zapisana liczba. Nie poprawiaj jej ręcznie.\n* Pod pierwszą linią użyj funkcji `round`. Podaj jej dwa argumenty: zmienną pi oraz liczbę miejsc, czyli `2`.\n* Wypisz otrzymany wynik przez `print`. W zapisie Pythona część dziesiętną oddziela kropka.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`3.14`",
       "start": "pi = 3.14159\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -94,7 +94,7 @@
       "id": "liczby-7",
       "typ": "napisz",
       "tytul": "Sekundy na minuty",
-      "opis": "Zamień sto czterdzieści pięć sekund na minuty i pozostałe sekundy.\n\n* Zmienna `seconds` jest już gotowa. Minuta ma sześćdziesiąt sekund.\n* Dzieleniem całkowitym oblicz liczbę pełnych minut.\n* Osobno oblicz resztę z dzielenia przez sześćdziesiąt. To pozostałe sekundy.\n* Wypisz w jednej linii: liczbę minut, tekst `min`, liczbę sekund i tekst `s`. Oddziel wartości spacjami.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`2 min 25 s`",
+      "opis": "Zamień 145 sekund na minuty i pozostałe sekundy.\n\n* Zmienna `seconds` jest już gotowa. Minuta ma 60 sekund.\n* Dzieleniem całkowitym oblicz liczbę pełnych minut.\n* Osobno oblicz resztę z dzielenia przez `60`. To pozostałe sekundy.\n* Wypisz w jednej linii: liczbę minut, tekst `min`, liczbę sekund i tekst `s`. Oddziel wartości spacjami.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`2 min 25 s`",
       "start": "seconds = 145\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -110,7 +110,7 @@
       "id": "liczby-paczki",
       "typ": "uzupelnij",
       "tytul": "Pełne paczki kredek",
-      "opis": "Policz pełne paczki, które można zapełnić kredkami.\n\n* Masz siedemnaście kredek. Do paczki wkładasz po pięć.\n* W lukę wpisz operator dzielenia całkowitego.\n* Interesuje Cię liczba pełnych paczek, bez niepełnej części.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3`",
+      "opis": "Policz pełne paczki, które można zapełnić kredkami.\n\n* Masz 17 kredek. Do paczki wkładasz po 5.\n* W lukę wpisz operator dzielenia całkowitego.\n* Interesuje Cię liczba pełnych paczek, bez niepełnej części.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3`",
       "kod": "print(17 ___ 5)",
       "luki": [
         [
@@ -143,7 +143,7 @@
       "id": "liczby-srednia",
       "typ": "napisz",
       "tytul": "Średnia z trzech wyników",
-      "opis": "Oblicz średnią z trzech wyników.\n\n* Zostaw zmienne a, b i c.\n* Dodaj ich wartości i podziel sumę przez trzy. Dodawanie umieść w nawiasach.\n* Zaokrąglij wynik funkcją round do dwóch miejsc po kropce.\n* Wypisz samą zaokrągloną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`8.33`",
+      "opis": "Oblicz średnią z trzech wyników.\n\n* Zostaw zmienne a, b i c.\n* Dodaj ich wartości i podziel sumę przez `3`. Dodawanie umieść w nawiasach. Wynik zapisz w zmiennej `average`.\n* Zaokrąglij average funkcją round do dwóch miejsc po kropce.\n* Wypisz samą zaokrągloną liczbę.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`8.33`",
       "start": "a = 7\nb = 8\nc = 10\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
