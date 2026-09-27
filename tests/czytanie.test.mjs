@@ -121,3 +121,70 @@ test('stop usuwa zaznaczenie i ignoruje spóźnione boundary oraz end', () => {
     assert.deepEqual(zakresy.at(-1), [0, 0]);
     assert.equal(p.wypowiedzi.length, 1);
 });
+
+function przygotujZeSterowaniem(tresc, pamiec = {}) {
+    const zrob = () => { const el = new EventTarget(); el.textContent = ''; return el; };
+    const pauza = zrob();
+    const suwak = zrob();
+    suwak.value = '1';
+    const opisTempa = zrob();
+    const przycisk = zrob();
+    const status = { textContent: '' };
+    const okno = new EventTarget();
+    const wypowiedzi = [];
+    okno.SpeechSynthesisUtterance = class { constructor(text) { this.text = text; } };
+    okno.speechSynthesis = { getVoices: () => [], speak: m => wypowiedzi.push(m), cancel: () => {} };
+    okno.localStorage = { getItem: k => pamiec[k] ?? null, setItem: (k, v) => { pamiec[k] = v; } };
+    podepnijCzytanie(przycisk, status, tresc, okno, { pauza, suwak, opisTempa });
+    return { przycisk, pauza, suwak, opisTempa, status, wypowiedzi, pamiec,
+        klik: el => el.dispatchEvent(new Event('click')),
+        tempo: v => { suwak.value = String(v); suwak.dispatchEvent(new Event('input')); } };
+}
+
+test('pauza zatrzymuje w miejscu i wznawia od ostatniego słowa', () => {
+    const p = przygotujZeSterowaniem('Ala ma kota. Kot śpi.');
+    assert.equal(p.pauza.hidden, true);
+    p.klik(p.przycisk);
+    assert.equal(p.pauza.hidden, false);
+    const mowa = p.wypowiedzi[0];
+    mowa.onboundary({ name: 'word', charIndex: 7, charLength: 4 });
+    p.klik(p.pauza);
+    assert.match(p.pauza.textContent, /Wznów/);
+    assert.match(p.status.textContent, /wstrzymane/);
+    mowa.onend();
+    assert.equal(p.wypowiedzi.length, 1);
+    p.klik(p.pauza);
+    assert.equal(p.wypowiedzi[1].text, 'kota. Kot śpi.');
+    assert.match(p.pauza.textContent, /Pauza/);
+    p.wypowiedzi[1].onboundary({ name: 'word', charIndex: 6, charLength: 3 });
+    p.klik(p.pauza);
+    p.klik(p.pauza);
+    assert.equal(p.wypowiedzi[2].text, 'Kot śpi.');
+});
+
+test('stop podczas pauzy wraca do początku', () => {
+    const p = przygotujZeSterowaniem('Ala ma kota.');
+    p.klik(p.przycisk);
+    p.wypowiedzi[0].onboundary({ name: 'word', charIndex: 4, charLength: 2 });
+    p.klik(p.pauza);
+    p.klik(p.przycisk);
+    assert.equal(p.pauza.hidden, true);
+    assert.match(p.przycisk.textContent, /Czytaj/);
+    p.klik(p.przycisk);
+    assert.equal(p.wypowiedzi.at(-1).text, 'Ala ma kota.');
+});
+
+test('suwak zmienia tempo od bieżącego słowa i zapamiętuje je', () => {
+    const p = przygotujZeSterowaniem('Ala ma kota.', { 'python-az:tempo-czytania': '1.5' });
+    assert.equal(p.suwak.value, '1.5');
+    assert.equal(p.opisTempa.textContent, '1,5×');
+    p.klik(p.przycisk);
+    assert.equal(p.wypowiedzi[0].rate, 1.5);
+    p.wypowiedzi[0].onboundary({ name: 'word', charIndex: 4, charLength: 2 });
+    p.tempo(0.7);
+    assert.equal(p.wypowiedzi[1].text, 'ma kota.');
+    assert.equal(p.wypowiedzi[1].rate, 0.7);
+    assert.equal(p.pamiec['python-az:tempo-czytania'], '0.7');
+    p.wypowiedzi[0].onend();
+    assert.equal(p.wypowiedzi.length, 2);
+});

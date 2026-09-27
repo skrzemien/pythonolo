@@ -1,32 +1,66 @@
 /* Czytanie polecenia przez syntezator mowy przeglądarki. */
-export function podepnijCzytanie(przycisk, status, tekst, okno = window) {
+const KLUCZ_TEMPA = 'python-az:tempo-czytania';
+const TEMPO_DOMYSLNE = 1;
+
+export function podepnijCzytanie(przycisk, status, tekst, okno = window, { pauza, suwak, opisTempa } = {}) {
     const synteza = okno.speechSynthesis;
     let biezaca = null;
     let czesci = [];
+    // Pozycja w czytanym zdaniu: od niej wznawiamy po pauzie i zmianie tempa.
+    let indeks = 0;
+    let pozycja = 0;
+    let wstrzymane = false;
+    let tempo = wczytajTempo();
     const wyczysc = () => czesci.forEach(c => c.zaznacz?.(0, 0));
 
-    function ustawStan(czyta) {
-        przycisk.textContent = czyta ? '⏹ Zatrzymaj czytanie' : '🔊 Czytaj polecenie';
+    function wczytajTempo() {
+        let zapisane = null;
+        try { zapisane = okno.localStorage?.getItem(KLUCZ_TEMPA); } catch (e) { /* tryb prywatny */ }
+        const liczba = Number(zapisane);
+        return zapisane !== null && liczba >= 0.5 && liczba <= 2 ? liczba : TEMPO_DOMYSLNE;
     }
 
-    ustawStan(false);
+    function pokazTempo() {
+        if (suwak) suwak.value = String(tempo);
+        if (opisTempa) opisTempa.textContent = tempo.toFixed(1).replace('.', ',') + '×';
+    }
+
+    function ustawStan() {
+        const aktywne = Boolean(biezaca) || wstrzymane;
+        przycisk.textContent = aktywne ? '⏹ Zatrzymaj czytanie' : '🔊 Czytaj polecenie';
+        if (pauza) {
+            pauza.hidden = !aktywne;
+            pauza.textContent = wstrzymane ? '▶ Wznów' : '⏸ Pauza';
+        }
+    }
+
+    ustawStan();
+    pokazTempo();
     if (!synteza || !okno.SpeechSynthesisUtterance) {
         przycisk.disabled = true;
+        if (suwak) suwak.disabled = true;
         status.textContent = 'Ta przeglądarka nie obsługuje czytania na głos.';
         return;
     }
 
-    function zatrzymaj() {
+    // Wbudowane pause()/resume() zawodzą w części przeglądarek (np. Chrome na
+    // Androidzie), więc pauza przerywa mowę i zapamiętuje ostatnie słowo.
+    function przerwij() {
         // Zdarzenie anulowanej wypowiedzi może nadejść już po kolejnym kliknięciu.
         biezaca = null;
-        wyczysc();
         synteza.cancel();
-        ustawStan(false);
+    }
+
+    function zatrzymaj() {
+        przerwij();
+        wstrzymane = false;
+        wyczysc();
+        ustawStan();
         status.textContent = '';
     }
 
     przycisk.addEventListener('click', () => {
-        if (biezaca) {
+        if (biezaca || wstrzymane) {
             zatrzymaj();
             return;
         }
@@ -35,31 +69,66 @@ export function podepnijCzytanie(przycisk, status, tekst, okno = window) {
         try {
             synteza.cancel();
             czesci = typeof tekst === 'function' ? tekst() : [{ tekst }];
-            czytajCzesc(0);
+            czytajCzesc(0, 0);
         } catch (e) {
             awaria();
         }
     });
 
+    pauza?.addEventListener('click', () => {
+        if (wstrzymane) {
+            wstrzymane = false;
+            status.textContent = '';
+            czytajCzesc(indeks, pozycja);
+        } else if (biezaca) {
+            przerwij();
+            wstrzymane = true;
+            ustawStan();
+            status.textContent = 'Czytanie wstrzymane.';
+        }
+    });
+
+    suwak?.addEventListener('input', () => {
+        const liczba = Number(suwak.value);
+        if (!(liczba > 0)) return;
+        tempo = liczba;
+        pokazTempo();
+        try { okno.localStorage?.setItem(KLUCZ_TEMPA, String(tempo)); } catch (e) { /* tryb prywatny */ }
+        // Nowe tempo działa od razu: czytamy dalej od bieżącego słowa.
+        if (biezaca) {
+            przerwij();
+            czytajCzesc(indeks, pozycja);
+        }
+    });
+
     function awaria() {
         biezaca = null;
+        wstrzymane = false;
         wyczysc();
-        ustawStan(false);
+        ustawStan();
         status.textContent = 'Nie udało się odczytać polecenia. Sprawdź, czy masz dostępny polski głos w systemie lub przeglądarce, i spróbuj ponownie.';
     }
 
-    function czytajCzesc(indeks) {
-        const czesc = czesci[indeks];
+    function czytajCzesc(nr, od) {
+        const czesc = czesci[nr];
         if (!czesc) {
             biezaca = null;
             wyczysc();
-            ustawStan(false);
+            ustawStan();
+            return;
+        }
+        indeks = nr;
+        pozycja = od;
+        const reszta = czesc.tekst.slice(od);
+        if (!reszta.trim()) {
+            czesc.zaznacz?.(0, 0);
+            czytajCzesc(nr + 1, 0);
             return;
         }
         try {
-            const mowa = new okno.SpeechSynthesisUtterance(czesc.tekst);
+            const mowa = new okno.SpeechSynthesisUtterance(reszta);
             mowa.lang = 'pl-PL';
-            mowa.rate = 0.95;
+            mowa.rate = tempo;
             // Lista może być pusta przy otwarciu strony. Odczytujemy ją na nowo
             // przy każdym kliknięciu; bez listy silnik dobiera głos do języka.
             const polskie = synteza.getVoices().filter(g => /^pl(?:[-_]|$)/i.test(g.lang));
@@ -67,21 +136,23 @@ export function podepnijCzytanie(przycisk, status, tekst, okno = window) {
             if (glos) mowa.voice = glos;
 
             biezaca = mowa;
-            ustawStan(true);
+            ustawStan();
             mowa.onstart = () => {
-                if (biezaca === mowa) czesc.zaznacz?.(0, czesc.tekst.length);
+                if (biezaca === mowa) czesc.zaznacz?.(od, reszta.length);
             };
             mowa.onboundary = ev => {
                 if (biezaca !== mowa || ev.name !== 'word') return;
-                if (!Number.isInteger(ev.charIndex) || ev.charIndex < 0 || ev.charIndex >= czesc.tekst.length) return;
+                if (!Number.isInteger(ev.charIndex) || ev.charIndex < 0 || ev.charIndex >= reszta.length) return;
                 const ile = ev.charLength > 0 ? ev.charLength
-                    : (czesc.tekst.slice(ev.charIndex).match(/^\S+/)?.[0].length || 0);
-                if (ile) czesc.zaznacz?.(ev.charIndex, ile);
+                    : (reszta.slice(ev.charIndex).match(/^\S+/)?.[0].length || 0);
+                if (!ile) return;
+                pozycja = od + ev.charIndex;
+                czesc.zaznacz?.(pozycja, ile);
             };
             mowa.onend = () => {
                 if (biezaca !== mowa) return;
                 czesc.zaznacz?.(0, 0);
-                czytajCzesc(indeks + 1);
+                czytajCzesc(nr + 1, 0);
             };
             mowa.onerror = () => {
                 if (biezaca !== mowa) return;

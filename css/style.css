@@ -791,8 +791,24 @@ input:focus-visible,
    zwykłą bezszeryfową, a wyglądała dziwnie. Działa to, co niżej.
    ========================================================================== */
 
-.czytanie-polecenia { margin: 0 0 1rem; }
-#stan-czytania { margin: .5rem 0 0; }
+.czytanie-polecenia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin: 0 0 1rem;
+}
+.tempo-czytania {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .93rem;
+    color: var(--tekst-slaby);
+}
+#pauza-czytania[hidden] { display: none; }
+.tempo-czytania input { width: 120px; accent-color: var(--akcent); }
+.tempo-czytania output { min-width: 3.2em; font-variant-numeric: tabular-nums; color: var(--tekst); }
+#stan-czytania { flex-basis: 100%; margin: 0; }
 #stan-czytania:empty { display: none; }
 .czytane-teraz {
     text-decoration-line: underline;

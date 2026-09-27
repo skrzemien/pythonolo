@@ -125,6 +125,12 @@ function render({ wpis, modul, zadanie, poprzednie, nastepne }) {
                 <div class="czytanie-polecenia">
                     <button class="przycisk maly" type="button" id="czytaj-polecenie"
                             aria-describedby="stan-czytania">🔊 Czytaj polecenie</button>
+                    <button class="przycisk maly" type="button" id="pauza-czytania" hidden>⏸ Pauza</button>
+                    <label class="tempo-czytania">Tempo
+                        <input type="range" id="tempo-czytania" min="0.5" max="2" step="0.1" value="1"
+                               aria-describedby="opis-tempa">
+                        <output id="opis-tempa" for="tempo-czytania">1,0×</output>
+                    </label>
                     <p id="stan-czytania" role="status"></p>
                 </div>
                 <div class="opis" id="opis-zadania">${htmlTresci(zadanie.opis)}</div>
@@ -205,7 +211,13 @@ async function start() {
         () => przygotujCzytanie([
             document.querySelector('.tresc-zadania h1'),
             ...document.querySelectorAll('#opis-zadania p, #opis-zadania li, #opis-zadania pre')
-        ])
+        ]),
+        window,
+        {
+            pauza: document.getElementById('pauza-czytania'),
+            suwak: document.getElementById('tempo-czytania'),
+            opisTempa: document.getElementById('opis-tempa')
+        }
     );
 
     const elWynik = document.getElementById('wynik');
