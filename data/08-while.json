@@ -187,6 +187,23 @@
         "Instrukcję `break` umieść pod `print(\"Otwarte\")`, z takim samym wcięciem."
       ],
       "rozwiazanie": "secret = \"kot\"\nwhile True:\n    password = input(\"Hasło: \")\n    if password == secret:\n        print(\"Otwarte\")\n        break\n    print(\"Spróbuj ponownie\")"
+    },
+    {
+      "id": "while-flaga-gry",
+      "typ": "uzupelnij",
+      "tytul": "Flaga działania pętli",
+      "opis": "Zatrzymaj pętlę sterowaną zmienną logiczną po trzeciej klatce.\n\n* Zmienna `running` ma na początku wartość `True`, więc pętla `while` wykonuje kolejne obroty.\n* Gdy licznik `step` osiągnie `3`, warunek `if` ma zmienić wartość zmiennej `running`.\n* Wpisz w lukę wartość logiczną oznaczającą fałsz, aby pętla zakończyła działanie po tym obrocie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nklatka 1\nklatka 2\nklatka 3\n```",
+      "kod": "running = True\nstep = 1\nwhile running:\n    print(\"klatka\", step)\n    if step == 3:\n        running = ___\n    step += 1",
+      "luki": [
+        [
+          "False"
+        ]
+      ],
+      "wyjscie": "klatka 1\nklatka 2\nklatka 3",
+      "podpowiedzi": [
+        "Wartości logiczne w Pythonie zaczynają się wielką literą: `True` oraz `False`.",
+        "Wpisz `False`."
+      ]
     }
   ]
 }

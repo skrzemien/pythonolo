@@ -8,10 +8,11 @@
  * Pyodide dochodzi zwykłym `import`, bez `importScripts`.
  *
  * Protokół wiadomości
- *   main -> worker: { typ: 'uruchom', id, kod, kodTestu?, wejscie? }
+ *   main -> worker: { typ: 'uruchom', id, kod, kodTestu?, wejscie?, scenariuszPygame? }
  *   worker -> main: { typ: 'gotowy' }
  *                   { typ: 'blad-startu', komunikat }
  *                   { typ: 'wyjscie', id, strumien: 'stdout'|'stderr'|'wejscie', tekst }
+ *                   { typ: 'ekran', id, dane }
  *                   { typ: 'koniec', id, ok, stdout, blad? }
  */
 
@@ -31,12 +32,20 @@ const PRELUDIUM = `
 import builtins, json, sys, traceback
 import _host  # moduł zarejestrowany po stronie JavaScriptu
 
+sys.path.insert(0, "/_moduly")
+import pygame as _pygame_mod
+
 _kolejka_wejscia = []
+_scenariusz_pygame = []
 
 def _ustaw_wejscie(dane):
     _kolejka_wejscia.clear()
     if dane:
         _kolejka_wejscia.extend(str(x) for x in dane)
+
+def _ustaw_scenariusz_pygame(dane_json):
+    global _scenariusz_pygame
+    _scenariusz_pygame = json.loads(dane_json) if dane_json else []
 
 def _wczytaj(prompt=""):
     """Zamiennik input(). Dane bierze z listy przygotowanej w zadaniu.
@@ -62,6 +71,7 @@ def _uruchom(kod, kod_testu):
 
     Zwraca None przy sukcesie albo JSON z opisem błędu.
     """
+    _pygame_mod._resetuj_stan(_scenariusz_pygame, _host.ekranPygame)
     przestrzen = {"__name__": "__main__"}
     zrodlo = "program"
     try:
@@ -84,6 +94,8 @@ def _uruchom(kod, kod_testu):
         })
     finally:
         try:
+            if _pygame_mod._stan["ekran"] is not None:
+                _pygame_mod._publikuj_ekran()
             sys.stdout.flush()
             sys.stderr.flush()
         except Exception:
@@ -108,13 +120,28 @@ function wyslijWyjscie(strumien, tekst) {
 }
 
 async function przygotuj() {
-    pyodide = await loadPyodide({ indexURL: BAZA });
+    const [instancja, kodPygame] = await Promise.all([
+        loadPyodide({ indexURL: BAZA }),
+        fetch(new URL('./pygame_shim.py', import.meta.url)).then(odp => {
+            if (!odp.ok) throw new Error(`Nie udało się wczytać modułu pygame (HTTP ${odp.status})`);
+            return odp.text();
+        })
+    ]);
+    pyodide = instancja;
+
+    pyodide.FS.mkdir('/_moduly');
+    pyodide.FS.writeFile('/_moduly/pygame.py', kodPygame, { encoding: 'utf8' });
 
     pyodide.setStdout({ batched: tekst => wyslijWyjscie('stdout', tekst + '\n') });
     pyodide.setStderr({ batched: tekst => wyslijWyjscie('stderr', tekst + '\n') });
 
     pyodide.registerJsModule('_host', {
-        echoWejscia: tekst => wyslijWyjscie('wejscie', tekst)
+        echoWejscia: tekst => wyslijWyjscie('wejscie', tekst),
+        ekranPygame: jsonDane => self.postMessage({
+            typ: 'ekran',
+            id: idBiezacego,
+            dane: JSON.parse(jsonDane)
+        })
     });
 
     pyodide.runPython(PRELUDIUM);
@@ -138,6 +165,9 @@ self.onmessage = async ({ data }) => {
         await start;
 
         pyodide.globals.get('_ustaw_wejscie')(pyodide.toPy(data.wejscie || []));
+        pyodide.globals.get('_ustaw_scenariusz_pygame')(
+            data.scenariuszPygame ? JSON.stringify(data.scenariuszPygame) : ''
+        );
 
         const wynik = pyodide.globals.get('_uruchom')(data.kod, data.kodTestu || null);
 

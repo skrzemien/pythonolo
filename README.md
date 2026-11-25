@@ -3,9 +3,9 @@
 Statyczna strona z zadaniami z Pythona dla początkujących (ok. 12 lat). Kod pisze się
 i uruchamia prosto w przeglądarce — bez instalowania czegokolwiek i bez konta.
 
-**12 modułów, 146 zadań**: od `print` przez zmienne, warunki i pętle aż po funkcje,
-słowniki i mini-projekty. Dwa pierwsze moduły są najdłuższe (po 15 zadań) — to
-podstawy, na których stoi cała reszta.
+**13 modułów, 165 zadań**: od `print` przez zmienne, warunki, pętle, listy, krotki
+i funkcje aż po słowniki, mini-projekty i **podstawy Pygame** (z podglądem okna gry
+na stronie oraz przyciskiem **Kopiuj kod** do uruchomienia lokalnie na komputerze).
 
 ## Jak to działa
 
@@ -222,6 +222,7 @@ piaskownica.html      wolny edytor bez zadania
 zmiany.html           lista tego, co doszło w zadaniach
 css/style.css
 js/pyodide-worker.js  worker: uruchamia kod w Pyodide
+js/pygame_shim.py     symulacja API pygame do podglądu w przeglądarce i testów
 js/runner.js          limit czasu, Stop, restart workera
 js/exercise.js        logika zadania i sprawdzania
 js/bledy.js           tłumaczenie wyjątków Pythona na polskie podpowiedzi

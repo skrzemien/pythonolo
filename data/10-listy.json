@@ -1,7 +1,7 @@
 {
   "id": "10-listy",
   "tytul": "Listy",
-  "wstep": "Lista przechowuje wiele wartości pod jedną nazwą: `fruits = [\"jabłko\", \"gruszka\"]`. Elementy numerujemy od `0`, więc `fruits[0]` to pierwszy element, a `fruits[-1]` to ostatni element.\n\nPrzydatne funkcje i metody: `len(lista)` — liczba elementów, `lista.append(x)` — dopisanie elementu na końcu, `sum(lista)`, `min(lista)`, `max(lista)`.",
+  "wstep": "Lista przechowuje wiele wartości pod jedną nazwą: `fruits = [\"jabłko\", \"gruszka\"]`. Elementy numerujemy od `0`, więc `fruits[0]` to pierwszy element, a `fruits[-1]` to ostatni element. Istniejący element zmienisz przez `fruits[0] = \"banan\"`.\n\nPrzydatne funkcje i metody: `len(lista)` — liczba elementów, `lista.append(x)` — dopisanie elementu na końcu, `sum(lista)`, `min(lista)`, `max(lista)`. Stały zestaw wartości w nawiasach okrągłych, np. `size = (800, 600)`, to krotka (`tuple`).",
   "zadania": [
     {
       "id": "listy-1",
@@ -200,6 +200,56 @@
         "Użyj `sum(grades) / len(grades)`."
       ],
       "rozwiazanie": "grades = [5, 4, 3, 5]\naverage = sum(grades) / len(grades)\nprint(\"Średnia:\", round(average, 2))"
+    },
+    {
+      "id": "listy-zmiana-elementu",
+      "typ": "uzupelnij",
+      "tytul": "Zmiana elementu na liście",
+      "opis": "Zmień pierwszą współrzędną zapisaną na liście.\n\n* Lista `position` przechowuje dwie liczby: `10` oraz `20`.\n* W drugiej linii chcesz zastąpić pierwszą liczbę wartością `50`.\n* Wpisz w lukę indeks pierwszego elementu listy. Gotowe `print` wyświetli zmienioną listę.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`[50, 20]`",
+      "kod": "position = [10, 20]\nposition[___] = 50\nprint(position)",
+      "luki": [
+        [
+          "0"
+        ]
+      ],
+      "wyjscie": "[50, 20]",
+      "podpowiedzi": [
+        "Elementy listy numerujemy od `0`.",
+        "Wpisz `0`."
+      ]
+    },
+    {
+      "id": "listy-krotka-wymiary",
+      "typ": "uzupelnij",
+      "tytul": "Krotka z wymiarami okna",
+      "opis": "Odczytaj wysokość okna zapisaną w krotce.\n\n* Zmienna `size` przechowuje krotkę `(800, 600)`, czyli stałą parę: szerokość i wysokość.\n* Pierwsze `print` odczytuje szerokość spod indeksu `0`.\n* W ostatniej linii wpisz w lukę dodatni indeks drugiego elementu krotki `size`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n```\nSzerokość: 800\nWysokość: 600\n```",
+      "kod": "size = (800, 600)\nprint(\"Szerokość:\", size[0])\nprint(\"Wysokość:\", size[___])",
+      "luki": [
+        [
+          "1"
+        ]
+      ],
+      "wyjscie": "Szerokość: 800\nWysokość: 600",
+      "podpowiedzi": [
+        "W krotce indeksy liczymy tak samo jak na liście — od `0`.",
+        "Wpisz `1`."
+      ]
+    },
+    {
+      "id": "listy-rozpakowanie-krotki",
+      "typ": "napisz",
+      "tytul": "Rozpakowanie koloru RGB",
+      "opis": "Rozpakuj krotkę z kolorem RGB do trzech osobnych zmiennych.\n\n* Krotka `color` zawiera trzy składowe koloru: czerwoną (`255`), zieloną (`128`) i niebieską (`0`).\n* W drugiej linii zapisz zmienne `r`, `g`, `b` po przecinku i przypisz im `color` (`r, g, b = color`).\n* Wypisz przez `print` w pierwszej linii tekst `Czerwony:` i wartość `r`, a w drugiej tekst `Zielony:` i wartość `g`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n```\nCzerwony: 255\nZielony: 128\n```",
+      "start": "color = (255, 128, 0)\n",
+      "sprawdzenie": {
+        "tryb": "wyjscie",
+        "oczekiwane": "Czerwony: 255\nZielony: 128"
+      },
+      "podpowiedzi": [
+        "Zapis `r, g, b = color` przypisze kolejne trzy liczby z krotki do zmiennych `r`, `g` oraz `b`.",
+        "Dodaj `print(\"Czerwony:\", r)` oraz `print(\"Zielony:\", g)`."
+      ],
+      "rozwiazanie": "color = (255, 128, 0)\nr, g, b = color\nprint(\"Czerwony:\", r)\nprint(\"Zielony:\", g)"
     }
   ]
 }

@@ -152,7 +152,7 @@ const REGULY = [
     },
     {
         nazwa: 'ImportError',
-        tekst: 'Nie udało się zaimportować modułu. W tych zadaniach wystarczają wbudowane moduły Pythona.'
+        tekst: 'Nie udało się zaimportować modułu. Na tej stronie dostępne są wbudowane moduły Pythona (np. `math`, `random`) oraz `pygame`.'
     },
     {
         nazwa: 'ModuleNotFoundError',

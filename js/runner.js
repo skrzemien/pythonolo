@@ -12,10 +12,12 @@ export class Uruchamiacz {
     constructor({
         onStan = () => {},
         onWyjscie = () => {},
+        onEkran = () => {},
         tworzWorkera = () => new Worker('js/pyodide-worker.js', { type: 'module' })
     } = {}) {
         this.onStan = onStan;
         this.onWyjscie = onWyjscie;
+        this.onEkran = onEkran;
         this.tworzWorkera = tworzWorkera;
         this.worker = null;
         this.gotowy = false;
@@ -77,6 +79,8 @@ export class Uruchamiacz {
 
         if (data.typ === 'wyjscie') {
             this.onWyjscie(data.strumien, data.tekst);
+        } else if (data.typ === 'ekran') {
+            this.onEkran(data.dane);
         } else if (data.typ === 'koniec') {
             this.zakoncz({ ok: data.ok, stdout: data.stdout, blad: data.blad });
         }
@@ -95,7 +99,7 @@ export class Uruchamiacz {
      * Uruchamia kod. Zwraca { ok, stdout, blad, przerwane }.
      * Kolejne wywołanie przerywa poprzednie.
      */
-    uruchom({ kod, kodTestu = null, wejscie = [], limitMs = LIMIT_MS }) {
+    uruchom({ kod, kodTestu = null, wejscie = [], scenariuszPygame = null, limitMs = LIMIT_MS }) {
         if (this.biezace) this.przerwij();
 
         const id = ++this.licznikId;
@@ -110,7 +114,7 @@ export class Uruchamiacz {
                 // pobieranie silnika na wolnym łączu nie udawało nieskończonej pętli.
                 timer: this.gotowy ? setTimeout(() => this.przerwij(true), limitMs) : null
             };
-            this.worker.postMessage({ typ: 'uruchom', id, kod, kodTestu, wejscie });
+            this.worker.postMessage({ typ: 'uruchom', id, kod, kodTestu, wejscie, scenariuszPygame });
         });
     }
 

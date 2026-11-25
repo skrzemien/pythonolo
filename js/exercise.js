@@ -7,7 +7,7 @@ import { podepnijWyczyszczeniePostepu } from './stopka.js';
 import { Uruchamiacz } from './runner.js';
 import { podepnijCzytanie, przygotujCzytanie } from './czytanie.js';
 import {
-    Konsola, ustawStan, pokazBlad, pokazWynik, schowajWynik,
+    Konsola, EkranGry, podepnijKopiowanie, ustawStan, pokazBlad, pokazWynik, schowajWynik,
     wyjsciaZgodne, htmlPorownania
 } from './ui.js';
 
@@ -151,10 +151,12 @@ function render({ wpis, modul, zadanie, poprzednie, nastepne }) {
                     <button class="przycisk glowny" id="uruchom">▶ Uruchom</button>
                     <button class="przycisk" id="stop" disabled>⏹ Stop</button>
                     <button class="przycisk zielony" id="sprawdz">✓ Sprawdź</button>
+                    <button class="przycisk maly" type="button" id="kopiuj-kod">📋 Kopiuj kod</button>
                     <button class="przycisk maly" id="reset">↺ Reset</button>
                 </div>
                 ${htmlPanelu(zadanie)}
                 <div class="wynik" id="wynik" role="status"></div>
+                <div class="ekran-gry" id="ekran-gry" hidden></div>
                 <div class="konsola" id="konsola" role="log" aria-live="polite"
                      aria-label="Wynik działania programu"></div>
             </section>
@@ -222,6 +224,7 @@ async function start() {
 
     const elWynik = document.getElementById('wynik');
     const konsola = new Konsola(document.getElementById('konsola'));
+    const ekranGry = new EkranGry(document.getElementById('ekran-gry'));
     const przyciskUruchom = document.getElementById('uruchom');
     const przyciskStop = document.getElementById('stop');
     const przyciskSprawdz = document.getElementById('sprawdz');
@@ -234,7 +237,8 @@ async function start() {
             przyciskSprawdz.disabled = pracuje;
             przyciskStop.disabled = !pracuje;
         },
-        onWyjscie: (strumien, tekst) => konsola.dopisz(strumien, tekst)
+        onWyjscie: (strumien, tekst) => konsola.dopisz(strumien, tekst),
+        onEkran: dane => ekranGry.pokaz(dane)
     });
 
     /* --- pobieranie kodu w zależności od typu zadania --- */
@@ -262,19 +266,29 @@ async function start() {
         ? zlozKod(zadanie.kod, poluLuk.map(p => p.value))
         : edytor.getValue();
 
+    const scenariuszPygame = zadanie.scenariuszPygame
+        || (zadanie.sprawdzenie && zadanie.sprawdzenie.scenariuszPygame)
+        || null;
+
     /* --- uruchamianie --- */
 
     async function uruchom() {
         konsola.wyczysc();
+        ekranGry.wyczysc();
         schowajWynik(elWynik);
 
         const wynik = await uruchamiacz.uruchom({
             kod: biezacyKod(),
-            wejscie: zadanie.wejscie || (zadanie.sprawdzenie && zadanie.sprawdzenie.wejscie) || []
+            wejscie: zadanie.wejscie || (zadanie.sprawdzenie && zadanie.sprawdzenie.wejscie) || [],
+            scenariuszPygame
         });
 
         if (!wynik.ok && wynik.blad) pokazBlad(elWynik, wynik.blad);
-        else if (konsola.pusta) konsola.info('(program nic nie wypisał)');
+        else if (konsola.pusta) {
+            konsola.info(ekranGry.widoczny
+                ? '(podgląd okna Pygame widać powyżej; program nie wypisał tekstu przez print)'
+                : '(program nic nie wypisał)');
+        }
         return wynik;
     }
 
@@ -337,12 +351,14 @@ async function start() {
     async function sprawdzNapisz() {
         const sprawdzenie = zadanie.sprawdzenie || { tryb: 'wyjscie', oczekiwane: '' };
         konsola.wyczysc();
+        ekranGry.wyczysc();
         schowajWynik(elWynik);
 
         const wynik = await uruchamiacz.uruchom({
             kod: biezacyKod(),
             kodTestu: sprawdzenie.tryb === 'testy' ? sprawdzenie.kod : null,
-            wejscie: sprawdzenie.wejscie || zadanie.wejscie || []
+            wejscie: sprawdzenie.wejscie || zadanie.wejscie || [],
+            scenariuszPygame
         });
 
         if (!wynik.ok) {
@@ -425,9 +441,11 @@ async function start() {
     przyciskUruchom.addEventListener('click', uruchom);
     przyciskSprawdz.addEventListener('click', sprawdz);
     przyciskStop.addEventListener('click', () => uruchamiacz.przerwij());
+    podepnijKopiowanie(document.getElementById('kopiuj-kod'), biezacyKod);
 
     document.getElementById('reset').addEventListener('click', () => {
         konsola.wyczysc();
+        ekranGry.wyczysc();
         schowajWynik(elWynik);
         if (zadanie.typ === 'uzupelnij') {
             poluLuk.forEach(p => { p.value = ''; p.classList.remove('ok', 'zle'); });

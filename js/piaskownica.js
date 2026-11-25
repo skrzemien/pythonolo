@@ -2,7 +2,7 @@
 
 import { utworzEdytor } from './editor.js';
 import { Uruchamiacz } from './runner.js';
-import { Konsola, ustawStan, pokazBlad, schowajWynik } from './ui.js';
+import { Konsola, EkranGry, podepnijKopiowanie, ustawStan, pokazBlad, schowajWynik } from './ui.js';
 import { podepnijWyczyszczeniePostepu } from './stopka.js';
 
 const KLUCZ_KODU = 'python-az:piaskownica';
@@ -18,6 +18,7 @@ for i in range(1, 4):
 const elStan = document.getElementById('stan');
 const elWynik = document.getElementById('wynik');
 const konsola = new Konsola(document.getElementById('konsola'));
+const ekranGry = new EkranGry(document.getElementById('ekran-gry'));
 
 const przyciskUruchom = document.getElementById('uruchom');
 const przyciskStop = document.getElementById('stop');
@@ -40,7 +41,8 @@ const uruchamiacz = new Uruchamiacz({
         przyciskUruchom.disabled = (stan === 'pracuje');
         przyciskStop.disabled = (stan !== 'pracuje');
     },
-    onWyjscie: (strumien, tekst) => konsola.dopisz(strumien, tekst)
+    onWyjscie: (strumien, tekst) => konsola.dopisz(strumien, tekst),
+    onEkran: dane => ekranGry.pokaz(dane)
 });
 
 function daneWejsciowe() {
@@ -51,6 +53,7 @@ function daneWejsciowe() {
 
 async function uruchom() {
     konsola.wyczysc();
+    ekranGry.wyczysc();
     schowajWynik(elWynik);
 
     const wynik = await uruchamiacz.uruchom({
@@ -62,14 +65,18 @@ async function uruchom() {
         pokazBlad(elWynik, wynik.blad);
     }
     if (wynik.ok && konsola.pusta) {
-        konsola.info('(program zakończył się bez wypisywania czegokolwiek)');
+        konsola.info(ekranGry.widoczny
+            ? '(podgląd okna Pygame widać powyżej; program nie wypisał tekstu przez print)'
+            : '(program zakończył się bez wypisywania czegokolwiek)');
     }
 }
 
 przyciskUruchom.addEventListener('click', uruchom);
 przyciskStop.addEventListener('click', () => uruchamiacz.przerwij());
+podepnijKopiowanie(document.getElementById('kopiuj-kod'), () => edytor.getValue());
 
 document.getElementById('wyczysc').addEventListener('click', () => {
+    ekranGry.wyczysc();
     edytor.setValue('');
     edytor.focus();
 });

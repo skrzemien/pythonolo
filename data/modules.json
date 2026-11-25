@@ -62,9 +62,9 @@
       "id": "08-while",
       "numer": 8,
       "tytul": "Pętla while",
-      "opis": "Powtarzanie, dopóki warunek jest prawdziwy. Break i continue.",
+      "opis": "Powtarzanie, dopóki warunek jest prawdziwy. Flaga pętli, break i continue.",
       "ikona": "🔁",
-      "liczbaZadan": 11
+      "liczbaZadan": 12
     },
     {
       "id": "09-for",
@@ -77,18 +77,18 @@
     {
       "id": "10-listy",
       "numer": 10,
-      "tytul": "Listy",
-      "opis": "Zbieranie wielu wartości: indeksy, append, sum, min i max.",
+      "tytul": "Listy i krotki",
+      "opis": "Zbieranie wielu wartości: indeksy, zmiana elementów, append oraz krotki.",
       "ikona": "📋",
-      "liczbaZadan": 12
+      "liczbaZadan": 15
     },
     {
       "id": "11-funkcje",
       "numer": 11,
-      "tytul": "Funkcje",
-      "opis": "Własne polecenia: def, argumenty i return.",
+      "tytul": "Funkcje i moduły",
+      "opis": "Własne polecenia: def, argumenty, return oraz import gotowych modułów.",
       "ikona": "⚙️",
-      "liczbaZadan": 11
+      "liczbaZadan": 14
     },
     {
       "id": "12-projekty",
@@ -97,6 +97,14 @@
       "opis": "Słowniki oraz mini-programy łączące wszystko razem.",
       "ikona": "🏆",
       "liczbaZadan": 13
+    },
+    {
+      "id": "13-pygame",
+      "numer": 13,
+      "tytul": "Podstawy Pygame",
+      "opis": "Okno gry, kolory RGB, rysowanie figur, obiekty Rect, kolizje i pętla gry.",
+      "ikona": "🎮",
+      "liczbaZadan": 12
     }
   ]
 }

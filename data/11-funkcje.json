@@ -1,7 +1,7 @@
 {
   "id": "11-funkcje",
   "tytul": "Funkcje",
-  "wstep": "Funkcja to własne, nazwane polecenie — definiujesz je raz i wywołujesz dowolną liczbę razy:\n\n```\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```\n\n`def` rozpoczyna definicję, w nawiasach są argumenty, a `return` przekazuje obliczony wynik. Bez `return` funkcja nie przekazuje wyniku obliczeń (zwraca pustą wartość `None`).\n\nW tym module sprawdzarka wywołuje Twoją funkcję z różnymi danymi — jej nazwa i liczba argumentów muszą dokładnie zgadzać się z poleceniem.",
+  "wstep": "Funkcja to własne, nazwane polecenie — definiujesz je raz i wywołujesz dowolną liczbę razy:\n\n```\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```\n\n`def` rozpoczyna definicję, w nawiasach są argumenty, a `return` przekazuje obliczony wynik. Bez `return` funkcja nie przekazuje wyniku obliczeń (zwraca pustą wartość `None`).\n\nW tym module sprawdzarka wywołuje Twoją funkcję z różnymi danymi — jej nazwa i liczba argumentów muszą dokładnie zgadzać się z poleceniem. Poznasz też słowo `import`, które dołącza gotowe moduły z funkcjami i stałymi (np. `import math`).",
   "zadania": [
     {
       "id": "funkcje-1",
@@ -181,6 +181,56 @@
         "Zwróć `text * times`."
       ],
       "rozwiazanie": "def repeat_text(text, times):\n    return text * times"
+    },
+    {
+      "id": "funkcje-import-math",
+      "typ": "uzupelnij",
+      "tytul": "Import gotowego modułu",
+      "opis": "Dołącz wbudowany moduł matematyczny, aby obliczyć pierwiastek.\n\n* Druga linia używa funkcji `math.sqrt(25)` oraz `int` i `print`, aby wypisać pierwiastek z `25`.\n* Aby Python znał moduł `math`, trzeba go dołączyć na początku programu.\n* Wpisz w lukę w pierwszej linii słowo kluczowe importujące moduł.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`5`",
+      "kod": "___ math\nprint(int(math.sqrt(25)))",
+      "luki": [
+        [
+          "import"
+        ]
+      ],
+      "wyjscie": "5",
+      "podpowiedzi": [
+        "To angielskie słowo oznacza „zaimportuj”.",
+        "Wpisz `import` małymi literami."
+      ]
+    },
+    {
+      "id": "funkcje-stala-modulu",
+      "typ": "uzupelnij",
+      "tytul": "Stała z modułu",
+      "opis": "Odczytaj przybliżenie liczby π z zaimportowanego modułu.\n\n* Pierwsza linia wykonuje `import math`. Moduły oprócz funkcji udostępniają po kropce także stałe liczbowe.\n* W drugiej linii `print` oraz `round` zaokrąglają wybraną wartość do `2` miejsc po kropce.\n* Wpisz w lukę po `math.` dwuliterową nazwę stałej oznaczającej liczbę π (bez nawiasów).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`3.14`",
+      "kod": "import math\nprint(round(math.___, 2))",
+      "luki": [
+        [
+          "pi"
+        ]
+      ],
+      "wyjscie": "3.14",
+      "podpowiedzi": [
+        "Stałą odczytujemy po kropce bez nawiasów, np. `math.pi`.",
+        "Wpisz `pi`."
+      ]
+    },
+    {
+      "id": "funkcje-ogranicz-zakres",
+      "typ": "napisz",
+      "tytul": "Utrzymanie współrzędnej w granicach",
+      "opis": "Napisz funkcję utrzymującą współrzędną w granicach ekranu.\n\n* Funkcja `clamp_x` przyjmuje współrzędną `x` oraz górną granicę `max_x`.\n* Jeśli `x` jest mniejsze niż `0`, użyj `if` oraz `return`, aby zwrócić `0`.\n* Jeśli `x` jest większe niż `max_x`, zwróć `max_x`.\n* W pozostałych przypadkach (od `0` do `max_x` włącznie) zwróć niezmienione `x`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "def clamp_x(x, max_x):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert clamp_x(50, 400) == 50, \"Dla wartości wewnątrz zakresu zwróć x bez zmian (50)\"\nassert clamp_x(-10, 400) == 0, \"Dla ujemnego x zwróć dolną granicę 0\"\nassert clamp_x(450, 400) == 400, \"Dla x większego niż max_x zwróć max_x (400)\"\nassert clamp_x(0, 400) == 0, \"Wartość 0 leży na granicy i powinna dać 0\"\nassert clamp_x(400, 400) == 400, \"Wartość równa max_x leży na granicy i powinna dać 400\""
+      },
+      "podpowiedzi": [
+        "Sprawdź kolejno warunki brzegowe: `if x < 0:` oraz `if x > max_x:`.",
+        "Na końcu funkcji umieść `return x` dla wartości mieszczących się w zakresie."
+      ],
+      "rozwiazanie": "def clamp_x(x, max_x):\n    if x < 0:\n        return 0\n    if x > max_x:\n        return max_x\n    return x"
     }
   ]
 }

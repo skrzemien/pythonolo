@@ -2,6 +2,38 @@
   "wpisy": [
     {
       "data": "2026-11-25",
+      "tytul": "Nowy moduł: Podstawy Pygame oraz 7 zadań przygotowujących",
+      "opis": "Przed wprowadzeniem grafiki 2D sprawdziliśmy cały kurs pod kątem brakujących elementów składni i uzupełniliśmy wcześniejsze moduły, a następnie dodaliśmy 13. moduł z podstawami biblioteki `pygame`.",
+      "punkty": [
+        "W modułach `08-while`, `10-listy` i `11-funkcje` pojawiły się brakujące cegiełki potrzebne w `pygame`: pętla sterowana flagą logiczną `running = True`, zmiana elementu po indeksie, krotki (`tuple`) z wymiarami okna i kolorem RGB, instrukcja `import` oraz ograniczanie współrzędnych do krawędzi ekranu.",
+        "Nowy moduł `13-pygame` prowadzi w 12 zadaniach od `import pygame` i utworzenia okna `set_mode((400, 300))`, przez kolory RGB, rysowanie prostokątów i kół, obiekty `pygame.Rect`, wykrywanie kolizji `colliderect`, aż po pętlę główną gry z `pygame.QUIT` i sterowaniem `K_RIGHT`.",
+        "Strona wyświetla podgląd narysowanego okna gry i animacji bezpośrednio pod edytorem, a nowy przycisk **Kopiuj kod** pozwala jednym kliknięciem przenieść ten sam kod do edytora na komputerze (np. Thonny lub VS Code z `pygame-ce`)."
+      ],
+      "noweZadania": [
+        "while-flaga-gry",
+        "listy-zmiana-elementu",
+        "listy-krotka-wymiary",
+        "listy-rozpakowanie-krotki",
+        "funkcje-import-math",
+        "funkcje-stala-modulu",
+        "funkcje-ogranicz-zakres",
+        "pygame-import",
+        "pygame-okno",
+        "pygame-kolor-tla",
+        "pygame-prostokat",
+        "pygame-kolo",
+        "pygame-obiekt-rect",
+        "pygame-ruch-w-dol",
+        "pygame-kolizja",
+        "pygame-petla-quit",
+        "pygame-klawisze",
+        "pygame-granica-ekranu",
+        "pygame-mini-gra"
+      ],
+      "stopka": "Dotychczasowe zadania zachowały swoje identyfikatory i zaliczenia. Kurs liczy teraz 13 modułów i 165 zadań."
+    },
+    {
+      "data": "2026-11-25",
       "tytul": "Jaśniejsze polecenia i wsparcie neuroróżnorodności (ASD/ADHD)",
       "opis": "Przeprowadziliśmy audyt merytoryczny wszystkich 12 modułów, 146 zadań i komunikatów błędów pod kątem dzieci i młodzieży w spektrum autyzmu oraz z ADHD.",
       "punkty": [

@@ -19,6 +19,7 @@ Użycie:
 
 import builtins
 import contextlib
+import importlib.util
 import io
 import json
 import re
@@ -26,6 +27,13 @@ import sys
 from pathlib import Path
 
 KATALOG = Path(__file__).resolve().parent.parent / 'data'
+SCIEZKA_PYGAME = Path(__file__).resolve().parent.parent / 'js' / 'pygame_shim.py'
+
+sys.dont_write_bytecode = True
+_spec_pygame = importlib.util.spec_from_file_location('pygame', SCIEZKA_PYGAME)
+_modul_pygame = importlib.util.module_from_spec(_spec_pygame)
+sys.modules['pygame'] = _modul_pygame
+_spec_pygame.loader.exec_module(_modul_pygame)
 
 
 def normalizuj(tekst):
@@ -35,8 +43,9 @@ def normalizuj(tekst):
     return re.sub(r'\n+$', '', '\n'.join(linie))
 
 
-def uruchom(kod, wejscie=None, kod_testu=None):
+def uruchom(kod, wejscie=None, kod_testu=None, scenariusz_pygame=None):
     """Wykonuje kod jak worker na stronie. Zwraca (wypisane, błąd albo None, niewykorzystane wejście)."""
+    _modul_pygame._resetuj_stan(scenariusz_pygame, None)
     kolejka = [str(x) for x in (wejscie or [])]
 
     def wczytaj(zacheta=''):
@@ -65,6 +74,10 @@ def wejscie_zadania(zadanie):
     return zadanie.get('wejscie') or (zadanie.get('sprawdzenie') or {}).get('wejscie') or []
 
 
+def scenariusz_zadania(zadanie):
+    return zadanie.get('scenariuszPygame') or (zadanie.get('sprawdzenie') or {}).get('scenariuszPygame')
+
+
 def sprawdz_uzupelnij(zadanie, zglos):
     czesci = zadanie['kod'].split('___')
     liczba_luk = len(czesci) - 1
@@ -77,7 +90,7 @@ def sprawdz_uzupelnij(zadanie, zglos):
             wartosci = [luka[0] for luka in zadanie['luki']]
             wartosci[i] = odpowiedz
             kod = ''.join(c + (wartosci[j] if j < liczba_luk else '') for j, c in enumerate(czesci))
-            wypisane, blad, _ = uruchom(kod, wejscie_zadania(zadanie))
+            wypisane, blad, _ = uruchom(kod, wejscie_zadania(zadanie), None, scenariusz_zadania(zadanie))
             if blad:
                 zglos(f'luka {i + 1} = {odpowiedz!r}: {blad}')
             elif normalizuj(wypisane) != normalizuj(zadanie.get('wyjscie', '')):
@@ -90,13 +103,14 @@ def sprawdz_napisz(zadanie, zglos):
     tryb = sprawdzenie.get('tryb')
     kod_testu = sprawdzenie.get('kod') if tryb == 'testy' else None
     wejscie = wejscie_zadania(zadanie)
+    scenariusz = scenariusz_zadania(zadanie)
 
     rozwiazanie = zadanie.get('rozwiazanie')
     if not rozwiazanie:
         zglos('brak pola "rozwiazanie"')
         return
 
-    wypisane, blad, zostalo = uruchom(rozwiazanie, wejscie, kod_testu)
+    wypisane, blad, zostalo = uruchom(rozwiazanie, wejscie, kod_testu, scenariusz)
     if blad:
         zglos(f'wzorcowe rozwiązanie nie przechodzi: {blad}')
     elif tryb == 'wyjscie' and normalizuj(wypisane) != normalizuj(sprawdzenie.get('oczekiwane')):
@@ -104,7 +118,7 @@ def sprawdz_napisz(zadanie, zglos):
     if zostalo:
         zglos(f'rozwiązanie nie wykorzystało {zostalo} przygotowanych odpowiedzi dla input()')
 
-    wypisane, blad, _ = uruchom(zadanie.get('start', ''), wejscie, kod_testu)
+    wypisane, blad, _ = uruchom(zadanie.get('start', ''), wejscie, kod_testu, scenariusz)
     if not blad and (tryb == 'testy' or normalizuj(wypisane) == normalizuj(sprawdzenie.get('oczekiwane'))):
         zglos('sam kod startowy zalicza zadanie')
 

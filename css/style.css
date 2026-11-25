@@ -514,6 +514,47 @@ input:focus-visible,
 .konsola .stderr { color: #ff9aa6; }
 .konsola .info { color: #8ea2bd; }
 
+/* --- podgląd okna gry Pygame ---------------------------------------------- */
+
+.ekran-gry[hidden] { display: none; }
+
+.ekran-gry {
+    background: var(--tlo-karta);
+    border: 1px solid var(--ramka);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--cien);
+}
+
+.ekran-naglowek {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 8px 14px;
+    background: #eef2f8;
+    border-bottom: 1px solid var(--ramka);
+    font-size: .88rem;
+}
+
+.ekran-tytul { font-weight: 700; color: var(--tekst); }
+.ekran-wymiary { color: var(--tekst-slaby); font-family: var(--mono); font-size: .82rem; margin-left: auto; }
+
+.ekran-obszar {
+    display: grid;
+    place-items: center;
+    padding: 14px;
+    background: #1e293b;
+}
+
+.ekran-obszar canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+    background: #000;
+}
+
 /* --- komunikat wyniku ----------------------------------------------------- */
 
 .wynik {
