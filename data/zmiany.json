@@ -1,6 +1,18 @@
 {
   "wpisy": [
     {
+      "data": "2026-11-25",
+      "tytul": "Jaśniejsze polecenia i wsparcie neuroróżnorodności (ASD/ADHD)",
+      "opis": "Przeprowadziliśmy audyt merytoryczny wszystkich 12 modułów, 146 zadań i komunikatów błędów pod kątem dzieci i młodzieży w spektrum autyzmu oraz z ADHD.",
+      "punkty": [
+        "Wszystkie nazwy zmiennych, funkcje, słowa kluczowe Pythona i wpisywane teksty w poleceniach oraz podpowiedziach są teraz konsekwentnie wyróżnione jako `kod`. Jednoliterowe zmienne (`a`, `b`, `i`, `n`) nie zlewają się już z polskimi spójnikami.",
+        "Zastąpiliśmy potoczne powiedzenia i przenośnie (np. „siedzi w zmiennej”, „załatwia sprawę”, „pętla kręci się w kółko”, „opakuj surowy tekst”) dosłownymi, jednoznacznymi instrukcjami.",
+        "W zadaniach z `input()` doprecyzowaliśmy, że tekst pytania wewnątrz `input(...)` może być dowolny, ponieważ sprawdzarka porównuje wyłącznie wynik `print()`.",
+        "Uporządkowaliśmy komunikaty błędów i podpowiedzi w interfejsie: usunięto pozostałe formy męskoosobowe („podałeś”, „spróbuj sam”), nieprecyzyjny opis „białych pól” oraz ogólnikowe nagłówki na rzecz konkretnych wskazówek krok po kroku."
+      ],
+      "stopka": "Identyfikatory, kolejność zadań oraz wzorcowe wyniki są bez zmian — zapisany postęp uczniów pozostaje w pełni zachowany."
+    },
+    {
       "data": "2026-09-23",
       "tytul": "Poprawki w sprawdzaniu i w poleceniach",
       "opis": "Przejrzeliśmy wszystkie 146 zadań pod kątem młodszego ucznia i poprawiliśmy to, co mogło mylić.",

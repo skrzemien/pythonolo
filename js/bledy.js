@@ -23,7 +23,7 @@ const REGULY = [
     {
         nazwa: 'SyntaxError',
         wzor: /invalid decimal literal|leading zeros/i,
-        tekst: 'Coś jest nie tak z liczbą albo z nazwą zmiennej. Nazwa nie może zaczynać się od cyfry.'
+        tekst: 'Nieprawidłowy zapis liczby lub nazwy zmiennej. Nazwa zmiennej nie może zaczynać się od cyfry, a liczba całkowita od zera (np. `05`).'
     },
     {
         nazwa: 'SyntaxError',
@@ -81,14 +81,14 @@ const REGULY = [
     {
         nazwa: 'TypeError',
         wzor: /'(.+?)' object is not callable/i,
-        tekst: (m) => `Próbujesz wywołać \`${m[1]}\` jak funkcję, a to nie jest funkcja. `
-            + `Czy przypadkiem nazwa zmiennej nie przykryła nazwy funkcji?`
+        tekst: (m) => `Próbujesz wywołać \`${m[1]}\` jak funkcję, a ta wartość nie jest funkcją. `
+            + `Sprawdź, czy wcześniej nie utworzono zmiennej o tej samej nazwie co funkcja (np. \`print = ...\`).`
     },
     {
         nazwa: 'TypeError',
         wzor: /takes (\d+) positional arguments? but (\d+) (?:was|were) given/i,
-        tekst: (m) => `Funkcja przyjmuje ${m[1]} argumentów, a podałeś ${m[2]}. `
-            + `Policz wartości w nawiasach.`
+        tekst: (m) => `Funkcja oczekuje innej liczby argumentów (oczekiwano: \`${m[1]}\`, podano: \`${m[2]}\`). `
+            + `Policz wartości wpisane w nawiasach.`
     },
     {
         nazwa: 'TypeError',
@@ -102,8 +102,8 @@ const REGULY = [
     },
     {
         nazwa: 'TypeError',
-        tekst: 'Coś nie pasuje typem: np. liczba tam, gdzie potrzebny jest tekst. '
-            + 'Pomogą `str()`, `int()` i `float()`.'
+        tekst: 'Niezgodne typy danych — na przykład użyto liczby tam, gdzie potrzebny jest tekst. '
+            + 'Do zamiany typu służą `str()`, `int()` oraz `float()`.'
     },
 
     // --- wartości ---
@@ -125,7 +125,7 @@ const REGULY = [
     },
     {
         nazwa: 'ValueError',
-        tekst: 'Wartość ma dobry typ, ale zły kształt albo zakres. Sprawdź, co dokładnie podajesz.'
+        tekst: 'Wartość ma odpowiedni typ, ale nieprawidłową zawartość lub zakres. Sprawdź dokładnie przekazywane dane.'
     },
 
     // --- reszta ---
@@ -147,8 +147,8 @@ const REGULY = [
     {
         nazwa: 'AttributeError',
         wzor: /'(.+?)' object has no attribute '(.+?)'/i,
-        tekst: (m) => `\`${m[1]}\` nie ma czegoś takiego jak \`${m[2]}\`. Najczęściej to literówka `
-            + `w nazwie metody (np. \`apend\` zamiast \`append\`).`
+        tekst: (m) => `Typ \`${m[1]}\` nie ma metody ani atrybutu o nazwie \`${m[2]}\`. Sprawdź pisownię `
+            + `nazwy po kropce (np. \`append\`, a nie \`apend\`).`
     },
     {
         nazwa: 'ImportError',
@@ -199,7 +199,7 @@ export function wyjasnijBlad(blad) {
 
 /** Krótki, przyjazny nagłówek błędu. */
 export function naglowekBledu(blad) {
-    if (!blad) return 'Coś poszło nie tak';
+    if (!blad) return 'Wystąpił błąd podczas uruchamiania';
     if (blad.nazwa === 'ZaDlugo') return 'Program działał za długo';
     if (blad.nazwa === 'Zatrzymane') return 'Program zatrzymany';
     if (blad.zrodlo === 'srodowisko') return 'Problem z uruchomieniem';

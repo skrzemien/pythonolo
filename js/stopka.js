@@ -3,9 +3,9 @@
 
 import { Postep } from './progress.js';
 
-const PYTANIE = 'Na pewno zacząć od nowa?\n\n'
-    + 'Wszystkie zaliczone zadania zostaną odznaczone. '
-    + 'Tego nie da się cofnąć.';
+const PYTANIE = 'Czy wyzerować zapisany postęp zadań?\n\n'
+    + 'Zaliczenia zadań na tym urządzeniu zostaną usunięte. '
+    + 'Tej operacji nie można cofnąć.';
 
 export function podepnijWyczyszczeniePostepu() {
     const przycisk = document.getElementById('wyczysc-postep');

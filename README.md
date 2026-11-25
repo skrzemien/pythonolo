@@ -69,7 +69,8 @@ Poza tym w całym serwisie:
 - link „przejdź do treści" na początku każdej strony, widoczny po naciśnięciu Tab,
 - wynik działania programu ogłaszany czytnikom ekranu (`role="log"`, `aria-live`),
 - guziki wysokie na co najmniej 44 px, wygodne do trafienia palcem,
-- animacje wyłączane przy systemowym ustawieniu „ogranicz ruch".
+- animacje wyłączane przy systemowym ustawieniu „ogranicz ruch",
+- polecenia i komunikaty błędów redagowane zgodnie z wytycznymi dostępności poznawczej (W3C COGA, CAST UDL) dla uczniów w **spektrum autyzmu (ASD)** i z **ADHD**: dosłowny język bez idiomów, każdy element kodu wyróżniony jako `` `kod` ``, krótkie kroki po jednej czynności oraz spokojne, bezosobowe wskazówki naprawcze.
 
 Dwa rodzaje zadań:
 
@@ -105,7 +106,7 @@ Można też sprawdzić pojedynczy moduł: `python3 tools/sprawdz-zadania.py 07-i
 
 ## Dodanie nowego zadania
 
-Zadania siedzą w `data/<id-modułu>.json`, w tablicy `zadania`. Kolejność w pliku
+Szczegółowe zasady językowe i dydaktyczne (w tym wymagania dla uczniów z ASD i ADHD) opisuje plik `AGENTS.md`. Zadania siedzą w `data/<id-modułu>.json`, w tablicy `zadania`. Kolejność w pliku
 = kolejność na stronie.
 
 Zadanie typu **uzupełnij**:
@@ -231,4 +232,5 @@ js/zmiany.js          renderowanie listy zmian
 data/                 treść zadań
 data/zmiany.json      wpisy na stronę „Zmiany"
 tools/                serwer lokalny i walidator treści
+AGENTS.md             wytyczne merytoryczne i dostępnościowe (ASD/ADHD) dla autorów i agentów AI
 ```

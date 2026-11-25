@@ -1,15 +1,19 @@
 {
   "id": "03-typy",
   "tytul": "Typy danych",
-  "wstep": "Python rozróżnia rodzaje wartości: `str` to tekst (`\"Ala\"`), `int` to liczba całkowita (`12`), `float` to ułamek (`3.5`), `bool` to prawda albo fałsz (`True` / `False`). Typ sprawdzisz przez `type(x)`, a zamienisz przez `int()`, `float()` i `str()`.",
+  "wstep": "Python rozróżnia typy wartości: `str` to tekst (`\"Ala\"`), `int` to liczba całkowita (`12`), `float` to liczba z częścią dziesiętną zapisywaną po kropce (`3.5`), a `bool` to prawda albo fałsz (`True` / `False`). Typ sprawdzisz funkcją `type(x)`, a zamienisz za pomocą `int()`, `float()` oraz `str()`.",
   "zadania": [
     {
       "id": "typy-1",
       "typ": "uzupelnij",
       "tytul": "Jaki to typ?",
-      "opis": "Sprawdź, jakiego typu jest tekst Ala.\n\n* Znajdź lukę wewnątrz polecenia `print`.\n* Wpisz nazwę funkcji, która rozpoznaje typ wartości. Nawiasy i tekst są już gotowe.\n* Po sprawdzeniu zobaczysz nazwę typu `str`. To typ używany do przechowywania tekstu.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`<class 'str'>`",
+      "opis": "Sprawdź, jakiego typu jest tekst `Ala`.\n\n* Znajdź lukę wewnątrz polecenia `print`.\n* Wpisz nazwę funkcji, która rozpoznaje typ wartości. Nawiasy i tekst są już gotowe.\n* Po sprawdzeniu zobaczysz nazwę typu `str`. To typ używany do przechowywania tekstu.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`<class 'str'>`",
       "kod": "print(___(\"Ala\"))",
-      "luki": [["type"]],
+      "luki": [
+        [
+          "type"
+        ]
+      ],
       "wyjscie": "<class 'str'>",
       "podpowiedzi": [
         "Po angielsku „typ” to `type`.",
@@ -22,7 +26,11 @@
       "tytul": "Tekst na liczbę całkowitą",
       "opis": "Zamień zapisany tekst na liczbę, żeby móc do niej dodać jeden.\n\n* W pierwszej linii liczba `12` jest zapisana w cudzysłowie, więc na razie jest tekstem.\n* W lukę przed nawiasem wpisz nazwę funkcji zamieniającej tekst na liczbę całkowitą.\n* Drugą linię zostaw bez zmian. Doda `1` do otrzymanej liczby.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`13`",
       "kod": "age = ___(\"12\")\nprint(age + 1)",
-      "luki": [["int"]],
+      "luki": [
+        [
+          "int"
+        ]
+      ],
       "wyjscie": "13",
       "podpowiedzi": [
         "Liczba całkowita to po angielsku „integer”.",
@@ -32,14 +40,18 @@
     {
       "id": "typy-3",
       "typ": "uzupelnij",
-      "tytul": "Tekst na ułamek",
-      "opis": "Odczytaj cenę z tekstu i podwój ją.\n\n* W pierwszej linii znajduje się tekst `3.5`. To liczba 3 i pół. Python zapisuje ją z kropką zamiast przecinka.\n* W lukę wpisz nazwę funkcji, która zamienia taki tekst na liczbę typu float.\n* Drugą linię zostaw bez zmian. Pomnoży cenę przez `2`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7.0`",
+      "tytul": "Tekst na liczbę z kropką",
+      "opis": "Odczytaj cenę z tekstu i podwój ją.\n\n* W pierwszej linii znajduje się tekst `3.5`. To liczba 3 i pół. Python zapisuje ją z kropką zamiast przecinka.\n* W lukę wpisz nazwę funkcji, która zamienia taki tekst na liczbę typu `float`.\n* Drugą linię zostaw bez zmian. Pomnoży cenę przez `2`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7.0`",
       "kod": "price = ___(\"3.5\")\nprint(price * 2)",
-      "luki": [["float"]],
+      "luki": [
+        [
+          "float"
+        ]
+      ],
       "wyjscie": "7.0",
       "podpowiedzi": [
-        "Nazwa typu to `float` — i tak samo nazywa się polecenie.",
-        "Zwróć uwagę: wynik to `7.0`, a nie `7` — ułamek zostaje ułamkiem."
+        "Nazwa typu to `float` — i tak samo nazywa się funkcja.",
+        "Zwróć uwagę: wynik to `7.0`, a nie `7` — typ `float` zawsze zachowuje część po kropce."
       ]
     },
     {
@@ -48,7 +60,11 @@
       "tytul": "Liczba na tekst",
       "opis": "Zamień liczbę na tekst i dołącz ją do zdania.\n\n* W pierwszej linii znajduje się liczba `25`.\n* Przed nawiasem wpisz nazwę funkcji, która zamieni tę liczbę na tekst.\n* Drugą linię zostaw bez zmian. Połączy otrzymany tekst z pozostałymi częściami zdania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Mam 25 lat`",
       "kod": "text = ___(25)\nprint(\"Mam \" + text + \" lat\")",
-      "luki": [["str"]],
+      "luki": [
+        [
+          "str"
+        ]
+      ],
       "wyjscie": "Mam 25 lat",
       "podpowiedzi": [
         "Tekst to po angielsku „string”, w skrócie `str`.",
@@ -59,7 +75,7 @@
       "id": "typy-5",
       "typ": "napisz",
       "tytul": "Sprawdź typ liczby",
-      "opis": "Sprawdź typ liczby `7`.\n\n* W pustym edytorze użyj funkcji `type` z liczbą `7` jako argumentem.\n* Umieść to wywołanie wewnątrz nawiasów polecenia `print`, żeby zobaczyć odpowiedź.\n* Nie otaczaj liczby cudzysłowami. Chcesz sprawdzić typ liczby, a nie tekstu.\n* Python sam wypisze oznaczenie klasy int, czyli typu liczb całkowitych. Nie przepisuj oznaczenia jako tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`<class 'int'>`",
+      "opis": "Sprawdź typ liczby `7`.\n\n* W pustym edytorze użyj funkcji `type` z liczbą `7` jako argumentem.\n* Umieść to wywołanie wewnątrz nawiasów polecenia `print`, żeby zobaczyć odpowiedź.\n* Nie otaczaj liczby cudzysłowami. Chcesz sprawdzić typ liczby, a nie tekstu.\n* Python sam wypisze oznaczenie klasy `int`, czyli typu liczb całkowitych. Nie przepisuj oznaczenia jako tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`<class 'int'>`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -83,7 +99,7 @@
       },
       "podpowiedzi": [
         "Najpierw `int(text)`, dopiero potem dodawanie.",
-        "Bez zamiany dostaniesz `428` albo błąd — tekst by się „skleił”."
+        "Bez `int(...)` operator `+` połączy dwa teksty w napis `\"428\"` albo zgłosi błąd typu."
       ],
       "rozwiazanie": "text = \"42\"\nprint(int(text) + 8)"
     },
@@ -107,7 +123,7 @@
       "id": "typy-numer-na-napis",
       "typ": "uzupelnij",
       "tytul": "Numer w etykiecie",
-      "opis": "Dołącz numer do tekstowej etykiety.\n\n* Zmienna number zawiera liczbę `8`.\n* W lukę przed nawiasem wpisz funkcję zamieniającą liczbę na tekst.\n* Dzięki temu plus będzie mógł połączyć numer z napisem.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Numer: 8`",
+      "opis": "Dołącz numer do tekstowej etykiety.\n\n* Zmienna `number` zawiera liczbę `8`.\n* W lukę przed nawiasem wpisz funkcję zamieniającą liczbę na tekst.\n* Dzięki temu plus będzie mógł połączyć numer z napisem.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Numer: 8`",
       "kod": "number = 8\nprint(\"Numer: \" + ___(number))",
       "luki": [
         [
@@ -116,7 +132,7 @@
       ],
       "wyjscie": "Numer: 8",
       "podpowiedzi": [
-        "Obie strony sklejania muszą być tekstami.",
+        "Obie łączone wartości przy znaku `+` muszą być tekstami (`str`).",
         "Wpisz `str`."
       ]
     },
@@ -124,7 +140,7 @@
       "id": "typy-cena-z-tekstu",
       "typ": "napisz",
       "tytul": "Cena i opakowanie",
-      "opis": "Dodaj koszt opakowania do ceny zapisanej jako tekst.\n\n* Zostaw gotową zmienną price_text. Zawiera tekst `2.5`, czyli 2 i pół.\n* Zamień jej wartość na liczbę przez float i zapisz w zmiennej price.\n* Dodaj do price `1` i wypisz wynik. Nie dopisuj żadnego tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`3.5`",
+      "opis": "Dodaj koszt opakowania do ceny zapisanej jako tekst.\n\n* Zostaw gotową zmienną `price_text`. Zawiera tekst `2.5`, czyli 2 i pół.\n* Zamień jej wartość na liczbę przez `float` i zapisz w zmiennej `price`.\n* Dodaj do `price` `1` i wypisz wynik. Nie dopisuj żadnego tekstu.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`3.5`",
       "start": "price_text = \"2.5\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -140,7 +156,7 @@
       "id": "typy-porownanie-falsz",
       "typ": "napisz",
       "tytul": "Porównanie, które jest fałszywe",
-      "opis": "Sprawdź, czy `2` jest większe od `9`.\n\n* W pustym edytorze dodaj polecenie print.\n* W nawiasie zapisz liczby `2` i `9`, a między nimi znak większe niż.\n* Nie otaczaj porównania cudzysłowami. Python ma je obliczyć i zwrócić fałsz.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`False`",
+      "opis": "Sprawdź, czy `2` jest większe od `9`.\n\n* W pustym edytorze dodaj polecenie `print`.\n* W nawiasie zapisz liczby `2` i `9`, a między nimi znak większości `>`.\n* Nie otaczaj porównania cudzysłowami. Python ma je obliczyć i zwrócić fałsz.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`False`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",

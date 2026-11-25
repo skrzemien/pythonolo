@@ -29,6 +29,9 @@ export function wczytajModul(idModulu) {
 
 /** Wpis modułu ze spisu + jego zadania, w jednym miejscu. */
 export async function wczytajModulZeSpisem(idModulu) {
+    if (!/^[a-z0-9-]+$/i.test(idModulu || '')) {
+        throw new Error(`Nie znam modułu „${idModulu}".`);
+    }
     const [spis, modul] = await Promise.all([
         wczytajSpisModulow(),
         wczytajModul(idModulu)
@@ -51,7 +54,8 @@ export function esc(tekst) {
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }
 
 /** Sam tekst, bez znaczników — do krótkich podsumowań na listach. */
@@ -62,12 +66,18 @@ export function bezMarkdown(tekst) {
 /**
  * Minimalny markdown w treściach zadań: `kod`, **pogrubienie**, *kursywa*.
  * Wejście jest najpierw escapowane, więc HTML z pliku JSON nie zadziała.
+ * Fragmenty `kodu` są chronione przed interpretacją gwiazdek wewnątrz nich.
  */
 export function prostyMarkdown(tekst) {
+    const kody = [];
     return esc(tekst)
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/`([^`]+)`/g, (_, kod) => {
+            kody.push(`<code>${kod}</code>`);
+            return `<${kody.length - 1}>`;
+        })
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-        .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+        .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>')
+        .replace(/<(\d+)>/g, (_, i) => kody[Number(i)]);
 }
 
 /**

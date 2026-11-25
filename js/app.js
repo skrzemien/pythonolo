@@ -8,8 +8,8 @@ import { podepnijTrybCzytania } from './dostepnosc.js';
 const lista = document.getElementById('lista-modulow');
 
 function kafelek(m) {
-    const zaliczone = Postep.zaliczoneWModule(m.id);
     const razem = m.liczbaZadan || 0;
+    const zaliczone = Math.min(Postep.zaliczoneWModule(m.id), razem);
     const procent = razem ? Math.round((zaliczone / razem) * 100) : 0;
     const ukonczony = razem > 0 && zaliczone >= razem;
 
@@ -31,7 +31,10 @@ function kafelek(m) {
 
 function pokazPostepGlobalny(moduly) {
     const razem = moduly.reduce((s, m) => s + (m.liczbaZadan || 0), 0);
-    const zaliczone = Postep.zaliczoneRazem(moduly.map(m => m.id));
+    const zaliczone = moduly.reduce(
+        (s, m) => s + Math.min(Postep.zaliczoneWModule(m.id), m.liczbaZadan || 0),
+        0
+    );
     if (!razem) return;
 
     const procent = Math.round((zaliczone / razem) * 100);

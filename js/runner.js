@@ -9,12 +9,17 @@ export class Uruchamiacz {
      * @param {(stan: 'ladowanie'|'gotowy'|'pracuje'|'blad') => void} opcje.onStan
      * @param {(strumien: 'stdout'|'stderr'|'wejscie', tekst: string) => void} opcje.onWyjscie
      */
-    constructor({ onStan = () => {}, onWyjscie = () => {} } = {}) {
+    constructor({
+        onStan = () => {},
+        onWyjscie = () => {},
+        tworzWorkera = () => new Worker('js/pyodide-worker.js', { type: 'module' })
+    } = {}) {
         this.onStan = onStan;
         this.onWyjscie = onWyjscie;
+        this.tworzWorkera = tworzWorkera;
         this.worker = null;
         this.gotowy = false;
-        this.biezace = null;      // { id, resolve, timer }
+        this.biezace = null;      // { id, resolve, limitMs, timer }
         this.licznikId = 0;
         this.postawWorkera();
     }
@@ -23,7 +28,7 @@ export class Uruchamiacz {
         this.gotowy = false;
         this.onStan('ladowanie');
 
-        this.worker = new Worker('js/pyodide-worker.js', { type: 'module' });
+        this.worker = this.tworzWorkera();
         this.worker.onmessage = ({ data }) => this.odbierz(data);
         this.worker.onerror = e => {
             this.onStan('blad');
@@ -42,6 +47,12 @@ export class Uruchamiacz {
     odbierz(data) {
         if (data.typ === 'gotowy') {
             this.gotowy = true;
+            if (this.biezace && this.biezace.timer === null) {
+                this.biezace.timer = setTimeout(
+                    () => this.przerwij(true),
+                    this.biezace.limitMs
+                );
+            }
             this.onStan(this.biezace ? 'pracuje' : 'gotowy');
             return;
         }
@@ -74,7 +85,7 @@ export class Uruchamiacz {
     zakoncz(wynik) {
         const biezace = this.biezace;
         if (!biezace) return;
-        clearTimeout(biezace.timer);
+        if (biezace.timer !== null) clearTimeout(biezace.timer);
         this.biezace = null;
         this.onStan(this.gotowy ? 'gotowy' : 'ladowanie');
         biezace.resolve(wynik);
@@ -94,7 +105,10 @@ export class Uruchamiacz {
             this.biezace = {
                 id,
                 resolve,
-                timer: setTimeout(() => this.przerwij(true), limitMs)
+                limitMs,
+                // Czas wykonania liczymy dopiero od gotowości Pyodide, żeby
+                // pobieranie silnika na wolnym łączu nie udawało nieskończonej pętli.
+                timer: this.gotowy ? setTimeout(() => this.przerwij(true), limitMs) : null
             };
             this.worker.postMessage({ typ: 'uruchom', id, kod, kodTestu, wejscie });
         });
@@ -107,7 +121,7 @@ export class Uruchamiacz {
         this.worker.terminate();
 
         const biezace = this.biezace;
-        clearTimeout(biezace.timer);
+        if (biezace.timer !== null) clearTimeout(biezace.timer);
         this.biezace = null;
 
         this.postawWorkera();

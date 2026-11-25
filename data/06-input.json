@@ -1,16 +1,22 @@
 {
   "id": "06-input",
   "tytul": "Pytanie użytkownika",
-  "wstep": "`input(\"Pytanie: \")` zatrzymuje program i czeka, aż ktoś coś wpisze. Uwaga: `input` **zawsze** oddaje tekst — nawet gdy ktoś wpisał cyfry. Żeby liczyć, trzeba go opakować: `int(input(...))`.\n\nNa tej stronie odpowiedzi są przygotowane z góry i pokazują się w konsoli na szaro.",
+  "wstep": "`input(\"Pytanie: \")` wczytuje odpowiedź użytkownika. Ważne: `input()` **zawsze** zwraca tekst (`str`) — nawet gdy wpisano cyfry. Aby wykonywać obliczenia, zamień ten tekst na liczbę, na przykład przez `int(input(...))`.\n\nNa tej stronie odpowiedzi są przygotowane z góry i wyświetlają się w konsoli na szaro. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print()`.",
   "zadania": [
     {
       "id": "input-1",
       "typ": "uzupelnij",
       "tytul": "Zapytaj o imię",
-      "opis": "Wczytaj imię i użyj go w powitaniu.\n\n* W pierwszej linii jest już tekst pytania o imię.\n* W lukę przed nawiasem wpisz nazwę funkcji wczytującej odpowiedź użytkownika.\n* Drugą linię zostaw bez zmian. Wypisze powitanie z imieniem zapisanym w zmiennej.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `Ala`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Cześć, Ala`",
+      "opis": "Wczytaj imię i użyj go w powitaniu.\n\n* W pierwszej linii jest już tekst pytania o imię.\n* W lukę przed nawiasem wpisz nazwę funkcji wczytującej odpowiedź użytkownika.\n* Drugą linię zostaw bez zmian. Wypisze powitanie z imieniem zapisanym w zmiennej.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `Ala`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Cześć, Ala`",
       "kod": "name = ___(\"Podaj imię: \")\nprint(\"Cześć,\", name)",
-      "luki": [["input"]],
-      "wejscie": ["Ala"],
+      "luki": [
+        [
+          "input"
+        ]
+      ],
+      "wejscie": [
+        "Ala"
+      ],
       "wyjscie": "Cześć, Ala",
       "podpowiedzi": [
         "Po angielsku „wejście” to `input`.",
@@ -21,10 +27,16 @@
       "id": "input-2",
       "typ": "uzupelnij",
       "tytul": "Odpowiedź jako liczba",
-      "opis": "Oblicz, ile lat użytkownik będzie miał za rok.\n\n* Pierwsza linia pobiera wiek przez `input`. Odpowiedź jest tekstem, nawet jeśli zawiera cyfry.\n* W lukę przed wywołaniem input wpisz nazwę funkcji zamieniającej tekst na liczbę całkowitą.\n* Drugą linię zostaw bez zmian. Doda `1` do wieku i wypisze wynik.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za rok: 13`",
+      "opis": "Oblicz, ile lat użytkownik będzie miał za rok.\n\n* Pierwsza linia pobiera wiek przez `input`. Odpowiedź jest tekstem, nawet jeśli zawiera cyfry.\n* W lukę przed wywołaniem `input` wpisz nazwę funkcji zamieniającej tekst na liczbę całkowitą.\n* Drugą linię zostaw bez zmian. Doda `1` do wieku i wypisze wynik.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za rok: 13`",
       "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za rok:\", age + 1)",
-      "luki": [["int"]],
-      "wejscie": ["12"],
+      "luki": [
+        [
+          "int"
+        ]
+      ],
+      "wejscie": [
+        "12"
+      ],
       "wyjscie": "Za rok: 13",
       "podpowiedzi": [
         "Chodzi o liczbę całkowitą.",
@@ -34,11 +46,21 @@
     {
       "id": "input-pulapka-tekstu",
       "typ": "uzupelnij",
-      "tytul": "Pułapka: to jeszcze nie liczby",
-      "opis": "Dodaj dwie wczytane liczby zamiast sklejać dwa teksty.\n\n* Pierwsze dwie linie pobierają odpowiedzi do zmiennych `a` i `b`. Na razie obie odpowiedzi są tekstami.\n* W ostatniej linii uzupełnij obie luki funkcją zamieniającą tekst na liczbę całkowitą.\n* Zamień każdą odpowiedź osobno. Dopiero wtedy plus wykona dodawanie liczb, zamiast połączyć cyfry w tekst.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `3`, `4`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7`",
+      "tytul": "Zamiana wczytanych tekstów na liczby",
+      "opis": "Dodaj dwie wczytane liczby zamiast sklejać dwa teksty.\n\n* Pierwsze dwie linie pobierają odpowiedzi do zmiennych `a` i `b`. Na razie obie odpowiedzi są tekstami.\n* W ostatniej linii uzupełnij obie luki funkcją zamieniającą tekst na liczbę całkowitą.\n* Zamień każdą odpowiedź osobno. Dopiero wtedy plus wykona dodawanie liczb, zamiast połączyć cyfry w tekst.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `3`, `4`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`7`",
       "kod": "a = input(\"Pierwsza liczba: \")\nb = input(\"Druga liczba: \")\nprint(___(a) + ___(b))",
-      "luki": [["int"], ["int"]],
-      "wejscie": ["3", "4"],
+      "luki": [
+        [
+          "int"
+        ],
+        [
+          "int"
+        ]
+      ],
+      "wejscie": [
+        "3",
+        "4"
+      ],
       "wyjscie": "7",
       "podpowiedzi": [
         "Każdy z dwóch tekstów trzeba osobno zamienić na liczbę.",
@@ -49,16 +71,18 @@
       "id": "input-3",
       "typ": "napisz",
       "tytul": "Przywitanie",
-      "opis": "Dokończ program witający użytkownika po imieniu.\n\n* Pierwsza linia już wczytuje imię do zmiennej `name`. Nie dopisuj drugiego pytania.\n* Pod nią dodaj `print` z f-stringiem. Wstaw wartość name między tekst powitania a wykrzyknik.\n* Po słowie Cześć ma być przecinek i spacja. Wykrzyknik ma przylegać do imienia.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `Kuba`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Cześć, Kuba!`",
+      "opis": "Dokończ program witający użytkownika po imieniu.\n\n* Pierwsza linia już wczytuje imię do zmiennej `name`. Nie dopisuj drugiego pytania.\n* Pod nią dodaj `print` z f-stringiem. Wstaw wartość `name` między tekst powitania a wykrzyknik.\n* Po słowie Cześć ma być przecinek i spacja. Wykrzyknik ma przylegać do imienia.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `Kuba`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Cześć, Kuba!`",
       "start": "name = input(\"Jak masz na imię? \")\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "wejscie": ["Kuba"],
+        "wejscie": [
+          "Kuba"
+        ],
         "oczekiwane": "Cześć, Kuba!"
       },
       "podpowiedzi": [
-        "Wykrzyknik musi przykleić się do imienia, bez spacji.",
-        "Najprościej f-stringiem: `print(f\"Cześć, {name}!\")`."
+        "Wykrzyknik zapisz bezpośrednio po imieniu, bez spacji.",
+        "Użyj f-stringa: `print(f\"Cześć, {name}!\")`."
       ],
       "rozwiazanie": "name = input(\"Jak masz na imię? \")\nprint(f\"Cześć, {name}!\")"
     },
@@ -66,11 +90,13 @@
       "id": "input-4",
       "typ": "napisz",
       "tytul": "Podwojenie",
-      "opis": "Napisz program, który podwaja wczytaną liczbę.\n\n* W pierwszej linii użyj `input`, żeby zapytać o liczbę.\n* Zamień otrzymany tekst na liczbę całkowitą przez `int` i zapisz ją w zmiennej.\n* W następnej linii pomnóż wartość zmiennej przez `2`. Wypisz wynik przez `print`, bez dodatkowego tekstu.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`14`",
+      "opis": "Napisz program, który podwaja wczytaną liczbę.\n\n* W pierwszej linii użyj `input`, żeby zapytać o liczbę.\n* Zamień otrzymany tekst na liczbę całkowitą przez `int` i zapisz ją w zmiennej.\n* W następnej linii pomnóż wartość zmiennej przez `2`. Wypisz wynik przez `print`, bez dodatkowego tekstu.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `7`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`14`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "wejscie": ["7"],
+        "wejscie": [
+          "7"
+        ],
         "oczekiwane": "14"
       },
       "podpowiedzi": [
@@ -83,16 +109,19 @@
       "id": "input-5",
       "typ": "napisz",
       "tytul": "Suma dwóch liczb",
-      "opis": "Napisz program dodający dwie odpowiedzi użytkownika.\n\n* W pierwszej linii wczytaj pierwszą odpowiedź przez `input`, zamień ją na liczbę całkowitą i zapisz w zmiennej.\n* W drugiej linii zrób to samo z drugą odpowiedzią. Użyj innej zmiennej.\n* W trzeciej linii wypisz sumę obu zmiennych. Pamiętaj, żeby zamienić oba teksty na liczby przed dodawaniem.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `3`, `4`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`7`",
+      "opis": "Napisz program dodający dwie odpowiedzi użytkownika.\n\n* W pierwszej linii wczytaj pierwszą odpowiedź przez `input`, zamień ją na liczbę całkowitą i zapisz w zmiennej.\n* W drugiej linii zrób to samo z drugą odpowiedzią. Użyj innej zmiennej.\n* W trzeciej linii wypisz sumę obu zmiennych. Pamiętaj, żeby zamienić oba teksty na liczby przed dodawaniem.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `3`, `4`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`7`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "wejscie": ["3", "4"],
+        "wejscie": [
+          "3",
+          "4"
+        ],
         "oczekiwane": "7"
       },
       "podpowiedzi": [
-        "Potrzebujesz dwóch osobnych `input`-ów.",
-        "Każdy z nich opakuj w `int(...)`."
+        "Potrzebujesz 2 osobnych wywołań `input(...)`.",
+        "Każde wywołanie `input(...)` przekaż do funkcji `int(...)`."
       ],
       "rozwiazanie": "a = int(input(\"Pierwsza liczba: \"))\nb = int(input(\"Druga liczba: \"))\nprint(a + b)"
     },
@@ -100,11 +129,14 @@
       "id": "input-6",
       "typ": "napisz",
       "tytul": "Kalkulator pola",
-      "opis": "Oblicz pole prostokąta na podstawie dwóch odpowiedzi.\n\n* Wczytaj przez `input` długość pierwszego boku. Zamień odpowiedź na liczbę całkowitą i zapisz ją w zmiennej.\n* Tak samo wczytaj drugi bok do innej zmiennej.\n* Pomnóż długości boków. Wypisz zdanie zawierające oba boki i obliczone pole.\n* Użyj f-stringa. Między bokami ma być litera `x` ze spacją po każdej stronie, tak jak we wzorze wyniku.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `5`, `3`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pole prostokąta 5 x 3 to 15`",
+      "opis": "Oblicz pole prostokąta na podstawie dwóch odpowiedzi.\n\n* Wczytaj przez `input` długość pierwszego boku. Zamień odpowiedź na liczbę całkowitą i zapisz ją w zmiennej.\n* Tak samo wczytaj drugi bok do innej zmiennej.\n* Pomnóż długości boków. Wypisz zdanie zawierające oba boki i obliczone pole.\n* Użyj f-stringa. Między bokami ma być litera `x` ze spacją po każdej stronie, tak jak we wzorze wyniku.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `5`, `3`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pole prostokąta 5 x 3 to 15`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "wejscie": ["5", "3"],
+        "wejscie": [
+          "5",
+          "3"
+        ],
         "oczekiwane": "Pole prostokąta 5 x 3 to 15"
       },
       "podpowiedzi": [
@@ -117,11 +149,13 @@
       "id": "input-cena",
       "typ": "napisz",
       "tytul": "Cena z groszami",
-      "opis": "Oblicz cenę dwóch sztuk produktu.\n\n* Użyj `input`, żeby wczytać cenę jednej sztuki.\n* Odpowiedź zawiera kropkę dziesiętną. Taki tekst zamień na liczbę przez `float`, a nie przez int.\n* Zapisz cenę w zmiennej i pomnóż ją przez `2`.\n* Wypisz tekst `Dwie sztuki:` oraz obliczony koszt, oddzielając je spacją.\n\nNa tej stronie odpowiedzi są przygotowane. Program dostanie kolejno: `19.99`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Dwie sztuki: 39.98`",
+      "opis": "Oblicz cenę dwóch sztuk produktu.\n\n* Użyj `input`, żeby wczytać cenę jednej sztuki.\n* Odpowiedź zawiera kropkę dziesiętną. Taki tekst zamień na liczbę przez `float`, a nie przez `int`.\n* Zapisz cenę w zmiennej i pomnóż ją przez `2`.\n* Wypisz tekst `Dwie sztuki:` oraz obliczony koszt, oddzielając je spacją.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `19.99`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Dwie sztuki: 39.98`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
-        "wejscie": ["19.99"],
+        "wejscie": [
+          "19.99"
+        ],
         "oczekiwane": "Dwie sztuki: 39.98"
       },
       "podpowiedzi": [
@@ -134,7 +168,7 @@
       "id": "input-wiek-na-liczbe",
       "typ": "uzupelnij",
       "tytul": "Wiek za dwa lata",
-      "opis": "Zamień odpowiedź na liczbę i oblicz przyszły wiek.\n\n* Input już pyta o wiek.\n* W lukę przed input wpisz funkcję zamieniającą tekst na liczbę całkowitą.\n* Gotowe print doda 2 lata. Nie zmieniaj tej linii.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za dwa lata: 14`",
+      "opis": "Zamień odpowiedź na liczbę i oblicz przyszły wiek.\n\n* Wywołanie `input` już pyta o wiek.\n* W lukę przed `input` wpisz funkcję zamieniającą tekst na liczbę całkowitą.\n* Gotowe `print` doda 2 lata. Nie zmieniaj tej linii.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Za dwa lata: 14`",
       "kod": "age = ___(input(\"Ile masz lat? \"))\nprint(\"Za dwa lata:\", age + 2)",
       "luki": [
         [
@@ -143,7 +177,7 @@
       ],
       "wyjscie": "Za dwa lata: 14",
       "podpowiedzi": [
-        "Nie dodawaj liczby do surowego tekstu z input.",
+        "Nie dodawaj liczby bezpośrednio do tekstu zwróconego przez `input()`.",
         "Wpisz `int`."
       ],
       "wejscie": [
@@ -154,7 +188,7 @@
       "id": "input-ulubione-zwierze",
       "typ": "napisz",
       "tytul": "Ulubione zwierzę",
-      "opis": "Wczytaj nazwę zwierzęcia i użyj jej w zdaniu.\n\n* Użyj input, żeby zapytać o ulubione zwierzę. Zapisz odpowiedź w zmiennej animal.\n* W następnej linii wypisz tekst `Moje ulubione zwierzę to` oraz wartość animal.\n* Oddziel tekst i zmienną przecinkiem. Nie zamieniaj odpowiedzi na liczbę.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `kot`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Moje ulubione zwierzę to kot`",
+      "opis": "Wczytaj nazwę zwierzęcia i użyj jej w zdaniu.\n\n* Użyj `input`, żeby zapytać o ulubione zwierzę. Zapisz odpowiedź w zmiennej `animal`.\n* W następnej linii wypisz tekst `Moje ulubione zwierzę to` oraz wartość `animal`.\n* Oddziel tekst i zmienną przecinkiem. Nie zamieniaj odpowiedzi na liczbę.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `kot`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Moje ulubione zwierzę to kot`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -173,7 +207,7 @@
       "id": "input-bilety",
       "typ": "napisz",
       "tytul": "Koszt biletów",
-      "opis": "Oblicz koszt kilku biletów na podstawie odpowiedzi użytkownika.\n\n* Najpierw wczytaj liczbę biletów, a potem cenę jednego biletu.\n* Obie odpowiedzi zamień przez int na liczby całkowite i zapisz w osobnych zmiennych.\n* Pomnóż liczbę biletów przez cenę.\n* Wypisz tekst `Do zapłaty:` i obliczony koszt.\n\nOdpowiedzi są przygotowane. Program dostanie kolejno: `3`, `12`. Nie wpisuj ich ręcznie podczas uruchamiania.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Do zapłaty: 36`",
+      "opis": "Oblicz koszt kilku biletów na podstawie odpowiedzi użytkownika.\n\n* Najpierw wczytaj liczbę biletów, a potem cenę jednego biletu.\n* Obie odpowiedzi zamień przez `int` na liczby całkowite i zapisz w osobnych zmiennych.\n* Pomnóż liczbę biletów przez cenę.\n* Wypisz tekst `Do zapłaty:` i obliczony koszt.\n\nNa tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: `3`, `12`. Nie wpisuj ich ręcznie podczas uruchamiania. Tekst pytania wewnątrz `input(...)` może być dowolny — sprawdzarka ocenia tylko wynik `print`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Do zapłaty: 36`",
       "start": "",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -184,8 +218,8 @@
         ]
       },
       "podpowiedzi": [
-        "Potrzebujesz dwóch wywołań input w podanej kolejności.",
-        "Koszt to `count * price`."
+        "Potrzebujesz 2 wywołań `input(...)` w podanej kolejności.",
+        "Koszt obliczysz działaniem `count * price`."
       ],
       "rozwiazanie": "count = int(input(\"Ile biletów? \"))\nprice = int(input(\"Cena biletu: \"))\nprint(\"Do zapłaty:\", count * price)"
     }

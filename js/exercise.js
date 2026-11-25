@@ -101,7 +101,7 @@ function htmlOczekiwanego(zadanie) {
 function htmlPanelu(zadanie) {
     if (zadanie.typ === 'uzupelnij') {
         return `
-            <p class="legenda-luk">Wpisz brakujące fragmenty w białe pola, a potem kliknij <strong>Sprawdź</strong>.</p>
+            <p class="legenda-luk">Wpisz brakujące fragmenty w puste pola w kodzie, a potem kliknij <strong>Sprawdź</strong>.</p>
             <div class="kod-z-lukami" id="kod-luki">${htmlKoduZLukami(zadanie)}</div>`;
     }
     return '<div class="edytor" id="edytor"></div>';
@@ -121,7 +121,7 @@ function render({ wpis, modul, zadanie, poprzednie, nastepne }) {
     widok.innerHTML = `
         <div class="cwiczenie">
             <section class="karta tresc-zadania">
-                <h1>${esc(zadanie.tytul)}${zaliczone ? ' ✓' : ''}</h1>
+                <h1><span id="tytul-zadania">${esc(zadanie.tytul)}</span><span id="znacznik-zaliczenia" aria-hidden="true"${zaliczone ? '' : ' hidden'}> ✓</span></h1>
                 <div class="czytanie-polecenia">
                     <button class="przycisk maly" type="button" id="czytaj-polecenie"
                             aria-describedby="stan-czytania">🔊 Czytaj polecenie</button>
@@ -209,7 +209,7 @@ async function start() {
         document.getElementById('czytaj-polecenie'),
         document.getElementById('stan-czytania'),
         () => przygotujCzytanie([
-            document.querySelector('.tresc-zadania h1'),
+            document.getElementById('tytul-zadania'),
             ...document.querySelectorAll('#opis-zadania p, #opis-zadania li, #opis-zadania pre')
         ]),
         window,
@@ -289,7 +289,8 @@ async function start() {
         pokazWynik(elWynik, 'ok', '🎉 Dobrze! Zadanie zaliczone.', dodatek);
         const nastepne = document.getElementById('nastepne');
         if (nastepne) nastepne.classList.add('glowny');
-        document.querySelector('.tresc-zadania h1').textContent = `${zadanie.tytul} ✓`;
+        const znacznik = document.getElementById('znacznik-zaliczenia');
+        if (znacznik) znacznik.hidden = false;
     }
 
     async function sprawdzUzupelnij() {
@@ -309,11 +310,17 @@ async function start() {
         if (!wszystkoOk) {
             zapiszWynik(false);
             const puste = poluLuk.some(p => !p.value.trim());
-            let dodatek = 'Pola zaznaczone na czerwono trzeba poprawić. Zajrzyj do podpowiedzi.';
-            if (puste) dodatek = 'Wypełnij wszystkie pola.';
-            else if (zlaWielkosc) dodatek = 'Prawie! Sprawdź wielkie i małe litery — dla Pythona '
-                + '<code>print</code> i <code>Print</code> to dwa różne słowa.';
-            pokazWynik(elWynik, 'zle', 'Jeszcze nie to.', dodatek);
+            let naglowek = 'Sprawdź wyróżnione pola.';
+            let dodatek = 'W wyróżnionych polach jest inna odpowiedź niż oczekiwana. Możesz skorzystać z przycisku <strong>Podpowiedź</strong>.';
+            if (puste) {
+                naglowek = 'Uzupełnij puste pola.';
+                dodatek = 'Wpisz brakujące fragmenty kodu we wszystkie puste pola i kliknij <strong>Sprawdź</strong>.';
+            } else if (zlaWielkosc) {
+                naglowek = 'Sprawdź wielkość liter.';
+                dodatek = 'Litery się zgadzają, ale ich wielkość ma znaczenie — dla Pythona '
+                    + '<code>print</code> i <code>Print</code> to dwa różne słowa.';
+            }
+            pokazWynik(elWynik, 'zle', naglowek, dodatek);
             return;
         }
 
@@ -341,7 +348,7 @@ async function start() {
         if (!wynik.ok) {
             zapiszWynik(false);
             if (wynik.blad && wynik.blad.zrodlo === 'sprawdzenie') {
-                pokazWynik(elWynik, 'zle', 'Prawie!', komunikatSprawdzenia(wynik.blad));
+                pokazWynik(elWynik, 'zle', 'Sprawdzenie wykryło różnicę.', komunikatSprawdzenia(wynik.blad));
             } else if (wynik.blad) {
                 pokazBlad(elWynik, wynik.blad);
             }
@@ -396,7 +403,7 @@ async function start() {
         przyciskRozwiazanie.disabled = !dosc;
         przyciskRozwiazanie.title = dosc
             ? ''
-            : `Najpierw spróbuj sam — rozwiązanie odblokuje się po ${PROB_DO_ROZWIAZANIA} próbach.`;
+            : `Najpierw spróbuj samodzielnie — przykładowe rozwiązanie odblokuje się po ${PROB_DO_ROZWIAZANIA} próbach sprawdzenia.`;
     }
 
     if (przyciskRozwiazanie) {

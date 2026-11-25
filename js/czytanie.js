@@ -192,6 +192,7 @@ export function przygotujCzytanie(elementy) {
                 }
                 wezel.replaceWith(fragment);
             } else if (wezel.nodeName === 'BR') tekst += '\n';
+            else if (wezel.nodeType === 1 && (wezel.hidden || wezel.getAttribute('aria-hidden') === 'true')) return;
             else Array.from(wezel.childNodes).forEach(odwiedz);
         }
         odwiedz(element);

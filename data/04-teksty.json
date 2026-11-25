@@ -1,15 +1,19 @@
 {
   "id": "04-teksty",
   "tytul": "Teksty",
-  "wstep": "Napisy można sklejać (`\"a\" + \"b\"`), powtarzać (`\"ab\" * 3`) i mierzyć (`len(\"Ala\")`). Najwygodniej wstawiać do nich zmienne przez f-string: `f\"Mam {age} lat\"`. Litery numerujemy od zera: `word[0]` to pierwsza litera.",
+  "wstep": "Teksty można łączyć plusem (`\"a\" + \"b\"`), powtarzać mnożeniem (`\"ab\" * 3`) i mierzyć funkcją `len(\"Ala\")`. Wartości zmiennych wygodnie wstawiać przez f-string: `f\"Mam {age} lat\"`. Znaki numerujemy od `0`: `word[0]` to pierwszy znak.",
   "zadania": [
     {
       "id": "teksty-sklejanie",
       "typ": "uzupelnij",
-      "tytul": "Sklejanie napisów",
-      "opis": "Połącz dwa fragmenty tekstu w jedno zdanie.\n\n* W nawiasie polecenia `print` są już dwa teksty. Drugi zaczyna się spacją.\n* W lukę między nimi wpisz znak działania, które skleja teksty.\n* Nie usuwaj spacji z drugiego tekstu. Znak sklejania sam nie dodaje odstępu.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Ala ma kota`",
+      "tytul": "Łączenie napisów",
+      "opis": "Połącz dwa fragmenty tekstu w jedno zdanie.\n\n* W nawiasie polecenia `print` są już dwa teksty. Drugi zaczyna się spacją.\n* W lukę między nimi wpisz znak działania, które łączy teksty.\n* Nie usuwaj spacji z drugiego tekstu. Znak `+` sam nie dodaje odstępu.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Ala ma kota`",
       "kod": "print(\"Ala\" ___ \" ma kota\")",
-      "luki": [["+"]],
+      "luki": [
+        [
+          "+"
+        ]
+      ],
       "wyjscie": "Ala ma kota",
       "podpowiedzi": [
         "Ten sam znak co przy dodawaniu liczb.",
@@ -20,9 +24,13 @@
       "id": "teksty-1",
       "typ": "uzupelnij",
       "tytul": "F-string",
-      "opis": "Wstaw imię ze zmiennej do powitania.\n\n* Pierwsza linia zapisuje imię Ola w zmiennej `name`.\n* W drugiej linii znajdź lukę między nawiasami klamrowymi.\n* Wpisz tam nazwę zmiennej z imieniem, bez cudzysłowów. W f-stringu klamry wskazują miejsce na jej wartość.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Cześć, Ola!`",
+      "opis": "Wstaw imię ze zmiennej do powitania.\n\n* Pierwsza linia zapisuje imię `Ola` w zmiennej `name`.\n* W drugiej linii znajdź lukę między nawiasami klamrowymi.\n* Wpisz tam nazwę zmiennej z imieniem, bez cudzysłowów. W f-stringu klamry wskazują miejsce na jej wartość.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Cześć, Ola!`",
       "kod": "name = \"Ola\"\nprint(f\"Cześć, {___}!\")",
-      "luki": [["name"]],
+      "luki": [
+        [
+          "name"
+        ]
+      ],
       "wyjscie": "Cześć, Ola!",
       "podpowiedzi": [
         "Zmienna nazywa się `name`.",
@@ -33,9 +41,13 @@
       "id": "teksty-2",
       "typ": "uzupelnij",
       "tytul": "Ile liter",
-      "opis": "Policz znaki w słowie Python.\n\n* Tekst jest już wpisany w nawiasie.\n* W lukę przed tym nawiasem wpisz nazwę funkcji, która podaje długość tekstu.\n* Nie licz znaków ręcznie i nie wpisuj gotowego wyniku. Ma go obliczyć funkcja.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`6`",
+      "opis": "Policz znaki w słowie `Python`.\n\n* Tekst jest już wpisany w nawiasie.\n* W lukę przed tym nawiasem wpisz nazwę funkcji, która podaje długość tekstu.\n* Nie licz znaków ręcznie i nie wpisuj gotowego wyniku. Ma go obliczyć funkcja.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`6`",
       "kod": "print(___(\"Python\"))",
-      "luki": [["len"]],
+      "luki": [
+        [
+          "len"
+        ]
+      ],
       "wyjscie": "6",
       "podpowiedzi": [
         "Od angielskiego „length”, czyli długość.",
@@ -46,9 +58,13 @@
       "id": "teksty-3",
       "typ": "uzupelnij",
       "tytul": "Wielkie litery",
-      "opis": "Zamień wszystkie litery słowa na wielkie.\n\n* Spójrz na słowo python zapisane małymi literami.\n* Po kropce wpisz w lukę nazwę metody, która zamienia litery na wielkie.\n* Nawiasy za luką są już gotowe. Nie zmieniaj samego słowa w cudzysłowie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`PYTHON`",
+      "opis": "Zamień wszystkie litery słowa na wielkie.\n\n* Spójrz na słowo `python` zapisane małymi literami.\n* Po kropce wpisz w lukę nazwę metody, która zamienia litery na wielkie.\n* Nawiasy za luką są już gotowe. Nie zmieniaj samego słowa w cudzysłowie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`PYTHON`",
       "kod": "print(\"python\".___())",
-      "luki": [["upper"]],
+      "luki": [
+        [
+          "upper"
+        ]
+      ],
       "wyjscie": "PYTHON",
       "podpowiedzi": [
         "Po angielsku wielkie litery to „upper case”.",
@@ -59,9 +75,13 @@
       "id": "teksty-male-litery",
       "typ": "uzupelnij",
       "tytul": "Małe litery",
-      "opis": "Zamień wszystkie litery słowa na małe.\n\n* Tekst PYTHON jest teraz zapisany wielkimi literami.\n* W lukę po kropce wpisz nazwę metody, która zamienia litery na małe. Działa odwrotnie niż `upper`.\n* Zostaw gotowe nawiasy i tekst w cudzysłowie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`python`",
+      "opis": "Zamień wszystkie litery słowa na małe.\n\n* Tekst `PYTHON` jest teraz zapisany wielkimi literami.\n* W lukę po kropce wpisz nazwę metody, która zamienia litery na małe. Działa odwrotnie niż `upper`.\n* Zostaw gotowe nawiasy i tekst w cudzysłowie.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`python`",
       "kod": "print(\"PYTHON\".___())",
-      "luki": [["lower"]],
+      "luki": [
+        [
+          "lower"
+        ]
+      ],
       "wyjscie": "python",
       "podpowiedzi": [
         "Po angielsku małe litery to „lower case”.",
@@ -72,9 +92,14 @@
       "id": "teksty-4",
       "typ": "uzupelnij",
       "tytul": "Litera po numerze",
-      "opis": "Wybierz literę t ze słowa Python.\n\n* Spójrz na słowo zapisane w zmiennej `word`.\n* Policz pozycje od `0`: litera P jest pierwsza, ale ma indeks `0`.\n* Ustal indeks litery t. Wpisz go cyfrą w lukę między nawiasami kwadratowymi.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`t`",
+      "opis": "Wybierz literę `t` ze słowa `Python`.\n\n* Spójrz na słowo zapisane w zmiennej `word`.\n* Policz pozycje od `0`: litera `P` jest pierwsza, ale ma indeks `0`.\n* Ustal indeks litery `t`. Wpisz go cyfrą w lukę między nawiasami kwadratowymi.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`t`",
       "kod": "word = \"Python\"\nprint(word[___])",
-      "luki": [["2", "-4"]],
+      "luki": [
+        [
+          "2",
+          "-4"
+        ]
+      ],
       "wyjscie": "t",
       "podpowiedzi": [
         "Policz od zera: P=0, y=1, t=?",
@@ -85,7 +110,7 @@
       "id": "teksty-5",
       "typ": "napisz",
       "tytul": "Pierwsze trzy litery",
-      "opis": "Wypisz tylko pierwsze 3 litery słowa Programowanie.\n\n* Zostaw gotową zmienną `word`.\n* Pod nią dodaj polecenie `print`. W jego nawiasach użyj wycinka zmiennej word.\n* W nawiasach kwadratowych wpisz początek `0`, dwukropek i koniec `3`. Koniec nie jest wliczany, więc wybierzesz indeksy `0`, `1` i `2`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pro`",
+      "opis": "Wypisz tylko pierwsze 3 litery słowa `Programowanie`.\n\n* Zostaw gotową zmienną `word`.\n* Pod nią dodaj polecenie `print`. W jego nawiasach użyj wycinka zmiennej `word`.\n* W nawiasach kwadratowych wpisz początek `0`, dwukropek i koniec `3`. Koniec nie jest wliczany, więc wybierzesz indeksy `0`, `1` i `2`.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Pro`",
       "start": "word = \"Programowanie\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -101,7 +126,7 @@
       "id": "teksty-6",
       "typ": "napisz",
       "tytul": "Wizytówka",
-      "opis": "Zbuduj wizytówkę z imienia i wieku.\n\n* Zmienne `name` i `age` są już przygotowane. Użyj ich wartości w swoim zdaniu.\n* Pod zmiennymi dopisz polecenie `print` z f-stringiem. Literę f umieść tuż przed otwierającym cudzysłowem.\n* W miejscu imienia i wieku wpisz nazwy zmiennych w nawiasach klamrowych.\n* Zachowaj spacje i kropkę na końcu zdania pokazanego poniżej.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Nazywam się Kuba i mam 12 lat.`",
+      "opis": "Zbuduj wizytówkę z imienia i wieku.\n\n* Zmienne `name` i `age` są już przygotowane. Użyj ich wartości w swoim zdaniu.\n* Pod zmiennymi dopisz polecenie `print` z f-stringiem. Literę `f` umieść tuż przed otwierającym cudzysłowem.\n* W miejscu imienia i wieku wpisz nazwy zmiennych w nawiasach klamrowych.\n* Zachowaj spacje i kropkę na końcu zdania pokazanego poniżej.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Nazywam się Kuba i mam 12 lat.`",
       "start": "name = \"Kuba\"\nage = 12\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -133,15 +158,15 @@
       "id": "teksty-obcinanie",
       "typ": "napisz",
       "tytul": "Niepotrzebne spacje",
-      "opis": "Usuń zbędne spacje przed imieniem i za nim.\n\n* Zmienna `name` zawiera imię Ala ze spacjami po obu stronach. Nie zmieniaj tej linii.\n* Użyj na tej zmiennej metody `strip` z pustymi nawiasami. Usunie spacje na brzegach tekstu.\n* Do oczyszczonego imienia doklej otwierający i zamykający nawias kwadratowy.\n* Wypisz całość. Między nawiasami a imieniem nie może być spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`[Ala]`",
+      "opis": "Usuń zbędne spacje przed imieniem i za nim.\n\n* Zmienna `name` zawiera imię `Ala` ze spacjami po obu stronach. Nie zmieniaj tej linii.\n* Użyj na tej zmiennej metody `strip` z pustymi nawiasami. Usunie spacje na brzegach tekstu.\n* Do oczyszczonego imienia doklej otwierający i zamykający nawias kwadratowy.\n* Wypisz całość. Między nawiasami a imieniem nie może być spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`[Ala]`",
       "start": "name = \"   Ala   \"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
         "oczekiwane": "[Ala]"
       },
       "podpowiedzi": [
-        "Najpierw obetnij: `name.strip()`.",
-        "Potem sklej trzy napisy plusem: `\"[\" + name.strip() + \"]\"`."
+        "Najpierw usuń spacje z brzegów: `name.strip()`.",
+        "Potem połącz 3 napisy operatorem `+`: `\"[\" + name.strip() + \"]\"`."
       ],
       "rozwiazanie": "name = \"   Ala   \"\nprint(\"[\" + name.strip() + \"]\")"
     },
@@ -149,7 +174,7 @@
       "id": "teksty-dlugosc-zmiennej",
       "typ": "uzupelnij",
       "tytul": "Długość imienia",
-      "opis": "Policz litery w imieniu zapisanym w zmiennej.\n\n* Zmienna name zawiera imię Zosia.\n* W lukę przed nawiasem wpisz nazwę funkcji podającej długość tekstu.\n* Nie wpisuj gotowej liczby. Funkcja ma policzyć znaki w name.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu program uruchomi się sam. Porównaj wynik ze wzorem:\n\n`5`",
+      "opis": "Policz litery w imieniu zapisanym w zmiennej.\n\n* Zmienna `name` zawiera imię `Zosia`.\n* W lukę przed nawiasem wpisz nazwę funkcji podającej długość tekstu.\n* Nie wpisuj gotowej liczby. Funkcja ma policzyć znaki w `name`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`5`",
       "kod": "name = \"Zosia\"\nprint(___(name))",
       "luki": [
         [
@@ -166,7 +191,7 @@
       "id": "teksty-prefiks",
       "typ": "napisz",
       "tytul": "Pierwsze dwie litery miasta",
-      "opis": "Wytnij początek nazwy miasta.\n\n* Zostaw zmienną city z nazwą Kraków.\n* Pod nią dopisz print z wycinkiem zmiennej city.\n* Wybierz znaki o indeksach `0` i `1`. Koniec wycinka ustaw na `2`, bo nie jest wliczany.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Kr`",
+      "opis": "Wytnij początek nazwy miasta.\n\n* Zostaw zmienną `city` z nazwą `Kraków`.\n* Pod nią dopisz `print` z wycinkiem zmiennej `city`.\n* Wybierz znaki o indeksach `0` i `1`. Koniec wycinka ustaw na `2`, bo nie jest wliczany.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Kr`",
       "start": "city = \"Kraków\"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
@@ -182,7 +207,7 @@
       "id": "teksty-powitanie-czyste",
       "typ": "napisz",
       "tytul": "Powitanie bez zbędnych spacji",
-      "opis": "Oczyść imię i wstaw je do powitania.\n\n* Zmienna name zawiera imię Ola ze spacjami po obu stronach.\n* Utwórz zmienną clean_name i przypisz jej wynik użycia strip na name.\n* Wypisz f-string z powitaniem `Cześć, Ola!`. Imię pobierz z clean_name.\n* Zostaw jedną spację po przecinku. Przed wykrzyknikiem nie może być spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem. Gdy się zgadza, kliknij **Sprawdź**.\n\n`Cześć, Ola!`",
+      "opis": "Oczyść imię i wstaw je do powitania.\n\n* Zmienna `name` zawiera imię `Ola` ze spacjami po obu stronach.\n* Utwórz zmienną `clean_name` i przypisz jej wynik wywołania `name.strip()`.\n* Wypisz f-string z powitaniem `Cześć, Ola!`. Imię pobierz z `clean_name`.\n* Zostaw jedną spację po przecinku. Przed wykrzyknikiem nie może być spacji.\n\nKliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.\n\n`Cześć, Ola!`",
       "start": "name = \"  Ola  \"\n",
       "sprawdzenie": {
         "tryb": "wyjscie",
