@@ -2,6 +2,38 @@
   "wpisy": [
     {
       "data": "2026-11-26",
+      "tytul": "Rozbudowa ścieżki Pygame do trzech modułów (36 zadań)",
+      "opis": "Podzieliliśmy naukę `pygame` na trzy stopniowane etapy po 12 zadań każdy: **Pygame: wstęp** (statyczne okno, kolory RGB, figury i warstwy), **Pygame: podstawy** (obiekty `Rect`, zegar, pętla gry, klawisze i krawędzie okna) oraz **Pygame: średni poziom** (kolizje, kliknięcia myszą, napisy `font`, odbicia piłki, listy przeszkód i pełna gra z punktacją).",
+      "noweZadania": [
+        "pygame-tytul-okna",
+        "pygame-ramka-prostokata",
+        "pygame-linia",
+        "pygame-flaga",
+        "pygame-wielokat",
+        "pygame-kolejnosc-warstw",
+        "pygame-tarcza",
+        "pygame-srodek-rect",
+        "pygame-move-ip",
+        "pygame-zegar-fps",
+        "pygame-animacja-w-prawo",
+        "pygame-pojedynczy-klawisz",
+        "pygame-lewo-prawo",
+        "pygame-cztery-kierunki",
+        "pygame-klikniecie-mysza",
+        "pygame-napis-font",
+        "pygame-odbicie-poziome",
+        "pygame-odbijajaca-pilka",
+        "pygame-lista-przeszkod",
+        "pygame-sprawdz-sciany",
+        "pygame-zbieranie-monet",
+        "pygame-losowa-moneta",
+        "pygame-pasek-zycia",
+        "pygame-gra-zbieracz"
+      ],
+      "stopka": "Wszystkie wcześniejsze identyfikatory zadań zostały zachowane i przyporządkowane do odpowiednich etapów. Kurs obejmuje teraz 16 modułów i 201 zadań."
+    },
+    {
+      "data": "2026-11-26",
       "tytul": "Nowy moduł: Losowość (random)",
       "opis": "Dodaliśmy 12 zadań poświęconych modułowi `random` — od prostego rzutu kostką i losowania z listy po generator kodu PIN, symulację rzutów w pętli `while` oraz losowanie pozycji obiektów `(x, y)` do gier.",
       "punkty": [

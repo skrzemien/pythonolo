@@ -1,0 +1,226 @@
+{
+  "id": "pygame-sredni",
+  "tytul": "Pygame: średni poziom",
+  "wstep": "W trzeciej części kursu `pygame` łączymy grafikę i ruch w pełne mechaniki gier: wykrywamy kolizje między obiektami (`colliderect`) i kliknięcia myszą (`collidepoint`), wyświetlamy napisy z punktacją (`pygame.font` i `blit`), odbijamy piłkę od ścian wektorem prędkości `(vx, vy)`, obsługujemy listy przeszkód i monet oraz budujemy kompletną grę.\n\nWszystkie zadania wyświetlają podgląd animacji na stronie, a przycisk **Kopiuj kod** pozwala przenieść gotową grę bezpośrednio do edytora na komputerze.",
+  "zadania": [
+    {
+      "id": "pygame-kolizja",
+      "typ": "uzupelnij",
+      "tytul": "Wykrywanie zderzenia prostokątów",
+      "opis": "Sprawdź, czy prostokąt gracza nachodzi na prostokąt monety.\n\n* Po `import pygame`, `pygame.init()` i utworzeniu `screen` przez `pygame.display.set_mode((400, 200))` kod tworzy `player` i `coin` jako obiekty `pygame.Rect(...)`.\n* Scena jest rysowana przez `screen.fill(...)`, `pygame.draw.rect(...)` oraz `pygame.display.flip()`.\n* W warunku `if` po `player.` wpisz nazwę metody sprawdzającej zderzenie z `coin`, aby wykonało się `print` przed `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Zebrano monetę`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nplayer = pygame.Rect(100, 80, 50, 50)\ncoin = pygame.Rect(130, 95, 24, 24)\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.draw.rect(screen, (250, 204, 21), coin)\npygame.display.flip()\nif player.___(coin):\n    print(\"Zebrano monetę\")\npygame.quit()",
+      "luki": [
+        [
+          "colliderect"
+        ]
+      ],
+      "wyjscie": "Zebrano monetę",
+      "podpowiedzi": [
+        "Nazwa łączy angielskie słowa „collide” (zderzyć się) oraz „rect” (prostokąt).",
+        "Wpisz `colliderect`."
+      ]
+    },
+    {
+      "id": "pygame-klikniecie-mysza",
+      "typ": "uzupelnij",
+      "tytul": "Kliknięcie myszą w cel",
+      "opis": "Sprawdź, czy kliknięcie myszą trafiło wewnątrz prostokąta celu.\n\n* W pętli `while running:` (po `import pygame`, `pygame.init()`, `screen = pygame.display.set_mode(...)`, `clock = pygame.time.Clock()`, `target = pygame.Rect(150, 80, 100, 60)` i `hits = 0`) pętla `for event in pygame.event.get():` obsługuje `pygame.QUIT` (`True` / `False`) oraz kliknięcie `pygame.MOUSEBUTTONDOWN`.\n* Zdarzenie kliknięcia przechowuje współrzędne kursora w krotce `event.pos`. Wpisz w lukę po `target.` nazwę metody sprawdzającej, czy punkt leży wewnątrz prostokąta (`elif` / `and`).\n* Symulacja klika raz obok celu i raz w środek celu (z `screen.fill(...)`, `pygame.draw.rect(...)`, `pygame.display.flip()`, `clock.tick(30)`), a potem wykonuje `print(\"Trafienia:\", hits)` i `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Trafienia: 1`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\ntarget = pygame.Rect(150, 80, 100, 60)\nhits = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n        elif event.type == pygame.MOUSEBUTTONDOWN and target.___(event.pos):\n            hits += 1\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (240, 100, 80), target)\n    pygame.display.flip()\n    clock.tick(30)\nprint(\"Trafienia:\", hits)\npygame.quit()",
+      "luki": [
+        [
+          "collidepoint"
+        ]
+      ],
+      "scenariuszPygame": [
+        { "zdarzenia": [{ "type": 1025, "pos": [40, 40] }] },
+        { "zdarzenia": [{ "type": 1025, "pos": [200, 110] }] }
+      ],
+      "wyjscie": "Trafienia: 1",
+      "podpowiedzi": [
+        "Dla dwóch prostokątów używamy `colliderect`, a dla pojedynczego punktu — słowa „point” na końcu.",
+        "Wpisz `collidepoint`."
+      ]
+    },
+    {
+      "id": "pygame-napis-font",
+      "typ": "uzupelnij",
+      "tytul": "Wyświetlanie napisu z punktami",
+      "opis": "Narysuj na ekranie gry napis z liczbą punktów.\n\n* W `pygame` tekst wyświetlamy w dwóch krokach: najpierw `font = pygame.font.Font(None, 36)` i `label = font.render(\"Punkty: 15\", True, (255, 255, 255))` zamieniają napis na obrazek (po `import pygame`, `pygame.init()`, `screen = pygame.display.set_mode((400, 200))` i `screen.fill(...)`).\n* Następnie kopiujemy ten obrazek `label` na powierzchnię `screen` w punkcie `(20, 20)`.\n* Wpisz w lukę po `screen.` czteroliterową nazwę metody wklejającej jedną powierzchnię na drugą (przed `pygame.display.flip()` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nfont = pygame.font.Font(None, 36)\nscreen.fill((25, 35, 50))\nlabel = font.render(\"Punkty: 15\", True, (255, 255, 255))\nscreen.___(label, (20, 20))\npygame.display.flip()\npygame.quit()",
+      "luki": [
+        [
+          "blit"
+        ]
+      ],
+      "wyjscie": "",
+      "podpowiedzi": [
+        "To klasyczne w grafice 2D czteroliterowe słowo od „block transfer” (przeniesienie bloku pikseli).",
+        "Wpisz `blit`."
+      ]
+    },
+    {
+      "id": "pygame-odbicie-poziome",
+      "typ": "uzupelnij",
+      "tytul": "Odbicie piłki od ściany bocznej",
+      "opis": "Odwróć kierunek lotu piłki po dotknięciu bocznej krawędzi okna.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode((400, 200))`), `clock = pygame.time.Clock()` i `ball = pygame.Rect(350, 85, 30, 30)` prędkość pozioma `vx` wynosi `20`.\n* W pętli `while running:` (z obsługą `for event in pygame.event.get():` i `event.type == pygame.QUIT`, `True` / `False`) dodajemy `ball.x += vx`.\n* Gdy `ball.right >= 400 or ball.left <= 0` (`if`), wpisz w lukę wyrażenie zmieniające znak `vx` na przeciwny (przed rysowaniem `screen.fill(...)`, `pygame.draw.ellipse(...)`, `pygame.display.flip()`, `clock.tick(25)`, `print(vx)` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`-20`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nball = pygame.Rect(350, 85, 30, 30)\nvx = 20\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    ball.x += vx\n    if ball.right >= 400 or ball.left <= 0:\n        vx = ___\n    screen.fill((25, 35, 50))\n    pygame.draw.ellipse(screen, (250, 204, 21), ball)\n    pygame.display.flip()\n    clock.tick(25)\nprint(vx)\npygame.quit()",
+      "luki": [
+        [
+          "-vx",
+          "-1 * vx",
+          "vx * -1"
+        ]
+      ],
+      "wyjscie": "-20",
+      "podpowiedzi": [
+        "Aby zmienić dodatnią prędkość na ujemną (i odwrotnie), postaw przed zmienną znak minus.",
+        "Wpisz `-vx`."
+      ]
+    },
+    {
+      "id": "pygame-odbijajaca-pilka",
+      "typ": "napisz",
+      "tytul": "Piłka odbijająca się w dwóch osiach",
+      "opis": "Zaprogramuj ruch piłki po przekątnej z odbijaniem od wszystkich czterech ścian okna `400 × 240`.\n\n* Kod startowy tworzy `screen`, `clock`, `ball = pygame.Rect(360, 15, 20, 20)`, prędkości `vx = 20`, `vy = -15` oraz początek pętli `while running:` (`import pygame`, `pygame.init()`, `pygame.display.set_mode(...)`, `pygame.time.Clock()`, `for event in pygame.event.get():`, `event.type`, `pygame.QUIT`, `True` / `False`).\n* W każdej klatce dodaj `ball.x += vx` oraz `ball.y += vy`.\n* Jeśli `ball.left <= 0 or ball.right >= 400` (`if`), ustaw `vx = -vx`. Jeśli `ball.top <= 0 or ball.bottom >= 240`, ustaw `vy = -vy`.\n* Narysuj klatkę: `screen.fill((25, 35, 50))`, `pygame.draw.ellipse(screen, (250, 204, 21), ball)`, `pygame.display.flip()`, `clock.tick(25)`, a po pętli `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nclock = pygame.time.Clock()\nball = pygame.Rect(360, 15, 20, 20)\nvx = 20\nvy = -15\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    # przesuń piłkę, sprawdź odbicia w poziomie i w pionie oraz narysuj klatkę\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert vx == -20, f\"Po odbiciu od prawej ściany (400) prędkość vx powinna zmienić się na -20 (otrzymano {vx})\"\nassert vy == 15, f\"Po odbiciu od górnej ściany (0) prędkość vy powinna zmienić się na 15 (otrzymano {vy})\"\nassert len(_pg._stan[\"klatki\"]) >= 5, \"Wywołuj pygame.display.flip() w każdym obrocie pętli\""
+      },
+      "podpowiedzi": [
+        "Osobno sprawdzaj ściany boczne (`ball.left <= 0 or ball.right >= 400`) i osobno górę/dół (`ball.top <= 0 or ball.bottom >= 240`).",
+        "Użyj dwóch niezależnych warunków `if` (piłka w rogu może odbić się od obu ścian w tej samej klatce)."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nclock = pygame.time.Clock()\nball = pygame.Rect(360, 15, 20, 20)\nvx = 20\nvy = -15\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    ball.x += vx\n    ball.y += vy\n    if ball.left <= 0 or ball.right >= 400:\n        vx = -vx\n    if ball.top <= 0 or ball.bottom >= 240:\n        vy = -vy\n    screen.fill((25, 35, 50))\n    pygame.draw.ellipse(screen, (250, 204, 21), ball)\n    pygame.display.flip()\n    clock.tick(25)\npygame.quit()"
+    },
+    {
+      "id": "pygame-lista-przeszkod",
+      "typ": "uzupelnij",
+      "tytul": "Rysowanie wielu przeszkód z listy",
+      "opis": "Narysuj wszystkie ściany zapisane na liście obiektów `pygame.Rect`.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode((400, 240))`) i `screen.fill((25, 35, 50))` lista `walls` przechowuje 3 prostokąty.\n* Wpisz w lukę w pętli `for wall in ___:` nazwę listy, aby `pygame.draw.rect(...)` narysowało każdą przeszkodę (przed `pygame.display.flip()` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nwalls = [\n    pygame.Rect(60, 40, 30, 160),\n    pygame.Rect(185, 40, 30, 160),\n    pygame.Rect(310, 40, 30, 160)\n]\nscreen.fill((25, 35, 50))\nfor wall in ___:\n    pygame.draw.rect(screen, (220, 80, 90), wall)\npygame.display.flip()\npygame.quit()",
+      "luki": [
+        [
+          "walls"
+        ]
+      ],
+      "wyjscie": "",
+      "podpowiedzi": [
+        "Lista z trzema obiektami `Rect` nazywa się `walls`.",
+        "Wpisz `walls`."
+      ]
+    },
+    {
+      "id": "pygame-sprawdz-sciany",
+      "typ": "napisz",
+      "tytul": "Zatrzymanie przed ścianą z listy",
+      "opis": "Cofnij ruch gracza, jeśli po przesunięciu wszedł w którąkolwiek ścianę z listy `walls`.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 220))`), `player = pygame.Rect(100, 90, 40, 40)` oraz listę `walls`.\n* Zapisz poprzednią pozycję `old_x = player.x`, a następnie przesuń gracza o `40` w prawo (`player.x += 40`).\n* Przejdź pętlą `for wall in walls:`: jeśli `player.colliderect(wall)` jest prawdziwe (`if`), przywróć `player.x = old_x`.\n* Narysuj `screen.fill((25, 35, 50))`, wszystkie ściany z `walls` kolorem `(220, 80, 90)` oraz `player` kolorem `(80, 200, 120)` przez `pygame.draw.rect(...)`, a na końcu wywołaj `pygame.display.flip()` i `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(100, 90, 40, 40)\nwalls = [pygame.Rect(160, 40, 30, 140), pygame.Rect(280, 40, 30, 140)]\n# zapamiętaj old_x, przesuń o 40, cofnij w razie kolizji ze ścianą i narysuj scenę\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert player.x == 100, f\"Po wejściu w ścianę (100 + 40 daje prawą krawędź 180 > 160) gracz powinien wrócić na old_x = 100, a ma x = {player.x}\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić scenę\"\n_pr = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert len(_pr) == 3, \"Narysuj dwie ściany z listy walls oraz obiekt player\""
+      },
+      "podpowiedzi": [
+        "Najpierw zapisz `old_x = player.x`, potem wykonaj `player.x += 40`, a następnie sprawdź pętlą `for wall in walls:` kolizję.",
+        "Gdy `if player.colliderect(wall):` jest spełnione, przypisz `player.x = old_x`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(100, 90, 40, 40)\nwalls = [pygame.Rect(160, 40, 30, 140), pygame.Rect(280, 40, 30, 140)]\nold_x = player.x\nplayer.x += 40\nfor wall in walls:\n    if player.colliderect(wall):\n        player.x = old_x\nscreen.fill((25, 35, 50))\nfor wall in walls:\n    pygame.draw.rect(screen, (220, 80, 90), wall)\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-mini-gra",
+      "typ": "napisz",
+      "tytul": "Mini-gra: dotrzyj do mety",
+      "opis": "Napisz pętlę gry przesuwającą gracza w prawo aż do zetknięcia z metą.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 200))`), `clock = pygame.time.Clock()`, obiekty `player` i `goal` (`pygame.Rect(...)`) oraz flagę `running = True`.\n* Utwórz pętlę `while running:`. Wewnątrz obsłuż zamknięcie okna: `for event in pygame.event.get():`, a w środku `if event.type == pygame.QUIT:` ustaw `running = False`.\n* W każdym obrocie zwiększ `player.x` o `25`. Jeśli `player.colliderect(goal)` zwróci `True`, ustaw `running = False`.\n* W każdym obrocie wywołaj `screen.fill((25, 35, 50))`, narysuj `goal` kolorem `(250, 204, 21)` i `player` kolorem `(80, 200, 120)` przez `pygame.draw.rect(...)`, odśwież ekran przez `pygame.display.flip()` oraz wywołaj `clock.tick(20)`. Po pętli wywołaj `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 85, 30, 30)\ngoal = pygame.Rect(140, 85, 30, 30)\nrunning = True\n# dopisz pętlę główną gry\n",
+      "scenariuszPygame": [
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [] }
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert player.colliderect(goal), \"Przesuwaj player.x w pętli o 25 w prawo, aż player.colliderect(goal) stanie się prawdziwe\"\nassert running is False, \"Po zetknięciu z metą (lub zdarzeniu pygame.QUIT) ustaw zmienną running na False\"\nassert len(_pg._stan[\"klatki\"]) >= 3, \"W każdym obrocie pętli odświeżaj ekran wywołaniem pygame.display.flip()\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert len(_prostokaty) >= 2, \"W każdej klatce narysuj oba prostokąty (goal oraz player) za pomocą pygame.draw.rect(...)\""
+      },
+      "podpowiedzi": [
+        "Wewnątrz `while running:` umieść kolejno: pętlę `for event in pygame.event.get():`, zmianę `player.x += 25`, sprawdzenie `if player.colliderect(goal):` oraz rysowanie.",
+        "Rysowanie w pętli: `screen.fill((25, 35, 50))`, dwa wywołania `pygame.draw.rect(...)`, `pygame.display.flip()` i `clock.tick(20)`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 85, 30, 30)\ngoal = pygame.Rect(140, 85, 30, 30)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    player.x += 25\n    if player.colliderect(goal):\n        running = False\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (250, 204, 21), goal)\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(20)\npygame.quit()"
+    },
+    {
+      "id": "pygame-zbieranie-monet",
+      "typ": "napisz",
+      "tytul": "Zbieranie monet z listy",
+      "opis": "Usuwaj z listy monety dotknięte przez gracza i zliczaj punkty.\n\n* Kod startowy przygotowuje `screen`, `clock`, `player = pygame.Rect(20, 90, 35, 35)`, listę 3 monet `coins`, licznik `score = 0` oraz pętlę `while running:` (`import pygame`, `pygame.init()`, `pygame.display.set_mode(...)`, `pygame.time.Clock()`, `for event in pygame.event.get():`, `event.type`, `pygame.QUIT`, `True` / `False`).\n* W każdej klatce przesuń `player.x += 30` i utwórz pustą listę `remaining = []`.\n* Przejdź pętlą `for coin in coins:`: jeśli `player.colliderect(coin)` jest prawdziwe (`if`), zwiększ `score += 1`, a w przeciwnym razie (`else`) dopisz monetę `remaining.append(coin)`. Po pętli przypisz `coins = remaining`.\n* Wywołaj `screen.fill((25, 35, 50))`, narysuj pozostałe monety z `coins` kolorem `(250, 204, 21)` oraz `player` kolorem `(80, 200, 120)` przez `pygame.draw.rect(...)`, dodaj `pygame.display.flip()` i `clock.tick(20)`, a po pętli `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 90, 35, 35)\ncoins = [\n    pygame.Rect(80, 95, 24, 24),\n    pygame.Rect(150, 95, 24, 24),\n    pygame.Rect(320, 95, 24, 24)\n]\nscore = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    # przesuń gracza, odfiltruj zebrane monety, zaktualizuj score i narysuj scenę\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert score == 2, f\"Gracz powinien zebrać 2 pierwsze monety (score = 2), a score wynosi {score}\"\nassert len(coins) == 1 and coins[0].x == 320, \"Na liście coins powinna pozostać tylko trzecia moneta (x = 320)\"\nassert len(_pg._stan[\"klatki\"]) >= 5, \"Wywołuj pygame.display.flip() w każdym obrocie pętli\""
+      },
+      "podpowiedzi": [
+        "Nie usuwaj elementów z listy `coins` bezpośrednio w trakcie pętli po niej — budowanie nowej listy `remaining` jest bezpieczne i czytelne.",
+        "Po pętli `for coin in coins:` zapisz `coins = remaining`, a potem narysuj pozostałe monety w drugiej pętli `for coin in coins:`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 90, 35, 35)\ncoins = [\n    pygame.Rect(80, 95, 24, 24),\n    pygame.Rect(150, 95, 24, 24),\n    pygame.Rect(320, 95, 24, 24)\n]\nscore = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    player.x += 30\n    remaining = []\n    for coin in coins:\n        if player.colliderect(coin):\n            score += 1\n        else:\n            remaining.append(coin)\n    coins = remaining\n    screen.fill((25, 35, 50))\n    for coin in coins:\n        pygame.draw.rect(screen, (250, 204, 21), coin)\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(20)\npygame.quit()"
+    },
+    {
+      "id": "pygame-losowa-moneta",
+      "typ": "napisz",
+      "tytul": "Losowe przenoszenie zebranej monety",
+      "opis": "Po zebraniu monety dodaj punkt i przenieś monetę w nowe losowe miejsce wewnątrz okna `400 × 260`.\n\n* Kod startowy wykonuje `import random`, `import pygame`, `pygame.init()`, tworzy `screen` (`pygame.display.set_mode((400, 260))`), ustawia kolidujące prostokąty `player` i `coin = pygame.Rect(110, 110, 20, 20)` oraz `score = 0`.\n* Napisz warunek `if player.colliderect(coin):`: zwiększ `score += 1`, wylosuj nowe `coin.x = random.randint(0, 380)` oraz `coin.y = random.randint(0, 240)` (moneta ma rozmiar `20 × 20`, więc `380` i `240` gwarantują, że cała zmieści się w oknie).\n* Wywołaj `screen.fill((25, 35, 50))`, narysuj `coin` kolorem `(250, 204, 21)` i `player` kolorem `(80, 200, 120)` przez `pygame.draw.rect(...)`, a na końcu dodaj `pygame.display.flip()` oraz `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć losowe położenie monety na podglądzie poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import random\nimport pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nplayer = pygame.Rect(100, 100, 40, 40)\ncoin = pygame.Rect(110, 110, 20, 20)\nscore = 0\n# sprawdź kolizję, zwiększ score, wylosuj nową pozycję coin i narysuj scenę\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert score == 1, f\"Po wykryciu kolizji licznik score powinien wynosić 1 (otrzymano {score})\"\nassert 0 <= coin.x <= 380 and 0 <= coin.y <= 240, f\"Nowa pozycja monety {(coin.x, coin.y)} musi mieścić się w zakresach 0..380 oraz 0..240\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić scenę\""
+      },
+      "podpowiedzi": [
+        "Maksymalne `coin.x` to `400 - 20 = 380`, a maksymalne `coin.y` to `260 - 20 = 240`.",
+        "Wewnątrz `if player.colliderect(coin):` ustaw `score += 1`, `coin.x = random.randint(0, 380)` i `coin.y = random.randint(0, 240)`."
+      ],
+      "rozwiazanie": "import random\nimport pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nplayer = pygame.Rect(100, 100, 40, 40)\ncoin = pygame.Rect(110, 110, 20, 20)\nscore = 0\nif player.colliderect(coin):\n    score += 1\n    coin.x = random.randint(0, 380)\n    coin.y = random.randint(0, 240)\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (250, 204, 21), coin)\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-pasek-zycia",
+      "typ": "napisz",
+      "tytul": "Pasek energii i podpis tekstowy",
+      "opis": "Narysuj dwuwarstwowy pasek energii zależny od zmiennej `hp` oraz podpis tekstowy.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 180))`), `font = pygame.font.Font(None, 32)` oraz `hp = 75`.\n* Wypełnij ekran przez `screen.fill((25, 35, 50))`.\n* Narysuj szare tło paska o pełnej szerokości `200`: `pygame.draw.rect(screen, (70, 80, 100), (20, 20, 200, 24))`.\n* Na nim narysuj zielony pasek o szerokości `hp * 2`: `pygame.draw.rect(screen, (80, 200, 120), (20, 20, hp * 2, 24))`.\n* Przygotuj napis `label = font.render(f\"HP: {hp}\", True, (255, 255, 255))`, wklej go przez `screen.blit(label, (20, 56))`, a na końcu wywołaj `pygame.display.flip()` i `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 180))\nfont = pygame.font.Font(None, 32)\nhp = 75\n# narysuj tło, oba prostokąty paska energii oraz napis z wartością hp\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić pasek energii\"\n_kl = _pg._stan[\"klatki\"][-1]\n_pr = [p for p in _kl if p[\"typ\"] == \"rect\"]\nassert len(_pr) == 2, \"Narysuj dwa prostokąty: tło paska (szerokość 200) oraz wypełnienie (szerokość hp * 2)\"\nassert _pr[0][\"w\"] == 200 and _pr[1][\"w\"] == 150, \"Pierwszy prostokąt powinien mieć szerokość 200, a drugi hp * 2 (czyli 150)\"\n_napisy = [p for p in _kl if p[\"typ\"] == \"text\"]\nassert _napisy and _napisy[0][\"tekst\"] == \"HP: 75\", \"Wklej napis 'HP: 75' za pomocą font.render(...) oraz screen.blit(...)\""
+      },
+      "podpowiedzi": [
+        "Najpierw narysuj szary prostokąt o szerokości `200`, a zaraz po nim zielony o szerokości `hp * 2` w tym samym punkcie `(20, 20)`.",
+        "Napis utworzysz przez `label = font.render(f\"HP: {hp}\", True, (255, 255, 255))` i wkleisz przez `screen.blit(label, (20, 56))`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 180))\nfont = pygame.font.Font(None, 32)\nhp = 75\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (70, 80, 100), (20, 20, 200, 24))\npygame.draw.rect(screen, (80, 200, 120), (20, 20, hp * 2, 24))\nlabel = font.render(f\"HP: {hp}\", True, (255, 255, 255))\nscreen.blit(label, (20, 56))\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-gra-zbieracz",
+      "typ": "napisz",
+      "tytul": "Pełna gra: zbieracz monet z licznikiem",
+      "opis": "Połącz sterowanie klawiaturą, granice ekranu, kolizję z monetą oraz wyświetlanie wyniku na ekranie.\n\n* Kod startowy przygotowuje `screen` (`400 × 260`), `clock`, `font`, `player = pygame.Rect(40, 100, 40, 40)`, `coin = pygame.Rect(95, 105, 24, 24)`, `score = 0` oraz początek pętli `while running:` (`import pygame`, `pygame.init()`, `pygame.display.set_mode(...)`, `pygame.time.Clock()`, `pygame.font.Font(...)`, `for event in pygame.event.get():`, `event.type`, `pygame.QUIT`, `True` / `False`).\n* Odczytaj `keys = pygame.key.get_pressed()`: dla `pygame.K_RIGHT` zwiększ `player.x += 25`, dla `pygame.K_LEFT` zmniejsz `player.x -= 25`, dla `pygame.K_DOWN` zwiększ `player.y += 25`, dla `pygame.K_UP` zmniejsz `player.y -= 25`, a potem wywołaj `player.clamp_ip(screen.get_rect())`.\n* Jeśli `player.colliderect(coin)` jest prawdziwe (`if`), zwiększ `score += 1` i przenieś monetę przez `coin.topleft = (320, 180)`.\n* Wywołaj `screen.fill((25, 35, 50))`, narysuj `coin` i `player` przez `pygame.draw.rect(...)`, utwórz `label = font.render(f\"Wynik: {score}\", True, (255, 255, 255))`, wklej `screen.blit(label, (15, 15))`, dodaj `pygame.display.flip()` i `clock.tick(30)`, a po pętli `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nclock = pygame.time.Clock()\nfont = pygame.font.Font(None, 32)\nplayer = pygame.Rect(40, 100, 40, 40)\ncoin = pygame.Rect(95, 105, 24, 24)\nscore = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    # sterowanie, granice ekranu, kolizja z monetą i rysowanie sceny z wynikiem\n",
+      "scenariuszPygame": [
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741905] },
+        { "klawisze": [1073741903] }
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert score == 1, f\"Po wejściu gracza w monetę licznik score powinien wzrosnąć do 1 (otrzymano {score})\"\nassert coin.topleft == (320, 180), \"Po zebraniu przenieś monetę do punktu (320, 180) przez coin.topleft = (320, 180)\"\nassert len(_pg._stan[\"klatki\"]) >= 4, \"Odświeżaj ekran w każdej klatce przez pygame.display.flip()\"\n_napisy = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"text\"]\nassert _napisy and _napisy[-1][\"tekst\"] == \"Wynik: 1\", \"Wyświetl aktualny napis 'Wynik: 1' za pomocą font.render(...) i screen.blit(...)\""
+      },
+      "podpowiedzi": [
+        "W klatce wykonaj kolejno: ruch z `keys`, przycięcie `player.clamp_ip(screen.get_rect())`, test `if player.colliderect(coin):` oraz rysowanie.",
+        "Pamiętaj o narysowaniu napisu w każdej klatce: `label = font.render(f\"Wynik: {score}\", True, (255, 255, 255))` oraz `screen.blit(label, (15, 15))`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nclock = pygame.time.Clock()\nfont = pygame.font.Font(None, 32)\nplayer = pygame.Rect(40, 100, 40, 40)\ncoin = pygame.Rect(95, 105, 24, 24)\nscore = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    keys = pygame.key.get_pressed()\n    if keys[pygame.K_LEFT]:\n        player.x -= 25\n    if keys[pygame.K_RIGHT]:\n        player.x += 25\n    if keys[pygame.K_UP]:\n        player.y -= 25\n    if keys[pygame.K_DOWN]:\n        player.y += 25\n    player.clamp_ip(screen.get_rect())\n    if player.colliderect(coin):\n        score += 1\n        coin.topleft = (320, 180)\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (250, 204, 21), coin)\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    label = font.render(f\"Wynik: {score}\", True, (255, 255, 255))\n    screen.blit(label, (15, 15))\n    pygame.display.flip()\n    clock.tick(30)\npygame.quit()"
+    }
+  ]
+}

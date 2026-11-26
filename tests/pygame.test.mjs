@@ -70,6 +70,9 @@ r2 = pygame.Rect(25, 30, 30, 40)
 assert r1.colliderect(r2) is True
 r1.right = 400
 assert r1.x == 370
+r_out = pygame.Rect(-15, 290, 30, 30)
+r_out.clamp_ip(screen.get_rect())
+assert (r_out.x, r_out.y) == (0, 270)
 
 running = True
 kroki = 0

@@ -1,13 +1,13 @@
 {
   "id": "13-pygame",
-  "tytul": "Podstawy Pygame",
-  "wstep": "Biblioteka `pygame` służy do tworzenia gier i grafiki 2D w Pythonie. Okno gry ma własny układ współrzędnych: punkt `(0, 0)` leży w **lewym górnym rogu**, współrzędna `x` rośnie w prawo, a współrzędna `y` rośnie **w dół**.\n\nNa tej stronie wbudowana symulacja `pygame` wyświetla podgląd okna gry bezpośrednio pod edytorem. Kod używa standardowej składni `pygame` — w dowolnym zadaniu możesz kliknąć **Kopiuj kod**, wkleić go do edytora na swoim komputerze (np. Thonny lub VS Code po zainstalowaniu pakietu `pip install pygame-ce`) i otworzyć prawdziwe okno systemowe.",
+  "tytul": "Pygame: wstęp",
+  "wstep": "Biblioteka `pygame` służy do tworzenia grafiki 2D i gier w Pythonie. W tym module poznasz okno gry, kolory RGB oraz rysowanie figur — bez pętli i bez animacji, krok po kroku.\n\nUkład współrzędnych okna różni się od szkolnej osi liczbowej: punkt `(0, 0)` leży w **lewym górnym rogu**, współrzędna `x` rośnie w prawo, a współrzędna `y` rośnie **w dół**.\n\nNa tej stronie wbudowana symulacja `pygame` wyświetla podgląd okna bezpośrednio pod edytorem. W dowolnym zadaniu możesz też kliknąć **Kopiuj kod** i uruchomić go na komputerze po zainstalowaniu `pip install pygame-ce`.",
   "zadania": [
     {
       "id": "pygame-import",
       "typ": "uzupelnij",
       "tytul": "Uruchomienie biblioteki Pygame",
-      "opis": "Zaimportuj bibliotekę `pygame` i uruchom jej moduły.\n\n* Pierwsza linia dołącza bibliotekę za pomocą słowa kluczowego `import`.\n* Funkcja `pygame.init()` przygotowuje `pygame` do pracy, `print` wypisuje komunikat, a `pygame.quit()` kończy działanie biblioteki.\n* Wpisz w lukę dokładną nazwę biblioteki małymi literami.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Pygame gotowe`",
+      "opis": "Zaimportuj bibliotekę `pygame` i uruchom jej moduły.\n\n* Pierwsza linia dołącza bibliotekę za pomocą słowa kluczowego `import`.\n* Funkcja `pygame.init()` przygotowuje `pygame` do pracy, `print` wypisuje potwierdzenie, a `pygame.quit()` kończy działanie biblioteki.\n* Wpisz w lukę dokładną nazwę biblioteki małymi literami.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Pygame gotowe`",
       "kod": "import ___\npygame.init()\nprint(\"Pygame gotowe\")\npygame.quit()",
       "luki": [
         [
@@ -24,8 +24,8 @@
       "id": "pygame-okno",
       "typ": "uzupelnij",
       "tytul": "Utworzenie okna gry",
-      "opis": "Utwórz okno gry o szerokości `400` i wysokości `300` pikseli.\n\n* Po `import pygame` oraz `pygame.init()` czwarta linia zapisuje powierzchnię okna w zmiennej `screen` i ustawia tytuł przez `pygame.display.set_caption(...)`.\n* Wymiary przekazujemy jako jedną krotkę `(400, 300)` — stąd podwójne nawiasy wokół liczb.\n* Wpisz w lukę po `pygame.display.` nazwę funkcji otwierającej okno gry (przed `pygame.display.flip()` oraz `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
-      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.___((400, 300))\npygame.display.set_caption(\"Moja gra\")\npygame.display.flip()\npygame.quit()",
+      "opis": "Utwórz okno gry o szerokości `400` i wysokości `300` pikseli.\n\n* Po `import pygame` oraz `pygame.init()` czwarta linia zapisuje powierzchnię okna w zmiennej `screen`.\n* Wymiary przekazujemy jako jedną krotkę `(400, 300)` — stąd podwójne nawiasy wokół liczb.\n* Wpisz w lukę po `pygame.display.` nazwę funkcji tworzącej okno gry (przed `pygame.display.flip()` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.___((400, 300))\npygame.display.flip()\npygame.quit()",
       "luki": [
         [
           "set_mode"
@@ -35,6 +35,23 @@
       "podpowiedzi": [
         "Nazwa składa się z dwóch słów połączonych znakiem `_` (po angielsku „ustaw tryb”).",
         "Wpisz `set_mode`."
+      ]
+    },
+    {
+      "id": "pygame-tytul-okna",
+      "typ": "uzupelnij",
+      "tytul": "Tytuł na pasku okna",
+      "opis": "Ustaw własny napis na górnym pasku okna gry.\n\n* Po `import pygame`, `pygame.init()` i utworzeniu `screen` przez `pygame.display.set_mode((400, 240))` piąta linia nadaje tytuł oknu.\n* Wpisz w lukę po `pygame.display.` nazwę funkcji ustawiającej podpis paska okna.\n* Na końcu `pygame.display.flip()` odświeży podgląd, a `pygame.quit()` zamknie bibliotekę.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\npygame.display.___(\"Kosmiczna misja\")\npygame.display.flip()\npygame.quit()",
+      "luki": [
+        [
+          "set_caption"
+        ]
+      ],
+      "wyjscie": "",
+      "podpowiedzi": [
+        "Po angielsku „ustaw podpis” to dwa słowa rozdzielone podkreśleniem `_`.",
+        "Wpisz `set_caption`."
       ]
     },
     {
@@ -72,6 +89,40 @@
       ]
     },
     {
+      "id": "pygame-ramka-prostokata",
+      "typ": "uzupelnij",
+      "tytul": "Obramowanie zamiast wypełnienia",
+      "opis": "Narysuj pustą w środku żółtą ramkę o grubości linii `4` pikseli.\n\n* Domyślnie `pygame.draw.rect(...)` zamalowuje cały środek prostokąta (grubość `0`).\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode(...)`) i `screen.fill(...)` możesz podać czwarty argument oznaczający grubość obramowania w pikselach.\n* Wpisz w lukę liczbę `4`, aby narysować samą ramkę przed `pygame.display.flip()` i `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (250, 204, 21), (80, 50, 240, 160), ___)\npygame.display.flip()\npygame.quit()",
+      "luki": [
+        [
+          "4"
+        ]
+      ],
+      "wyjscie": "",
+      "podpowiedzi": [
+        "Czwarty argument określa grubość linii w pikselach.",
+        "Wpisz `4`."
+      ]
+    },
+    {
+      "id": "pygame-linia",
+      "typ": "uzupelnij",
+      "tytul": "Rysowanie linii prostej",
+      "opis": "Narysuj białą linię poziomą dzielącą boisko na dwie równe części.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode((400, 300))`) i zielonym tle `screen.fill((34, 139, 87))` szósta linia rysuje odcinek od punktu `(0, 150)` do `(400, 150)` o grubości `4`.\n* Wpisz w lukę po `pygame.draw.` nazwę funkcji rysującej odcinek między dwoma punktami (przed `pygame.display.flip()` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nscreen.fill((34, 139, 87))\npygame.draw.___(screen, (255, 255, 255), (0, 150), (400, 150), 4)\npygame.display.flip()\npygame.quit()",
+      "luki": [
+        [
+          "line"
+        ]
+      ],
+      "wyjscie": "",
+      "podpowiedzi": [
+        "Po angielsku „linia” to cztery litery.",
+        "Wpisz `line`."
+      ]
+    },
+    {
       "id": "pygame-kolo",
       "typ": "napisz",
       "tytul": "Słońce na niebie",
@@ -88,136 +139,68 @@
       "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nscreen.fill((135, 206, 235))\npygame.draw.circle(screen, (250, 204, 21), (320, 70), 40)\npygame.display.flip()\npygame.quit()"
     },
     {
-      "id": "pygame-obiekt-rect",
-      "typ": "uzupelnij",
-      "tytul": "Obiekt prostokąta i ruch poziomy",
-      "opis": "Utwórz obiekt prostokąta przechowujący położenie i rozmiar gracza.\n\n* Po `import pygame`, `pygame.init()` i utworzeniu `screen` przez `pygame.display.set_mode((400, 300))` piąta linia tworzy obiekt `player`.\n* Wpisz w lukę po `pygame.` nazwę klasy tworzącej prostokąt (zaczyna się wielką literą).\n* Kod zwiększy `player.x` o `50`, wykona `screen.fill(...)`, `pygame.draw.rect(...)` i `pygame.display.flip()`, wypisze przez `print` nową wartość `player.x` i wywoła `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`110`",
-      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.___(60, 130, 40, 40)\nplayer.x += 50\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (240, 100, 80), player)\npygame.display.flip()\nprint(player.x)\npygame.quit()",
-      "luki": [
-        [
-          "Rect"
-        ]
-      ],
-      "wyjscie": "110",
-      "podpowiedzi": [
-        "Nazwa klasy prostokąta w `pygame` zaczyna się wielką literą `R`.",
-        "Wpisz `Rect`."
-      ]
-    },
-    {
-      "id": "pygame-ruch-w-dol",
+      "id": "pygame-flaga",
       "typ": "napisz",
-      "tytul": "Przesunięcie w prawo i w dół",
-      "opis": "Przesuń prostokąt gracza o `70` pikseli w prawo i o `60` pikseli w dół, a następnie go narysuj.\n\n* Kod startowy wykonuje `import pygame`, `pygame.init()`, tworzy `screen` przez `pygame.display.set_mode((400, 300))` oraz `player = pygame.Rect(50, 40, 40, 40)`.\n* Zwiększ `player.x` o `70` (ruch w prawo) oraz `player.y` o `60` (oś `y` rośnie w dół, więc ruch w dół oznacza dodawanie).\n* Wypełnij tło przez `screen.fill((25, 35, 50))` i narysuj gracza przez `pygame.draw.rect(screen, (240, 100, 80), player)`.\n* Odśwież okno wywołaniem `pygame.display.flip()` i zakończ program przez `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
-      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(50, 40, 40, 40)\n# przesuń gracza, narysuj tło oraz gracza i odśwież ekran\n",
+      "tytul": "Dwa równe pasy kolorów",
+      "opis": "Pomaluj górną połowę okna na biało, a dolną połowę na czerwono.\n\n* Kod startowy wykonuje `import pygame`, `pygame.init()` i tworzy `screen` o wymiarach `(400, 240)` przez `pygame.display.set_mode((400, 240))`.\n* Wypełnij całe okno białym kolorem `(255, 255, 255)` za pomocą `screen.fill(...)`.\n* Narysuj czerwony prostokąt `(220, 40, 60)` zajmujący dokładnie dolną połowę okna: od `x = 0`, `y = 120`, o szerokości `400` i wysokości `120` przez `pygame.draw.rect(...)`.\n* Wywołaj `pygame.display.flip()` oraz `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\n# wypełnij tło na biało, narysuj dolny pas i odśwież ekran\n",
       "sprawdzenie": {
         "tryb": "testy",
-        "kod": "import pygame as _pg\nassert player.x == 120, f\"Współrzędna player.x powinna wynosić 120 (50 + 70), a wynosi {player.x}\"\nassert player.y == 100, f\"Współrzędna player.y powinna wynosić 100 (ruch w dół zwiększa y: 40 + 60), a wynosi {player.y}\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić obraz na ekranie\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert any((p[\"x\"], p[\"y\"], p[\"w\"], p[\"h\"]) == (120, 100, 40, 40) for p in _prostokaty), \"Narysuj obiekt player w nowej pozycji przez pygame.draw.rect(screen, (240, 100, 80), player)\""
+        "kod": "import pygame as _pg\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić flagę\"\n_kl = _pg._stan[\"klatki\"][-1]\n_tla = [p for p in _kl if p[\"typ\"] == \"fill\"]\nassert _tla and tuple(_tla[-1][\"kolor\"]) == (255, 255, 255), \"Wypełnij tło białym kolorem (255, 255, 255)\"\n_pr = [p for p in _kl if p[\"typ\"] == \"rect\"]\nassert len(_pr) == 1, \"Narysuj jeden prostokąt dla dolnego pasa za pomocą pygame.draw.rect(...)\"\n_r = _pr[0]\nassert tuple(_r[\"kolor\"]) == (220, 40, 60), \"Ustaw kolor dolnego pasa na (220, 40, 60)\"\nassert (_r[\"x\"], _r[\"y\"], _r[\"w\"], _r[\"h\"]) == (0, 120, 400, 120), \"Dolna połowa okna 400x240 ma wymiary (0, 120, 400, 120)\""
       },
       "podpowiedzi": [
-        "Użyj zapisu `player.x += 70` oraz `player.y += 60` przed rysowaniem.",
-        "Po zmianie współrzędnych wywołaj `screen.fill((25, 35, 50))`, `pygame.draw.rect(screen, (240, 100, 80), player)` oraz `pygame.display.flip()`."
+        "Połowa wysokości `240` to `120`, więc dolny pas zaczyna się na `y = 120` i ma wysokość `120`.",
+        "Użyj `pygame.draw.rect(screen, (220, 40, 60), (0, 120, 400, 120))` oraz `pygame.display.flip()`."
       ],
-      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(50, 40, 40, 40)\nplayer.x += 70\nplayer.y += 60\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (240, 100, 80), player)\npygame.display.flip()\npygame.quit()"
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nscreen.fill((255, 255, 255))\npygame.draw.rect(screen, (220, 40, 60), (0, 120, 400, 120))\npygame.display.flip()\npygame.quit()"
     },
     {
-      "id": "pygame-kolizja",
-      "typ": "uzupelnij",
-      "tytul": "Wykrywanie zderzenia prostokątów",
-      "opis": "Sprawdź, czy prostokąt gracza nachodzi na prostokąt monety.\n\n* Po `import pygame`, `pygame.init()` i utworzeniu `screen` przez `pygame.display.set_mode((400, 200))` kod tworzy `player` i `coin` jako obiekty `pygame.Rect(...)`.\n* Scena jest rysowana przez `screen.fill(...)`, `pygame.draw.rect(...)` oraz `pygame.display.flip()`.\n* W warunku `if` po `player.` wpisz nazwę metody sprawdzającej zderzenie z `coin`, aby wykonało się `print` przed `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Zebrano monetę`",
-      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nplayer = pygame.Rect(100, 80, 50, 50)\ncoin = pygame.Rect(130, 95, 24, 24)\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.draw.rect(screen, (250, 204, 21), coin)\npygame.display.flip()\nif player.___(coin):\n    print(\"Zebrano monetę\")\npygame.quit()",
-      "luki": [
-        [
-          "colliderect"
-        ]
-      ],
-      "wyjscie": "Zebrano monetę",
-      "podpowiedzi": [
-        "Nazwa łączy angielskie słowa „collide” (zderzyć się) oraz „rect” (prostokąt).",
-        "Wpisz `colliderect`."
-      ]
-    },
-    {
-      "id": "pygame-petla-quit",
-      "typ": "uzupelnij",
-      "tytul": "Pętla główna gry i zamknięcie okna",
-      "opis": "Obsłuż zdarzenie zamknięcia okna wewnątrz pętli głównej gry.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode(...)`) i zegara `clock = pygame.time.Clock()` pętla `while running:` działa od wartości `True`.\n* Pętla `for event in pygame.event.get():` odczytuje zdarzenia, a `screen.fill(...)`, `pygame.display.flip()` i `clock.tick(60)` odpowiadają za kolejne klatki.\n* W warunku `if` porównaj `event.type` ze stałą zamykania okna po `pygame.` (wielkimi literami), aby ustawić `running = False` i przejść do `print` oraz `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Koniec gry`",
-      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nclock = pygame.time.Clock()\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.___:\n            running = False\n    screen.fill((30, 45, 70))\n    pygame.display.flip()\n    clock.tick(60)\nprint(\"Koniec gry\")\npygame.quit()",
-      "luki": [
-        [
-          "QUIT"
-        ]
-      ],
-      "wyjscie": "Koniec gry",
-      "podpowiedzi": [
-        "Stałą oznaczającą zamknięcie okna zapisujemy wielkimi literami (po angielsku „wyjdź”).",
-        "Wpisz `QUIT`."
-      ]
-    },
-    {
-      "id": "pygame-klawisze",
-      "typ": "uzupelnij",
-      "tytul": "Sterowanie strzałką w prawo",
-      "opis": "Przesuwaj prostokąt gracza w prawo, gdy wciśnięty jest klawisz strzałki w prawo.\n\n* W pętli `while running:` (po `import pygame`, `pygame.init()`, utworzeniu `screen` przez `pygame.display.set_mode(...)`, `clock = pygame.time.Clock()` i `player = pygame.Rect(...)`) obsługujemy najpierw `for event in pygame.event.get():` oraz `event.type == pygame.QUIT` (`True` / `False`).\n* Następnie `keys = pygame.key.get_pressed()` odczytuje stan klawiszy — wpisz w lukę po `pygame.` stałą strzałki w prawo w warunku `if`.\n* Symulacja przytrzymuje ten klawisz przez `4` klatki (z `screen.fill(...)`, `pygame.draw.rect(...)`, `pygame.display.flip()` i `clock.tick(30)`), a potem wykonuje `print(player.x)` oraz `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`120`",
-      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(40, 90, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    keys = pygame.key.get_pressed()\n    if keys[pygame.___]:\n        player.x += 20\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(30)\nprint(player.x)\npygame.quit()",
-      "luki": [
-        [
-          "K_RIGHT"
-        ]
-      ],
-      "scenariuszPygame": [
-        { "klawisze": [1073741903] },
-        { "klawisze": [1073741903] },
-        { "klawisze": [1073741903] },
-        { "klawisze": [1073741903] }
-      ],
-      "wyjscie": "120",
-      "podpowiedzi": [
-        "Stałe klawiszy zaczynają się od `K_`, a „prawo” po angielsku to `RIGHT`.",
-        "Wpisz `K_RIGHT`."
-      ]
-    },
-    {
-      "id": "pygame-granica-ekranu",
+      "id": "pygame-wielokat",
       "typ": "napisz",
-      "tytul": "Zatrzymanie gracza przy krawędzi okna",
-      "opis": "Zatrzymaj prostokąt gracza tak, aby nie wyszedł poza prawą krawędź okna o szerokości `400`.\n\n* Kod startowy wykonuje `import pygame`, `pygame.init()`, tworzy `screen` przez `pygame.display.set_mode((400, 220))` oraz `player = pygame.Rect(350, 90, 40, 40)` i dodaje `player.x += 30`.\n* Po ruchu prawa krawędź `player.right` ma wartość `420`. Napisz warunek `if`: gdy `player.right > 400`, ustaw `player.right = 400`.\n* Następnie wywołaj `screen.fill((25, 35, 50))`, narysuj `player` przez `pygame.draw.rect(screen, (80, 200, 120), player)`, a na końcu dodaj `pygame.display.flip()` oraz `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
-      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(350, 90, 40, 40)\nplayer.x += 30\n# zatrzymaj gracza przy prawej krawędzi okna (400), narysuj scenę i odśwież ekran\n",
+      "tytul": "Trójkąt z trzech punktów",
+      "opis": "Narysuj trójkątny dach na podstawie listy trzech wierzchołków.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 260))`) oraz listę wierzchołków `points = [(120, 180), (200, 70), (280, 180)]`.\n* Wypełnij `screen` ciemnym tłem `(25, 35, 50)` metodą `screen.fill(...)`.\n* Narysuj wielokąt funkcją `pygame.draw.polygon(screen, (240, 120, 60), points)`.\n* Odśwież okno przez `pygame.display.flip()` i zamknij bibliotekę przez `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\npoints = [(120, 180), (200, 70), (280, 180)]\n# wypełnij tło, narysuj trójkąt i odśwież ekran\n",
       "sprawdzenie": {
         "tryb": "testy",
-        "kod": "import pygame as _pg\nassert player.right <= 400, f\"Prawa krawędź gracza (player.right) wynosi {player.right}, a nie może przekroczyć 400\"\nassert player.x == 360, f\"Po zatrzymaniu przy prawej krawędzi 400 gracz o szerokości 40 powinien mieć player.x równe 360 (otrzymano {player.x})\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić scenę\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert any((p[\"x\"], p[\"y\"], p[\"w\"], p[\"h\"]) == (360, 90, 40, 40) for p in _prostokaty), \"Narysuj obiekt player już po korekcie pozycji przez pygame.draw.rect(screen, (80, 200, 120), player)\""
+        "kod": "import pygame as _pg\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić rysunek\"\n_kl = _pg._stan[\"klatki\"][-1]\n_tla = [p for p in _kl if p[\"typ\"] == \"fill\"]\nassert _tla and tuple(_tla[-1][\"kolor\"]) == (25, 35, 50), \"Wypełnij tło kolorem (25, 35, 50)\"\n_wiel = [p for p in _kl if p[\"typ\"] == \"polygon\"]\nassert len(_wiel) == 1, \"Narysuj wielokąt za pomocą pygame.draw.polygon(...)\"\nassert tuple(_wiel[0][\"kolor\"]) == (240, 120, 60), \"Użyj koloru (240, 120, 60)\"\nassert _wiel[0][\"punkty\"] == [[120, 180], [200, 70], [280, 180]], \"Przekaż listę points jako trzeci argument pygame.draw.polygon(...)\""
       },
       "podpowiedzi": [
-        "Atrybut `player.right` automatycznie przelicza `player.x` z uwzględnieniem szerokości `40`.",
-        "Dopisz `if player.right > 400:` z wciętym `player.right = 400`, a pod spodem narysuj tło i `player`."
+        "Funkcja `pygame.draw.polygon` łączy kolejne punkty z listy `points` i wypełnia środek.",
+        "Wywołaj `screen.fill((25, 35, 50))`, potem `pygame.draw.polygon(screen, (240, 120, 60), points)` oraz `pygame.display.flip()`."
       ],
-      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(350, 90, 40, 40)\nplayer.x += 30\nif player.right > 400:\n    player.right = 400\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\npygame.quit()"
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\npoints = [(120, 180), (200, 70), (280, 180)]\nscreen.fill((25, 35, 50))\npygame.draw.polygon(screen, (240, 120, 60), points)\npygame.display.flip()\npygame.quit()"
     },
     {
-      "id": "pygame-mini-gra",
+      "id": "pygame-kolejnosc-warstw",
       "typ": "napisz",
-      "tytul": "Mini-gra: dotrzyj do mety",
-      "opis": "Napisz pętlę gry przesuwającą gracza w prawo aż do zetknięcia z metą.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 200))`), `clock = pygame.time.Clock()`, obiekty `player` i `goal` (`pygame.Rect(...)`) oraz flagę `running = True`.\n* Utwórz pętlę `while running:`. Wewnątrz obsłuż zamknięcie okna: `for event in pygame.event.get():`, a w środku `if event.type == pygame.QUIT:` ustaw `running = False`.\n* W każdym obrocie zwiększ `player.x` o `25`. Jeśli `player.colliderect(goal)` zwróci `True`, ustaw `running = False`.\n* W każdym obrocie wywołaj `screen.fill((25, 35, 50))`, narysuj `goal` kolorem `(250, 204, 21)` i `player` kolorem `(80, 200, 120)` przez `pygame.draw.rect(...)`, odśwież ekran przez `pygame.display.flip()` oraz wywołaj `clock.tick(20)`. Po pętli wywołaj `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć animowany podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
-      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 85, 30, 30)\ngoal = pygame.Rect(140, 85, 30, 30)\nrunning = True\n# dopisz pętlę główną gry\n",
-      "scenariuszPygame": [
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] },
-        { "zdarzenia": [] }
-      ],
+      "tytul": "Kolejność warstw: niebo, trawa i dom",
+      "opis": "Zbuduj prostą scenę z trzech warstw rysowanych od najdalszej do najbliższej.\n\n* Kod startowy zawiera `import pygame`, `pygame.init()` oraz `screen = pygame.display.set_mode((400, 300))`.\n* Najpierw pomaluj niebo przez `screen.fill((30, 45, 80))`.\n* Następnie narysuj pas trawy na dole okna: `pygame.draw.rect(screen, (60, 170, 90), (0, 220, 400, 80))`.\n* Na końcu postaw jasny budynek dokładnie na linii trawy: `pygame.draw.rect(screen, (235, 225, 200), (160, 120, 80, 100))`, wywołaj `pygame.display.flip()` i `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\n# narysuj kolejno niebo, trawę i budynek\n",
       "sprawdzenie": {
         "tryb": "testy",
-        "kod": "import pygame as _pg\nassert player.colliderect(goal), \"Przesuwaj player.x w pętli o 25 w prawo, aż player.colliderect(goal) stanie się prawdziwe\"\nassert running is False, \"Po zetknięciu z metą (lub zdarzeniu pygame.QUIT) ustaw zmienną running na False\"\nassert len(_pg._stan[\"klatki\"]) >= 3, \"W każdym obrocie pętli odświeżaj ekran wywołaniem pygame.display.flip()\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert len(_prostokaty) >= 2, \"W każdej klatce narysuj oba prostokąty (goal oraz player) za pomocą pygame.draw.rect(...)\""
+        "kod": "import pygame as _pg\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić scenę\"\n_kl = _pg._stan[\"klatki\"][-1]\nassert _kl[0][\"typ\"] == \"fill\" and tuple(_kl[0][\"kolor\"]) == (30, 45, 80), \"Jako pierwszą warstwę wypełnij tło nieba kolorem (30, 45, 80)\"\n_pr = [p for p in _kl if p[\"typ\"] == \"rect\"]\nassert len(_pr) == 2, \"Narysuj dwa prostokąty: trawę oraz budynek\"\nassert (_pr[0][\"x\"], _pr[0][\"y\"], _pr[0][\"w\"], _pr[0][\"h\"]) == (0, 220, 400, 80), \"Pierwszy prostokąt (trawa) powinien mieć wymiary (0, 220, 400, 80)\"\nassert (_pr[1][\"x\"], _pr[1][\"y\"], _pr[1][\"w\"], _pr[1][\"h\"]) == (160, 120, 80, 100), \"Drugi prostokąt (budynek) powinien mieć wymiary (160, 120, 80, 100)\""
       },
       "podpowiedzi": [
-        "Wewnątrz `while running:` umieść kolejno: pętlę `for event in pygame.event.get():`, zmianę `player.x += 25`, sprawdzenie `if player.colliderect(goal):` oraz rysowanie.",
-        "Rysowanie w pętli: `screen.fill((25, 35, 50))`, dwa wywołania `pygame.draw.rect(...)`, `pygame.display.flip()` i `clock.tick(20)`."
+        "W grafice 2D każda kolejna figura przykrywa wcześniejszą — dlatego `screen.fill(...)` musi być na samym początku.",
+        "Po `screen.fill((30, 45, 80))` dodaj dwa wywołania `pygame.draw.rect(...)`, a na końcu `pygame.display.flip()` i `pygame.quit()`."
       ],
-      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(20, 85, 30, 30)\ngoal = pygame.Rect(140, 85, 30, 30)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    player.x += 25\n    if player.colliderect(goal):\n        running = False\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (250, 204, 21), goal)\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(20)\npygame.quit()"
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nscreen.fill((30, 45, 80))\npygame.draw.rect(screen, (60, 170, 90), (0, 220, 400, 80))\npygame.draw.rect(screen, (235, 225, 200), (160, 120, 80, 100))\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-tarcza",
+      "typ": "napisz",
+      "tytul": "Tarcza z trzech kół",
+      "opis": "Narysuj tarczę złożoną z trzech kół o wspólnym środku `(200, 150)`.\n\n* Kod startowy zawiera `import pygame`, `pygame.init()` oraz `screen = pygame.display.set_mode((400, 300))`.\n* Wypełnij tło kolorem `(25, 35, 50)` metodą `screen.fill(...)`.\n* Narysuj przez `pygame.draw.circle(...)` kolejno od największego do najmniejszego koła w punkcie `(200, 150)`: czerwone `(220, 50, 60)` o promieniu `90`, białe `(255, 255, 255)` o promieniu `60` i żółte `(250, 204, 21)` o promieniu `30`.\n* Na końcu wywołaj `pygame.display.flip()` oraz `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\n# narysuj tło oraz trzy koła od największego do najmniejszego\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić tarczę\"\n_kl = _pg._stan[\"klatki\"][-1]\n_kola = [p for p in _kl if p[\"typ\"] == \"circle\"]\nassert len(_kola) == 3, \"Narysuj dokładnie 3 koła funkcją pygame.draw.circle(...)\"\nassert [k[\"r\"] for k in _kola] == [90, 60, 30], \"Rysuj koła w kolejności malejących promieni: 90, 60, 30 (inaczej większe koło zakryje mniejsze)\"\nassert all((k[\"cx\"], k[\"cy\"]) == (200, 150) for k in _kola), \"Wszystkie trzy koła powinny mieć środek w punkcie (200, 150)\"\nassert [tuple(k[\"kolor\"]) for k in _kola] == [(220, 50, 60), (255, 255, 255), (250, 204, 21)], \"Sprawdź kolory kolejnych kół: czerwony, biały, żółty\""
+      },
+      "podpowiedzi": [
+        "Gdyby największe koło o promieniu `90` narysować na końcu, przykryłoby mniejsze koła.",
+        "Trzy wywołania mają ten sam środek `(200, 150)` i kolejne promienie: `90`, `60` oraz `30`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nscreen.fill((25, 35, 50))\npygame.draw.circle(screen, (220, 50, 60), (200, 150), 90)\npygame.draw.circle(screen, (255, 255, 255), (200, 150), 60)\npygame.draw.circle(screen, (250, 204, 21), (200, 150), 30)\npygame.display.flip()\npygame.quit()"
     }
   ]
 }

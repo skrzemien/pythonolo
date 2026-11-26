@@ -143,7 +143,18 @@ function narysujKlatke(ctx, szerokosc, wysokosc, polecenia) {
             ctx.fillStyle = styl;
             ctx.fillRect(0, 0, szerokosc, wysokosc);
         } else if (p.typ === 'rect') {
-            if (p.grubosc > 0) {
+            if (p.promien > 0 && typeof ctx.roundRect === 'function') {
+                ctx.beginPath();
+                ctx.roundRect(p.x, p.y, p.w, p.h, p.promien);
+                if (p.grubosc > 0) {
+                    ctx.strokeStyle = styl;
+                    ctx.lineWidth = p.grubosc;
+                    ctx.stroke();
+                } else {
+                    ctx.fillStyle = styl;
+                    ctx.fill();
+                }
+            } else if (p.grubosc > 0) {
                 ctx.strokeStyle = styl;
                 ctx.lineWidth = p.grubosc;
                 ctx.strokeRect(p.x, p.y, p.w, p.h);
@@ -201,7 +212,7 @@ function narysujKlatke(ctx, szerokosc, wysokosc, polecenia) {
             }
         } else if (p.typ === 'text') {
             ctx.fillStyle = styl;
-            ctx.font = `${p.rozmiar || 20}px sans-serif`;
+            ctx.font = `600 ${Math.max(12, Math.round((p.rozmiar || 24) * 0.72))}px sans-serif`;
             ctx.textBaseline = 'top';
             ctx.fillText(p.tekst || '', p.x, p.y);
         }

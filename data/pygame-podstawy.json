@@ -1,0 +1,229 @@
+{
+  "id": "pygame-podstawy",
+  "tytul": "Pygame: podstawy",
+  "wstep": "W tym module statyczny rysunek zamienia się w działającą grę. Poznasz obiekty `pygame.Rect`, zegar `pygame.time.Clock()`, pętlę główną `while running:`, obsługę zdarzenia zamknięcia okna `pygame.QUIT`, sterowanie klawiaturą oraz pilnowanie krawędzi ekranu.\n\nNa tej stronie pętla główna wykonuje przygotowane klatki animacji i odtwarza ruch pod edytorem, a po kliknięciu **Kopiuj kod** ten sam skrypt możesz uruchomić na komputerze i sterować graczem na żywo.",
+  "zadania": [
+    {
+      "id": "pygame-obiekt-rect",
+      "typ": "uzupelnij",
+      "tytul": "Obiekt prostokąta i ruch poziomy",
+      "opis": "Utwórz obiekt prostokąta przechowujący położenie i rozmiar gracza.\n\n* Po `import pygame`, `pygame.init()` i utworzeniu `screen` przez `pygame.display.set_mode((400, 300))` piąta linia tworzy obiekt `player`.\n* Wpisz w lukę po `pygame.` nazwę klasy tworzącej prostokąt (zaczyna się wielką literą).\n* Kod zwiększy `player.x` o `50`, wykona `screen.fill(...)`, `pygame.draw.rect(...)` i `pygame.display.flip()`, wypisze przez `print` nową wartość `player.x` i wywoła `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`110`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.___(60, 130, 40, 40)\nplayer.x += 50\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (240, 100, 80), player)\npygame.display.flip()\nprint(player.x)\npygame.quit()",
+      "luki": [
+        [
+          "Rect"
+        ]
+      ],
+      "wyjscie": "110",
+      "podpowiedzi": [
+        "Nazwa klasy prostokąta w `pygame` zaczyna się wielką literą `R`.",
+        "Wpisz `Rect`."
+      ]
+    },
+    {
+      "id": "pygame-srodek-rect",
+      "typ": "uzupelnij",
+      "tytul": "Wyśrodkowanie obiektu na ekranie",
+      "opis": "Ustaw środek prostokąta gracza dokładnie na środku okna `400 × 300`.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode((400, 300))`) i `player = pygame.Rect(0, 0, 60, 40)` szósta linia ustawia środek obiektu w punkcie `(200, 150)`.\n* Wpisz w lukę po `player.` nazwę właściwości oznaczającej punkt środkowy prostokąta.\n* `pygame` sam wyliczy lewy górny róg `(170, 130)` (co wypisze `print(player.x, player.y)` po `screen.fill(...)`, `pygame.draw.rect(...)` i `pygame.display.flip()`, przed `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`170 130`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(0, 0, 60, 40)\nplayer.___ = (200, 150)\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\nprint(player.x, player.y)\npygame.quit()",
+      "luki": [
+        [
+          "center"
+        ]
+      ],
+      "wyjscie": "170 130",
+      "podpowiedzi": [
+        "Po angielsku „środek” to `center`.",
+        "Wpisz `center`."
+      ]
+    },
+    {
+      "id": "pygame-move-ip",
+      "typ": "uzupelnij",
+      "tytul": "Przesunięcie w dwóch osiach naraz",
+      "opis": "Przesuń prostokąt o `40` pikseli w prawo i o `20` pikseli w górę jedną metodą.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode((400, 300))`) i `player = pygame.Rect(100, 150, 40, 40)` szósta linia modyfikuje położenie obiektu w miejscu (końcówka `_ip` oznacza *in place*).\n* Wpisz w lukę po `player.` nazwę metody przyjmującej zmianę `(dx, dy)` — ujemne `-20` oznacza ruch w górę.\n* Kod narysuje scenę (`screen.fill(...)`, `pygame.draw.rect(...)`, `pygame.display.flip()`), wypisze przez `print` nowe `player.x` oraz `player.y` i wywoła `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`140 130`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(100, 150, 40, 40)\nplayer.___(40, -20)\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\nprint(player.x, player.y)\npygame.quit()",
+      "luki": [
+        [
+          "move_ip"
+        ]
+      ],
+      "wyjscie": "140 130",
+      "podpowiedzi": [
+        "Metoda łączy słowo `move` (przesuń) ze skrótem `_ip` (w miejscu).",
+        "Wpisz `move_ip`."
+      ]
+    },
+    {
+      "id": "pygame-ruch-w-dol",
+      "typ": "napisz",
+      "tytul": "Przesunięcie w prawo i w dół",
+      "opis": "Przesuń prostokąt gracza o `70` pikseli w prawo i o `60` pikseli w dół, a następnie go narysuj.\n\n* Kod startowy wykonuje `import pygame`, `pygame.init()`, tworzy `screen` przez `pygame.display.set_mode((400, 300))` oraz `player = pygame.Rect(50, 40, 40, 40)`.\n* Zwiększ `player.x` o `70` (ruch w prawo) oraz `player.y` o `60` (oś `y` rośnie w dół, więc ruch w dół oznacza dodawanie).\n* Wypełnij tło przez `screen.fill((25, 35, 50))` i narysuj gracza przez `pygame.draw.rect(screen, (240, 100, 80), player)`.\n* Odśwież okno wywołaniem `pygame.display.flip()` i zakończ program przez `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(50, 40, 40, 40)\n# przesuń gracza, narysuj tło oraz gracza i odśwież ekran\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert player.x == 120, f\"Współrzędna player.x powinna wynosić 120 (50 + 70), a wynosi {player.x}\"\nassert player.y == 100, f\"Współrzędna player.y powinna wynosić 100 (ruch w dół zwiększa y: 40 + 60), a wynosi {player.y}\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić obraz na ekranie\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert any((p[\"x\"], p[\"y\"], p[\"w\"], p[\"h\"]) == (120, 100, 40, 40) for p in _prostokaty), \"Narysuj obiekt player w nowej pozycji przez pygame.draw.rect(screen, (240, 100, 80), player)\""
+      },
+      "podpowiedzi": [
+        "Użyj zapisu `player.x += 70` oraz `player.y += 60` przed rysowaniem.",
+        "Po zmianie współrzędnych wywołaj `screen.fill((25, 35, 50))`, `pygame.draw.rect(screen, (240, 100, 80), player)` oraz `pygame.display.flip()`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 300))\nplayer = pygame.Rect(50, 40, 40, 40)\nplayer.x += 70\nplayer.y += 60\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (240, 100, 80), player)\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-petla-quit",
+      "typ": "uzupelnij",
+      "tytul": "Pętla główna gry i zamknięcie okna",
+      "opis": "Obsłuż zdarzenie zamknięcia okna wewnątrz pętli głównej gry.\n\n* Po `import pygame`, `pygame.init()`, utworzeniu `screen` (`pygame.display.set_mode(...)`) i zegara `clock = pygame.time.Clock()` pętla `while running:` działa od wartości `True`.\n* Pętla `for event in pygame.event.get():` odczytuje zdarzenia, a `screen.fill(...)`, `pygame.display.flip()` i `clock.tick(60)` odpowiadają za kolejne klatki.\n* W warunku `if` porównaj `event.type` ze stałą zamykania okna po `pygame.` (wielkimi literami), aby ustawić `running = False` i przejść do `print` oraz `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Koniec gry`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 240))\nclock = pygame.time.Clock()\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.___:\n            running = False\n    screen.fill((30, 45, 70))\n    pygame.display.flip()\n    clock.tick(60)\nprint(\"Koniec gry\")\npygame.quit()",
+      "luki": [
+        [
+          "QUIT"
+        ]
+      ],
+      "wyjscie": "Koniec gry",
+      "podpowiedzi": [
+        "Stałą oznaczającą zamknięcie okna zapisujemy wielkimi literami (po angielsku „wyjdź”).",
+        "Wpisz `QUIT`."
+      ]
+    },
+    {
+      "id": "pygame-zegar-fps",
+      "typ": "uzupelnij",
+      "tytul": "Zegar i stała liczba klatek na sekundę",
+      "opis": "Ogranicz prędkość pętli gry do `60` klatek na sekundę za pomocą zegara.\n\n* Bez zegara pętla `while running:` (po `import pygame`, `pygame.init()`, utworzeniu `screen` przez `pygame.display.set_mode(...)` i `clock = pygame.time.Clock()`) wykonywałaby się ze zmienną prędkością zależną od komputera.\n* Po obsłudze `for event in pygame.event.get():` (`event.type == pygame.QUIT`, `True` / `False`), `screen.fill(...)` oraz `pygame.display.flip()` wywołujemy metodę zegara `clock`.\n* Wpisz w lukę po `clock.` nazwę metody ustalającej tempo klatek (przed `print(int(clock.get_fps()))` i `pygame.quit()`).\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`60`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    screen.fill((25, 35, 50))\n    pygame.display.flip()\n    clock.___(60)\nprint(int(clock.get_fps()))\npygame.quit()",
+      "luki": [
+        [
+          "tick"
+        ]
+      ],
+      "wyjscie": "60",
+      "podpowiedzi": [
+        "Po angielsku „tyknięcie zegara” to czteroliterowe słowo.",
+        "Wpisz `tick`."
+      ]
+    },
+    {
+      "id": "pygame-animacja-w-prawo",
+      "typ": "napisz",
+      "tytul": "Płynna animacja w pętli",
+      "opis": "Przesuwaj kwadrat o `20` pikseli w prawo w każdej klatce pętli gry.\n\n* Kod startowy przygotowuje `import pygame`, `pygame.init()`, `screen` (`pygame.display.set_mode((400, 200))`), `clock = pygame.time.Clock()`, obiekt `box = pygame.Rect(30, 80, 40, 40)` oraz `running = True`.\n* Napisz pętlę `while running:` z obsługą zamknięcia okna: `for event in pygame.event.get():` oraz `if event.type == pygame.QUIT: running = False`.\n* W każdym obrocie dodaj `box.x += 20`, wyczyść ekran przez `screen.fill((25, 35, 50))` (bez tego poprzednie klatki zostałyby na ekranie), narysuj `pygame.draw.rect(screen, (80, 200, 120), box)`, wywołaj `pygame.display.flip()` oraz `clock.tick(20)`. Po pętli wywołaj `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nbox = pygame.Rect(30, 80, 40, 40)\nrunning = True\n# dopisz pętlę z ruchem i rysowaniem klatek\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert running is False, \"W pętli obsłuż zdarzenie pygame.QUIT i ustaw running = False\"\nassert box.x > 100, \"W każdym obrocie pętli zwiększaj box.x o 20\"\nassert len(_pg._stan[\"klatki\"]) >= 5, \"Wywołuj pygame.display.flip() wewnątrz każdego obrotu pętli\"\n_ostatnia = _pg._stan[\"klatki\"][-1]\nassert any(p[\"typ\"] == \"fill\" for p in _ostatnia), \"W każdej klatce czyść tło wywołaniem screen.fill((25, 35, 50))\"\nassert any(p[\"typ\"] == \"rect\" for p in _ostatnia), \"W każdej klatce rysuj obiekt box przez pygame.draw.rect(...)\""
+      },
+      "podpowiedzi": [
+        "Wszystkie operacje ruchu i rysowania muszą mieć wcięcie 4 spacji wewnątrz `while running:`.",
+        "Kolejność w klatce: pętla zdarzeń `for`, `box.x += 20`, `screen.fill((25, 35, 50))`, `pygame.draw.rect(...)`, `pygame.display.flip()`, `clock.tick(20)`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\nbox = pygame.Rect(30, 80, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    box.x += 20\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (80, 200, 120), box)\n    pygame.display.flip()\n    clock.tick(20)\npygame.quit()"
+    },
+    {
+      "id": "pygame-klawisze",
+      "typ": "uzupelnij",
+      "tytul": "Sterowanie strzałką w prawo",
+      "opis": "Przesuwaj prostokąt gracza w prawo, gdy wciśnięty jest klawisz strzałki w prawo.\n\n* W pętli `while running:` (po `import pygame`, `pygame.init()`, utworzeniu `screen` przez `pygame.display.set_mode(...)`, `clock = pygame.time.Clock()` i `player = pygame.Rect(...)`) obsługujemy najpierw `for event in pygame.event.get():` oraz `event.type == pygame.QUIT` (`True` / `False`).\n* Następnie `keys = pygame.key.get_pressed()` odczytuje stan klawiszy — wpisz w lukę po `pygame.` stałą strzałki w prawo w warunku `if`.\n* Symulacja przytrzymuje ten klawisz przez `4` klatki (z `screen.fill(...)`, `pygame.draw.rect(...)`, `pygame.display.flip()` i `clock.tick(30)`), a potem wykonuje `print(player.x)` oraz `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`120`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(40, 90, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    keys = pygame.key.get_pressed()\n    if keys[pygame.___]:\n        player.x += 20\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(30)\nprint(player.x)\npygame.quit()",
+      "luki": [
+        [
+          "K_RIGHT"
+        ]
+      ],
+      "scenariuszPygame": [
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] }
+      ],
+      "wyjscie": "120",
+      "podpowiedzi": [
+        "Stałe klawiszy zaczynają się od `K_`, a „prawo” po angielsku to `RIGHT`.",
+        "Wpisz `K_RIGHT`."
+      ]
+    },
+    {
+      "id": "pygame-pojedynczy-klawisz",
+      "typ": "uzupelnij",
+      "tytul": "Pojedyncze naciśnięcie spacji",
+      "opis": "Wykryj pojedyncze naciśnięcie klawisza spacji w pętli zdarzeń.\n\n* Do skoku lub strzału zamiast `get_pressed()` sprawdzamy pojedyncze zdarzenie naciśnięcia klawisza `pygame.KEYDOWN` wewnątrz `for event in pygame.event.get():` (obok `pygame.QUIT`, po `import pygame`, `pygame.init()`, `screen = pygame.display.set_mode(...)`, `clock = pygame.time.Clock()`, `jumps = 0` i `running = True` / `False`).\n* Gdy `event.type == pygame.KEYDOWN`, atrybut `event.key` informuje, który klawisz naciśnięto — wpisz w lukę po `pygame.` stałą oznaczającą spację.\n* Symulacja naciska spację 2 razy (z `screen.fill(...)`, `pygame.display.flip()`, `clock.tick(30)`), a na końcu wykonuje `print(\"Skoki:\", jumps)` i `pygame.quit()`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:\n\n`Skoki: 2`",
+      "kod": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 200))\nclock = pygame.time.Clock()\njumps = 0\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n        elif event.type == pygame.KEYDOWN and event.key == pygame.___:\n            jumps += 1\n    screen.fill((25, 35, 50))\n    pygame.display.flip()\n    clock.tick(30)\nprint(\"Skoki:\", jumps)\npygame.quit()",
+      "luki": [
+        [
+          "K_SPACE"
+        ]
+      ],
+      "scenariuszPygame": [
+        { "zdarzenia": [{ "type": 768, "key": 32 }] },
+        { "zdarzenia": [] },
+        { "zdarzenia": [{ "type": 768, "key": 32 }] }
+      ],
+      "wyjscie": "Skoki: 2",
+      "podpowiedzi": [
+        "Stała klawisza spacji zaczyna się od `K_`, a „spacja” po angielsku to `SPACE`.",
+        "Wpisz `K_SPACE`."
+      ]
+    },
+    {
+      "id": "pygame-lewo-prawo",
+      "typ": "napisz",
+      "tytul": "Ruch w lewo i w prawo",
+      "opis": "Dodaj w pętli sterowanie graczem w lewo (`pygame.K_LEFT`) oraz w prawo (`pygame.K_RIGHT`).\n\n* Kod startowy przygotowuje okno `screen`, zegar `clock`, gracza `player = pygame.Rect(180, 90, 40, 40)` oraz pętlę `while running:` obsługującą `pygame.QUIT` (`import pygame`, `pygame.init()`, `pygame.display.set_mode(...)`, `pygame.time.Clock()`, `for event in pygame.event.get():`, `event.type`, `True` / `False`).\n* Wewnątrz pętli odczytaj `keys = pygame.key.get_pressed()`. Jeśli `keys[pygame.K_LEFT]` jest prawdziwe (`if`), zmniejsz `player.x` o `15`; jeśli `keys[pygame.K_RIGHT]` jest prawdziwe, zwiększ `player.x` o `15`.\n* W każdej klatce wywołaj `screen.fill((25, 35, 50))`, narysuj `pygame.draw.rect(screen, (80, 200, 120), player)`, odśwież przez `pygame.display.flip()` i dodaj `clock.tick(30)`. Po pętli wywołaj `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(180, 90, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    # odczytaj klawisze K_LEFT i K_RIGHT, przesuń gracza i narysuj klatkę\n",
+      "scenariuszPygame": [
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741904] }
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert player.x == 210, f\"Po 3 krokach w prawo (+45) i 1 kroku w lewo (-15) od pozycji 180 wartość player.x powinna wynosić 210 (otrzymano {player.x})\"\nassert len(_pg._stan[\"klatki\"]) >= 4, \"Odświeżaj ekran w każdej klatce wywołaniem pygame.display.flip()\""
+      },
+      "podpowiedzi": [
+        "Ruch w lewo zmniejsza `x`: `if keys[pygame.K_LEFT]: player.x -= 15`.",
+        "Ruch w prawo zwiększa `x`: `if keys[pygame.K_RIGHT]: player.x += 15`, a pod spodem narysuj tło i `player`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(180, 90, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    keys = pygame.key.get_pressed()\n    if keys[pygame.K_LEFT]:\n        player.x -= 15\n    if keys[pygame.K_RIGHT]:\n        player.x += 15\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(30)\npygame.quit()"
+    },
+    {
+      "id": "pygame-granica-ekranu",
+      "typ": "napisz",
+      "tytul": "Zatrzymanie gracza przy krawędzi okna",
+      "opis": "Zatrzymaj prostokąt gracza tak, aby nie wyszedł poza prawą krawędź okna o szerokości `400`.\n\n* Kod startowy wykonuje `import pygame`, `pygame.init()`, tworzy `screen` przez `pygame.display.set_mode((400, 220))` oraz `player = pygame.Rect(350, 90, 40, 40)` i dodaje `player.x += 30`.\n* Po ruchu prawa krawędź `player.right` ma wartość `420`. Napisz warunek `if`: gdy `player.right > 400`, ustaw `player.right = 400`.\n* Następnie wywołaj `screen.fill((25, 35, 50))`, narysuj `player` przez `pygame.draw.rect(screen, (80, 200, 120), player)`, a na końcu dodaj `pygame.display.flip()` oraz `pygame.quit()`.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(350, 90, 40, 40)\nplayer.x += 30\n# zatrzymaj gracza przy prawej krawędzi okna (400), narysuj scenę i odśwież ekran\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert player.right <= 400, f\"Prawa krawędź gracza (player.right) wynosi {player.right}, a nie może przekroczyć 400\"\nassert player.x == 360, f\"Po zatrzymaniu przy prawej krawędzi 400 gracz o szerokości 40 powinien mieć player.x równe 360 (otrzymano {player.x})\"\nassert len(_pg._stan[\"klatki\"]) >= 1, \"Wywołaj pygame.display.flip(), aby wyświetlić scenę\"\n_prostokaty = [p for p in _pg._stan[\"klatki\"][-1] if p[\"typ\"] == \"rect\"]\nassert any((p[\"x\"], p[\"y\"], p[\"w\"], p[\"h\"]) == (360, 90, 40, 40) for p in _prostokaty), \"Narysuj obiekt player już po korekcie pozycji przez pygame.draw.rect(screen, (80, 200, 120), player)\""
+      },
+      "podpowiedzi": [
+        "Atrybut `player.right` automatycznie przelicza `player.x` z uwzględnieniem szerokości `40`.",
+        "Dopisz `if player.right > 400:` z wciętym `player.right = 400`, a pod spodem narysuj tło i `player`."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 220))\nplayer = pygame.Rect(350, 90, 40, 40)\nplayer.x += 30\nif player.right > 400:\n    player.right = 400\nscreen.fill((25, 35, 50))\npygame.draw.rect(screen, (80, 200, 120), player)\npygame.display.flip()\npygame.quit()"
+    },
+    {
+      "id": "pygame-cztery-kierunki",
+      "typ": "napisz",
+      "tytul": "Cztery kierunki i pilnowanie wszystkich ścian",
+      "opis": "Obsłuż ruch gracza we wszystkich czterech kierunkach i utrzymaj go wewnątrz okna.\n\n* Kod startowy tworzy `screen` (`400 × 260`), `clock`, `player = pygame.Rect(10, 10, 40, 40)` oraz początek pętli `while running:` (`import pygame`, `pygame.init()`, `pygame.display.set_mode(...)`, `pygame.time.Clock()`, `for event in pygame.event.get():`, `event.type`, `pygame.QUIT`, `True` / `False`).\n* Odczytaj `keys = pygame.key.get_pressed()` i zmieniaj położenie o `20`: `pygame.K_LEFT` (`player.x -= 20`), `pygame.K_RIGHT` (`player.x += 20`), `pygame.K_UP` (`player.y -= 20`), `pygame.K_DOWN` (`player.y += 20`) w instrukcjach `if`.\n* Po ruchu przytnij położenie gracza do prostokąta ekranu jedną metodą: `player.clamp_ip(screen.get_rect())`.\n* Wywołaj `screen.fill((25, 35, 50))`, `pygame.draw.rect(screen, (80, 200, 120), player)`, `pygame.display.flip()`, `clock.tick(30)` oraz `pygame.quit()` po pętli.\n\nKliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(10, 10, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    # obsłuż 4 strzałki, ogranicz pozycję do ekranu i narysuj klatkę\n",
+      "scenariuszPygame": [
+        { "klawisze": [1073741904, 1073741906] },
+        { "klawisze": [1073741903] },
+        { "klawisze": [1073741905] },
+        { "klawisze": [1073741905] }
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import pygame as _pg\nassert (player.x, player.y) == (20, 40), f\"Po przycięciu do lewego górnego rogu (0, 0), 1 ruchu w prawo (+20) i 2 ruchach w dół (+40) pozycja powinna wynosić (20, 40), a wynosi {(player.x, player.y)}\"\nassert len(_pg._stan[\"klatki\"]) >= 4, \"Odświeżaj ekran w każdej klatce przez pygame.display.flip()\""
+      },
+      "podpowiedzi": [
+        "Ruch w górę zmniejsza `player.y` (`-= 20`), a ruch w dół zwiększa `player.y` (`+= 20`).",
+        "Wywołanie `player.clamp_ip(screen.get_rect())` po wszystkich 4 warunkach `if` zatrzymuje gracza na każdej z czterech krawędzi okna."
+      ],
+      "rozwiazanie": "import pygame\n\npygame.init()\nscreen = pygame.display.set_mode((400, 260))\nclock = pygame.time.Clock()\nplayer = pygame.Rect(10, 10, 40, 40)\nrunning = True\nwhile running:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            running = False\n    keys = pygame.key.get_pressed()\n    if keys[pygame.K_LEFT]:\n        player.x -= 20\n    if keys[pygame.K_RIGHT]:\n        player.x += 20\n    if keys[pygame.K_UP]:\n        player.y -= 20\n    if keys[pygame.K_DOWN]:\n        player.y += 20\n    player.clamp_ip(screen.get_rect())\n    screen.fill((25, 35, 50))\n    pygame.draw.rect(screen, (80, 200, 120), player)\n    pygame.display.flip()\n    clock.tick(30)\npygame.quit()"
+    }
+  ]
+}

@@ -185,6 +185,28 @@ class Rect:
         px, py = _sprawdz_pare_liczb(args[0] if len(args) == 1 else args, "punkt")
         return self.x <= px < self.x + self.width and self.y <= py < self.y + self.height
 
+    def clamp(self, other):
+        r = other if isinstance(other, Rect) else Rect(other)
+        kopia = self.copy()
+        kopia.clamp_ip(r)
+        return kopia
+
+    def clamp_ip(self, other):
+        r = other if isinstance(other, Rect) else Rect(other)
+        if self.width >= r.width:
+            self.centerx = r.centerx
+        elif self.x < r.x:
+            self.x = r.x
+        elif self.right > r.right:
+            self.right = r.right
+
+        if self.height >= r.height:
+            self.centery = r.centery
+        elif self.y < r.y:
+            self.y = r.y
+        elif self.bottom > r.bottom:
+            self.bottom = r.bottom
+
     def __eq__(self, other):
         if isinstance(other, Rect):
             return (self.x, self.y, self.width, self.height) == (other.x, other.y, other.width, other.height)
@@ -281,6 +303,7 @@ _stan = {
     "domyslny_limit_krokow": 5,
     "wywolania_event_get": 0,
     "biezace_klawisze": set(),
+    "mysz_pos": (0, 0),
     "wyslij_do_hosta": None,
 }
 
@@ -297,6 +320,7 @@ def _resetuj_stan(scenariusz=None, wyslij_do_hosta=None):
     _stan["domyslny_limit_krokow"] = 5
     _stan["wywolania_event_get"] = 0
     _stan["biezace_klawisze"] = set()
+    _stan["mysz_pos"] = (0, 0)
     _stan["wyslij_do_hosta"] = wyslij_do_hosta
 
 
@@ -441,6 +465,8 @@ class Event:
     def __init__(self, typ_zdarzenia, **atrybuty):
         self.type = typ_zdarzenia
         for k, v in atrybuty.items():
+            if k == "pos" and isinstance(v, list):
+                v = tuple(v)
             setattr(self, k, v)
 
     def __repr__(self):
@@ -466,7 +492,15 @@ class _EventModule:
             if indeks < len(scenariusz):
                 krok = scenariusz[indeks]
                 _stan["biezace_klawisze"] = set(krok.get("klawisze", []))
-                return [Event(z["type"], **{k: v for k, v in z.items() if k != "type"}) for z in krok.get("zdarzenia", [])]
+                if "mysz" in krok:
+                    _stan["mysz_pos"] = tuple(krok["mysz"])
+                zdarzenia = []
+                for z in krok.get("zdarzenia", []):
+                    ev = Event(z["type"], **{k: v for k, v in z.items() if k != "type"})
+                    if hasattr(ev, "pos"):
+                        _stan["mysz_pos"] = ev.pos
+                    zdarzenia.append(ev)
+                return zdarzenia
             _stan["biezace_klawisze"] = set()
             return [Event(QUIT)]
 
@@ -533,9 +567,18 @@ class _FontModule:
         return Font(name, size)
 
 
+class _MouseModule:
+    def get_pos(self):
+        return _stan["mysz_pos"]
+
+    def get_pressed(self):
+        return (False, False, False)
+
+
 display = _DisplayModule()
 draw = _DrawModule()
 event = _EventModule()
 key = _KeyModule()
+mouse = _MouseModule()
 time = _TimeModule()
 font = _FontModule()
