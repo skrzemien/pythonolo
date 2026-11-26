@@ -85,15 +85,18 @@ def sprawdz_uzupelnij(zadanie, zglos):
         zglos(f'w kodzie jest {liczba_luk} luk, a w "luki" {len(zadanie["luki"])} pozycji')
         return
 
+    sprawdzenie = zadanie.get('sprawdzenie') or {}
+    kod_testu = sprawdzenie.get('kod') if sprawdzenie.get('tryb') == 'testy' else None
+
     for i, przyjmowane in enumerate(zadanie['luki']):
         for odpowiedz in przyjmowane:
             wartosci = [luka[0] for luka in zadanie['luki']]
             wartosci[i] = odpowiedz
             kod = ''.join(c + (wartosci[j] if j < liczba_luk else '') for j, c in enumerate(czesci))
-            wypisane, blad, _ = uruchom(kod, wejscie_zadania(zadanie), None, scenariusz_zadania(zadanie))
+            wypisane, blad, _ = uruchom(kod, wejscie_zadania(zadanie), kod_testu, scenariusz_zadania(zadanie))
             if blad:
                 zglos(f'luka {i + 1} = {odpowiedz!r}: {blad}')
-            elif normalizuj(wypisane) != normalizuj(zadanie.get('wyjscie', '')):
+            elif not kod_testu and normalizuj(wypisane) != normalizuj(zadanie.get('wyjscie', '')):
                 zglos(f'luka {i + 1} = {odpowiedz!r}: wypisuje {wypisane!r}, '
                       f'a treść obiecuje {zadanie.get("wyjscie")!r}')
 

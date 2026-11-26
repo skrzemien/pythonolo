@@ -50,10 +50,10 @@ Każde pole `opis` musi mieć stałą, przewidywalną budowę:
    - `Na tej stronie odpowiedzi są przygotowane z góry. Program otrzyma kolejno: \`...\`. Nie wpisuj ich ręcznie podczas uruchamiania.`
    - Jeśli uczeń sam pisze wywołanie `input(...)`, zaznacz, że tekst pytania wewnątrz `input(...)` może być dowolny, bo sprawdzarka ocenia wyłącznie wynik wypisany przez `print()`.
 4. **Stałe zakończenie (instrukcja działania + wzór wyniku)**:
-   - dla `uzupelnij`: `Kliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:` + wzór wyniku (lub w zadaniach graficznych `pygame` bez `print`: `Kliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam i wyświetli okno gry poniżej.`),
+   - dla `uzupelnij`: `Kliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Porównaj wynik ze wzorem:` + wzór wyniku (w zadaniach graficznych `pygame` bez `print`: `... i wyświetli okno gry poniżej.`, a w zadaniach z `random`: zaznacz wprost, że wylosowana wartość może być za każdym razem inna, i podaj przykład wyglądu wyniku),
    - dla `napisz` (`tryb: "wyjscie"`): `Kliknij **Uruchom** i porównaj wynik ze wzorem poniżej. Gdy wynik się zgadza, kliknij **Sprawdź**.` + wzór wyniku,
    - dla `napisz` (`tryb: "testy"` — funkcja): `Kliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać \`print\`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.`,
-   - dla `napisz` (`tryb: "testy"` — skrypt graficzny `pygame`): `Kliknij **Uruchom**, aby zobaczyć podgląd okna gry poniżej, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.`
+   - dla `napisz` (`tryb: "testy"` — skrypt graficzny `pygame` lub losujący `random`): `Kliknij **Uruchom**, aby zobaczyć wynik działania, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.`
 
 ### 3.4. Jawność warunków brzegowych
 - Zawsze precyzuj, czy granice zakresu należą do wyniku (*„od `1` do `5` włącznie”*, *„co najmniej `20` (czyli `>= 20`)”*).

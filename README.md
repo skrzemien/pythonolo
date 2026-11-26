@@ -3,9 +3,9 @@
 Statyczna strona z zadaniami z Pythona dla początkujących (ok. 12 lat). Kod pisze się
 i uruchamia prosto w przeglądarce — bez instalowania czegokolwiek i bez konta.
 
-**13 modułów, 165 zadań**: od `print` przez zmienne, warunki, pętle, listy, krotki
-i funkcje aż po słowniki, mini-projekty i **podstawy Pygame** (z podglądem okna gry
-na stronie oraz przyciskiem **Kopiuj kod** do uruchomienia lokalnie na komputerze).
+**14 modułów, 177 zadań**: od `print` przez zmienne, warunki, pętle, listy, krotki
+i funkcje aż po słowniki, **losowość (`random`)**, mini-projekty i **podstawy Pygame**
+(z podglądem okna gry na stronie oraz przyciskiem **Kopiuj kod** do uruchomienia lokalnie na komputerze).
 
 ## Jak to działa
 

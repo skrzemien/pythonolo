@@ -1,6 +1,30 @@
 {
   "wpisy": [
     {
+      "data": "2026-11-26",
+      "tytul": "Nowy moduł: Losowość (random)",
+      "opis": "Dodaliśmy 12 zadań poświęconych modułowi `random` — od prostego rzutu kostką i losowania z listy po generator kodu PIN, symulację rzutów w pętli `while` oraz losowanie pozycji obiektów `(x, y)` do gier.",
+      "punkty": [
+        "Moduł wyraźnie wyjaśnia różnicę między `range(1, 6)` a `random.randint(1, 6)` (gdzie obie granice należą do wyniku) oraz działanie `random.shuffle` w miejscu.",
+        "Podczas klikania **Uruchom** programy wykonują prawdziwe losowania, natomiast sprawdzarka testuje poprawność zakresów i losowości wielokrotnymi wywołaniami."
+      ],
+      "noweZadania": [
+        "random-import",
+        "random-kostka",
+        "random-zakres",
+        "random-wybor",
+        "random-dwie-kostki",
+        "random-tasowanie",
+        "random-bez-powtorzen",
+        "random-kostka-funkcja",
+        "random-wybor-funkcja",
+        "random-az-szostka",
+        "random-kod-pin",
+        "random-pozycja-gry"
+      ],
+      "stopka": "Dotychczasowe identyfikatory modułów i zadań pozostały bez zmian — wszystkie zaliczenia uczniów są bezpieczne. Kurs obejmuje teraz 14 modułów i 177 zadań."
+    },
+    {
       "data": "2026-11-25",
       "tytul": "Nowy moduł: Podstawy Pygame oraz 7 zadań przygotowujących",
       "opis": "Przed wprowadzeniem grafiki 2D sprawdziliśmy cały kurs pod kątem brakujących elementów składni i uzupełniliśmy wcześniejsze moduły, a następnie dodaliśmy 13. moduł z podstawami biblioteki `pygame`.",

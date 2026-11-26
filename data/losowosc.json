@@ -1,0 +1,223 @@
+{
+  "id": "losowosc",
+  "tytul": "Losowość: random",
+  "wstep": "Wbudowany moduł `random` pozwala losować liczby i elementy z listy — przydaje się w grach, quizach i symulacjach.\n\nWażna różnica względem `range`: funkcja `random.randint(1, 6)` losuje liczbę całkowitą od `1` do `6` **włącznie z obiema granicami** (czyli może wypaść zarówno `1`, jak i `6`).\n\nPonieważ przy każdym uruchomieniu wynik losowania może być inny, sprawdzarka nie porównuje pojedynczego napisu ze stałym wzorem, lecz sprawdza, czy Twój kod losuje wartości z właściwego zakresu lub listy.",
+  "zadania": [
+    {
+      "id": "random-import",
+      "typ": "uzupelnij",
+      "tytul": "Import modułu losującego",
+      "opis": "Dołącz wbudowany moduł losujący i wylosuj liczbę od `1` do `10`.\n\n* Druga linia wywołuje `random.randint(1, 10)` i zapisuje wynik w zmiennej `number`.\n* Aby Python znał moduł `random`, zaimportuj go na początku programu za pomocą `import`.\n* Wpisz w lukę nazwę modułu małymi literami, a `print` wypisze wylosowaną wartość.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Przy każdym uruchomieniu liczba może być inna (od `1` do `10`), na przykład:\n\n`Wylosowana liczba: 7`",
+      "kod": "import ___\nnumber = random.randint(1, 10)\nprint(\"Wylosowana liczba:\", number)",
+      "luki": [
+        [
+          "random"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert isinstance(number, int) and 1 <= number <= 10"
+      },
+      "podpowiedzi": [
+        "Po angielsku „losowy” to `random`.",
+        "Wpisz `random` małymi literami."
+      ]
+    },
+    {
+      "id": "random-kostka",
+      "typ": "uzupelnij",
+      "tytul": "Rzut sześciościenną kostką",
+      "opis": "Wylosuj liczbę oczek na kostce od `1` do `6` włącznie.\n\n* Po `import random` trzecia linia zapisuje wynik losowania w zmiennej `roll`.\n* Wpisz w lukę po `random.` nazwę funkcji losującej liczbę całkowitą z podanego przedziału (obie granice `1` oraz `6` są wliczane).\n* Czwarta linia wypisze wynik przez `print`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Przy każdym uruchomieniu liczba może być inna (od `1` do `6`), na przykład:\n\n`Oczka: 4`",
+      "kod": "import random\n\nroll = random.___(1, 6)\nprint(\"Oczka:\", roll)",
+      "luki": [
+        [
+          "randint"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert isinstance(roll, int) and 1 <= roll <= 6"
+      },
+      "podpowiedzi": [
+        "Nazwa łączy skróty angielskich słów „random” (losowa) oraz „integer” (liczba całkowita).",
+        "Wpisz `randint`."
+      ]
+    },
+    {
+      "id": "random-zakres",
+      "typ": "uzupelnij",
+      "tytul": "Losowanie od 0 do 100",
+      "opis": "Ustaw górną granicę tak, aby losować liczbę całkowitą od `0` do `100` włącznie.\n\n* W przeciwieństwie do `range`, funkcja `random.randint(a, b)` uwzględnia również drugą liczbę `b`.\n* Wpisz w lukę w trzeciej linii największą liczbę, jaka ma być możliwa do wylosowania w zmiennej `percent` (po `import random`).\n* Polecenie `print` wypisze wylosowany procent.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Przy każdym uruchomieniu wynik może być inny (od `0` do `100`), na przykład:\n\n`Szansa: 85 %`",
+      "kod": "import random\n\npercent = random.randint(0, ___)\nprint(\"Szansa:\", percent, \"%\")",
+      "luki": [
+        [
+          "100"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert isinstance(percent, int) and 0 <= percent <= 100"
+      },
+      "podpowiedzi": [
+        "W `randint` nie dodajemy `1` na końcu — wpisujemy dokładną górną granicę.",
+        "Wpisz `100`."
+      ]
+    },
+    {
+      "id": "random-wybor",
+      "typ": "uzupelnij",
+      "tytul": "Orzeł czy reszka",
+      "opis": "Wylosuj jeden napis z dwuelementowej listy.\n\n* Po `import random` lista `coin` przechowuje dwa napisy: `\"orzeł\"` oraz `\"reszka\"`.\n* W czwartej linii po `random.` wpisz nazwę funkcji wybierającej jeden losowy element z listy i zapisującej go w `result`.\n* Ostatnia linia wypisze wynik przez `print`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Wynikiem będzie jedno z dwóch słów z listy, na przykład:\n\n`Wypadło: orzeł`",
+      "kod": "import random\n\ncoin = [\"orzeł\", \"reszka\"]\nresult = random.___(coin)\nprint(\"Wypadło:\", result)",
+      "luki": [
+        [
+          "choice"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert result in [\"orzeł\", \"reszka\"]"
+      },
+      "podpowiedzi": [
+        "Po angielsku „wybór” to `choice`.",
+        "Wpisz `choice`."
+      ]
+    },
+    {
+      "id": "random-dwie-kostki",
+      "typ": "napisz",
+      "tytul": "Rzut dwiema kostkami",
+      "opis": "Wylosuj niezależnie wyniki rzutu dwiema kostkami sześciościennymi i wypisz ich sumę.\n\n* Kod startowy zawiera `import random`.\n* Zapisz w zmiennej `first` wynik `random.randint(1, 6)`, a w zmiennej `second` wynik drugiego wywołania `random.randint(1, 6)`.\n* Zapisz w zmiennej `total` sumę `first + second`.\n* W pierwszej linii wypisz przez `print` tekst `Kostki:` oraz wartości `first` i `second`, a w drugiej linii tekst `Suma:` oraz wartość `total`.\n\nKliknij **Uruchom** kilka razy, aby zobaczyć różne losowania w konsoli, a następnie kliknij **Sprawdź**. Jeśli pojawi się komunikat błędu, popraw wskazany element.",
+      "start": "import random\n\n# wylosuj dwie kostki od 1 do 6 i wypisz je oraz ich sumę\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert \"first\" in dir() and \"second\" in dir(), \"Utwórz zmienne first oraz second z wynikami rzutów\"\nassert isinstance(first, int) and 1 <= first <= 6, \"Zmienna first powinna być liczbą całkowitą od 1 do 6\"\nassert isinstance(second, int) and 1 <= second <= 6, \"Zmienna second powinna być liczbą całkowitą od 1 do 6\"\nassert \"total\" in dir() and total == first + second, \"Zmienna total powinna przechowywać sumę first + second\""
+      },
+      "podpowiedzi": [
+        "Każda kostka potrzebuje osobnego wywołania `random.randint(1, 6)`.",
+        "Po obliczeniu `total = first + second` użyj `print(\"Kostki:\", first, second)` oraz `print(\"Suma:\", total)`."
+      ],
+      "rozwiazanie": "import random\n\nfirst = random.randint(1, 6)\nsecond = random.randint(1, 6)\ntotal = first + second\nprint(\"Kostki:\", first, second)\nprint(\"Suma:\", total)"
+    },
+    {
+      "id": "random-tasowanie",
+      "typ": "uzupelnij",
+      "tytul": "Tasowanie kolejności graczy",
+      "opis": "Wymieszaj losowo kolejność imion na liście.\n\n* Po `import random` lista `players` zawiera 4 imiona.\n* W czwartej linii po `random.` wpisz nazwę funkcji mieszającej elementy listy bezpośrednio w niej (nie przypisujemy wyniku do zmiennej, bo funkcja zwraca `None`).\n* Polecenie `print(players)` wypisze listę w nowej kolejności.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Kolejność imion na liście może być za każdym razem inna, na przykład:\n\n`['Zosia', 'Ala', 'Tomek', 'Kuba']`",
+      "kod": "import random\n\nplayers = [\"Ala\", \"Kuba\", \"Zosia\", \"Tomek\"]\nrandom.___(players)\nprint(players)",
+      "luki": [
+        [
+          "shuffle"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert sorted(players) == [\"Ala\", \"Kuba\", \"Tomek\", \"Zosia\"]"
+      },
+      "podpowiedzi": [
+        "Po angielsku „tasować karty” to `shuffle`.",
+        "Wpisz `shuffle`."
+      ]
+    },
+    {
+      "id": "random-bez-powtorzen",
+      "typ": "uzupelnij",
+      "tytul": "Losowanie bez powtórzeń",
+      "opis": "Wylosuj z listy dokładnie `2` różne nagrody bez powtórzeń.\n\n* Funkcja `random.choice` losuje tylko 1 element, natomiast do wylosowania kilku **różnych** elementów naraz służy funkcja przyjmująca listę oraz liczbę elementów.\n* Po `import random` i utworzeniu listy `prizes` wpisz w lukę po `random.` nazwę tej funkcji, aby zapisać 2 różne nagrody w `winners`.\n* Ostatnia linia wypisze wylosowaną parę przez `print`.\n\nKliknij **Sprawdź**. Po poprawnym uzupełnieniu kod uruchomi się sam. Wylosowana para nagród może być za każdym razem inna, na przykład:\n\n`['gra', 'kubek']`",
+      "kod": "import random\n\nprizes = [\"książka\", \"gra\", \"piłka\", \"kubek\", \"puzzle\"]\nwinners = random.___(prizes, 2)\nprint(winners)",
+      "luki": [
+        [
+          "sample"
+        ]
+      ],
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "assert isinstance(winners, list) and len(winners) == 2 and len(set(winners)) == 2 and all(w in prizes for w in winners)"
+      },
+      "podpowiedzi": [
+        "Po angielsku „próbka” (kilka wybranych sztuk ze zbioru) to `sample`.",
+        "Wpisz `sample`."
+      ]
+    },
+    {
+      "id": "random-kostka-funkcja",
+      "typ": "napisz",
+      "tytul": "Kostka o dowolnej liczbie ścian",
+      "opis": "Napisz funkcję losującą rzut kostką o podanej liczbie ścian.\n\n* Kod startowy zawiera `import random` oraz nagłówek `def roll_die(sides):`.\n* Argument `sides` to dodatnia liczba całkowita oznaczająca liczbę ścian kostki (np. `6` albo `20`).\n* Zwróć przez `return` losową liczbę całkowitą z przedziału od `1` do `sides` włącznie za pomocą `random.randint(...)`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "import random\n\ndef roll_die(sides):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import random as _r\n_r.seed(12345)\n_rzuty6 = [roll_die(6) for _ in range(120)]\nassert all(isinstance(w, int) and 1 <= w <= 6 for w in _rzuty6), \"Dla sides=6 każdy wynik musi być liczbą całkowitą od 1 do 6\"\nassert 1 in _rzuty6 and 6 in _rzuty6, \"Dla sides=6 możliwe muszą być obie wartości graniczne: 1 oraz 6\"\n_rzuty20 = [roll_die(20) for _ in range(200)]\nassert all(1 <= w <= 20 for w in _rzuty20) and 20 in _rzuty20, \"Użyj argumentu sides jako górnej granicy w random.randint(1, sides)\""
+      },
+      "podpowiedzi": [
+        "Wewnątrz funkcji przekaż `1` oraz `sides` do `random.randint(...)`.",
+        "Zwróć wynik instrukcją `return random.randint(1, sides)`."
+      ],
+      "rozwiazanie": "import random\n\ndef roll_die(sides):\n    return random.randint(1, sides)"
+    },
+    {
+      "id": "random-wybor-funkcja",
+      "typ": "napisz",
+      "tytul": "Losowy ruch komputera",
+      "opis": "Napisz funkcję losującą ruch komputera w grze „kamień, papier, nożyce”.\n\n* Kod startowy zawiera `import random` oraz nagłówek `def computer_move():`.\n* Utwórz wewnątrz funkcji listę `moves` z trzema napisami: `\"kamień\"`, `\"papier\"`, `\"nożyce\"`.\n* Zwróć przez `return` losowy element z listy `moves` za pomocą `random.choice(...)`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "import random\n\ndef computer_move():\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import random as _r\n_r.seed(42)\n_ruchy = [computer_move() for _ in range(90)]\n_dozwolone = {\"kamień\", \"papier\", \"nożyce\"}\nassert all(x in _dozwolone for x in _ruchy), \"Funkcja powinna zwracać wyłącznie napisy: 'kamień', 'papier' lub 'nożyce'\"\nassert set(_ruchy) == _dozwolone, \"Funkcja powinna losować spośród wszystkich trzech ruchów za pomocą random.choice(...)\""
+      },
+      "podpowiedzi": [
+        "Zapisz listę `moves = [\"kamień\", \"papier\", \"nożyce\"]`.",
+        "Zwróć wynik wywołania `return random.choice(moves)`."
+      ],
+      "rozwiazanie": "import random\n\ndef computer_move():\n    moves = [\"kamień\", \"papier\", \"nożyce\"]\n    return random.choice(moves)"
+    },
+    {
+      "id": "random-az-szostka",
+      "typ": "napisz",
+      "tytul": "Ile rzutów do pierwszej szóstki",
+      "opis": "Napisz funkcję liczącą, w którym rzucie kostką wypadnie pierwsza `6`.\n\n* Kod startowy zawiera `import random` oraz nagłówek `def rolls_until_six():`.\n* Utwórz licznik `count = 0`, a pod nim pętlę `while True:`.\n* W każdym obrocie zwiększ `count` o `1` i wylosuj rzut `roll = random.randint(1, 6)`.\n* Jeśli `roll == 6` (warunek `if`), zakończ funkcję i zwróć `count` przez `return count`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "import random\n\ndef rolls_until_six():\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import random as _r\n_r.seed(10)\n_seria = [rolls_until_six() for _ in range(40)]\nassert all(isinstance(x, int) and x >= 1 for x in _seria), \"Liczba rzutów musi być liczbą całkowitą co najmniej 1\"\nassert len(set(_seria)) > 3, \"Funkcja powinna powtarzać random.randint(1, 6) w pętli aż wypadnie 6\"\n_r.seed(10)\n_oczekiwane = []\nfor _ in range(5):\n    _c = 0\n    while True:\n        _c += 1\n        if _r.randint(1, 6) == 6:\n            _oczekiwane.append(_c)\n            break\n_r.seed(10)\n_otrzymane = [rolls_until_six() for _ in range(5)]\nassert _otrzymane == _oczekiwane, \"Zwiększaj licznik przy każdym wywołaniu random.randint(1, 6) i zwróć go, gdy wypadnie 6\""
+      },
+      "podpowiedzi": [
+        "Jeśli `6` wypadnie już w pierwszym rzucie, funkcja powinna zwrócić `1`.",
+        "Wewnątrz `while True:` zwiększ `count += 1`, wylosuj `roll = random.randint(1, 6)` i sprawdź `if roll == 6: return count`."
+      ],
+      "rozwiazanie": "import random\n\ndef rolls_until_six():\n    count = 0\n    while True:\n        count += 1\n        roll = random.randint(1, 6)\n        if roll == 6:\n            return count"
+    },
+    {
+      "id": "random-kod-pin",
+      "typ": "napisz",
+      "tytul": "Generator kodu PIN",
+      "opis": "Napisz funkcję budującą losowy kod PIN z cyfr o podanej długości.\n\n* Kod PIN przechowujemy jako tekst (`str`), ponieważ może zaczynać się od cyfry `'0'` (np. `\"0482\"`).\n* W funkcji `make_pin(length)` (po `import random`) masz już napis `digits = \"0123456789\"`. Utwórz pusty tekst `code = \"\"`.\n* Użyj pętli `for` wykonującej `length` obrotów (`range(length)`). W każdym obrocie wylosuj jeden znak przez `random.choice(digits)` i dołącz go do `code` operatorem `+=`.\n* Po pętli zwróć `code` przez `return`. Dla `length` równego `0` funkcja ma zwrócić pusty tekst `\"\"`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "import random\n\ndef make_pin(length):\n    digits = \"0123456789\"\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import random as _r\n_r.seed(99)\nassert make_pin(0) == \"\", \"Dla długości 0 funkcja powinna zwrócić pusty tekst ''\"\n_piny = [make_pin(4) for _ in range(30)]\nassert all(isinstance(p, str) and len(p) == 4 and p.isdigit() for p in _piny), \"Dla length=4 zwróć czteroznakowy tekst złożony z samych cyfr\"\nassert len(set(_piny)) > 10, \"Losuj każdą cyfrę osobno wewnątrz pętli, aby kolejne kody PIN się różniły\"\nassert len(make_pin(6)) == 6, \"Długość zwróconego tekstu musi być równa argumentowi length\""
+      },
+      "podpowiedzi": [
+        "Wewnątrz `for _ in range(length):` dopisuj wylosowaną cyfrę: `code += random.choice(digits)`.",
+        "Pamiętaj, aby `return code` umieścić po zakończeniu pętli `for`."
+      ],
+      "rozwiazanie": "import random\n\ndef make_pin(length):\n    digits = \"0123456789\"\n    code = \"\"\n    for _ in range(length):\n        code += random.choice(digits)\n    return code"
+    },
+    {
+      "id": "random-pozycja-gry",
+      "typ": "napisz",
+      "tytul": "Losowa pozycja obiektu w grze",
+      "opis": "Napisz funkcję losującą współrzędne `(x, y)` obiektu w oknie gry.\n\n* Funkcja `random_position(max_x, max_y)` (po `import random`) otrzymuje maksymalną współrzędną poziomą `max_x` oraz pionową `max_y`.\n* Wylosuj `x` jako liczbę całkowitą od `0` do `max_x` włącznie przez `random.randint(0, max_x)`.\n* Wylosuj `y` jako liczbę całkowitą od `0` do `max_y` włącznie przez `random.randint(0, max_y)`.\n* Zwróć przez `return` krotkę `(x, y)`.\n\nKliknij **Sprawdź**. Sprawdzarka wywoła Twoją funkcję dla kilku zestawów danych (nie musisz dodawać `print`). Jeśli pojawi się komunikat błędu, popraw wskazany przypadek.",
+      "start": "import random\n\ndef random_position(max_x, max_y):\n",
+      "sprawdzenie": {
+        "tryb": "testy",
+        "kod": "import random as _r\n_r.seed(7)\n_punkty = [random_position(360, 260) for _ in range(60)]\nassert all(isinstance(p, tuple) and len(p) == 2 for p in _punkty), \"Zwróć dwuelementową krotkę (x, y)\"\nassert all(0 <= p[0] <= 360 and 0 <= p[1] <= 260 for p in _punkty), \"Współrzędna x musi mieścić się w 0..max_x, a y w 0..max_y\"\nassert len(set(_punkty)) > 20, \"Losuj osobno współrzędną x oraz współrzędną y\"\nassert random_position(0, 0) == (0, 0), \"Dla granic (0, 0) funkcja powinna zwrócić (0, 0)\""
+      },
+      "podpowiedzi": [
+        "Wylosuj osobno `x = random.randint(0, max_x)` oraz `y = random.randint(0, max_y)`.",
+        "Zwróć parę w nawiasach okrągłych: `return (x, y)`."
+      ],
+      "rozwiazanie": "import random\n\ndef random_position(max_x, max_y):\n    x = random.randint(0, max_x)\n    y = random.randint(0, max_y)\n    return (x, y)"
+    }
+  ]
+}

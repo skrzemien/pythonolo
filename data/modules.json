@@ -99,8 +99,16 @@
       "liczbaZadan": 13
     },
     {
-      "id": "13-pygame",
+      "id": "losowosc",
       "numer": 13,
+      "tytul": "Losowość: random",
+      "opis": "Rzut kostką, losowy wybór z listy, tasowanie i symulacje w grach.",
+      "ikona": "🎲",
+      "liczbaZadan": 12
+    },
+    {
+      "id": "13-pygame",
+      "numer": 14,
       "tytul": "Podstawy Pygame",
       "opis": "Okno gry, kolory RGB, rysowanie figur, obiekty Rect, kolizje i pętla gry.",
       "ikona": "🎮",
